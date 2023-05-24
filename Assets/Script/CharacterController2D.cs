@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -10,13 +11,15 @@ public class CharacterController2D : MonoBehaviour
 {
     public Animator animator;
     [FormerlySerializedAs("renderer")] public SpriteRenderer render;
-    public float speed = 0.05f;
+    public float speed = 0.02f;
     public KeyCode key;
     public bool isIA;
     public bool isMoving = false;
+    private TextMeshProUGUI winText;
 
     private void Start()
     {
+        winText = GameObject.Find("win").GetComponent<TextMeshProUGUI>();
         render.sortingOrder = (int) (transform.position.y * 10);
         if (isIA)
             StartCoroutine(IA());
@@ -28,6 +31,13 @@ public class CharacterController2D : MonoBehaviour
             Move(Input.GetKey(key));
         else
             Move(isMoving);
+        if (transform.position.x > 7f)
+            if (isIA)
+                winText.text = "AI win";
+            else if (key == KeyCode.D || key == KeyCode.Joystick1Button1)
+                winText.text = "Player 1 wins";
+            else
+                winText.text = "Player 2 wins";
     }
 
     IEnumerator IA()

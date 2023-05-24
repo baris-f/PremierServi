@@ -10,7 +10,7 @@ using Vector3 = System.Numerics.Vector3;
 public class AIManager : MonoBehaviour
 {
     public List<CharacterController2D> list = new List<CharacterController2D>();
-
+    public bool iscontroller;
     public void Start()
     {
         int rand = Random.Range(0, list.Count);
@@ -19,9 +19,15 @@ public class AIManager : MonoBehaviour
         while (rand2 == rand)
             rand2 = Random.Range(0, list.Count);
         list[rand].isIA = false;
-        list[rand].key = KeyCode.Joystick1Button1;
+        if (iscontroller)
+            list[rand].key = KeyCode.Joystick1Button1;
+        else
+            list[rand].key = KeyCode.D;
         list[rand2].isIA = false;
-        list[rand2].key = KeyCode.Joystick2Button1;
+        if (iscontroller)
+            list[rand2].key = KeyCode.Joystick2Button1;
+        else
+            list[rand2].key = KeyCode.RightArrow;
     }
 
     void FixedUpdate()
