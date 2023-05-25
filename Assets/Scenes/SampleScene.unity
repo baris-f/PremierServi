@@ -866,6 +866,10 @@ PrefabInstance:
       propertyPath: playerID
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1173992791672641109, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
+      propertyPath: controller
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
 --- !u!1001 &1395813673
@@ -1337,6 +1341,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1173992791672641108, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173992791672641109, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
+      propertyPath: controller
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

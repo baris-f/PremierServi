@@ -30,12 +30,18 @@ public class AIManager : MonoBehaviour
             list[rand2].key = KeyCode.RightArrow;
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        if (Input.anyKey)
+            Debug.Log(Input.inputString);
         if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             Debug.Log("Joycon1 X");
         if (Input.GetKeyDown(KeyCode.Joystick2Button1))
             Debug.Log("Joycon2 X");
+        if (Input.GetKeyDown(KeyCode.Joystick3Button1))
+            Debug.Log("Joycon3 X");
+        if (Input.GetKeyDown(KeyCode.Joystick4Button1))
+            Debug.Log("Joycon4 X");
     }
 }
 
