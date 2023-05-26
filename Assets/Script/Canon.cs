@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 public class Canon : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Canon : MonoBehaviour
     public LineRenderer line;
     public GameObject projectile;
     private RaycastHit2D hit;
+    private Vector2 movement = Vector2.zero;
     private KeyCode up;
     private KeyCode down;
     private KeyCode shoot;
@@ -19,18 +21,9 @@ public class Canon : MonoBehaviour
     {
         if (controller)
         {
-            if (playerID == 1)
-            {
-                up = KeyCode.Joystick1Button3;
-                down = KeyCode.Joystick1Button0;
-                shoot = KeyCode.Joystick1Button2;
-            }
-            else
-            {
-                up = KeyCode.Joystick2Button3;
-                down = KeyCode.Joystick2Button0;
-                shoot = KeyCode.Joystick2Button2;
-            }
+            up = JoyCon.GetKeyCode(JCKey.Y, playerID);
+            down = JoyCon.GetKeyCode(JCKey.A, playerID);
+            shoot = JoyCon.GetKeyCode(JCKey.B, playerID);
         }
         else
         {
@@ -47,6 +40,7 @@ public class Canon : MonoBehaviour
                 shoot = KeyCode.LeftArrow;
             }
         }
+        Debug.Log(playerID + " - up : " + up + " down : " + down + " left: " + shoot);
     }
 
     // Update is called once per frame
@@ -60,19 +54,35 @@ public class Canon : MonoBehaviour
         }
         else
             line.SetPosition(1, transform.position + (Vector3.left * 50));
-        if (Input.GetKey(up))
-            transform.Translate(Vector2.up * speed);
+        if (movement != Vector2.zero)
+            transform.Translate(movement * Vector2.up * speed);
+        /*if (Input.GetKey(up))
+            MoveUp();
         if (Input.GetKey(down))
-            transform.Translate(Vector2.down * speed);
+            MoveDown();
         if (Input.GetKey(shoot))
-        {
-            Instantiate(projectile, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
+            Fire();*/
     }
 
-    void Fire()
+    public void MoveUp()
     {
-        
+        transform.Translate(Vector2.up * speed);
+    }
+    
+    public void MoveDown()
+    {
+        transform.Translate(Vector2.down * speed);
+    }
+
+    public void Move(InputAction.CallbackContext value)
+    {
+        movement = value.ReadValue<Vector2>();
+        Debug.Log("Input : " + movement);
+    }
+    
+    public void Fire()
+    {
+        Instantiate(projectile, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

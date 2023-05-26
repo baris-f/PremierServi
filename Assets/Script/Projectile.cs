@@ -32,5 +32,6 @@ public class Projectile : MonoBehaviour
                 winText.GetComponent<TextMeshProUGUI>().text = "player 1 win !";
         }
         Destroy(col.gameObject);
+        Destroy(gameObject);
     }
 }

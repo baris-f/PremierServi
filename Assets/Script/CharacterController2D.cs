@@ -13,6 +13,7 @@ public class CharacterController2D : MonoBehaviour
     [FormerlySerializedAs("renderer")] public SpriteRenderer render;
     public float speed = 0.02f;
     public KeyCode key;
+    public int id = 0;
     public bool isIA;
     public bool isMoving = false;
     private TextMeshProUGUI winText;

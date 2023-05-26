@@ -19,13 +19,15 @@ public class AIManager : MonoBehaviour
         while (rand2 == rand)
             rand2 = Random.Range(0, list.Count);
         list[rand].isIA = false;
+        list[rand].id = 1;
         if (iscontroller)
-            list[rand].key = KeyCode.Joystick1Button1;
+            list[rand].key = JoyCon.GetKeyCode(JCKey.X, 1);
         else
             list[rand].key = KeyCode.D;
         list[rand2].isIA = false;
+        list[rand2].id = 2;
         if (iscontroller)
-            list[rand2].key = KeyCode.Joystick2Button1;
+            list[rand2].key = JoyCon.GetKeyCode(JCKey.X, 2);
         else
             list[rand2].key = KeyCode.RightArrow;
     }
