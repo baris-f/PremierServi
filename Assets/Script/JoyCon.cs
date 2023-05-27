@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Legacy Class, now project Uses Input System
+//Usage : JoyCon.GetKeyCode(JCKey.Y, playerID);
+
 public enum JCKey // 20 difference in the keycode between each joystick controller (0 button : 330 generic | 350 joystick 1 | 370 joystick 2 ...)
 {
     None = KeyCode.None,

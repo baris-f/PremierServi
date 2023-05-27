@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1173992791672641107}
   - component: {fileID: 1173992791672641109}
   - component: {fileID: 7158833494570987962}
-  - component: {fileID: 391079561}
   m_Layer: 0
   m_Name: Canon
   m_TagString: Untagged
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1560046809
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 42d9d2676fbc0634ebe6c8fd935d220d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -99,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40345cba7e368e64e9dd8c6b224cc042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 2
   speed: 0.03
   controller: 1
   line: {fileID: 7158833494570987962}
@@ -203,111 +201,3 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &391079561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173992791672641106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 690dbb358bf041c4986f8da05a88b0a8, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1173992791672641109}
-        m_TargetAssemblyTypeName: Canon, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 28c2338a-7d5d-41df-9f23-535057bb0808
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/Nintendo
-      Wireless Gamepad/stick,/Nintendo Wireless Gamepad1/stick]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1173992791672641109}
-        m_TargetAssemblyTypeName: Canon, Assembly-CSharp
-        m_MethodName: Fire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 0f7b8a71-3439-44f9-bdda-da71553a7e31
-    m_ActionName: Player/Fire[/Mouse/leftButton,/Nintendo Wireless Gamepad/button2,/Nintendo
-      Wireless Gamepad1/button2]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c73e0214-3e2b-40ef-8c10-52f78107b3e8
-    m_ActionName: UI/Navigate[/Nintendo Wireless Gamepad/stick/up,/Nintendo Wireless
-      Gamepad1/stick/up,/Nintendo Wireless Gamepad/stick/down,/Nintendo Wireless
-      Gamepad1/stick/down,/Nintendo Wireless Gamepad/stick/left,/Nintendo Wireless
-      Gamepad1/stick/left,/Nintendo Wireless Gamepad/stick/right,/Nintendo Wireless
-      Gamepad1/stick/right,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e2a81d82-e657-4997-82bd-8b69214e5aa3
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 135bc24a-fa55-48a7-9646-b7e906641e61
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b4dbae87-001d-4115-bc83-5d9002fac43f
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7b182f8f-b7da-4ccc-ae06-548d42baa786
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9ead02e4-abc4-4b8a-be76-17d8f2eff2be
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3f0c4ab5-9481-4d19-855c-f7c3b7cf52ef
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dbb008e5-7d27-4e20-b0b8-74b9143d3148
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 79dbcfa0-a191-412f-b934-2763033da2e7
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ecb25c97-b003-4b4c-9a90-59e49caea33d
-    m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Joystick
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}

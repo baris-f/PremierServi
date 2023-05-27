@@ -7,27 +7,21 @@ using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 public class Canon : MonoBehaviour
 {
-    public int playerID = 0;
     public float speed = 0.02f;
     public bool controller;
     public LineRenderer line;
     public GameObject projectile;
     private RaycastHit2D hit;
     private Vector2 movement = Vector2.zero;
-    private KeyCode up;
+/*    private KeyCode up;
     private KeyCode down;
     private KeyCode shoot;
-    void Start()
+
+    void Initialize()
     {
-        if (controller)
+        if (!controller)
         {
-            up = JoyCon.GetKeyCode(JCKey.Y, playerID);
-            down = JoyCon.GetKeyCode(JCKey.A, playerID);
-            shoot = JoyCon.GetKeyCode(JCKey.B, playerID);
-        }
-        else
-        {
-            if (playerID == 1)
+            if (player.id == 1)
             {
                 up = KeyCode.Z;
                 down = KeyCode.S;
@@ -40,10 +34,10 @@ public class Canon : MonoBehaviour
                 shoot = KeyCode.LeftArrow;
             }
         }
-        Debug.Log(playerID + " - up : " + up + " down : " + down + " left: " + shoot);
-    }
+    } */
 
-    // Update is called once per frame
+
+
     void FixedUpdate()
     {
         line.SetPosition(0, transform.position);
@@ -77,7 +71,7 @@ public class Canon : MonoBehaviour
     public void Move(InputAction.CallbackContext value)
     {
         movement = value.ReadValue<Vector2>();
-        Debug.Log("Input : " + movement);
+        //Debug.Log("Input : " + movement);
     }
     
     public void Fire()

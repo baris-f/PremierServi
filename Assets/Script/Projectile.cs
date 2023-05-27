@@ -22,16 +22,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.GetComponent<CharacterController2D>().isIA == false)
+        if (!col || !col.CompareTag("Player"))
+            return;
+        if (col.GetComponent<Character>().isIA == false)
         {
             winText.SetActive(true);
-            if (col.GetComponent<CharacterController2D>().key == KeyCode.D
-                || col.GetComponent<CharacterController2D>().key == KeyCode.Joystick1Button1)
-                winText.GetComponent<TextMeshProUGUI>().text = "player 2 win !";
-            else
-                winText.GetComponent<TextMeshProUGUI>().text = "player 1 win !";
+            winText.GetComponent<TextMeshProUGUI>().text = "player " + col.GetComponent<Character>().id +" win !";
         }
-        Destroy(col.gameObject);
+        col.GetComponent<Character>().Die();
+        //Destroy(col.gameObject);
         Destroy(gameObject);
     }
 }
