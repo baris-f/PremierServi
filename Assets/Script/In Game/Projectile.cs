@@ -24,11 +24,6 @@ public class Projectile : MonoBehaviour
     {
         if (!col || !col.CompareTag("Player"))
             return;
-        if (col.GetComponent<Character>().isIA == false)
-        {
-            winText.SetActive(true);
-            winText.GetComponent<TextMeshProUGUI>().text = "player " + col.GetComponent<Character>().id +" win !";
-        }
         col.GetComponent<Character>().Die();
         //Destroy(col.gameObject);
         Destroy(gameObject);

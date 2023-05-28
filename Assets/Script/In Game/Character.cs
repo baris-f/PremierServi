@@ -17,6 +17,7 @@ public class Character : MonoBehaviour
     public bool isIA;
     public bool isRunning = false;
     public bool isWalking = false;
+    public Player player;
     private bool isDead = false;
     private TextMeshProUGUI winText;
 
@@ -34,10 +35,17 @@ public class Character : MonoBehaviour
             return;
         Move();
         if (transform.position.x > 7f)
-            if (isIA)
-                winText.text = "AI win";
-            else
-                winText.text = "Player " + id + " wins";
+        {
+            if (winText.text == "")
+            {
+                if (isIA)
+                    winText.text = "AI win";
+                else
+                    winText.text = "Player " + id + " wins";
+            }
+            winText.color = player.color;
+            GameObject.Find("GameManager").GetComponent<GameManagerServi>().Restart();
+        }
     }
 
     IEnumerator IA()
@@ -65,6 +73,8 @@ public class Character : MonoBehaviour
         animator.SetBool("Walking", false);
         animator.SetBool("Running", false);
         animator.SetTrigger("Death");
+        if (player && player.canon)
+            Destroy(player.canon.gameObject);
     }
 
     private void DestroySelf()

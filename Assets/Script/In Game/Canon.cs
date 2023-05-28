@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class Canon : MonoBehaviour
 {
     public float speed = 0.02f;
-    public bool controller;
+    private bool fired;
     public LineRenderer line;
     public GameObject projectile;
     private RaycastHit2D hit;
@@ -47,7 +47,7 @@ public class Canon : MonoBehaviour
             line.SetPosition(1, hit.point);
         }
         else
-            line.SetPosition(1, transform.position + (Vector3.left * 50));
+            line.SetPosition(1, transform.position + (Vector3.left * 16));
         if (movement != Vector2.zero)
             transform.Translate(movement * Vector2.up * speed);
         /*if (Input.GetKey(up))
@@ -76,7 +76,9 @@ public class Canon : MonoBehaviour
     
     public void Fire()
     {
-        Instantiate(projectile, transform.position, transform.rotation);
+        if (!fired)
+            Instantiate(projectile, transform.position, transform.rotation);
+        fired = true;
         Destroy(gameObject);
     }
 }

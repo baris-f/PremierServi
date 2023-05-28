@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247818854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.86, y: 2.1, z: -0.08561115}
+  m_LocalPosition: {x: 8.86, y: 3.27, z: -0.08561115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -762,8 +762,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1560046809
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d4aebedbe3d66bd4992a944fadf7818c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -837,11 +837,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list: []
   playerPrefab: {fileID: 3226012835197748866, guid: 5bd0b3f817e243b4482f7878cab245e0, type: 3}
+  playerColors:
+  - {r: 0.9960785, g: 0.87843144, b: 0.49411768, a: 1}
+  - {r: 0.20000002, g: 0.6784314, b: 0.73333335, a: 1}
+  - {r: 0.45098042, g: 0.86274517, b: 0.73333335, a: 1}
+  - {r: 0.93725497, g: 0.4156863, b: 0.48235297, a: 1}
   characterPrefab: {fileID: 47848447183714486, guid: 784a33eee2cdae946b6cfadfcb7f4ed4, type: 3}
-  iscontroller: 1
   characterStartPos: {fileID: 1824824911}
   canonStartPos: {fileID: 247818855}
-  playerNumber: 2
+  ISDEBUG: 0
+  game:
+    sceneAsset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+    scenePath: Assets/Scenes/Game.unity
+  menu:
+    sceneAsset: {fileID: 102900000, guid: 9b70ad2f51eaa6b459dbe92b616224f9, type: 3}
+    scenePath: Assets/Scenes/MainMenu.unity
   AINumber: 7
 --- !u!1 &1535611508
 GameObject:

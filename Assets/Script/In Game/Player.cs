@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public int id;
     public Color color;
     public Character character;
+    public Canon canon;
     
     public void CharacterRun(InputAction.CallbackContext value)
     {

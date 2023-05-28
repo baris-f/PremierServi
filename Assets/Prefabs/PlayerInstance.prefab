@@ -191,6 +191,7 @@ MonoBehaviour:
   id: 0
   color: {r: 0, g: 0, b: 0, a: 0}
   character: {fileID: 0}
+  canon: {fileID: 3226012834082546509}
 --- !u!1001 &4363923914201707800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,58 +199,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3226012835197748869}
     m_Modifications:
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
-      value: 660b6ff3-56ed-456a-8af0-2f9cd86eb040
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
-      value: Player/MoveCharacter[/Keyboard/d,/Keyboard/rightArrow,/Nintendo Wireless
-        Gamepad/button2,/Nintendo Wireless Gamepad1/button2]
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3226012834082546509}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MoveCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Canon, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1173992791672641106, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
       propertyPath: m_Name
       value: Canon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1173992791672641106, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1173992791672641107, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1173992791672641108, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
       propertyPath: m_RootOrder
@@ -295,20 +247,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7158833494570987962, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.b
-      value: 0.46274513
-      objectReference: {fileID: 0}
-    - target: {fileID: 7158833494570987962, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.g
-      value: 0.3372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 7158833494570987962, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.r
-      value: 0.6666667
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 391079561, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501fbb7306758c544b0f904ca94cc618, type: 3}
 --- !u!4 &3226012834082546508 stripped
 Transform:
