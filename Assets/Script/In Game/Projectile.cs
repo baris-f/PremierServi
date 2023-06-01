@@ -25,7 +25,6 @@ public class Projectile : MonoBehaviour
         if (!col || !col.CompareTag("Player"))
             return;
         col.GetComponent<Character>().Die();
-        //Destroy(col.gameObject);
         Destroy(gameObject);
     }
 }

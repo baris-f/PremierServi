@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     public bool isRunning = false;
     public bool isWalking = false;
     public Player player;
+    public bool isInDanger = false;
     private bool isDead = false;
     private TextMeshProUGUI winText;
 
@@ -43,7 +44,8 @@ public class Character : MonoBehaviour
                 else
                     winText.text = "Player " + id + " wins";
             }
-            winText.color = player.color;
+            if (!isIA)
+                winText.color = player.color;
             GameObject.Find("GameManager").GetComponent<GameManagerServi>().Restart();
         }
     }
@@ -56,13 +58,15 @@ public class Character : MonoBehaviour
             isWalking = true;
             yield return new WaitForSeconds(Random.Range(0.5f, 2.5f));
             isWalking = false;
-            yield return new WaitForSeconds(Random.Range(1f, 4f));
-            if (Random.Range(0, 100) > 60)
+            if (!isInDanger) 
+                yield return new WaitForSeconds(Random.Range(1f, 4f));
+            if (Random.Range(0, 100) > 60 || isInDanger)
             {
                 isRunning = true;
                 yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
                 isRunning = false;
-                yield return new WaitForSeconds(Random.Range(1f, 4f));
+                if (!isInDanger)
+                    yield return new WaitForSeconds(Random.Range(1f, 4f));
             }
         }
     }
@@ -108,5 +112,19 @@ public class Character : MonoBehaviour
         }
         else
             animator.SetBool("Running", false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Road"))
+        {
+            Debug.Log("DANGER");
+            isInDanger = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Road"))
+            isInDanger = false;
     }
 }

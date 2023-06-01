@@ -56,6 +56,8 @@ MonoBehaviour:
   isIA: 1
   isRunning: 0
   isWalking: 0
+  player: {fileID: 0}
+  isInDanger: 0
 --- !u!212 &47848447183714484
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1560046809
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1364720564, guid: 4d1c903a637b88d4eb802766a91c4644, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -174,5 +176,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.2}
+  m_Size: {x: 0.1, y: 0.2}
   m_EdgeRadius: 0
