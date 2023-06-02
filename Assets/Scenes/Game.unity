@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 300521311}
   - component: {fileID: 300521310}
   - component: {fileID: 300521312}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap
   m_TagString: Road
   m_Icon: {fileID: 0}
@@ -2993,7 +2993,7 @@ GameObject:
   - component: {fileID: 758263587}
   - component: {fileID: 758263586}
   - component: {fileID: 758263585}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3398,6 +3398,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 688774444061527590, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774444193167137, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
 --- !u!4 &1217220274 stripped
@@ -3605,6 +3613,14 @@ PrefabInstance:
     - target: {fileID: 688774444061527590, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
       propertyPath: m_Name
       value: Car (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774444061527590, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774444193167137, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
@@ -3879,6 +3895,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 688774444061527590, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774444193167137, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
 --- !u!4 &1788644138 stripped
@@ -3926,7 +3950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2003352544}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CrossyRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4007,6 +4031,14 @@ PrefabInstance:
     - target: {fileID: 688774444061527590, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774444061527590, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774444193167137, guid: bd328acdbbef3814faca998aa1040a33, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd328acdbbef3814faca998aa1040a33, type: 3}

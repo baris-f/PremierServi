@@ -36,12 +36,11 @@ public class Canon : MonoBehaviour
         }
     } */
 
-
-
     void FixedUpdate()
     {
         line.SetPosition(0, transform.position);
         hit = Physics2D.Raycast(transform.position, Vector2.left);
+        
         if (hit.collider != null)
         {
             line.SetPosition(1, hit.point);
