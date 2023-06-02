@@ -118,7 +118,6 @@ public class Character : MonoBehaviour
     {
         if (other.CompareTag("Road"))
         {
-            Debug.Log("DANGER");
             isInDanger = true;
         }
     }

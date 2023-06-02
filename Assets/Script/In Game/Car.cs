@@ -38,12 +38,11 @@ public class Car : MonoBehaviour
     {
         if (!hasStarted)
             return;
-        StartCoroutine(changeDir());
+        Invoke("changeDir", Random.Range(1f, 2.5f));
     }
 
-    IEnumerator changeDir()
+    void changeDir()
     {
-        yield return new WaitForSeconds(Random.Range(1f, 2.5f));
         transform.Rotate(Vector3.forward, 180);
     }
 }
