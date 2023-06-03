@@ -1,0 +1,16 @@
+{
+    "name": "MainMenu",
+    "rootNamespace": "",
+    "references": [
+        "ScriptableEvents.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
