@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Start",
+                    "name": "Menu",
                     "type": "Button",
                     "id": "82884dda-61c8-4423-b9dd-bf0feefe5763",
                     "expectedControlType": "Button",
@@ -184,6 +184,28 @@
                 },
                 {
                     "name": "",
+                    "id": "c671e1df-0951-4bc8-8762-dd2a2efcf005",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Joycon",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0a26a0a-107e-49c4-a122-8f831a7c7917",
+                    "path": "<HID::Nintendo Wireless Gamepad>/stick",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Joycon",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
                     "path": "*/{Submit}",
                     "interactions": "",
@@ -233,7 +255,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad;Joycon",
-                    "action": "Start",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -244,7 +266,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard (and Mouse)",
-                    "action": "Start",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -413,6 +435,17 @@
                 },
                 {
                     "name": "",
+                    "id": "5409f198-38a7-472c-95a4-0028a4d914f7",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joycon",
+                    "action": "MoveCanon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9c83bf41-d41a-4d0e-9acb-3152b58f06cd",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -429,6 +462,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8478bce2-f8b0-4496-891d-d8a2f351e64f",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9eac583-6506-4d2c-abc4-42e7cc4306f5",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
