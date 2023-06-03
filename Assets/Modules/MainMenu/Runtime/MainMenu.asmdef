@@ -2,7 +2,9 @@
     "name": "MainMenu",
     "rootNamespace": "",
     "references": [
-        "ScriptableEvents.Runtime"
+        "ScriptableEvents.Runtime",
+        "ScriptUtils.Runtime",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,24 +1,69 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Modules.ScriptUtils.Runtime;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace Modules.MainMenu.Runtime
 {
     public class MainMenuUI : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> states = new();
-
-        public void SelectState(Object target) => SelectState(target.name);
-
-        public void SelectState(string targetName)
+        [Serializable]
+        public enum StateEnum
         {
-            foreach (var state in states)
-                state.SetActive(state.name == targetName);
+            Menu = 0,
+            Setup = 1,
+            Mode = 2
         }
 
-        public void Quit()
+        [Serializable]
+        public class StateData
         {
-            Application.Quit();
+            public StateEnum stateEnum;
+            public GameObject container;
+            public Button buttonToSelect;
         }
+
+        private StateEnum currentState;
+        public StateEnum CurrentState
+        {
+            get => currentState;
+            set
+            {
+                currentState = value;
+                if (currentState < StateEnum.Menu) currentState = StateEnum.Menu;
+                if (currentState > StateEnum.Mode) currentState = StateEnum.Mode;
+                foreach (var state in states)
+                {
+                    var current = state.stateEnum == currentState;
+                    if (current && state.buttonToSelect != null)
+                        state.buttonToSelect.Select();
+                    state.container.SetActive(current);
+                }
+            }
+        }
+
+        [Header("States")]
+        [SerializeField] private List<StateData> states = new();
+
+        private void Awake() => CurrentState = StateEnum.Menu;
+
+        [Button] public void PrevState() => CurrentState--;
+        [Button] public void NextState() => CurrentState++;
+        public void SelectState(StateEnum state) => CurrentState = state;
+
+        [Button] public void InitList()
+        {
+            states = new List<StateData>();
+            foreach (StateEnum value in Enum.GetValues(typeof(StateEnum)))
+                states.Add(new StateData { stateEnum = value });
+        }
+
+        public void Quit() => Application.Quit();
     }
 }

@@ -35,13 +35,13 @@ namespace Modules.ScriptUtils.Editor
                     : buttonAttribute.Text;
                 if (GUILayout.Button(buttonText))
                 {
-                    if (!Application.isPlaying)
-                        Debug.LogError("Currently not supported");
-                    else
-                    {
+                    // if (!Application.isPlaying)
+                    //     Debug.LogError("Currently not supported");
+                    // else
+                    // {
                         var defaultParams = buttonMethod.GetParameters().Select(p => p.DefaultValue).ToArray();
                         buttonMethod.Invoke(target, defaultParams);
-                    }
+                    // }
                 }
             }
         }
