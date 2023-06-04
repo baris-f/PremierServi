@@ -4,7 +4,8 @@
     "references": [
         "ScriptableEvents.Runtime",
         "ScriptUtils.Runtime",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
