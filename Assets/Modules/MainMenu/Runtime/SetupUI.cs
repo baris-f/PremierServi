@@ -3,46 +3,127 @@ using System.Collections.Generic;
 using Modules.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
-using UnityEngine.Serialization;
 
 namespace Modules.MainMenu.Runtime
 {
     public class SetupUI : MonoBehaviour
     {
-        [Header("Refs")]
-        [SerializeField] private InputManager inputManager;
+        [Serializable]
+        public class Player
+        {
+            public int id;
+            public InputDevice Device;
+            public string deviceName;
+        }
 
+        [Serializable]
+        public class Card
+        {
+            public GameObject notConnected;
+            public GameObject connected;
+        }
+
+        [Header("Refs")]
+        [SerializeField] private PlayerInput input;
+        [SerializeField] private Card[] cards = new Card[4];
+        
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
+
+        [Header("Debug")]
+        private readonly Player[] players = new Player[4];
 
         private InputAction submit;
         private InputAction start;
         private InputAction cancel;
 
+        #region Setup
+
         private void Awake()
         {
+            submit = input.actions["Submit"];
+            start = input.actions["Menu"];
+            cancel = input.actions["Cancel"];
         }
 
         private void OnEnable()
         {
-        }
-
-        private void OnSubmit(InputAction.CallbackContext context)
-        {
-        }
-
-        private void OnStart(InputAction.CallbackContext context)
-        {
-        }
-
-        private void OnCancel(InputAction.CallbackContext context)
-        {
+            submit.performed += OnSubmit;
+            start.performed += OnStart;
+            cancel.performed += OnCancel;
         }
 
         private void OnDisable()
         {
-          
+            submit.performed -= OnSubmit;
+            start.performed -= OnStart;
+            cancel.performed -= OnCancel;
         }
+
+        #endregion
+
+        #region Input Callbacks
+
+        private void OnSubmit(InputAction.CallbackContext context)
+        {
+            for (var i = 0; i < players.Length; i++)
+            {
+                if (players[i] != null && players[i].Device == context.control.device)
+                {
+                    Debug.Log($"Player {i} already registered");
+                    continue;
+                }
+
+                if (players[i] != null) continue;
+                players[i] = new Player
+                    { Device = context.control.device, deviceName = context.control.device.name, id = i };
+                AddPlayer(i);
+                return;
+            }
+
+            Debug.Log("Too much players");
+        }
+
+        private void OnStart(InputAction.CallbackContext context)
+        {
+            Debug.Log($"Start pressed on {context.control.device.displayName}");
+        }
+
+        private void OnCancel(InputAction.CallbackContext context)
+        {
+            var count = 0;
+            for (var i = 0; i < players.Length; i++)
+            {
+                if (players[i] == null) continue;
+                count++;
+                if (players[i].Device != context.control.device) continue;
+                players[i] = null;
+               RemovePlayer(i);
+                return;
+            }
+
+            if (count <= 0)
+                prevState.Raise();
+        }
+
+        #endregion
+
+        #region UI
+
+        private void AddPlayer(int id)
+        {
+            var card = cards[id];
+            card.connected.SetActive(true);
+            card.notConnected.SetActive(false);
+        }
+
+        private void RemovePlayer(int id )
+        {
+            var card = cards[id];
+            card.connected.SetActive(false);
+            card.notConnected.SetActive(true);
+        }
+
+        #endregion
     }
 }

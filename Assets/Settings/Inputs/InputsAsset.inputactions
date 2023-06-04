@@ -184,21 +184,10 @@
                 },
                 {
                     "name": "",
-                    "id": "c671e1df-0951-4bc8-8762-dd2a2efcf005",
+                    "id": "8fcd365a-bd80-4c26-8588-5dccb5e14bfc",
                     "path": "<HID::Nintendo Wireless Gamepad>/hat",
                     "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "Joycon",
-                    "action": "Navigate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c0a26a0a-107e-49c4-a122-8f831a7c7917",
-                    "path": "<HID::Nintendo Wireless Gamepad>/stick",
-                    "interactions": "",
-                    "processors": "StickDeadzone",
+                    "processors": "",
                     "groups": "Joycon",
                     "action": "Navigate",
                     "isComposite": false,
