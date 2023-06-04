@@ -2343,7 +2343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 690dbb358bf041c4986f8da05a88b0a8, type: 3}
   m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 1329126724}
+  m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2399,10 +2399,10 @@ MonoBehaviour:
     m_ActionId: e76055a6-0b0d-46a9-bc5a-3a1c84ca55dd
     m_ActionName: Game/MoveCanon[/Keyboard/upArrow,/Keyboard/downArrow,/XInputControllerWindows/leftStick]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Joycon
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 433446218}
+  m_Camera: {fileID: 0}
 --- !u!1 &2106226285
 GameObject:
   m_ObjectHideFlags: 0
