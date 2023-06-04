@@ -184,17 +184,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8fcd365a-bd80-4c26-8588-5dccb5e14bfc",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joycon",
-                    "action": "Navigate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
                     "path": "*/{Submit}",
                     "interactions": "",
@@ -424,17 +413,6 @@
                 },
                 {
                     "name": "",
-                    "id": "5409f198-38a7-472c-95a4-0028a4d914f7",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joycon",
-                    "action": "MoveCanon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "9c83bf41-d41a-4d0e-9acb-3152b58f06cd",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -451,28 +429,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8478bce2-f8b0-4496-891d-d8a2f351e64f",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a9eac583-6506-4d2c-abc4-42e7cc4306f5",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button8",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false

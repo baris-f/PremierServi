@@ -11,7 +11,6 @@ namespace Modules.MainMenu.Runtime
         [Serializable]
         public class Player
         {
-            public int id;
             public InputDevice Device;
             public string deviceName;
         }
@@ -26,12 +25,13 @@ namespace Modules.MainMenu.Runtime
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
         [SerializeField] private Card[] cards = new Card[4];
-        
+
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
+        [SerializeField] private SimpleLocalEvent nextState;
 
         [Header("Debug")]
-        private readonly Player[] players = new Player[4];
+        [SerializeField] private Player[] players = new Player[4];
 
         private InputAction submit;
         private InputAction start;
@@ -68,25 +68,30 @@ namespace Modules.MainMenu.Runtime
         {
             for (var i = 0; i < players.Length; i++)
             {
-                if (players[i] != null && players[i].Device == context.control.device)
-                {
-                    Debug.Log($"Player {i} already registered");
-                    continue;
-                }
+                if (players[i].Device != null && players[i].Device == context.control.device)
+                    return;
 
-                if (players[i] != null) continue;
-                players[i] = new Player
-                    { Device = context.control.device, deviceName = context.control.device.name, id = i };
+                if (players[i].Device != null) continue;
+                players[i].Device = context.control.device;
+                players[i].deviceName = context.control.device.name;
                 AddPlayer(i);
                 return;
             }
-
             Debug.Log("Too much players");
         }
 
         private void OnStart(InputAction.CallbackContext context)
         {
-            Debug.Log($"Start pressed on {context.control.device.displayName}");
+            for (var i = 0; i < players.Length; i++)
+            {
+                if (players[i].Device != null && players[i].Device == context.control.device)
+                {
+                    // registered player used start
+                    // sauvegarde data des player qqpart
+                    nextState.Raise();
+                    return;
+                }
+            }
         }
 
         private void OnCancel(InputAction.CallbackContext context)
@@ -94,14 +99,13 @@ namespace Modules.MainMenu.Runtime
             var count = 0;
             for (var i = 0; i < players.Length; i++)
             {
-                if (players[i] == null) continue;
+                if (players[i].Device == null) continue;
                 count++;
                 if (players[i].Device != context.control.device) continue;
                 players[i] = null;
-               RemovePlayer(i);
+                RemovePlayer(i);
                 return;
             }
-
             if (count <= 0)
                 prevState.Raise();
         }
@@ -117,7 +121,7 @@ namespace Modules.MainMenu.Runtime
             card.notConnected.SetActive(false);
         }
 
-        private void RemovePlayer(int id )
+        private void RemovePlayer(int id)
         {
             var card = cards[id];
             card.connected.SetActive(false);
