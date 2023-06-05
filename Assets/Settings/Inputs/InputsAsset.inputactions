@@ -457,6 +457,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0322d2c3-d583-4e89-a098-eb857d8803c9",
+                    "path": "<HID::Nintendo Wireless Gamepad>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fa73849c-ff5b-4607-a575-4a1b80d7d64d",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -479,6 +490,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a331a6c3-0a2e-486a-975f-902da5b5b602",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f59ea55a-708b-4273-a414-2c7e01d7b98c",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -495,6 +517,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "464f4a56-cea7-4f19-9f5b-77411d9a3c16",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -545,6 +578,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ee0b65db-74d8-41a3-b0c0-b401248cb445",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCanon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9c83bf41-d41a-4d0e-9acb-3152b58f06cd",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -561,6 +605,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0a9a4ab-f29d-4952-8c1b-bf527a1e7c8f",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e9f2893-fbf2-4d84-bedd-16799493a2cc",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false

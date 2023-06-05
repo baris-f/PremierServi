@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Character character;
     public Canon canon;
     
-    public void CharacterRun(InputAction.CallbackContext value)
+    public void Run(InputAction.CallbackContext value)
     {
         if (value.ReadValue<float>() == 1)
             character.isRunning = true;
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
             character.isRunning = false;
     }
     
-    public void CharacterWalk(InputAction.CallbackContext value)
+    public void Walk(InputAction.CallbackContext value)
     {
         if (value.ReadValue<float>() == 1)
             character.isWalking = true;
