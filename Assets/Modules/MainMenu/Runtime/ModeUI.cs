@@ -5,6 +5,7 @@ using Modules.ScriptUtils.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Modules.MainMenu.Runtime
@@ -25,6 +26,9 @@ namespace Modules.MainMenu.Runtime
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
+        [SerializeField] private SimpleLocalEvent classic;
+        [SerializeField] private SimpleLocalEvent frogger;
+        [SerializeField] private SimpleLocalEvent squid;
 
         [Header("Settings")]
         [SerializeField] private Color32 selectedColor;
@@ -118,19 +122,35 @@ namespace Modules.MainMenu.Runtime
         public void NextOption(int id)
         {
             CurrentChoice = id;
-            ChangeOption( 1);
+            ChangeOption(1);
         }
 
         public void PrevOption(int id)
         {
             CurrentChoice = id;
-            ChangeOption( -1);
+            ChangeOption(-1);
         }
 
         public void StartGame()
         {
             CurrentChoice = choices.Count - 1;
-            Debug.Log("Passer au jeu yay");
+            var diffChoice = choices[1];
+            GameConfig.Runtime.GameConfig.Instance.SetDifficultyFromString(diffChoice.options[diffChoice.curOption]);
+            var modeChoice = choices[0];
+            var mode = GameConfig.Runtime.GameConfig.Instance.SetModeFromString(
+                modeChoice.options[modeChoice.curOption]);
+            switch (mode)
+            {
+                case GameConfig.Runtime.GameConfig.GameMode.Classic:
+                    classic.Raise();
+                    break;
+                case GameConfig.Runtime.GameConfig.GameMode.Frogger:
+                    frogger.Raise();
+                    break;
+                case GameConfig.Runtime.GameConfig.GameMode.Squid:
+                    squid.Raise();
+                    break;
+            }
         }
 
         #endregion

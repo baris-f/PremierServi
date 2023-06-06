@@ -2,19 +2,13 @@ using System;
 using Modules.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Player = Modules.GameConfig.Runtime.GameConfig.Player;
 
 namespace Modules.MainMenu.Runtime
 {
     public class SetupUI : MonoBehaviour
     {
-        [Serializable]
-        public class Player
-        {
-            public InputDevice Device;
-            public string deviceName;
-        }
-
-        [Serializable]
+    [Serializable]
         public class Card
         {
             public GameObject notConnected;
@@ -131,7 +125,7 @@ namespace Modules.MainMenu.Runtime
 
         public void ValidatePlayers()
         {
-            //sauvegarde
+            GameConfig.Runtime.GameConfig.Instance.SetPlayersFromArray(players);
             nextState.Raise();
         }
 
