@@ -6,23 +6,28 @@ using Random = UnityEngine.Random;
 public class Car : MonoBehaviour
 {
     public float refSpeed = 0.02f;
+    public SpriteRenderer sprite;
+    public List<Color> colors = new();
     private float speed = 0.02f;
-    private bool hasStarted;
 
     private void Start()
     {
         randomize();
-        hasStarted = true;
     }
 
     void randomize()
     {
         speed = refSpeed + Random.Range(-0.01f, 0.01f);
+        sprite.color = colors[Random.Range(0, colors.Count)];
     }
 
     void FixedUpdate()
     {
         transform.Translate(Vector2.up * -speed);
+
+        if ((transform.position.y < -7f && transform.rotation.z % 360 == 0) ||
+            (transform.position.y > 6f && transform.rotation.z == 1))
+            changeDir();
     }
     
     private void OnTriggerEnter2D(Collider2D col)
@@ -36,13 +41,12 @@ public class Car : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        if (!hasStarted)
-            return;
-        Invoke("changeDir", Random.Range(1f, 2.5f));
+        Debug.Log("invi");
     }
 
     void changeDir()
     {
+        randomize();
         transform.Rotate(Vector3.forward, 180);
     }
 }

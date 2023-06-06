@@ -13,18 +13,15 @@ public class Character : MonoBehaviour
     [FormerlySerializedAs("renderer")] public SpriteRenderer render;
     public float speed = 0.02f;
     public KeyCode key;
-    public int id = 0;
     public bool isIA;
     public bool isRunning = false;
     public bool isWalking = false;
-    public Player player;
+    public Player player = null;
     public bool isInDanger = false;
     private bool isDead = false;
-    private TextMeshProUGUI winText;
 
     private void Start()
     {
-        winText = GameObject.Find("win").GetComponent<TextMeshProUGUI>();
         render.sortingOrder = (int) (transform.position.y * 10);
         if (isIA)
             StartCoroutine(IA());
@@ -37,16 +34,7 @@ public class Character : MonoBehaviour
         Move();
         if (transform.position.x > 7f)
         {
-            if (winText.text == "")
-            {
-                if (isIA)
-                    winText.text = "AI win";
-                else
-                    winText.text = "Player " + id + " wins";
-            }
-            if (!isIA)
-                winText.color = player.color;
-            GameObject.Find("GameManager").GetComponent<GameManagerServi>().Restart();
+            GameObject.Find("GameManager").GetComponent<GameManagerServi>().Win(player);
         }
     }
 

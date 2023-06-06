@@ -436,7 +436,7 @@
                 {
                     "name": "",
                     "id": "dc923967-ea6d-4273-b63a-90f0e71c02ac",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard (and Mouse)",
@@ -468,8 +468,19 @@
                 },
                 {
                     "name": "",
+                    "id": "3cf7692b-904c-4ff8-8902-853a2c499bec",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fa73849c-ff5b-4607-a575-4a1b80d7d64d",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard (and Mouse)",
@@ -501,8 +512,19 @@
                 },
                 {
                     "name": "",
+                    "id": "c84715ce-2322-49bb-a775-b1a56af7e5b3",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f59ea55a-708b-4273-a414-2c7e01d7b98c",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard (and Mouse)",
@@ -525,6 +547,17 @@
                     "name": "",
                     "id": "464f4a56-cea7-4f19-9f5b-77411d9a3c16",
                     "path": "<HID::Nintendo Wireless Gamepad>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "facff66e-b4ba-4d71-9cb8-ceca58c704cf",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -630,6 +663,39 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Keyboard",
+                    "id": "b08f4713-0288-4361-b2b4-870f6507fa4d",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCanon",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "1bb5ef40-21b3-4cfc-a969-d20fd076b2b9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard (and Mouse)",
+                    "action": "MoveCanon",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "d1619954-ac4a-4cec-bb11-5d73fc8c42c2",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard (and Mouse)",
+                    "action": "MoveCanon",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
