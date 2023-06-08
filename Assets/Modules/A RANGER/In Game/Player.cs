@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int id;
     public Color color;
     public Character character;
-    public Canon canon;
+    public GameObject weapon;
     
     public void Run(InputAction.CallbackContext value)
     {

@@ -943,19 +943,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d08899c2f9e4f17b9a4ffef8221fdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list: []
+  AIList: []
   playerList: []
-  playerPrefab: {fileID: 3226012835197748866, guid: 5bd0b3f817e243b4482f7878cab245e0, type: 3}
+  playerPrefab: {fileID: 3226012835197748866, guid: 10435f1cfc66c994e8ede2dfa3dd02a0, type: 3}
   playerColors:
+  - {r: 0.93725497, g: 0.4156863, b: 0.48235297, a: 1}
   - {r: 0.9960785, g: 0.87843144, b: 0.49411768, a: 1}
   - {r: 0.20000002, g: 0.6784314, b: 0.73333335, a: 1}
   - {r: 0.45098042, g: 0.86274517, b: 0.73333335, a: 1}
-  - {r: 0.93725497, g: 0.4156863, b: 0.48235297, a: 1}
   characterPrefab: {fileID: 47848447183714486, guid: 784a33eee2cdae946b6cfadfcb7f4ed4, type: 3}
   characterStartPos: {fileID: 1824824911}
   canonStartPos: {fileID: 247818855}
   winText: {fileID: 1688352005}
-  ISDEBUG: 0
+  isSquidGame: 1
+  ISDEBUG: 1
   game:
     asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
     guid: 00000000000000000000000000000000

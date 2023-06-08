@@ -13,28 +13,6 @@ public class Canon : MonoBehaviour
     public GameObject projectile;
     private RaycastHit2D hit;
     private Vector2 movement = Vector2.zero;
-/*    private KeyCode up;
-    private KeyCode down;
-    private KeyCode shoot;
-
-    void Initialize()
-    {
-        if (!controller)
-        {
-            if (player.id == 1)
-            {
-                up = KeyCode.Z;
-                down = KeyCode.S;
-                shoot = KeyCode.Q;
-            }
-            else
-            {
-                up = KeyCode.UpArrow;
-                down = KeyCode.DownArrow;
-                shoot = KeyCode.LeftArrow;
-            }
-        }
-    } */
 
     void FixedUpdate()
     {
@@ -49,12 +27,6 @@ public class Canon : MonoBehaviour
             line.SetPosition(1, transform.position + (Vector3.left * 16));
         if (movement != Vector2.zero)
             transform.Translate(movement * Vector2.up * speed);
-        /*if (Input.GetKey(up))
-            MoveUp();
-        if (Input.GetKey(down))
-            MoveDown();
-        if (Input.GetKey(shoot))
-            Fire();*/
     }
 
     public void MoveUp()
@@ -70,7 +42,6 @@ public class Canon : MonoBehaviour
     public void Move(InputAction.CallbackContext value)
     {
         movement = value.ReadValue<Vector2>();
-        //Debug.Log("Input : " + movement);
     }
     
     public void Fire()

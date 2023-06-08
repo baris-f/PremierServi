@@ -40,7 +40,8 @@ public class Character : MonoBehaviour
 
     IEnumerator IA()
     {
-        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+        if (Random.Range(0, 100) > 30)
+            yield return new WaitForSeconds(Random.Range(0.5f, 2f));
         while (true)
         {
             isWalking = true;
@@ -65,8 +66,8 @@ public class Character : MonoBehaviour
         animator.SetBool("Walking", false);
         animator.SetBool("Running", false);
         animator.SetTrigger("Death");
-        if (player && player.canon)
-            Destroy(player.canon.gameObject);
+        if (player && player.weapon)
+            Destroy(player.weapon);
     }
 
     private void DestroySelf()

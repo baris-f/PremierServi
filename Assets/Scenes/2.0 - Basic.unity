@@ -955,7 +955,7 @@ MonoBehaviour:
   characterStartPos: {fileID: 1824824911}
   canonStartPos: {fileID: 247818855}
   winText: {fileID: 1688352005}
-  ISDEBUG: 0
+  ISDEBUG: 1
   game:
     asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
     guid: 00000000000000000000000000000000
