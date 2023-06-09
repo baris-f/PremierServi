@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d08899c2f9e4f17b9a4ffef8221fdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list: []
+  AIList: []
   playerList: []
   playerPrefab: {fileID: 3226012835197748866, guid: 5bd0b3f817e243b4482f7878cab245e0, type: 3}
   playerColors:
@@ -955,7 +955,8 @@ MonoBehaviour:
   characterStartPos: {fileID: 1824824911}
   canonStartPos: {fileID: 247818855}
   winText: {fileID: 1688352005}
-  ISDEBUG: 1
+  isSquidGame: 0
+  ISDEBUG: 0
   game:
     asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
     guid: 00000000000000000000000000000000

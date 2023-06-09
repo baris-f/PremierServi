@@ -31,6 +31,8 @@ public class SquidGameDoll : MonoBehaviour
         Debug.Log(line.positionCount);
         foreach (Character character in charactersList)
         {
+            if (!character)
+                continue;
             line.SetPosition(lineID++, transform.position);
             line.SetPosition(lineID++, character.transform.position);
             character.Die();

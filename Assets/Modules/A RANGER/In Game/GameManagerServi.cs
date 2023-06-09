@@ -34,7 +34,7 @@ public class GameManagerServi : MonoBehaviour
     private int currentID = 1;
     public void Start()
     {
-        playerCount = InputSystem.devices.OfType<Joystick>().Count();
+        playerCount = InputSystem.devices.OfType<Joystick>().Count() + 1;
         //if (playerCount == 0) Keyboard mode
         foreach (var device in InputSystem.devices)
             Debug.Log(device.GetType());        
@@ -105,7 +105,8 @@ public class GameManagerServi : MonoBehaviour
     
     public void Restart()
     {
-        StartCoroutine(LoadScene(game));
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        //StartCoroutine(LoadScene(game));
     }
     
     public void Quit()

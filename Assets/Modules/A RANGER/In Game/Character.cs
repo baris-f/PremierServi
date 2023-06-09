@@ -62,6 +62,8 @@ public class Character : MonoBehaviour
 
     public void Die()
     {
+        isRunning = false;
+        isWalking = false;
         isDead = true;
         animator.SetBool("Walking", false);
         animator.SetBool("Running", false);
