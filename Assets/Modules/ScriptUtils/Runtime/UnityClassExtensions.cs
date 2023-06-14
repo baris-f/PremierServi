@@ -7,6 +7,8 @@ namespace Modules.ScriptUtils.Runtime
 {
     public static class UnityClassExtensions
     {
+        public static Vector2Int RoundToInt(this Vector2 src) => Vector2Int.RoundToInt(src);
+        
         public static void DestroyAllChildren(this Transform parent)
         {
             if (Application.isPlaying)

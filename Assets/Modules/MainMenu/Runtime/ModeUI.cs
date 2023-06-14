@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Modules.ScriptableEvents.Runtime.LocalEvents;
+using Modules.ScriptUtils.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Modules.MainMenu.Runtime
@@ -19,12 +21,14 @@ namespace Modules.MainMenu.Runtime
             public int curOption;
         }
 
-        public Vector2 navDebug;
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
+        [SerializeField] private SimpleLocalEvent classic;
+        [SerializeField] private SimpleLocalEvent frogger;
+        [SerializeField] private SimpleLocalEvent squid;
 
         [Header("Settings")]
         [SerializeField] private Color32 selectedColor;
@@ -80,7 +84,7 @@ namespace Modules.MainMenu.Runtime
         private void OnSubmit(InputAction.CallbackContext context)
         {
             if (CurrentChoice >= choices.Count - 1)
-                Debug.Log("Passer au jeu yay");
+                StartGame();
             CurrentChoice++;
         }
 
@@ -93,12 +97,60 @@ namespace Modules.MainMenu.Runtime
 
         private void OnNavigate(InputAction.CallbackContext context)
         {
-            var vector = context.ReadValue<Vector2>();
-            navDebug = vector;
-            var choice = choices[currentChoice];
-            choice.curOption += (int)vector.x;
+            var vector = context.ReadValue<Vector2>().RoundToInt();
+            if (vector.x != 0)
+            {
+                ChangeOption(vector.x);
+                return;
+            }
+
+            CurrentChoice -= vector.y;
+        }
+
+        private void ChangeOption(int dir)
+        {
+            var choice = choices[CurrentChoice];
+            choice.curOption += dir;
             choice.curOption = Mathf.Clamp(choice.curOption, 0, choice.options.Length - 1);
             choice.text.text = choice.options[choice.curOption];
+        }
+
+        #endregion
+
+        #region Public
+
+        public void NextOption(int id)
+        {
+            CurrentChoice = id;
+            ChangeOption(1);
+        }
+
+        public void PrevOption(int id)
+        {
+            CurrentChoice = id;
+            ChangeOption(-1);
+        }
+
+        public void StartGame()
+        {
+            CurrentChoice = choices.Count - 1;
+            var diffChoice = choices[1];
+            GameConfig.Runtime.GameConfig.Instance.SetDifficultyFromString(diffChoice.options[diffChoice.curOption]);
+            var modeChoice = choices[0];
+            var mode = GameConfig.Runtime.GameConfig.Instance.SetModeFromString(
+                modeChoice.options[modeChoice.curOption]);
+            switch (mode)
+            {
+                case GameConfig.Runtime.GameConfig.GameMode.Classic:
+                    classic.Raise();
+                    break;
+                case GameConfig.Runtime.GameConfig.GameMode.Frogger:
+                    frogger.Raise();
+                    break;
+                case GameConfig.Runtime.GameConfig.GameMode.Squid:
+                    squid.Raise();
+                    break;
+            }
         }
 
         #endregion

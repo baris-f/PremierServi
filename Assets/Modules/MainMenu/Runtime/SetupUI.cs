@@ -1,21 +1,14 @@
 using System;
-using System.Collections.Generic;
 using Modules.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Player = Modules.GameConfig.Runtime.GameConfig.Player;
 
 namespace Modules.MainMenu.Runtime
 {
     public class SetupUI : MonoBehaviour
     {
-        [Serializable]
-        public class Player
-        {
-            public InputDevice Device;
-            public string deviceName;
-        }
-
-        [Serializable]
+    [Serializable]
         public class Card
         {
             public GameObject notConnected;
@@ -69,7 +62,10 @@ namespace Modules.MainMenu.Runtime
             for (var i = 0; i < players.Length; i++)
             {
                 if (players[i].Device != null && players[i].Device == context.control.device)
+                {
+                    ValidatePlayers();
                     return;
+                }
 
                 if (players[i].Device != null) continue;
                 players[i].Device = context.control.device;
@@ -77,20 +73,17 @@ namespace Modules.MainMenu.Runtime
                 AddPlayer(i);
                 return;
             }
+
             Debug.Log("Too much players");
         }
 
         private void OnStart(InputAction.CallbackContext context)
         {
-            for (var i = 0; i < players.Length; i++)
+            foreach (var player in players)
             {
-                if (players[i].Device != null && players[i].Device == context.control.device)
-                {
-                    // registered player used start
-                    // sauvegarde data des player qqpart
-                    nextState.Raise();
-                    return;
-                }
+                if (player.Device == null || player.Device != context.control.device) continue;
+                ValidatePlayers();
+                return;
             }
         }
 
@@ -102,10 +95,12 @@ namespace Modules.MainMenu.Runtime
                 if (players[i].Device == null) continue;
                 count++;
                 if (players[i].Device != context.control.device) continue;
-                players[i] = null;
+                players[i].Device = null;
+                players[i].deviceName = "";
                 RemovePlayer(i);
                 return;
             }
+
             if (count <= 0)
                 prevState.Raise();
         }
@@ -126,6 +121,12 @@ namespace Modules.MainMenu.Runtime
             var card = cards[id];
             card.connected.SetActive(false);
             card.notConnected.SetActive(true);
+        }
+
+        public void ValidatePlayers()
+        {
+            GameConfig.Runtime.GameConfig.Instance.SetPlayersFromArray(players);
+            nextState.Raise();
         }
 
         #endregion

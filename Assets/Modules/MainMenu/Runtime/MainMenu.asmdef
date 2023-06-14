@@ -5,7 +5,8 @@
         "ScriptableEvents.Runtime",
         "ScriptUtils.Runtime",
         "Unity.InputSystem",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "GameConfig"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

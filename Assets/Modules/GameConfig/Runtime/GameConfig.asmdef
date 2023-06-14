@@ -1,0 +1,7 @@
+﻿{
+  "name": "GameConfig",
+  "references": [
+    "ScriptUtils.Runtime",
+    "Unity.InputSystem"
+  ]
+}
