@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Modules.A_RANGER.In_Game;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -69,7 +70,7 @@ public class Character : MonoBehaviour
         animator.SetBool("Running", false);
         animator.SetTrigger("Death");
         if (player && player.weapon)
-            Destroy(player.weapon);
+            player.weapon.GetComponent<IWeapon>().DestroySelf();
     }
 
     private void DestroySelf()

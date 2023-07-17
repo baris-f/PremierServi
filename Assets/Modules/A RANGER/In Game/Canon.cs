@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Modules.A_RANGER.In_Game;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
-public class Canon : MonoBehaviour
+public class Canon : MonoBehaviour, IWeapon
 {
     public float speed = 0.02f;
     private bool fired;
@@ -49,6 +50,11 @@ public class Canon : MonoBehaviour
         if (!fired)
             Instantiate(projectile, transform.position, transform.rotation);
         fired = true;
+        DestroySelf();
+    }
+
+    public void DestroySelf()
+    {
         Destroy(gameObject);
     }
 }

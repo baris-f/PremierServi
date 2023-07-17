@@ -1,26 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Modules.A_RANGER.In_Game;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
-public class SquidGameDoll : MonoBehaviour
+
+public class SquidGameDoll : MonoBehaviour, IWeapon
 {
     private bool fired;
     public LineRenderer line;
     public GameManagerServi GameManager;
+    public Animator animator;
+    public Transform eyes;
     private RaycastHit2D hit;
 
     private void Start()
     {
         GameManager = GameObject.Find("GameManager").GetComponent<GameManagerServi>();
-    }
-
-    void FixedUpdate()
-    {
-
     }
 
     public void ShootLine()
@@ -33,7 +32,7 @@ public class SquidGameDoll : MonoBehaviour
         {
             if (!character)
                 continue;
-            line.SetPosition(lineID++, transform.position);
+            line.SetPosition(lineID++, eyes.position);
             line.SetPosition(lineID++, character.transform.position);
             character.Die();
         }
@@ -43,12 +42,19 @@ public class SquidGameDoll : MonoBehaviour
     {
         if (fired)
             return;
-        ShootLine();
+        //ShootLine(); triggered by animation
+        animator.SetTrigger("Fire");
+        Invoke(nameof(ReallyDestroySelf), 2f);
         fired = true;
-        Invoke(nameof(DestroySelf), 1f);
     }
 
-    void DestroySelf()
+    public void DestroySelf()
+    {
+        if (!fired)
+            ReallyDestroySelf();
+    }
+
+    void ReallyDestroySelf()
     {
         Destroy(gameObject);
     }

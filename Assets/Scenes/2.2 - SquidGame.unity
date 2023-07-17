@@ -956,7 +956,7 @@ MonoBehaviour:
   canonStartPos: {fileID: 247818855}
   winText: {fileID: 1688352005}
   isSquidGame: 1
-  ISDEBUG: 0
+  ISDEBUG: 1
   game:
     asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
     guid: 00000000000000000000000000000000
