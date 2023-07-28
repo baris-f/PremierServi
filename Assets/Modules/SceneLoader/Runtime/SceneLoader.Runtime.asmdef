@@ -2,6 +2,8 @@
   "name": "SceneLoader.Runtime",
   "rootNamespace": "",
   "references": [
+    "ScriptableEvents.Runtime",
+    "ScriptUtils.Runtime",
     "Eflatun.SceneReference"
   ],
   "includePlatforms": [],

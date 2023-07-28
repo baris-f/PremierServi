@@ -16,10 +16,11 @@ namespace Modules.ScriptableEvents.Runtime
         protected const bool Verbose = false;
         [SerializeField] protected List<EventListener<T>> listeners = new();
 
-        public abstract void Raise(T data);
+        protected abstract void Raise(T data);
 
-        public void Register(EventListener<T> listener)
+        public void Register(EventListener<T> listener, Component origin)
         {
+            listener.origin = origin;
             if (!listeners.Contains(listener))
                 listeners.Add(listener);
         }

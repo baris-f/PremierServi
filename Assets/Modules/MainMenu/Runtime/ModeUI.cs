@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Eflatun.SceneReference;
+using Modules.SceneLoader.Runtime;
 using Modules.ScriptableEvents.Runtime.LocalEvents;
 using Modules.ScriptUtils.Runtime;
 using TMPro;
@@ -26,9 +28,9 @@ namespace Modules.MainMenu.Runtime
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
-        [SerializeField] private SimpleLocalEvent classic;
-        [SerializeField] private SimpleLocalEvent frogger;
-        [SerializeField] private SimpleLocalEvent squid;
+        [SerializeField] private LoadSceneEvent classic;
+        [SerializeField] private LoadSceneEvent frogger;
+        [SerializeField] private LoadSceneEvent squid;
 
         [Header("Settings")]
         [SerializeField] private Color32 selectedColor;

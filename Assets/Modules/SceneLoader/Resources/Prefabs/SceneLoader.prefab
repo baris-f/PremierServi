@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209567172181389035}
   - component: {fileID: 5788607560572615717}
+  - component: {fileID: 6001211774189058547}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -47,6 +48,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6349777200627300529}
   transitionTimeInMs: 1000
+  inspectorEventListener: {fileID: 6001211774189058547}
+  sceneEvents:
+  - {fileID: 11400000, guid: 4b0b2e7e146824546bd3f4a0f67acee0, type: 2}
+  - {fileID: 11400000, guid: feeaa654dae16d443bebce6e99e1e575, type: 2}
+  - {fileID: 11400000, guid: 447fbc4c9e366b148b4502a5dae7f5ec, type: 2}
+--- !u!114 &6001211774189058547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693547299499510988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsToListen: []
 --- !u!1001 &7464944992311821443
 PrefabInstance:
   m_ObjectHideFlags: 0

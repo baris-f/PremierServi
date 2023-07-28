@@ -327,10 +327,7 @@ PrefabInstance:
     - {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8693547299499510988, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2111156567}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
 --- !u!1 &264618397
 GameObject:
@@ -494,9 +491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 1924894349}
   prevState: {fileID: 11400000, guid: 6be56b76f54be6448b2304fcae9245b3, type: 2}
-  classic: {fileID: 11400000, guid: c02498aff1d03d744a8c2141616a5aec, type: 2}
-  frogger: {fileID: 11400000, guid: 66d774ccad1881e4bb2a38dd3adf52f8, type: 2}
-  squid: {fileID: 11400000, guid: 47685bb3ead8dda4c898da8dd0309368, type: 2}
+  classic: {fileID: 11400000, guid: 4b0b2e7e146824546bd3f4a0f67acee0, type: 2}
+  frogger: {fileID: 11400000, guid: feeaa654dae16d443bebce6e99e1e575, type: 2}
+  squid: {fileID: 11400000, guid: 447fbc4c9e366b148b4502a5dae7f5ec, type: 2}
   selectedColor:
     serializedVersion: 2
     rgba: 4282766847
@@ -533,7 +530,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5788607560572615717, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
   m_PrefabInstance: {fileID: 211385364}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111156566}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49cbd181519f4268b4a0464ba40d7b66, type: 3}
@@ -2921,72 +2918,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2111156566 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8693547299499510988, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-  m_PrefabInstance: {fileID: 211385364}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2111156567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111156566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToListen:
-  - event: {fileID: 11400000, guid: c02498aff1d03d744a8c2141616a5aec, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 363738615}
-          m_TargetAssemblyTypeName: Modules.SceneLoader.Runtime.SceneLoader, SceneLoader.Runtime
-          m_MethodName: LoadScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 2.0 - Basic
-            m_BoolArgument: 0
-          m_CallState: 2
-  - event: {fileID: 11400000, guid: 66d774ccad1881e4bb2a38dd3adf52f8, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 363738615}
-          m_TargetAssemblyTypeName: Modules.SceneLoader.Runtime.SceneLoader, SceneLoader.Runtime
-          m_MethodName: LoadScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 2.1 - Frogger
-            m_BoolArgument: 0
-          m_CallState: 2
-  - event: {fileID: 11400000, guid: 47685bb3ead8dda4c898da8dd0309368, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 363738615}
-          m_TargetAssemblyTypeName: Modules.SceneLoader.Runtime.SceneLoader, SceneLoader.Runtime
-          m_MethodName: LoadScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 2.2 - SquidGame
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &2137225997
 GameObject:
   m_ObjectHideFlags: 0

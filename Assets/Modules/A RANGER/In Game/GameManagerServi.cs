@@ -36,8 +36,8 @@ public class GameManagerServi : MonoBehaviour
     {
         playerCount = InputSystem.devices.OfType<Joystick>().Count() + 1;
         //if (playerCount == 0) Keyboard mode
-        foreach (var device in InputSystem.devices)
-            Debug.Log(device.GetType());        
+        // foreach (var device in InputSystem.devices)
+        //     Debug.Log(device.GetType());        
         for (int i = 0; i < AINumber; i++)
             AIList.Add(Instantiate(characterPrefab, characterStartPos.position -= Vector3.up, characterStartPos.rotation).GetComponent<Character>());
         for (int i = 0; i < playerCount; i++)

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Eflatun.SceneReference;
+using Modules.ScriptableEvents.Runtime;
 using UnityEngine;
 
 namespace Modules.SceneLoader.Runtime
@@ -12,11 +14,24 @@ namespace Modules.SceneLoader.Runtime
         [Header("Config")]
         [SerializeField] private Animator animator;
         [SerializeField] private int transitionTimeInMs = 1000;
+        [SerializeField] private InspectorEventListener inspectorEventListener;
 
-        private void Awake() => animator.gameObject.SetActive(true);
+        [SerializeField] private List<LoadSceneEvent> sceneEvents;
+
+        private void Awake()
+        {
+            animator.gameObject.SetActive(true);
+            foreach (var sceneEvent in sceneEvents) inspectorEventListener.AddCallback(sceneEvent, LoadSceneCallback);
+        }
+
+        private void LoadSceneCallback(MinimalData data)
+        {
+            if (data is not LoadSceneEvent.LoadSceneData sceneData)
+                return;
+            LoadScene(sceneData.sceneName);
+        }
 
         public async void LoadScene(string sceneName) => await DoTransition(sceneName);
-        public async void LoadScene(SceneReference scene) => await DoTransition(scene.Name);
 
         private async Task DoTransition(string sceneName)
         {

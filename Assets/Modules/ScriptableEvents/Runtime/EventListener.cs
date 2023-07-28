@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Modules.ScriptableEvents.Runtime
@@ -6,6 +7,7 @@ namespace Modules.ScriptableEvents.Runtime
     [Serializable]
     public class EventListener<T> where T : MinimalData
     {
+        public Component origin;
         public ScriptableEvent<T> @event;
         public UnityEvent<T> callback;
 

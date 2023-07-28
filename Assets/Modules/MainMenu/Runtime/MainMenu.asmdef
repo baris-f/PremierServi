@@ -6,7 +6,9 @@
         "ScriptUtils.Runtime",
         "Unity.InputSystem",
         "Unity.TextMeshPro",
-        "GameConfig"
+        "GameConfig",
+        "SceneLoader.Runtime",
+        "Eflatun.SceneReference"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

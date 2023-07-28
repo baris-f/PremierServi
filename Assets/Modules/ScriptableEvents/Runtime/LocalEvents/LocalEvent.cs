@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Modules.ScriptableEvents.Runtime.LocalEvents
 {
-    public abstract class LocalEvent : ScriptableEvent<MinimalData>
+    public abstract class LocalEvent<T> : ScriptableEvent<T> where T : MinimalData
     {
-        public override void Raise(MinimalData data)
+        protected override void Raise(T data)
         {
             data.timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
             foreach (var listener in listeners)

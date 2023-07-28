@@ -4,8 +4,9 @@ using UnityEngine;
 namespace Modules.ScriptableEvents.Runtime.LocalEvents
 {
     [CreateAssetMenu(fileName = "New Simple Local Event", menuName = "ScriptableEvents/Simple Local Event")]
-    public class SimpleLocalEvent : LocalEvent
+    public class SimpleLocalEvent : LocalEvent<MinimalData>
     {
-        [Button] public void Raise() => Raise(new MinimalData());
+        private readonly MinimalData data = new();
+        [Button] public void Raise() => Raise(data);
     }
 }
