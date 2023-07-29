@@ -1,12 +1,8 @@
-using System;
 using System.Collections;
 using Modules.A_RANGER.In_Game;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
-using Vector3 = System.Numerics.Vector3;
 
 public class Character : MonoBehaviour
 {

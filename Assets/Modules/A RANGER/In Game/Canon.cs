@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Modules.A_RANGER.In_Game;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using Random = UnityEngine.Random;
+
 public class Canon : MonoBehaviour, IWeapon
 {
     public float speed = 0.02f;

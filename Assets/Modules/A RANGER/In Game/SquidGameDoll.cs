@@ -1,12 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Modules.A_RANGER.In_Game;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using Random = UnityEngine.Random;
 
 public class SquidGameDoll : MonoBehaviour, IWeapon
 {

@@ -405,7 +405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventsToListen:
-  - event: {fileID: 11400000, guid: 0b58e065cb1b1f1408bc7e72b0529c8e, type: 2}
+  - origin: {fileID: 0}
+    event: {fileID: 11400000, guid: 0b58e065cb1b1f1408bc7e72b0529c8e, type: 2}
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -421,7 +422,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - event: {fileID: 11400000, guid: 6be56b76f54be6448b2304fcae9245b3, type: 2}
+  - origin: {fileID: 0}
+    event: {fileID: 11400000, guid: 6be56b76f54be6448b2304fcae9245b3, type: 2}
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -2597,7 +2599,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1799028877
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1769512998 stripped
