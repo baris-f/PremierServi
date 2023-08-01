@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace Modules.ScriptUtils.Editor
+namespace Modules.Technical.ScriptUtils.Editor
 {
     public static class ReflectionUtility
     {

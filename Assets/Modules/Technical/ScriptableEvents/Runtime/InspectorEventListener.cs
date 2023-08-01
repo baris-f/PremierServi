@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Modules.ScriptableEvents.Runtime
+namespace Modules.Technical.ScriptableEvents.Runtime
 {
     public class InspectorEventListener : MonoBehaviour
     {

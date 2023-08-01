@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Modules.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Modules.MainMenu.Runtime
+namespace Modules.Scenes.MainMenu.Runtime
 {
     public class MainMenuUI : MonoBehaviour
     {

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Modules.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime;
 using UnityEditor;
 using UnityEngine;
 
-namespace Modules.ScriptUtils.Editor
+namespace Modules.Technical.ScriptUtils.Editor
 {
     [CustomEditor(typeof(Object), true)]
     public class GamevrestInspector : UnityEditor.Editor

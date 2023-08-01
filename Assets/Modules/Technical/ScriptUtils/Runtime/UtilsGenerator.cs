@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Modules.ScriptUtils.Runtime
+namespace Modules.Technical.ScriptUtils.Runtime
 {
     public static class UtilsGenerator
     {

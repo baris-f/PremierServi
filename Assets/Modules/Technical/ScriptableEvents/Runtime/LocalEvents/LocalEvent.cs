@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Modules.ScriptableEvents.Runtime.LocalEvents
+namespace Modules.Technical.ScriptableEvents.Runtime.LocalEvents
 {
     public abstract class LocalEvent<T> : ScriptableEvent<T> where T : MinimalData
     {

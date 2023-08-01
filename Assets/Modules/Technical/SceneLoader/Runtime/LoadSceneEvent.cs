@@ -1,11 +1,11 @@
 ﻿using System;
 using Eflatun.SceneReference;
-using Modules.ScriptableEvents.Runtime;
-using Modules.ScriptableEvents.Runtime.LocalEvents;
-using Modules.ScriptUtils.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
+using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 
-namespace Modules.SceneLoader.Runtime
+namespace Modules.Technical.SceneLoader.Runtime
 {
     [CreateAssetMenu(fileName = "New Load Scene Event", menuName = "ScriptableEvents/Load Scene Event")]
     public class LoadSceneEvent : LocalEvent<MinimalData>

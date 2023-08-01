@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Modules.ScriptUtils.Editor
+namespace Modules.Technical.ScriptUtils.Editor
 {
     [CustomEditor(typeof(MonoScript), editorForChildClasses: true)]
     public class CreateSoInstanceFromInspector : UnityEditor.Editor

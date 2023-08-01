@@ -1,27 +1,30 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+namespace Modules.A_RANGER.In_Game
 {
-    public int id;
-    public Color color;
-    public Character character;
-    public GameObject weapon;
-    
-    public void Run(InputAction.CallbackContext value)
+    public class Player : MonoBehaviour
     {
-        if (value.ReadValue<float>() == 1)
-            character.isRunning = true;
-        else
-            character.isRunning = false;
-    }
+        public int id;
+        public Color color;
+        public Character character;
+        public GameObject weapon;
     
-    public void Walk(InputAction.CallbackContext value)
-    {
-        if (value.ReadValue<float>() == 1)
-            character.isWalking = true;
-        else
-            character.isWalking = false;
-    }
+        public void Run(InputAction.CallbackContext value)
+        {
+            if (value.ReadValue<float>() == 1)
+                character.isRunning = true;
+            else
+                character.isRunning = false;
+        }
+    
+        public void Walk(InputAction.CallbackContext value)
+        {
+            if (value.ReadValue<float>() == 1)
+                character.isWalking = true;
+            else
+                character.isWalking = false;
+        }
 
+    }
 }

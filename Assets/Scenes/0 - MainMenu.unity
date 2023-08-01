@@ -239,42 +239,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2106226286}
     m_Modifications:
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].event
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 363738615}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
-      propertyPath: eventsToListen.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1209567172181389035, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -323,8 +287,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1575885679, guid: d48bcc16a5168f3419c76cf29ef2a3b3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -492,8 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 1924894349}
+  gameConfig: {fileID: 11400000, guid: f18362f1a3d38ea4086821517aa0aa60, type: 2}
   prevState: {fileID: 11400000, guid: 6be56b76f54be6448b2304fcae9245b3, type: 2}
-  classic: {fileID: 11400000, guid: 4b0b2e7e146824546bd3f4a0f67acee0, type: 2}
+  classic: {fileID: 11400000, guid: 202d9ed320ee37b42b97c4616fae21db, type: 2}
   frogger: {fileID: 11400000, guid: feeaa654dae16d443bebce6e99e1e575, type: 2}
   squid: {fileID: 11400000, guid: 447fbc4c9e366b148b4502a5dae7f5ec, type: 2}
   selectedColor:
@@ -1789,6 +1753,7 @@ MonoBehaviour:
     connected: {fileID: 1395217599}
   - notConnected: {fileID: 1444182619}
     connected: {fileID: 1814161664}
+  gameConfig: {fileID: 11400000, guid: f18362f1a3d38ea4086821517aa0aa60, type: 2}
   prevState: {fileID: 11400000, guid: 6be56b76f54be6448b2304fcae9245b3, type: 2}
   nextState: {fileID: 11400000, guid: 0b58e065cb1b1f1408bc7e72b0529c8e, type: 2}
   players:

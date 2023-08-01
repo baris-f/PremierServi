@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Modules.ScriptUtils.Runtime
+namespace Modules.Technical.ScriptUtils.Runtime
 {
     public class OpenScenesAdditive : MonoBehaviour
     {

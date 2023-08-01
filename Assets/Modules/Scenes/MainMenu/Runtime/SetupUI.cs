@@ -1,10 +1,11 @@
 using System;
-using Modules.ScriptableEvents.Runtime.LocalEvents;
+using Modules.Technical.GameConfig.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Player = Modules.GameConfig.Runtime.GameConfig.Player;
+using Player = Modules.Technical.GameConfig.Runtime.GameConfig.Player;
 
-namespace Modules.MainMenu.Runtime
+namespace Modules.Scenes.MainMenu.Runtime
 {
     public class SetupUI : MonoBehaviour
     {
@@ -18,6 +19,7 @@ namespace Modules.MainMenu.Runtime
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
         [SerializeField] private Card[] cards = new Card[4];
+        [SerializeField] private GameConfig gameConfig;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
@@ -125,7 +127,7 @@ namespace Modules.MainMenu.Runtime
 
         public void ValidatePlayers()
         {
-            GameConfig.Runtime.GameConfig.Instance.SetPlayersFromArray(players);
+            gameConfig.SetPlayersFromArray(players);
             nextState.Raise();
         }
 

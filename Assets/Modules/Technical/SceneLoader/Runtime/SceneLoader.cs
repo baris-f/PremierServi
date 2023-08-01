@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Modules.ScriptableEvents.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime;
 using UnityEngine;
 
-namespace Modules.SceneLoader.Runtime
+namespace Modules.Technical.SceneLoader.Runtime
 {
     public class SceneLoader : MonoBehaviour
     {

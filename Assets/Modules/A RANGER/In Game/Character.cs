@@ -1,117 +1,119 @@
 using System.Collections;
-using Modules.A_RANGER.In_Game;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class Character : MonoBehaviour
+namespace Modules.A_RANGER.In_Game
 {
-    public Animator animator;
-    [FormerlySerializedAs("renderer")] public SpriteRenderer render;
-    public float speed = 0.02f;
-    public KeyCode key;
-    public bool isIA;
-    public bool isRunning = false;
-    public bool isWalking = false;
-    public Player player = null;
-    public bool isInDanger = false;
-    private bool isDead = false;
-
-    private void Start()
+    public class Character : MonoBehaviour
     {
-        render.sortingOrder = (int) (transform.position.y * 10);
-        if (isIA)
-            StartCoroutine(IA());
-    }
+        public Animator animator;
+        [FormerlySerializedAs("renderer")] public SpriteRenderer render;
+        public float speed = 0.02f;
+        public KeyCode key;
+        public bool isIA;
+        public bool isRunning = false;
+        public bool isWalking = false;
+        public Player player = null;
+        public bool isInDanger = false;
+        private bool isDead = false;
 
-    private void FixedUpdate()
-    {
-        if (isDead)
-            return;
-        Move();
-        if (transform.position.x > 7f)
+        private void Start()
         {
-            GameObject.Find("GameManager").GetComponent<GameManagerServi>().Win(player);
+            render.sortingOrder = (int) (transform.position.y * 10);
+            if (isIA)
+                StartCoroutine(IA());
         }
-    }
 
-    IEnumerator IA()
-    {
-        if (Random.Range(0, 100) > 30)
-            yield return new WaitForSeconds(Random.Range(0.5f, 2f));
-        while (true)
+        private void FixedUpdate()
         {
-            isWalking = true;
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.5f));
-            isWalking = false;
-            if (!isInDanger) 
-                yield return new WaitForSeconds(Random.Range(1f, 4f));
-            if (Random.Range(0, 100) > 60 || isInDanger)
+            if (isDead)
+                return;
+            Move();
+            if (transform.position.x > 7f)
             {
-                isRunning = true;
-                yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
-                isRunning = false;
-                if (!isInDanger)
-                    yield return new WaitForSeconds(Random.Range(1f, 4f));
+                GameObject.Find("GameManager").GetComponent<GameManagerServi>().Win(player);
             }
         }
-    }
 
-    public void Die()
-    {
-        isRunning = false;
-        isWalking = false;
-        isDead = true;
-        animator.SetBool("Walking", false);
-        animator.SetBool("Running", false);
-        animator.SetTrigger("Death");
-        if (player && player.weapon)
-            player.weapon.GetComponent<IWeapon>().DestroySelf();
-    }
-
-    private void DestroySelf()
-    {
-        Destroy(gameObject);
-    }
-
-    private void Move()
-    {
-        Walk();
-        Run();
-    }
-    
-    private void Walk()
-    {
-        if (isWalking && !isRunning)
+        IEnumerator IA()
         {
-            transform.Translate(Vector2.right * (speed / 2));
-            animator.SetBool("Walking", true);
+            if (Random.Range(0, 100) > 30)
+                yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+            while (true)
+            {
+                isWalking = true;
+                yield return new WaitForSeconds(Random.Range(0.5f, 2.5f));
+                isWalking = false;
+                if (!isInDanger) 
+                    yield return new WaitForSeconds(Random.Range(1f, 4f));
+                if (Random.Range(0, 100) > 60 || isInDanger)
+                {
+                    isRunning = true;
+                    yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
+                    isRunning = false;
+                    if (!isInDanger)
+                        yield return new WaitForSeconds(Random.Range(1f, 4f));
+                }
+            }
         }
-        else
+
+        public void Die()
+        {
+            isRunning = false;
+            isWalking = false;
+            isDead = true;
             animator.SetBool("Walking", false);
-    }
-    
-    private void Run()
-    {
-        if (isRunning && !isWalking)
-        {
-            transform.Translate(Vector2.right * speed);
-            animator.SetBool("Running", true);
-        }
-        else
             animator.SetBool("Running", false);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Road"))
-        {
-            isInDanger = true;
+            animator.SetTrigger("Death");
+            if (player && player.weapon)
+                player.weapon.GetComponent<IWeapon>().DestroySelf();
         }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Road"))
-            isInDanger = false;
+
+        private void DestroySelf()
+        {
+            Destroy(gameObject);
+        }
+
+        private void Move()
+        {
+            Walk();
+            Run();
+        }
+    
+        private void Walk()
+        {
+            if (isWalking && !isRunning)
+            {
+                transform.Translate(Vector2.right * (speed / 2));
+                animator.SetBool("Walking", true);
+            }
+            else
+                animator.SetBool("Walking", false);
+        }
+    
+        private void Run()
+        {
+            if (isRunning && !isWalking)
+            {
+                transform.Translate(Vector2.right * speed);
+                animator.SetBool("Running", true);
+            }
+            else
+                animator.SetBool("Running", false);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Road"))
+            {
+                isInDanger = true;
+            }
+        }
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Road"))
+                isInDanger = false;
+        }
     }
 }

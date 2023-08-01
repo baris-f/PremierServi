@@ -1,7 +1,7 @@
 ﻿using Eflatun.SceneReference;
 using UnityEngine;
 
-namespace GameManagerSystem
+namespace Modules.A_RANGER.UI
 {
     public class SceneManager : MonoBehaviour
     {

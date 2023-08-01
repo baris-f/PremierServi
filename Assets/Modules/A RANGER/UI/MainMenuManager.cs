@@ -1,8 +1,7 @@
 ﻿using Eflatun.SceneReference;
-using GameManagerSystem;
 using UnityEngine;
 
-namespace UI
+namespace Modules.A_RANGER.UI
 {
     public class MainMenuManager : MonoBehaviour
     {

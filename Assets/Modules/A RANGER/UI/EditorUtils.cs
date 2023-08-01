@@ -1,10 +1,7 @@
-using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
 
-#endif
-
-namespace GamevrestUtils
+namespace Modules.A_RANGER.UI
 {
 #if UNITY_EDITOR
     internal static class CustomEditorUtils

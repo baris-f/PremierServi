@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Modules.ScriptableEvents.Runtime
+namespace Modules.Technical.ScriptableEvents.Runtime
 {
     [Serializable]
     public class EventListener<T> where T : MinimalData

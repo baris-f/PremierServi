@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace Modules.ScriptableEvents.Runtime
+namespace Modules.Technical.ScriptableEvents.Runtime
 {
     public class MinimalData
     {

@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 7895063961512693370}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5788607560572615717
 MonoBehaviour:
@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b0b2e7e146824546bd3f4a0f67acee0, type: 2}
   - {fileID: 11400000, guid: feeaa654dae16d443bebce6e99e1e575, type: 2}
   - {fileID: 11400000, guid: 447fbc4c9e366b148b4502a5dae7f5ec, type: 2}
+  - {fileID: 11400000, guid: 202d9ed320ee37b42b97c4616fae21db, type: 2}
 --- !u!114 &6001211774189058547
 MonoBehaviour:
   m_ObjectHideFlags: 0

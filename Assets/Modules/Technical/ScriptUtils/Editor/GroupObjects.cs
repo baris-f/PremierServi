@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Modules.ScriptUtils.Editor
+namespace Modules.Technical.ScriptUtils.Editor
 {
     public static class GroupCommand
     {

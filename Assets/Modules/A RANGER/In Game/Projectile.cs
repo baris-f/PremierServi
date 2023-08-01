@@ -1,25 +1,27 @@
 using UnityEngine;
 
-
-public class Projectile : MonoBehaviour
+namespace Modules.A_RANGER.In_Game
 {
-    public GameObject winText;
-
-    private void Start()
+    public class Projectile : MonoBehaviour
     {
-        winText = GameObject.Find("win");
-    }
+        public GameObject winText;
 
-    void FixedUpdate()
-    {
-        transform.Translate(Vector2.left);
-    }
+        private void Start()
+        {
+            winText = GameObject.Find("win");
+        }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (!col || !col.CompareTag("Player"))
-            return;
-        col.GetComponent<Character>().Die();
-        Destroy(gameObject);
+        void FixedUpdate()
+        {
+            transform.Translate(Vector2.left);
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (!col || !col.CompareTag("Player"))
+                return;
+            col.GetComponent<Character>().Die();
+            Destroy(gameObject);
+        }
     }
 }

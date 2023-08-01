@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Modules.ScriptableEvents.Runtime.LocalEvents
+namespace Modules.Technical.ScriptableEvents.Runtime.LocalEvents
 {
     public class TriggerLocalEventsInspector : MonoBehaviour
     {

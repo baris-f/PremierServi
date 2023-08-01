@@ -3,7 +3,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityToolbarExtender;
 
-namespace Modules.ScriptUtils.Editor
+namespace Modules.Technical.ScriptUtils.Editor
 {
     [InitializeOnLoad]
     public class SceneSwitchLeftButton

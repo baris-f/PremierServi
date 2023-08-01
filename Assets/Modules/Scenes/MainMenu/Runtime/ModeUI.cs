@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
-using Modules.SceneLoader.Runtime;
-using Modules.ScriptableEvents.Runtime.LocalEvents;
-using Modules.ScriptUtils.Runtime;
+using Modules.Technical.GameConfig.Runtime;
+using Modules.Technical.SceneLoader.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
+using Modules.Technical.ScriptUtils.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-namespace Modules.MainMenu.Runtime
+namespace Modules.Scenes.MainMenu.Runtime
 {
     public class ModeUI : MonoBehaviour
     {
@@ -23,6 +24,7 @@ namespace Modules.MainMenu.Runtime
 
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
+        [SerializeField] private GameConfig gameConfig;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
@@ -135,19 +137,18 @@ namespace Modules.MainMenu.Runtime
         {
             CurrentChoice = choices.Count - 1;
             var diffChoice = choices[1];
-            GameConfig.Runtime.GameConfig.Instance.SetDifficultyFromString(diffChoice.options[diffChoice.curOption]);
+            gameConfig.SetDifficultyFromString(diffChoice.options[diffChoice.curOption]);
             var modeChoice = choices[0];
-            var mode = GameConfig.Runtime.GameConfig.Instance.SetModeFromString(
-                modeChoice.options[modeChoice.curOption]);
+            var mode = gameConfig.SetModeFromString(modeChoice.options[modeChoice.curOption]);
             switch (mode)
             {
-                case GameConfig.Runtime.GameConfig.GameMode.Classic:
+                case GameConfig.GameMode.Classic:
                     classic.Raise();
                     break;
-                case GameConfig.Runtime.GameConfig.GameMode.Frogger:
+                case GameConfig.GameMode.Frogger:
                     frogger.Raise();
                     break;
-                case GameConfig.Runtime.GameConfig.GameMode.Squid:
+                case GameConfig.GameMode.Squid:
                     squid.Raise();
                     break;
             }
