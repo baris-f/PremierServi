@@ -1,14 +1,8 @@
 {
-    "name": "ScriptUtils.Editor",
+    "name": "ScriptUtils.Core",
     "rootNamespace": "",
-    "references": [
-        "ScriptUtils.Runtime",
-        "ToolbarExtender.Editor",
-        "ScriptUtils.Core"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

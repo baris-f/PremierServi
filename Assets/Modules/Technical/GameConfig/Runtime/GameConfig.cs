@@ -30,10 +30,9 @@ namespace Modules.Technical.GameConfig.Runtime
             public string deviceName;
         }
 
-        [Header("In game choices (don't touch)")]
-        [SerializeField] private List<Player> players;
-        [SerializeField] private GameMode mode;
-        [SerializeField] private GameDifficulty difficulty;
+        [SerializeField, SaveAtRuntime] private List<Player> players;
+        [SerializeField, SaveAtRuntime] private GameMode mode;
+        [SerializeField, SaveAtRuntime] private GameDifficulty difficulty;
 
         public GameMode Mode => mode;
         public List<Player> Players => players;
@@ -41,13 +40,5 @@ namespace Modules.Technical.GameConfig.Runtime
         public void SetPlayersFromArray(IEnumerable<Player> value) => players = value.ToList();
         public void SetDifficultyFromString(string value) => difficulty = Enum.Parse<GameDifficulty>(value);
         public GameMode SetModeFromString(string value) => mode = Enum.Parse<GameMode>(value);
-
-        protected override void RevertTo(RuntimeScriptableObject obj)
-        {
-            if (obj is not GameConfig config) return;
-            players = config.players;
-            mode = config.mode;
-            difficulty = config.difficulty;
-        }
     }
 }

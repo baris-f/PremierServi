@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Modules.Technical.ScriptUtils.Core;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEditor;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace Modules.Technical.ScriptUtils.Editor
         private void OnEnable()
         {
             buttonMethods = ReflectionUtility.GetAllMethods(target,
+                BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public |
+                BindingFlags.DeclaredOnly,
                 info => info.GetCustomAttributes(typeof(ButtonAttribute), true).Length > 0);
         }
 
@@ -39,8 +42,8 @@ namespace Modules.Technical.ScriptUtils.Editor
                     //     Debug.LogError("Currently not supported");
                     // else
                     // {
-                        var defaultParams = buttonMethod.GetParameters().Select(p => p.DefaultValue).ToArray();
-                        buttonMethod.Invoke(target, defaultParams);
+                    var defaultParams = buttonMethod.GetParameters().Select(p => p.DefaultValue).ToArray();
+                    buttonMethod.Invoke(target, defaultParams);
                     // }
                 }
             }

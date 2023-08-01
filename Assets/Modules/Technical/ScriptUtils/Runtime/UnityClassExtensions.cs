@@ -35,7 +35,7 @@ namespace Modules.Technical.ScriptUtils.Runtime
                 return (T)ScriptableObject.CreateInstance(typeof(T));
             }
 
-            T instance = Object.Instantiate(scriptableObject);
+            var instance = Object.Instantiate(scriptableObject);
             instance.name = scriptableObject.name; // remove (Clone) from name
             return instance;
         }
