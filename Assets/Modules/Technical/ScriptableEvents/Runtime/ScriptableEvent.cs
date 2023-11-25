@@ -6,8 +6,10 @@ namespace Modules.Technical.ScriptableEvents.Runtime
 {
     public class MinimalData
     {
-        [JsonProperty("timestamp")] public long timestamp;
-        [JsonProperty("event_name")] public string eventName;
+        [JsonProperty("timestamp"), HideInInspector]
+        public long Timestamp;
+        [JsonProperty("event_name"), HideInInspector]
+        public string EventName;
     }
 
     public abstract class ScriptableEvent<T> : ScriptableObject where T : MinimalData

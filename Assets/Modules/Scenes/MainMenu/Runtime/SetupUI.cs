@@ -3,7 +3,6 @@ using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Player = Modules.Technical.GameConfig.Runtime.GameConfig.Player;
 
 namespace Modules.Scenes.MainMenu.Runtime
 {
@@ -26,7 +25,7 @@ namespace Modules.Scenes.MainMenu.Runtime
         [SerializeField] private SimpleLocalEvent nextState;
 
         [Header("Debug")]
-        [SerializeField] private Player[] players = new Player[4];
+        [SerializeField] private GameConfig.Human[] players = new GameConfig.Human[4];
 
         private InputAction submit;
         private InputAction start;

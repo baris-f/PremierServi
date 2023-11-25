@@ -6,7 +6,7 @@ namespace Modules.Technical.ScriptableEvents.Runtime.LocalEvents
     {
         protected override void Raise(T data)
         {
-            data.timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            data.Timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
             foreach (var listener in listeners)
                 listener.OnEventReceived(data);
         }

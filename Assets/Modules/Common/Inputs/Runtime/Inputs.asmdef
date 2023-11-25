@@ -1,9 +1,9 @@
 {
-    "name": "InputManager",
+    "name": "Inputs",
     "rootNamespace": "",
     "references": [
-        "GameConfig",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "GameConfig"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

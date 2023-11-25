@@ -1,0 +1,20 @@
+{
+  "name": "GameSetup",
+  "rootNamespace": "",
+  "references": [
+    "Controllers",
+    "ScriptUtils.Runtime",
+    "GameConfig",
+    "Inputs",
+    "ScriptableEvents.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

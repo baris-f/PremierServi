@@ -4,6 +4,7 @@ using System.Linq;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Modules.Technical.GameConfig.Runtime
 {
@@ -24,20 +25,20 @@ namespace Modules.Technical.GameConfig.Runtime
         }
 
         [Serializable]
-        public class Player
+        public class Human
         {
             public InputDevice Device;
             public string deviceName;
         }
 
-        [SerializeField, SaveAtRuntime] private List<Player> players;
+        [SerializeField, SaveAtRuntime] private List<Human> humans;
         [SerializeField, SaveAtRuntime] private GameMode mode;
         [SerializeField, SaveAtRuntime] private GameDifficulty difficulty;
 
         public GameMode Mode => mode;
-        public List<Player> Players => players;
+        public List<Human> Humans => humans;
 
-        public void SetPlayersFromArray(IEnumerable<Player> value) => players = value.ToList();
+        public void SetPlayersFromArray(IEnumerable<Human> value) => humans = value.ToList();
         public void SetDifficultyFromString(string value) => difficulty = Enum.Parse<GameDifficulty>(value);
         public GameMode SetModeFromString(string value) => mode = Enum.Parse<GameMode>(value);
     }
