@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8050890334687013862}
   - component: {fileID: 3060424113564448529}
-  - component: {fileID: 8208203997691829352}
   m_Layer: 0
   m_Name: Canon
   m_TagString: Untagged
@@ -32,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 8871653389478596261}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3060424113564448529
 MonoBehaviour:
@@ -47,91 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbShots: 0
---- !u!114 &8208203997691829352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4607465862032686091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToListen:
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: 1a3783af1b1d4ee40b31b35ce905dd4b, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.Controller,
-            Controllers
-          m_MethodName: OnGameStart
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: cf04f5e2e3039cc45ab7604414fd8275, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.Controller,
-            Controllers
-          m_MethodName: OnGamePause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: d635efe74ee66994da74ae9051839978, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.Controller,
-            Controllers
-          m_MethodName: OnGameResume
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: 87d1bcddfb25a0a42aa2cd2b0c21d5b7, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.Controller,
-            Controllers
-          m_MethodName: OnGameEnd
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &4917617782299909063
 GameObject:
   m_ObjectHideFlags: 0

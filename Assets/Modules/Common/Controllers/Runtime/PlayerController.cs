@@ -1,40 +1,56 @@
-﻿using Modules.Common.CustomEvents.Runtime;
-using Modules.Common.Inputs.Runtime;
+﻿using System;
+using Modules.Common.CustomEvents.Runtime;
 using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
 {
-    public class PlayerController : Controller
+    public class PlayerController : MonoBehaviour
     {
-        [Header("Config")]
-        [SerializeField] private RobotInput defaultInput;
+        [Serializable] private enum Status
+        {
+            Stopped,
+            Walking,
+            Running
+        }
+
+        [Header("Settings")]
+        [SerializeField] private float walkSpeed;
+        [SerializeField] private float runSpeed;
+        [SerializeField] private Transform goal;
+        [SerializeField] private int playerId;
 
         [Header("Events")]
         [SerializeField] private PlayerWinEvent playerWin;
 
-        private int playerId;
-        private Transform goal;
+        [Header("Debug")]
+        [SerializeField] private Status currentStatus;
+        private Transform cachedTransform;
 
-        public void Setup(int newPlayerId, Transform newGoal)
-        {
-            playerId = newPlayerId;
-            goal = newGoal;
-        }
+        private void Start() => cachedTransform = transform;
 
-        private void Awake()
-        {
-            Input = defaultInput;
-            name = $"{defaultInput.name}";
-        }
-
-        protected override void OnUpdate()
+        protected void Update()
         {
             if (transform.position.x > goal.position.x)
             {
-                OnGamePause();
                 Debug.Log("win yay");
                 playerWin.Raise(playerId);
             }
+
+            if (currentStatus == Status.Stopped) return;
+            var speed = currentStatus == Status.Running ? runSpeed : walkSpeed;
+            cachedTransform.position += Time.deltaTime * speed * cachedTransform.right;
+        }
+
+        public void StartWalking() => currentStatus = Status.Walking;
+
+        public void StartRunning() => currentStatus = Status.Running;
+
+        public void Stop() => currentStatus = Status.Stopped;
+
+        public void Taunt()
+        {
+            Debug.Log("I am Taunting wow");
+            // independant : prends le pas temporairement pour faire le taunt puis reprends action precedente
         }
     }
 }

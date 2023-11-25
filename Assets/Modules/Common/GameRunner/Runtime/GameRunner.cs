@@ -12,49 +12,44 @@ namespace Modules.Common.GameRunner.Runtime
     {
         [Header("Config")]
         [SerializeField] private GameConfig config;
-        [SerializeField] private int nbPlayers = 8;
-        [SerializeField] private Transform goal;
-        
-        [Header("Humans")]
-        [SerializeField] private PlayerController playerPrefab;
+        [SerializeField] private List<RobotInput> robots;
+
+        [Header("Prefabs")]
         [SerializeField] private CanonController canonPrefab;
-        [SerializeField] private Transform playersContainer;
+        [SerializeField] private HumanInput humanPrefab;
+
+        [Header("Containers")]
         [SerializeField] private Transform canonsContainer;
+        [SerializeField] private Transform humansContainer;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent GameStartEvent;
 
         private void Start()
         {
+            humansContainer.DestroyAllChildren();
             canonsContainer.DestroyAllChildren();
-            playersContainer.DestroyAllChildren();
-            var players = new List<PlayerController>();
-
-            for (var i = 0; i < nbPlayers; i++)
-            {
-                var player = Instantiate(playerPrefab, playersContainer);
-                players.Add(player);
-                player.Setup(i, goal);
-                
-            }
 
             for (var i = 0; i < config.Humans.Count; i++)
             {
                 var human = config.Humans[i];
                 if (string.IsNullOrWhiteSpace(human.deviceName)) continue;
-                var playerPos = Random.Range(0, players.Count);
-                var humanInput = new HumanInput(human);
+                var robotId = Random.Range(0, robots.Count);
+                var robotToReplace = robots[robotId];
+                var humanInput = Instantiate(humanPrefab, humansContainer);
                 var canon = Instantiate(canonPrefab, canonsContainer);
-                canon.name = $"Human {i}";
-                canon.SetInput(humanInput);
-                var player = players[playerPos];
-                player.name = $"Human {i}";
-                player.SetInput(humanInput);
-                players.RemoveAt(playerPos);
+
+                robotToReplace.gameObject.SetActive(false);
+                robotToReplace.name = $"replaced by Human {i}";
+                humanInput.Init(human, robotToReplace.player, canon);
+                humanInput.name = $"Human {i}";
+                canon.name = $"Canon {i}";
+
+                robots.RemoveAt(robotId);
             }
         }
 
-        // mets en place la game : instanciation des players et canons et assignation des diferents inputs
+        // mets en place la game : instantiation des players et canons et assignation des diferents inputs
 
         // events :
         //  game start

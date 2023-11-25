@@ -2,7 +2,7 @@
 
 namespace Modules.Common.Controllers.Runtime
 {
-    public class CanonController : Controller
+    public class CanonController : MonoBehaviour
     {
         [Header("Config")]
         [SerializeField] private int nbShots;
@@ -10,7 +10,7 @@ namespace Modules.Common.Controllers.Runtime
         private int curShot;
         
         // gestion des animations
-        protected override void OnUpdate()
+        protected void Update()
         {
             if (curShot >= nbShots)
             {
