@@ -4,7 +4,6 @@ using System.Linq;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Modules.Technical.GameConfig.Runtime
 {
@@ -29,6 +28,7 @@ namespace Modules.Technical.GameConfig.Runtime
         {
             public InputDevice Device;
             public string deviceName;
+            public JoyConColors.ColorName color;
         }
 
         [SerializeField, SaveAtRuntime] private List<Human> humans;

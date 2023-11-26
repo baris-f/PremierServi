@@ -8,16 +8,9 @@ namespace Modules.Scenes.MainMenu.Runtime
 {
     public class SetupUI : MonoBehaviour
     {
-    [Serializable]
-        public class Card
-        {
-            public GameObject notConnected;
-            public GameObject connected;
-        }
-
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
-        [SerializeField] private Card[] cards = new Card[4];
+        [SerializeField] private PlayerCard[] cards;
         [SerializeField] private GameConfig gameConfig;
 
         [Header("Events")]
@@ -71,7 +64,8 @@ namespace Modules.Scenes.MainMenu.Runtime
                 if (players[i].Device != null) continue;
                 players[i].Device = context.control.device;
                 players[i].deviceName = context.control.device.name;
-                AddPlayer(i);
+                players[i].color = cards[i].Color;
+                cards[i].Connected = true;
                 return;
             }
 
@@ -98,7 +92,8 @@ namespace Modules.Scenes.MainMenu.Runtime
                 if (players[i].Device != context.control.device) continue;
                 players[i].Device = null;
                 players[i].deviceName = "";
-                RemovePlayer(i);
+                players[i].color = JoyConColors.ColorName.None;
+                cards[i].Connected = false;
                 return;
             }
 
@@ -109,20 +104,6 @@ namespace Modules.Scenes.MainMenu.Runtime
         #endregion
 
         #region UI
-
-        private void AddPlayer(int id)
-        {
-            var card = cards[id];
-            card.connected.SetActive(true);
-            card.notConnected.SetActive(false);
-        }
-
-        private void RemovePlayer(int id)
-        {
-            var card = cards[id];
-            card.connected.SetActive(false);
-            card.notConnected.SetActive(true);
-        }
 
         public void ValidatePlayers()
         {
