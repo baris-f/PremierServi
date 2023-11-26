@@ -25,11 +25,12 @@ namespace Modules.Common.Controllers.Runtime
         [Header("Debug")]
         [SerializeField] private Status currentStatus;
         private Transform cachedTransform;
-
+        private bool paused;
         private void Start() => cachedTransform = transform;
 
         protected void Update()
         {
+            if (paused) return;
             if (transform.position.x > goal.position.x)
             {
                 Debug.Log("win yay");
@@ -52,5 +53,9 @@ namespace Modules.Common.Controllers.Runtime
             Debug.Log("I am Taunting wow");
             // independant : prends le pas temporairement pour faire le taunt puis reprends action precedente
         }
+
+        // animation
+        public void PauseGame() => paused = true;
+        public void ResumeGame() => paused = false;
     }
 }

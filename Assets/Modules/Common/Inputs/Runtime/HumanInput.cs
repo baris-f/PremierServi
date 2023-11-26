@@ -12,6 +12,18 @@ namespace Modules.Common.Inputs.Runtime
         [SerializeField] private PlayerController player;
         [SerializeField] private CanonController canon;
 
+        [Header("Inputs")]
+        [SerializeField] private InputActionAsset asset;
+
+        // Player
+        private InputAction walk;
+        private InputAction run;
+        private InputAction taunt;
+
+        // Canon
+        private InputAction move;
+        private InputAction fire;
+
         public void Init(GameConfig.Human human, PlayerController newPlayer, CanonController newCanon)
         {
             player = newPlayer;
@@ -26,6 +38,15 @@ namespace Modules.Common.Inputs.Runtime
 
             var user = InputUser.PerformPairingWithDevice(human.Device);
             userInfos = $"{user.id} : {user.pairedDevices[0].displayName}";
+            // var scheme = InputControlScheme.FindControlSchemeForDevice(user.pairedDevices[0], asset.controlSchemes);
+            // if (scheme == null)
+            // {
+            //     Debug.LogError($"Couldn't find scheme compatible with device {user.pairedDevices[0].displayName}");
+            //     return;
+            // }
+            //
+            // user.ActivateControlScheme((InputControlScheme)scheme);
+            
         }
     }
 }
