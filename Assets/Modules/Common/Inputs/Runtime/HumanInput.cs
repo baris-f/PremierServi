@@ -2,18 +2,17 @@
 using Modules.Technical.GameConfig.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
 
 namespace Modules.Common.Inputs.Runtime
 {
     public class HumanInput : MonoBehaviour
     {
-        [SerializeField] private string userInfos;
+        [Header("Debug")]
         [SerializeField] private PlayerController player;
         [SerializeField] private CanonController canon;
 
         [Header("Inputs")]
-        [SerializeField] private InputActionAsset asset;
+        [SerializeField] private PlayerInput input;
 
         // Player
         private InputAction walk;
@@ -24,29 +23,29 @@ namespace Modules.Common.Inputs.Runtime
         private InputAction move;
         private InputAction fire;
 
-        public void Init(GameConfig.Human human, PlayerController newPlayer, CanonController newCanon)
+        public static HumanInput Instantiate(GameObject prefab, Transform container, GameConfig.Human human,
+            PlayerController player, CanonController canon)
         {
-            player = newPlayer;
-            canon = newCanon;
-            human.Device ??= InputSystem.GetDevice(human.deviceName);
-            // todo trouver un moyen de gerer, async qui tente la connection en boucle ?
-            if (human.Device == null)
-            {
-                Debug.LogError($"No Device found with name {human.deviceName}, skipping");
-                return;
-            }
+            var inputDevice = InputSystem.GetDevice(human.deviceName);
+            var playerInput = PlayerInput.Instantiate(prefab, pairWithDevice: inputDevice);
+            playerInput.transform.SetParent(container);
+            var humanInput = playerInput.GetComponent<HumanInput>();
+            humanInput.player = player;
+            humanInput.canon = canon;
 
-            var user = InputUser.PerformPairingWithDevice(human.Device);
-            userInfos = $"{user.id} : {user.pairedDevices[0].displayName}";
-            // var scheme = InputControlScheme.FindControlSchemeForDevice(user.pairedDevices[0], asset.controlSchemes);
-            // if (scheme == null)
-            // {
-            //     Debug.LogError($"Couldn't find scheme compatible with device {user.pairedDevices[0].displayName}");
-            //     return;
-            // }
-            //
-            // user.ActivateControlScheme((InputControlScheme)scheme);
-            
+            return humanInput;
+        }
+
+        private void Start()
+        {
+            walk = input.actions["Walk"];
+            walk.started += _ => player.StartWalking();
+            walk.canceled += _ => player.Stop();
+            run = input.actions["Run"];
+            run.started += _ => player.StartRunning();
+            run.canceled += _ => player.Stop();
+            taunt = input.actions["Taunt"];
+            taunt.started += _ => player.Taunt();
         }
     }
 }

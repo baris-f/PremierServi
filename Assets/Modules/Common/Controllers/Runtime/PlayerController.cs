@@ -25,7 +25,7 @@ namespace Modules.Common.Controllers.Runtime
         [Header("Debug")]
         [SerializeField] private Status currentStatus;
         private Transform cachedTransform;
-        private bool paused;
+        private bool paused = true;
         private void Start() => cachedTransform = transform;
 
         protected void Update()

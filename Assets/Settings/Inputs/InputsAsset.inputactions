@@ -405,6 +405,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Taunt",
+                    "type": "Value",
+                    "id": "f20847ac-5f3d-4c80-93f9-eff86d4b6975",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Fire",
                     "type": "Value",
                     "id": "f49ec077-6a3f-4ad4-9d29-eb833bb0ad9a",
@@ -435,17 +444,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "dc923967-ea6d-4273-b63a-90f0e71c02ac",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard (and Mouse)",
-                    "action": "Walk",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "639f0502-9197-4fa1-9ecb-c07a66e1ebe2",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -469,22 +467,11 @@
                 {
                     "name": "",
                     "id": "3cf7692b-904c-4ff8-8902-853a2c499bec",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Walk",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fa73849c-ff5b-4607-a575-4a1b80d7d64d",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard (and Mouse)",
-                    "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -513,22 +500,11 @@
                 {
                     "name": "",
                     "id": "c84715ce-2322-49bb-a775-b1a56af7e5b3",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Run",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f59ea55a-708b-4273-a414-2c7e01d7b98c",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard (and Mouse)",
-                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -564,39 +540,6 @@
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "UpDown",
-                    "id": "78fda002-5ef3-4e74-8733-fecaea468b35",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveCanon",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "4751334d-5678-4e09-bdfc-a283c9bb425e",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard (and Mouse)",
-                    "action": "MoveCanon",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "e0745dcb-974a-4c41-85d0-6389b7b78ed5",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard (and Mouse)",
-                    "action": "MoveCanon",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -696,6 +639,39 @@
                     "action": "MoveCanon",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c0357651-cc69-4200-bf22-9a301d686942",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Taunt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e07304b2-6404-4752-bf9e-526c88f73a84",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Taunt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7abb7f91-593b-4942-8656-97adb8473793",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Taunt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

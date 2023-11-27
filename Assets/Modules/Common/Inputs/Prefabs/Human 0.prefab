@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3296084110325913638}
   - component: {fileID: 347995918743298120}
+  - component: {fileID: 7432053685024342599}
   m_Layer: 0
   m_Name: Human 0
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &347995918743298120
 MonoBehaviour:
@@ -44,6 +45,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f003c775b0f44e5a89f733435ec824f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userInfos: 
   player: {fileID: 0}
   canon: {fileID: 0}
+  input: {fileID: 7432053685024342599}
+--- !u!114 &7432053685024342599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960557570424488946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 690dbb358bf041c4986f8da05a88b0a8, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c73e0214-3e2b-40ef-8c10-52f78107b3e8
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/dpad,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e2a81d82-e657-4997-82bd-8b69214e5aa3
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 135bc24a-fa55-48a7-9646-b7e906641e61
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 82884dda-61c8-4423-b9dd-bf0feefe5763
+    m_ActionName: UI/Menu[/XInputControllerWindows/start,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b4dbae87-001d-4115-bc83-5d9002fac43f
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b182f8f-b7da-4ccc-ae06-548d42baa786
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 58d226e9-1b61-4adf-bbec-a52370e59e2a
+    m_ActionName: Game/Walk[/Keyboard/d,/XInputControllerWindows/buttonSouth,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4adf25f2-41a3-4627-8a2e-892966a782f9
+    m_ActionName: Game/Run[/Keyboard/e,/XInputControllerWindows/buttonEast,/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f49ec077-6a3f-4ad4-9d29-eb833bb0ad9a
+    m_ActionName: Game/Fire[/Keyboard/a,/XInputControllerWindows/buttonWest,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f543df6-1898-46e1-86d5-37969ac0d592
+    m_ActionName: Game/Pause[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e76055a6-0b0d-46a9-bc5a-3a1c84ca55dd
+    m_ActionName: Game/MoveCanon[/Keyboard/upArrow,/Keyboard/downArrow,/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

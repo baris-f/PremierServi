@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2427fb1033144818a8451e85f48f2808, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  players:
-  - deviceName: XInputControllerWindows
+  humans:
   - deviceName: Keyboard
+    color: 14
+  - deviceName: XInputControllerWindows
+    color: 13
   - deviceName: 
+    color: 0
   - deviceName: 
+    color: 0
   mode: 0
-  difficulty: 0
+  difficulty: 1

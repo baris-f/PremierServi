@@ -104,7 +104,7 @@ Transform:
   - {fileID: 5963208410058812702}
   - {fileID: 7367533575315881335}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7898153958609148277
 MonoBehaviour:
@@ -634,70 +634,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5963208410058812702}
     m_Modifications:
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: asset
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: 690dbb358bf041c4986f8da05a88b0a8, type: 3}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Id
-      value: 9799c045-639a-4c0c-93ea-c8b390ba771b
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Name
-      value: Map
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: action.m_Id
-      value: 0f6791fb-b489-4b62-8b95-e8a9b95c30d9
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: action.m_Name
-      value: Action
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Actions.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Bindings.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Actions.Array.data[0].m_Id
-      value: dca80cae-8ad8-4d17-aa55-894a8ddb9c85
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Bindings.Array.data[0].m_Id
-      value: d7591349-cbc8-4b0b-b199-c4c7ce7c64f4
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Actions.Array.data[0].m_Name
-      value: New action
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Actions.Array.data[0].m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Bindings.Array.data[0].m_Action
-      value: New action
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: action.m_SingletonActionBindings.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: map.m_Actions.Array.data[0].m_ExpectedControlType
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: action.m_SingletonActionBindings.Array.data[0].m_Id
-      value: de235eb7-32f3-4fbb-ae9a-08fac57265b4
-      objectReference: {fileID: 0}
-    - target: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
-      propertyPath: action.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Action
-      objectReference: {fileID: 0}
     - target: {fileID: 1960557570424488946, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
       propertyPath: m_Name
       value: Human 0

@@ -36,29 +36,24 @@ namespace Modules.Common.GameRunner.Runtime
                 if (string.IsNullOrWhiteSpace(human.deviceName)) continue;
                 var robotId = Random.Range(0, robots.Count);
                 var robotToReplace = robots[robotId];
-                var humanInput = Instantiate(humanPrefab, humansContainer);
                 var canon = Instantiate(canonPrefab, canonsContainer);
 
                 robotToReplace.gameObject.SetActive(false);
                 robotToReplace.name = $"replaced by Human {i}";
-                humanInput.Init(human, robotToReplace.player, canon);
-                humanInput.name = $"Human {i}";
                 canon.name = $"Canon {i}";
 
+                var humanInput =
+                    HumanInput.Instantiate(humanPrefab.gameObject, humansContainer, human, robotToReplace.player,
+                        canon);
+                humanInput.name = $"Human {i}";
+
+                Destroy(robotToReplace);
                 robots.RemoveAt(robotId);
             }
+
+            Invoke(nameof(StartGame), 1);
         }
 
-        // mets en place la game : instantiation des players et canons et assignation des diferents inputs
-
-        // events :
-        //  game start
-        //  (game pause)
-        //  (game resume)
-        //  game end (winner)
-
-        public void OnGameStart()
-        {
-        }
+        private void StartGame() => GameStartEvent.Raise();
     }
 }
