@@ -48,7 +48,6 @@ namespace Modules.Common.Controllers.Runtime
             if (paused || disabled) return;
             if (transform.position.x > goal.position.x)
             {
-                Debug.Log("win yay");
                 playerWin.Raise(playerId);
                 DisablePlayer();
             }
@@ -61,7 +60,7 @@ namespace Modules.Common.Controllers.Runtime
         public void OnProjectileHit(Collider2D other)
         {
             if (!other.transform.CompareTag("Projectile")) return;
-            Debug.Log("dead sadge");
+            Destroy(other); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
             playerDeath.Raise(playerId);
             DisablePlayer();
         }
@@ -78,7 +77,7 @@ namespace Modules.Common.Controllers.Runtime
             // independant : prends le pas temporairement pour faire le taunt puis reprends action precedente
         }
 
-        public void DisablePlayer()
+        private void DisablePlayer()
         {
             disabled = true;
             sprite.color = disabledColor;

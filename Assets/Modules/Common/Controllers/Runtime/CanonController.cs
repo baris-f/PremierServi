@@ -52,7 +52,7 @@ namespace Modules.Common.Controllers.Runtime
             if (curAmmo <= 0) DisableCanon();
         }
 
-        public void DisableCanon()
+        private void DisableCanon()
         {
             disabled = true;
             sprite.color = disabledColor;
