@@ -1,4 +1,5 @@
-﻿using Modules.Common.Controllers.Runtime;
+﻿using System;
+using Modules.Common.Controllers.Runtime;
 using Modules.Technical.GameConfig.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -38,6 +39,7 @@ namespace Modules.Common.Inputs.Runtime
 
         private void Start()
         {
+            // PlayerController
             walk = input.actions["Walk"];
             walk.started += _ => player.StartWalking();
             walk.canceled += _ => player.Stop();
@@ -46,6 +48,17 @@ namespace Modules.Common.Inputs.Runtime
             run.canceled += _ => player.Stop();
             taunt = input.actions["Taunt"];
             taunt.started += _ => player.Taunt();
+
+            // CanonController
+            move = input.actions["Move"];
+            // move.performed += ctx => canon.Move(ctx.ReadValue<Vector2>());
+            fire = input.actions["Fire"];
+            fire.started += _ => canon.Fire();
+        }
+
+        private void Update()
+        {
+            canon.Move(move.ReadValue<Vector2>());
         }
     }
 }

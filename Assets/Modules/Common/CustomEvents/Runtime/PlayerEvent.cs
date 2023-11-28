@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Modules.Common.CustomEvents.Runtime
 {
-    public class PlayerWinEvent : LocalEvent<PlayerWinEvent.PlayerData>
+    public class PlayerEvent : LocalEvent<MinimalData>
     {
         [Serializable]
         public class PlayerData : MinimalData
@@ -15,6 +15,7 @@ namespace Modules.Common.CustomEvents.Runtime
         }
 
         [SerializeField] private PlayerData data = new();
+
         [Button] public void Raise(int id)
         {
             data.id = id;

@@ -432,7 +432,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MoveCanon",
+                    "name": "Move",
                     "type": "Value",
                     "id": "e76055a6-0b0d-46a9-bc5a-3a1c84ca55dd",
                     "expectedControlType": "Vector2",
@@ -548,7 +548,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MoveCanon",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -559,7 +559,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveCanon",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -614,7 +614,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveCanon",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -625,7 +625,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard (and Mouse)",
-                    "action": "MoveCanon",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -636,7 +636,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard (and Mouse)",
-                    "action": "MoveCanon",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },

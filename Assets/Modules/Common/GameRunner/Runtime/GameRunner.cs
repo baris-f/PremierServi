@@ -30,22 +30,22 @@ namespace Modules.Common.GameRunner.Runtime
             humansContainer.DestroyAllChildren();
             canonsContainer.DestroyAllChildren();
 
-            for (var i = 0; i < config.Humans.Count; i++)
+            for (var humanId = 0; humanId < config.Humans.Count; humanId++)
             {
-                var human = config.Humans[i];
+                var human = config.Humans[humanId];
                 if (string.IsNullOrWhiteSpace(human.deviceName)) continue;
                 var robotId = Random.Range(0, robots.Count);
                 var robotToReplace = robots[robotId];
                 var canon = Instantiate(canonPrefab, canonsContainer);
+                var player = robotToReplace.player;
 
                 robotToReplace.gameObject.SetActive(false);
-                robotToReplace.name = $"replaced by Human {i}";
-                canon.name = $"Canon {i}";
+                robotToReplace.name = $"replaced by Human {humanId}";
+                canon.Init(robotId, humanId);
+                player.Init(robotId, humanId);
 
-                var humanInput =
-                    HumanInput.Instantiate(humanPrefab.gameObject, humansContainer, human, robotToReplace.player,
-                        canon);
-                humanInput.name = $"Human {i}";
+                var humanInput = HumanInput.Instantiate(humanPrefab.gameObject, humansContainer, human, player, canon);
+                humanInput.name = $"Human {humanId} (player {robotId})";
 
                 Destroy(robotToReplace);
                 robots.RemoveAt(robotId);
