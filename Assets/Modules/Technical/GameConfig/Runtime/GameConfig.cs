@@ -29,6 +29,7 @@ namespace Modules.Technical.GameConfig.Runtime
             public InputDevice Device;
             public string deviceName;
             public JoyConColors.ColorName color;
+            public int playerId = -1; // -1 || >nbPlayers = random id on game start else, random at game start
         }
 
         [SerializeField, SaveAtRuntime] private List<Human> humans;

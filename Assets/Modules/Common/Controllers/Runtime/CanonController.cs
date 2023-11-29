@@ -30,8 +30,9 @@ namespace Modules.Common.Controllers.Runtime
         public void Init(int newPlayerId, int humanId)
         {
             playerId = newPlayerId;
-            name = $"Canon for player {playerId}/human {humanId}";
+            name = $"Canon {humanId} (player {playerId}, human {humanId})";
         }
+
 
         private void Start()
         {

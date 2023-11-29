@@ -6,7 +6,8 @@
     "ScriptUtils.Runtime",
     "GameConfig",
     "Inputs",
-    "ScriptableEvents.Runtime"
+    "ScriptableEvents.Runtime",
+    "ScriptableField"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

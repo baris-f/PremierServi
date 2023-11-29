@@ -18,7 +18,7 @@ namespace Modules.Common.Controllers.Runtime
         [Header("Settings")]
         [SerializeField] private float walkSpeed;
         [SerializeField] private float runSpeed;
-        [SerializeField] private Transform goal;
+        [SerializeField] public Transform goal;
         [SerializeField] private int playerId;
         [SerializeField] private Color disabledColor;
 
@@ -34,16 +34,28 @@ namespace Modules.Common.Controllers.Runtime
 
         [Header("Debug")]
         [SerializeField] private Status currentStatus;
-        
+
         private Transform cachedTransform;
         private bool disabled;
 
-        public void Init(int newPlayerId, int humanId)
+        public int PlayerId
         {
-            playerId = newPlayerId;
-            name = $"Player {playerId} for human {humanId}";
+            set
+            {
+                playerId = value;
+                name = $"Player {playerId} (";
+            }
         }
 
+        public int HumanId
+        {
+            set => name += $"human {value})";
+        }
+
+        public int RobotId
+        {
+            set => name += $"robot {value})";
+        }
 
         private void Start() => cachedTransform = transform;
 
@@ -64,7 +76,7 @@ namespace Modules.Common.Controllers.Runtime
         public void OnProjectileHit(Collider2D other)
         {
             if (!other.transform.CompareTag("Projectile")) return;
-            Destroy(other); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
+            Destroy(other.gameObject); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
             playerDeath.Raise(playerId);
             DisablePlayer();
         }

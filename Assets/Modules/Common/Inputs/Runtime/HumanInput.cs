@@ -12,8 +12,6 @@ namespace Modules.Common.Inputs.Runtime
         [Header("Debug")]
         [SerializeField] private PlayerController player;
         [SerializeField] private CanonController canon;
-
-        [Header("Inputs")]
         [SerializeField] private PlayerInput input;
 
         // Player
@@ -25,16 +23,15 @@ namespace Modules.Common.Inputs.Runtime
         private InputAction move;
         private InputAction fire;
 
-        public static HumanInput Instantiate(GameObject prefab, Transform container, GameConfig.Human human,
+        public static HumanInput Instantiate(HumanInput prefab, Transform container, GameConfig.Human human,
             PlayerController player, CanonController canon)
         {
             var inputDevice = InputSystem.GetDevice(human.deviceName);
-            var playerInput = PlayerInput.Instantiate(prefab, pairWithDevice: inputDevice);
+            var playerInput = PlayerInput.Instantiate(prefab.gameObject, pairWithDevice: inputDevice);
             playerInput.transform.SetParent(container);
             var humanInput = playerInput.GetComponent<HumanInput>();
             humanInput.player = player;
             humanInput.canon = canon;
-
             return humanInput;
         }
 

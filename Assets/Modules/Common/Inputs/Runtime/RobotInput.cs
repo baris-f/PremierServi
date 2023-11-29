@@ -6,7 +6,8 @@ using UnityEngine;
 
 namespace Modules.Common.Inputs.Runtime
 {
-    public class RobotInput : MonoBehaviour
+    [Serializable]
+    public class RobotInput
     {
         public class GameState
         {
@@ -14,14 +15,20 @@ namespace Modules.Common.Inputs.Runtime
             public bool Paused;
         }
 
-        [Header("Settings")]
+        [SerializeField] private string name;
         [SerializeField] private BaseIa ia;
-        [SerializeField] public PlayerController player;
+        [SerializeField] private PlayerController player;
 
-        [Header("Fields")]
-        [SerializeField] private ScriptableFloat gameSpeed;
-
+        private ScriptableFloat gameSpeed;
         private readonly GameState state = new();
+
+        public RobotInput(string name, BaseIa ia, PlayerController player, ScriptableFloat gameSpeed)
+        {
+            this.name = name;
+            this.ia = ia;
+            this.player = player;
+            this.gameSpeed = gameSpeed;
+        }
 
         public void StartGame()
         {

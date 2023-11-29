@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humans:
   - deviceName: Keyboard
-    color: 14
-  - deviceName: XInputControllerWindows
     color: 13
+    playerId: -1
+  - deviceName: XInputControllerWindows
+    color: 14
+    playerId: -1
   - deviceName: 
     color: 0
+    playerId: -1
   - deviceName: 
     color: 0
+    playerId: -1
   mode: 0
   difficulty: 1

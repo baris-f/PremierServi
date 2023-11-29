@@ -1,59 +1,94 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Modules.Common.Controllers.Runtime;
 using Modules.Common.Inputs.Runtime;
+using Modules.Common.Inputs.Runtime.IAs;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
+using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Modules.Common.GameRunner.Runtime
 {
     public class GameRunner : MonoBehaviour
     {
         [Header("Config")]
+        [SerializeField] private int nbPlayers = 8;
         [SerializeField] private GameConfig config;
-        [SerializeField] private List<RobotInput> robots;
+        [SerializeField] private Transform goal;
+        [SerializeField] private BaseIa robotsComportment;
 
         [Header("Prefabs")]
+        [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private CanonController canonPrefab;
         [SerializeField] private HumanInput humanPrefab;
 
         [Header("Containers")]
+        [SerializeField] private Transform playersContainer;
         [SerializeField] private Transform canonsContainer;
         [SerializeField] private Transform humansContainer;
 
         [Header("Events")]
-        [SerializeField] private SimpleLocalEvent GameStartEvent;
+        [SerializeField] private SimpleLocalEvent gameStartEvent;
+
+        [Header("Fields")]
+        [SerializeField] private ScriptableFloat gameSpeed;
+
+        [Header("Debug")]
+        [SerializeField] private List<RobotInput> robots = new();
 
         private void Start()
         {
-            humansContainer.DestroyAllChildren();
+            playersContainer.DestroyAllChildren();
             canonsContainer.DestroyAllChildren();
+            humansContainer.DestroyAllChildren();
 
-            for (var humanId = 0; humanId < config.Humans.Count; humanId++)
+            var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.Humans.Count);
+
+            foreach (var human in config.Humans)
             {
-                var human = config.Humans[humanId];
                 if (string.IsNullOrWhiteSpace(human.deviceName)) continue;
-                var robotId = Random.Range(0, robots.Count);
-                var robotToReplace = robots[robotId];
-                var canon = Instantiate(canonPrefab, canonsContainer);
-                var player = robotToReplace.player;
+                if (human.playerId == -1 || human.playerId >= nbPlayers)
+                    human.playerId = humanPlayerIds[0];
+                humanPlayerIds.RemoveAt(0);
+            }
 
-                robotToReplace.gameObject.SetActive(false);
-                robotToReplace.name = $"replaced by Human {humanId}";
-                canon.Init(robotId, humanId);
-                player.Init(robotId, humanId);
-
-                var humanInput = HumanInput.Instantiate(humanPrefab.gameObject, humansContainer, human, player, canon);
-                humanInput.name = $"Human {humanId} (player {robotId})";
-
-                Destroy(robotToReplace);
-                robots.RemoveAt(robotId);
+            int robotCount = 0, humanCount = 0;
+            for (var playerId = 0; playerId < nbPlayers; playerId++)
+            {
+                var player = Instantiate(playerPrefab, playersContainer);
+                player.PlayerId = playerId;
+                player.goal = goal;
+                var human = config.Humans.Find(h => h.playerId == playerId);
+                if (human == null)
+                {
+                    player.RobotId = robotCount;
+                    var robotName = $"Robot {robotCount} (player {playerId})";
+                    robots.Add(new RobotInput(robotName, robotsComportment, player, gameSpeed));
+                    robotCount++;
+                }
+                else
+                {
+                    player.HumanId = humanCount;
+                    var canon = Instantiate(canonPrefab, canonsContainer);
+                    canon.Init(playerId, humanCount);
+                    var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
+                    humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
+                    humanCount++;
+                }
             }
 
             Invoke(nameof(StartGame), 1);
         }
 
-        private void StartGame() => GameStartEvent.Raise();
+        private void StartGame()
+        {
+            gameStartEvent.Raise();
+            gameSpeed.Value = 1f;
+            foreach (var robot in robots) robot.StartGame();
+        }
     }
 }
