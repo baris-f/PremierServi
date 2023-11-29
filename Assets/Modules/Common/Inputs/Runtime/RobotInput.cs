@@ -1,6 +1,7 @@
 ﻿using System;
 using Modules.Common.Controllers.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
+using Modules.Technical.ScriptableField;
 using UnityEngine;
 
 namespace Modules.Common.Inputs.Runtime
@@ -17,11 +18,15 @@ namespace Modules.Common.Inputs.Runtime
         [SerializeField] private BaseIa ia;
         [SerializeField] public PlayerController player;
 
+        [Header("Fields")]
+        [SerializeField] private ScriptableFloat gameSpeed;
+
         private readonly GameState state = new();
 
         public void StartGame()
         {
             state.Started = true;
+            gameSpeed.OnValueChanged += speed => state.Paused = speed <= 0;
             try
             {
                 ia.StartThinking(state, player, name);
@@ -32,13 +37,7 @@ namespace Modules.Common.Inputs.Runtime
             }
         }
 
-        public void PauseGame() => state.Paused = true;
-        public void ResumeGame() => state.Paused = false;
         public void EndGame() => state.Started = false;
-
-        private void OnDisable()
-        {
-            state.Started = false;
-        }
+        private void OnDisable() => state.Started = false;
     }
 }

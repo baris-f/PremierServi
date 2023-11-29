@@ -1,6 +1,7 @@
 ﻿using System;
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
+using Modules.Technical.ScriptableField;
 using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
@@ -24,14 +25,17 @@ namespace Modules.Common.Controllers.Runtime
         [Header("References")]
         [SerializeField] private SpriteRenderer sprite;
 
+        [Header("Fields")]
+        [SerializeField] private ScriptableFloat gameSpeed;
+
         [Header("Events")]
         [SerializeField] private PlayerEvent playerWin;
         [SerializeField] private PlayerEvent playerDeath;
 
         [Header("Debug")]
         [SerializeField] private Status currentStatus;
+        
         private Transform cachedTransform;
-        private bool paused = true;
         private bool disabled;
 
         public void Init(int newPlayerId, int humanId)
@@ -45,7 +49,7 @@ namespace Modules.Common.Controllers.Runtime
 
         protected void Update()
         {
-            if (paused || disabled) return;
+            if (gameSpeed.Value <= 0 || disabled) return;
             if (transform.position.x > goal.position.x)
             {
                 playerWin.Raise(playerId);
@@ -54,7 +58,7 @@ namespace Modules.Common.Controllers.Runtime
 
             if (currentStatus == Status.Stopped) return;
             var speed = currentStatus == Status.Running ? runSpeed : walkSpeed;
-            cachedTransform.position += Time.deltaTime * speed * cachedTransform.right;
+            cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * cachedTransform.right;
         }
 
         public void OnProjectileHit(Collider2D other)
@@ -82,9 +86,5 @@ namespace Modules.Common.Controllers.Runtime
             disabled = true;
             sprite.color = disabledColor;
         }
-
-        // animation
-        public void PauseGame() => paused = true;
-        public void ResumeGame() => paused = false;
     }
 }

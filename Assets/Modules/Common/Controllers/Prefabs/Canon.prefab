@@ -53,6 +53,7 @@ MonoBehaviour:
   sprite: {fileID: 6948633866902436845}
   projectile: {fileID: 5943722618379184314, guid: 4c9a6b3e128b1074c9b5962fd7ac3da2, type: 3}
   projectileStart: {fileID: 8849913668048496641}
+  gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   curAmmo: 0
 --- !u!114 &3429208139571072904
 MonoBehaviour:
@@ -67,78 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventsToListen:
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: cf04f5e2e3039cc45ab7604414fd8275, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.CanonController,
-            Controllers
-          m_MethodName: PauseGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: d635efe74ee66994da74ae9051839978, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.CanonController,
-            Controllers
-          m_MethodName: ResumeGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: 1a3783af1b1d4ee40b31b35ce905dd4b, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.CanonController,
-            Controllers
-          m_MethodName: ResumeGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: 87d1bcddfb25a0a42aa2cd2b0c21d5b7, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3060424113564448529}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.CanonController,
-            Controllers
-          m_MethodName: PauseGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - origin: {fileID: 0}
     event: {fileID: 11400000, guid: 02c2942c2dc072346a648dae0ca01ad2, type: 2}
     callback:

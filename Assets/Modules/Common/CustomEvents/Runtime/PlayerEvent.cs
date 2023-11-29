@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Modules.Common.CustomEvents.Runtime
 {
+    [CreateAssetMenu(fileName = "New Player Event", menuName = "Scriptable Events/Player")]
     public class PlayerEvent : LocalEvent<MinimalData>
     {
         [Serializable]

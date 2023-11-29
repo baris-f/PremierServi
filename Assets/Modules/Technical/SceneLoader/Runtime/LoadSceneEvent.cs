@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Modules.Technical.SceneLoader.Runtime
 {
-    [CreateAssetMenu(fileName = "New Load Scene Event", menuName = "ScriptableEvents/Load Scene Event")]
+    [CreateAssetMenu(fileName = "New Load Scene Event", menuName = "Scriptable Events/Load Scene")]
     public class LoadSceneEvent : LocalEvent<MinimalData>
     {
         [Serializable]

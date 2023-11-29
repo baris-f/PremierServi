@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3256438291868001488}
   - component: {fileID: 5540609058838008082}
-  - component: {fileID: 5383731194052398657}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -53,94 +52,10 @@ MonoBehaviour:
   playerId: 1
   disabledColor: {r: 0, g: 0, b: 0, a: 0.8}
   sprite: {fileID: 683600909151089515}
+  gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   playerWin: {fileID: 11400000, guid: 954ad7bfee57caa4c9586cf15f6e48da, type: 2}
   playerDeath: {fileID: 11400000, guid: 02c2942c2dc072346a648dae0ca01ad2, type: 2}
   currentStatus: 0
---- !u!114 &5383731194052398657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952473586864672032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToListen:
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: cf04f5e2e3039cc45ab7604414fd8275, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5540609058838008082}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.PlayerController,
-            Controllers
-          m_MethodName: PauseGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: d635efe74ee66994da74ae9051839978, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5540609058838008082}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.PlayerController,
-            Controllers
-          m_MethodName: ResumeGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: 1a3783af1b1d4ee40b31b35ce905dd4b, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5540609058838008082}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.PlayerController,
-            Controllers
-          m_MethodName: ResumeGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: 87d1bcddfb25a0a42aa2cd2b0c21d5b7, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5540609058838008082}
-          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.PlayerController,
-            Controllers
-          m_MethodName: PauseGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &3963575115525082933
 GameObject:
   m_ObjectHideFlags: 0

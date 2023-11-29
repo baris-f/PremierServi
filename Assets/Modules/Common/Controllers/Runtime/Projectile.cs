@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Modules.Technical.ScriptableField;
+using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
 {
@@ -7,18 +8,14 @@ namespace Modules.Common.Controllers.Runtime
         [Header("Settings")]
         [SerializeField] private float speed;
 
-        private bool paused;
+        [Header("Fields")]
+        [SerializeField] private ScriptableFloat gameSpeed;
+
         private Transform cachedTransform;
 
         private void Start() => cachedTransform = transform;
 
-        private void Update()
-        {
-            if (paused) return;
-            cachedTransform.position += Time.deltaTime * speed * -1 * cachedTransform.right;
-        }
-
-        public void PauseGame() => paused = true;
-        public void ResumeGame() => paused = false;
+        private void Update() =>
+            cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * -1 * cachedTransform.right;
     }
 }

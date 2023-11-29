@@ -1,6 +1,7 @@
 ﻿using System;
 using Modules.Common.Controllers.Runtime;
 using Modules.Technical.GameConfig.Runtime;
+using Modules.Technical.ScriptableField;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -56,9 +57,7 @@ namespace Modules.Common.Inputs.Runtime
             fire.started += _ => canon.Fire();
         }
 
-        private void Update()
-        {
+        private void Update() => 
             canon.Move(move.ReadValue<Vector2>());
-        }
     }
 }

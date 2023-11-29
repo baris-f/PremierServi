@@ -1,5 +1,6 @@
 ﻿using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
+using Modules.Technical.ScriptableField;
 using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
@@ -16,11 +17,13 @@ namespace Modules.Common.Controllers.Runtime
         [SerializeField] private Projectile projectile;
         [SerializeField] private Transform projectileStart;
 
+        [Header("Fields")]
+        [SerializeField] private ScriptableFloat gameSpeed;
+
         [Header("Debug")]
         [SerializeField] private int curAmmo;
 
         private Transform cachedTransform;
-        private bool paused = true;
         private bool disabled;
         private int playerId;
 
@@ -38,13 +41,13 @@ namespace Modules.Common.Controllers.Runtime
 
         public void Move(Vector2 amount)
         {
-            if (paused || disabled) return;
-            cachedTransform.position += Time.deltaTime * speed * amount.y * cachedTransform.up;
+            if (gameSpeed.Value <= 0 || disabled) return;
+            cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * amount.y * cachedTransform.up;
         }
 
         public void Fire()
         {
-            if (paused || disabled) return;
+            if (gameSpeed.Value <= 0 || disabled) return;
             curAmmo--;
             var obj = Instantiate(projectile);
             obj.transform.position = projectileStart.position;
@@ -57,9 +60,6 @@ namespace Modules.Common.Controllers.Runtime
             disabled = true;
             sprite.color = disabledColor;
         }
-
-        public void PauseGame() => paused = true;
-        public void ResumeGame() => paused = false;
 
         public void OnPlayerDeath(MinimalData data)
         {

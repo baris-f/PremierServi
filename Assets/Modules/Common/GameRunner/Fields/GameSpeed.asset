@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bd1bdcfc3e04de1a98f9ede1f7ab1b3, type: 3}
-  m_Name: PlayerDeath
+  m_Script: {fileID: 11500000, guid: 00d465adc8c34804afe0bd5289fe192c, type: 3}
+  m_Name: GameSpeed
   m_EditorClassIdentifier: 
-  listeners: []
-  data:
-    Timestamp: 0
-    EventName: 
-    id: 0
+  value: 0

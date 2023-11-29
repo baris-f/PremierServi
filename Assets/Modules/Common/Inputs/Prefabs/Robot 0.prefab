@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ia: {fileID: 11400000, guid: 6fd5b8e374794574191c6e9ba2b584d5, type: 2}
   player: {fileID: 0}
+  gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
 --- !u!114 &7741398965862251432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,40 +69,6 @@ MonoBehaviour:
         - m_Target: {fileID: 2070580805076308042}
           m_TargetAssemblyTypeName: Modules.Common.Inputs.Runtime.RobotInput, Inputs
           m_MethodName: StartGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: cf04f5e2e3039cc45ab7604414fd8275, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2070580805076308042}
-          m_TargetAssemblyTypeName: Modules.Common.Inputs.Runtime.RobotInput, Inputs
-          m_MethodName: PauseGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: d635efe74ee66994da74ae9051839978, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2070580805076308042}
-          m_TargetAssemblyTypeName: Modules.Common.Inputs.Runtime.RobotInput, Inputs
-          m_MethodName: ResumeGame
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

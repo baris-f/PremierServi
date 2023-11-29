@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Modules.Technical.ScriptableEvents.Runtime.LocalEvents
 {
-    [CreateAssetMenu(fileName = "New Simple Local Event", menuName = "ScriptableEvents/Simple Local Event")]
+    [CreateAssetMenu(fileName = "New Simple Local Event", menuName = "Scriptable Events/Simple Local")]
     public class SimpleLocalEvent : LocalEvent<MinimalData>
     {
         private readonly MinimalData data = new();
