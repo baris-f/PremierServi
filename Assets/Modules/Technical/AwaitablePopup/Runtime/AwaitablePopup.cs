@@ -22,21 +22,21 @@ namespace Modules.Technical.AwaitablePopup.Runtime
             }
         }
 
-        private void Awake() => HideDialog();
+        private void Awake() => Hide();
 
-        public async Task<T> OpenDialog()
+        protected async Task<T> Open()
         {
             Opened = true;
             userResponded = false;
-            ShowDialog();
+            Show();
             while (!userResponded)
                 await Task.Delay(checkDelay);
-            HideDialog();
+            Hide();
             Opened = false;
             return Response;
         }
 
-        protected abstract void ShowDialog();
-        protected abstract void HideDialog();
+        protected abstract void Show();
+        protected abstract void Hide();
     }
 }

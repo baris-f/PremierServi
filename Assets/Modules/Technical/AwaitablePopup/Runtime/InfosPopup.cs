@@ -1,27 +1,14 @@
-﻿using System.Threading.Tasks;
-using TMPro;
-using UnityEngine;
-
-namespace Modules.Technical.AwaitablePopup.Runtime
+﻿namespace Modules.Technical.AwaitablePopup.Runtime
 {
-    public class InfoPopup : AwaitablePopup<bool>
+    public class InfoPopup : CanvasPopup<InfoPopup.ResponseType>
     {
-        [Header("Ui Refs")]
-        [SerializeField] private GameObject container;
-        [SerializeField] private TextMeshProUGUI message;
-
-        private void Awake() => HideDialog();
-
-        public async Task<bool> OpenDialog(string newMessage)
+        public enum ResponseType
         {
-            message.text = newMessage;
-            return await OpenDialog();
+            Close,
+            Acknowledge
         }
-
-        protected override void ShowDialog() => container.SetActive(true);
-        protected override void HideDialog() => container.SetActive(false);
-
-        public void OnClose() => Response = false;
-        public void OnAcknowledge() => Response = true;
+        
+        public void OnClose() => Response = ResponseType.Close;
+        public void OnAcknowledge() => Response = ResponseType.Acknowledge;
     }
 }
