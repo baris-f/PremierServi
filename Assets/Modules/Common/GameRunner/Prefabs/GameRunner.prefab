@@ -79,7 +79,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nbPlayers: 8
   config: {fileID: 11400000, guid: f18362f1a3d38ea4086821517aa0aa60, type: 2}
-  goal: {fileID: 0}
   robotsComportment: {fileID: 11400000, guid: 6fd5b8e374794574191c6e9ba2b584d5, type: 2}
   playerPrefab: {fileID: 5540609058838008082, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
   canonPrefab: {fileID: 3060424113564448529, guid: 9588c373c1f2bfd4b803af1c29029bd0, type: 3}
@@ -89,9 +88,7 @@ MonoBehaviour:
   humansContainer: {fileID: 5963208410058812702}
   gameStartEvent: {fileID: 11400000, guid: 1a3783af1b1d4ee40b31b35ce905dd4b, type: 2}
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
-  players: []
-  canons: []
-  humans: []
+  goal: {fileID: 11400000, guid: 2b3bec6eeebc9554fa82cf92f5099c6c, type: 2}
   robots: []
 --- !u!1001 &6409530271538693490
 PrefabInstance:

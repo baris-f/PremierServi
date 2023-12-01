@@ -18,7 +18,6 @@ namespace Modules.Common.GameRunner.Runtime
         [Header("Config")]
         [SerializeField] private int nbPlayers = 8;
         [SerializeField] private GameConfig config;
-        [SerializeField] private Transform goal;
         [SerializeField] private BaseIa robotsComportment;
 
         [Header("Prefabs")]
@@ -36,6 +35,7 @@ namespace Modules.Common.GameRunner.Runtime
 
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
+        [SerializeField] private ScriptableFloat goal;
 
         [Header("Debug")]
         [SerializeField] private List<RobotInput> robots = new();
@@ -61,7 +61,6 @@ namespace Modules.Common.GameRunner.Runtime
             {
                 var player = Instantiate(playerPrefab, playersContainer);
                 player.PlayerId = playerId;
-                player.goal = goal;
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
@@ -89,6 +88,13 @@ namespace Modules.Common.GameRunner.Runtime
             gameStartEvent.Raise();
             gameSpeed.Value = 1f;
             foreach (var robot in robots) robot.StartGame();
+        }
+
+        private void OnDrawGizmos()
+        {
+            var x = goal.Value;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(new Vector3(x, -10), new Vector3(x, 10));
         }
     }
 }

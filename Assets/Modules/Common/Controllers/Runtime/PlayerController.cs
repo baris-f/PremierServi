@@ -1,6 +1,5 @@
 ﻿using System;
 using Modules.Common.CustomEvents.Runtime;
-using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 
@@ -18,7 +17,6 @@ namespace Modules.Common.Controllers.Runtime
         [Header("Settings")]
         [SerializeField] private float walkSpeed;
         [SerializeField] private float runSpeed;
-        [SerializeField] public Transform goal;
         [SerializeField] private int playerId;
         [SerializeField] private Color disabledColor;
 
@@ -27,6 +25,7 @@ namespace Modules.Common.Controllers.Runtime
 
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
+        [SerializeField] private ScriptableFloat goal;
 
         [Header("Events")]
         [SerializeField] private PlayerEvent playerWin;
@@ -62,7 +61,7 @@ namespace Modules.Common.Controllers.Runtime
         protected void Update()
         {
             if (gameSpeed.Value <= 0 || disabled) return;
-            if (transform.position.x > goal.position.x)
+            if (transform.position.x > goal.Value)
             {
                 playerWin.Raise(playerId);
                 DisablePlayer();

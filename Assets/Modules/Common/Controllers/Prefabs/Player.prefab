@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 0.3
   runSpeed: 0.6
-  goal: {fileID: 0}
+  goal: {fileID: 11400000, guid: 2b3bec6eeebc9554fa82cf92f5099c6c, type: 2}
   playerId: 1
   disabledColor: {r: 0, g: 0, b: 0, a: 0.8}
   sprite: {fileID: 683600909151089515}

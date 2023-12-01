@@ -11,6 +11,8 @@ namespace Modules.Common.Controllers.Runtime
         [SerializeField] private float speed;
         [SerializeField] private int maxAmmo = 2;
         [SerializeField] private Color disabledColor;
+        [SerializeField] private float maxYPosition = 10;
+        [SerializeField] private float minYPosition = -10;
 
         [Header("References")]
         [SerializeField] private SpriteRenderer sprite;
@@ -33,7 +35,6 @@ namespace Modules.Common.Controllers.Runtime
             name = $"Canon {humanId} (player {playerId}, human {humanId})";
         }
 
-
         private void Start()
         {
             cachedTransform = transform;
@@ -43,7 +44,10 @@ namespace Modules.Common.Controllers.Runtime
         public void Move(Vector2 amount)
         {
             if (gameSpeed.Value <= 0 || disabled) return;
-            cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * amount.y * cachedTransform.up;
+            var newPos = cachedTransform.position;
+            newPos.y += Time.deltaTime * gameSpeed.Value * speed * amount.y;
+            newPos.y = Mathf.Clamp(newPos.y, minYPosition, maxYPosition);
+            cachedTransform.position = newPos;
         }
 
         public void Fire()
@@ -68,6 +72,14 @@ namespace Modules.Common.Controllers.Runtime
                 && data is PlayerEvent.PlayerData playerData
                 && playerData.id == playerId)
                 DisableCanon();
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (cachedTransform == null) cachedTransform = transform;
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(new Vector3(cachedTransform.position.x, (maxYPosition + minYPosition) / 2f),
+                new Vector3(1, maxYPosition - minYPosition));
         }
     }
 }

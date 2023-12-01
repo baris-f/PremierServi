@@ -50,11 +50,15 @@ MonoBehaviour:
   speed: 1
   maxAmmo: 2
   disabledColor: {r: 0, g: 0, b: 0, a: 0.8}
+  maxYPosition: 4.5
+  minYPosition: -4.5
   sprite: {fileID: 6948633866902436845}
   projectile: {fileID: 5943722618379184314, guid: 4c9a6b3e128b1074c9b5962fd7ac3da2, type: 3}
   projectileStart: {fileID: 8849913668048496641}
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   curAmmo: 0
+  newPos: {x: 0, y: 0, z: 0}
+  newPosClamped: {x: 0, y: 0, z: 0}
 --- !u!114 &3429208139571072904
 MonoBehaviour:
   m_ObjectHideFlags: 0
