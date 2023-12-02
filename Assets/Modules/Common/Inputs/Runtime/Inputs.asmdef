@@ -5,7 +5,8 @@
         "Unity.InputSystem",
         "GameConfig",
         "Controllers",
-        "ScriptableField"
+        "ScriptableField",
+        "ScriptableEvents.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

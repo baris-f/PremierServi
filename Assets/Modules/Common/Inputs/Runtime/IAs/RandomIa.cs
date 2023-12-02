@@ -6,7 +6,7 @@ namespace Modules.Common.Inputs.Runtime.IAs
 {
     public class RandomIa : BaseIa
     {
-        protected override async Task Think(string robotName, PlayerController player)
+        protected override async Task Think(PlayerController player)
         {
             while (State.Started)
             {

@@ -7,7 +7,7 @@ namespace Modules.Technical.ScriptableEvents.Runtime
     [Serializable]
     public class EventListener<T> where T : MinimalData
     {
-       [HideInInspector] public Component origin;
+        [HideInInspector] public Component origin;
         public ScriptableEvent<T> @event;
         public UnityEvent<T> callback;
 

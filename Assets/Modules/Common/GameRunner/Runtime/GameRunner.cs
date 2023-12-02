@@ -8,8 +8,6 @@ using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Random = UnityEngine.Random;
 
 namespace Modules.Common.GameRunner.Runtime
 {
@@ -96,5 +94,8 @@ namespace Modules.Common.GameRunner.Runtime
             Gizmos.color = Color.blue;
             Gizmos.DrawLine(new Vector3(x, -10), new Vector3(x, 10));
         }
+
+        private void OnEnable() => gameSpeed.Value = -1;
+        private void OnDisable() => gameSpeed.Value = -1;
     }
 }

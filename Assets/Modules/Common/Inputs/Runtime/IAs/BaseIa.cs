@@ -10,15 +10,15 @@ namespace Modules.Common.Inputs.Runtime.IAs
     public abstract class BaseIa : ScriptableObject
     {
         [SerializeField] public int tickDelay = 100;
-        [SerializeField] protected RobotInput.GameState State;
+        protected RobotInput.GameState State;
 
-        public async Task StartThinking(RobotInput.GameState newState, PlayerController newPlayer, string name)
+        public async Task StartThinking(RobotInput.GameState newState, PlayerController newPlayer)
         {
             State = newState;
-            await Think(name, newPlayer);
+            await Think(newPlayer);
         }
 
-        protected abstract Task Think(string robotName, PlayerController player);
+        protected abstract Task Think(PlayerController player);
 
         protected async Task WaitForTicks(int nbTicks)
         {
