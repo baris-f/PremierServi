@@ -26,8 +26,8 @@ namespace Modules.Common.GameRunner.Runtime
         [SerializeField] private HumanInput humanPrefab;
 
         [Header("Containers")]
-        [SerializeField] private Transform playersContainer;
-        [SerializeField] private Transform canonsContainer;
+        [SerializeField] private TransformLayout playersLayout;
+        [SerializeField] private TransformLayout canonsLayout;
         [SerializeField] private Transform humansContainer;
 
         [Header("Events")]
@@ -42,10 +42,7 @@ namespace Modules.Common.GameRunner.Runtime
 
         private void Start()
         {
-            playersContainer.DestroyAllChildren();
-            canonsContainer.DestroyAllChildren();
             humansContainer.DestroyAllChildren();
-
             var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.Humans.Count);
 
             foreach (var human in config.Humans)
@@ -59,7 +56,7 @@ namespace Modules.Common.GameRunner.Runtime
             int robotCount = 0, humanCount = 0;
             for (var playerId = 0; playerId < nbPlayers; playerId++)
             {
-                var player = Instantiate(playerPrefab, playersContainer);
+                var player = Instantiate(playerPrefab, playersLayout.transform);
                 player.PlayerId = playerId;
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
@@ -72,7 +69,7 @@ namespace Modules.Common.GameRunner.Runtime
                 else
                 {
                     player.HumanId = humanCount;
-                    var canon = Instantiate(canonPrefab, canonsContainer);
+                    var canon = Instantiate(canonPrefab, canonsLayout.transform);
                     canon.Init(playerId, humanCount);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
@@ -80,6 +77,9 @@ namespace Modules.Common.GameRunner.Runtime
                 }
             }
 
+            playersLayout.RefreshLayout();
+            canonsLayout.RefreshLayout();
+            
             Invoke(nameof(StartGame), 1);
         }
 

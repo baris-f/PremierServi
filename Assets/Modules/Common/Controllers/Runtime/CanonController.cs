@@ -74,10 +74,10 @@ namespace Modules.Common.Controllers.Runtime
                 DisableCanon();
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             if (cachedTransform == null) cachedTransform = transform;
-            Gizmos.color = Color.green;
+            Gizmos.color = Color.red;
             Gizmos.DrawWireCube(new Vector3(cachedTransform.position.x, (maxYPosition + minYPosition) / 2f),
                 new Vector3(1, maxYPosition - minYPosition));
         }
