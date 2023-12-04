@@ -1,5 +1,5 @@
 {
-  "name": "GameSetup",
+  "name": "GameRunner",
   "rootNamespace": "",
   "references": [
     "Controllers",

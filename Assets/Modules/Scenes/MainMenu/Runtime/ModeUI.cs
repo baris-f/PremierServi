@@ -1,36 +1,20 @@
-using System;
 using System.Collections.Generic;
 using Modules.Technical.GameConfig.Runtime;
-using Modules.Technical.SceneLoader.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptUtils.Runtime;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 namespace Modules.Scenes.MainMenu.Runtime
 {
     public class ModeUI : MonoBehaviour
     {
-        [Serializable]
-        public class Choice
-        {
-            public Image selection;
-            public TextMeshProUGUI text;
-            public string[] options;
-            public int curOption;
-        }
-
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
-        [SerializeField] private GameConfig gameConfig;
+        [SerializeField] private ProjectConfig projectConfig;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
-        [SerializeField] private LoadSceneEvent classic;
-        [SerializeField] private LoadSceneEvent frogger;
-        [SerializeField] private LoadSceneEvent squid;
 
         [Header("Settings")]
         [SerializeField] private Color32 selectedColor;
@@ -77,7 +61,11 @@ namespace Modules.Scenes.MainMenu.Runtime
             navigate.performed -= OnNavigate;
         }
 
-        private void Start() => CurrentChoice = 0;
+        private void Start()
+        {
+            // instancier les choix
+            CurrentChoice = 0;
+        }
 
         #endregion
 
@@ -112,9 +100,9 @@ namespace Modules.Scenes.MainMenu.Runtime
         private void ChangeOption(int dir)
         {
             var choice = choices[CurrentChoice];
-            choice.curOption += dir;
-            choice.curOption = Mathf.Clamp(choice.curOption, 0, choice.options.Length - 1);
-            choice.text.text = choice.options[choice.curOption];
+            choice.curOptionIndex += dir;
+            choice.curOptionIndex = Mathf.Clamp(choice.curOptionIndex, 0, choice.options.Length - 1);
+            choice.text.text = choice.options[choice.curOptionIndex];
         }
 
         #endregion
@@ -135,25 +123,22 @@ namespace Modules.Scenes.MainMenu.Runtime
 
         public void StartGame()
         {
-            CurrentChoice = choices.Count - 1;
-            var diffChoice = choices[1];
-            gameConfig.SetDifficultyFromString(diffChoice.options[diffChoice.curOption]);
-            var modeChoice = choices[0];
-            var mode = gameConfig.SetModeFromString(modeChoice.options[modeChoice.curOption]);
-            switch (mode)
-            {
-                case GameConfig.GameMode.Classic:
-                    classic.Raise();
-                    break;
-                case GameConfig.GameMode.Frogger:
-                    frogger.Raise();
-                    break;
-                case GameConfig.GameMode.Squid:
-                    squid.Raise();
-                    break;
-            }
+            // CurrentChoice = choices.Count - 1;
+            var setting = choices[0].GetCurValue<ProjectConfig.GameSetting>();
+            var diff = choices[1].GetCurValue<Round.GameDifficulty>();
+            var length = choices[2].GetCurValue<ProjectConfig.GameLenght>();
+            
+            projectConfig.SetupRounds(length, setting, diff);
+            //todo envoyer les bons trucs
+            //commencer la game
         }
 
         #endregion
+
+        [Button] private void SetCurOptions()
+        {
+            foreach (var choice in choices)
+                choice.text.text = choice.CurOption;
+        }
     }
 }

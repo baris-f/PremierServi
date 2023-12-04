@@ -6,8 +6,7 @@
         "ScriptUtils.Runtime",
         "Unity.InputSystem",
         "Unity.TextMeshPro",
-        "GameConfig",
-        "SceneLoader.Runtime"
+        "GameConfig"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

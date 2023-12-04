@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Modules.Common.Controllers.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
@@ -11,11 +10,11 @@ using UnityEngine;
 
 namespace Modules.Common.GameRunner.Runtime
 {
-    public class GameRunner : MonoBehaviour
+    public class RoundRunner : MonoBehaviour
     {
         [Header("Config")]
         [SerializeField] private int nbPlayers = 8;
-        [SerializeField] private GameConfig config;
+        [SerializeField] private InGameConfig config;
         [SerializeField] private BaseIa robotsComportment;
 
         [Header("Prefabs")]
@@ -41,9 +40,9 @@ namespace Modules.Common.GameRunner.Runtime
         private void Start()
         {
             humansContainer.DestroyAllChildren();
-            var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.Humans.Count);
+            var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.humans.Count);
 
-            foreach (var human in config.Humans)
+            foreach (var human in config.humans)
             {
                 if (string.IsNullOrWhiteSpace(human.deviceName)) continue;
                 if (human.playerId == -1 || human.playerId >= nbPlayers)
@@ -56,7 +55,7 @@ namespace Modules.Common.GameRunner.Runtime
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
                 player.PlayerId = playerId;
-                var human = config.Humans.Find(h => h.playerId == playerId);
+                var human = config.humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
                     player.RobotId = robotCount;

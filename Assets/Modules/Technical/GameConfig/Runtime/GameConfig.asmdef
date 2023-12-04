@@ -2,6 +2,7 @@
   "name": "GameConfig",
   "references": [
     "ScriptUtils.Runtime",
-    "Unity.InputSystem"
+    "Unity.InputSystem",
+    "SceneLoader.Runtime"
   ]
 }

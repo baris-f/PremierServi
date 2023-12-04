@@ -3,6 +3,7 @@ using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Modules.Scenes.MainMenu.Runtime
 {
@@ -11,14 +12,14 @@ namespace Modules.Scenes.MainMenu.Runtime
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
         [SerializeField] private PlayerCard[] cards;
-        [SerializeField] private GameConfig gameConfig;
+       [SerializeField] private ProjectConfig projectConfig;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
         [SerializeField] private SimpleLocalEvent nextState;
 
         [Header("Debug")]
-        [SerializeField] private GameConfig.Human[] players = new GameConfig.Human[4];
+        [SerializeField] private Human[] players = new Human[4];
 
         private InputAction submit;
         private InputAction start;
@@ -107,7 +108,7 @@ namespace Modules.Scenes.MainMenu.Runtime
 
         public void ValidatePlayers()
         {
-            gameConfig.SetPlayersFromArray(players);
+            projectConfig.SetupHumans(players);
             nextState.Raise();
         }
 

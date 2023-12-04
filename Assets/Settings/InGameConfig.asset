@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2427fb1033144818a8451e85f48f2808, type: 3}
-  m_Name: GameConfig
+  m_Name: InGameConfig
   m_EditorClassIdentifier: 
   humans:
-  - deviceName: Keyboard
+  - deviceName: XInputControllerWindows
     color: 13
     playerId: -1
-  - deviceName: XInputControllerWindows
+  - deviceName: Keyboard
     color: 14
     playerId: -1
   - deviceName: 
@@ -25,5 +25,6 @@ MonoBehaviour:
   - deviceName: 
     color: 0
     playerId: -1
-  mode: 0
-  difficulty: 1
+  rounds:
+  - sceneEvent: {fileID: 0}
+    difficulty: 0

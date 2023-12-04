@@ -23,7 +23,7 @@ namespace Modules.Common.Inputs.Runtime
         private InputAction move;
         private InputAction fire;
 
-        public static HumanInput Instantiate(HumanInput prefab, Transform container, GameConfig.Human human,
+        public static HumanInput Instantiate(HumanInput prefab, Transform container, Human human,
             PlayerController player, CanonController canon)
         {
             var inputDevice = InputSystem.GetDevice(human.deviceName);
