@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Modules.Scenes.MainMenu.Runtime.Choices;
+using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.GameConfig.Runtime.RoundsProvider;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptUtils.Runtime;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,38 +13,33 @@ namespace Modules.Scenes.MainMenu.Runtime
     {
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
+        [SerializeField] private InGameConfig inGameConfig;
+        [SerializeField] private List<Choice> choices = new();
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
 
-        [Header("Settings")]
-        [SerializeField] private Color32 selectedColor;
-        [SerializeField] private Color32 unSelectedColor;
-        [SerializeField] private List<Choice> choices = new();
+        private int currentChoiceId;
 
-        [Header("Mode")]
-        [SerializeField] private TextMeshProUGUI modesText;
-        [SerializeField] private RectTransform modesContainer;
-        [SerializeField] private List<BaseRoundsProvider> roundsProviders = new();
-
-        private int currentChoice;
-        private int CurrentChoice
+        private int CurrentChoiceId
         {
-            get => currentChoice;
+            get => currentChoiceId;
             set
             {
-                currentChoice = value;
-                currentChoice = Mathf.Clamp(currentChoice, 0, choices.Count - 1);
+                currentChoiceId = Mathf.Clamp(value, 0, choices.Count - 1);
                 for (var i = 0; i < choices.Count; i++)
-                    choices[i].selection.color = i == currentChoice ? selectedColor : unSelectedColor;
+                    choices[i].Selected = i == currentChoiceId;
             }
         }
+        private Choice CurrentChoice => choices[currentChoiceId];
+
+        private void Start() => CurrentChoiceId = 0;
+
+        #region Actions setup
 
         private InputAction submit;
         private InputAction cancel;
         private InputAction navigate;
-
-        #region Setup
 
         private void Awake()
         {
@@ -66,28 +62,22 @@ namespace Modules.Scenes.MainMenu.Runtime
             navigate.performed -= OnNavigate;
         }
 
-        private void Start()
-        {
-            // instancier les choix
-            CurrentChoice = 0;
-        }
-
         #endregion
 
         #region Input Callbacks
 
         private void OnSubmit(InputAction.CallbackContext context)
         {
-            if (CurrentChoice >= choices.Count - 1)
+            if (currentChoiceId >= choices.Count - 1)
                 StartGame();
-            CurrentChoice++;
+            CurrentChoiceId++;
         }
 
         private void OnCancel(InputAction.CallbackContext context)
         {
-            if (CurrentChoice <= 0)
+            if (currentChoiceId <= 0)
                 prevState.Raise();
-            CurrentChoice--;
+            CurrentChoiceId--;
         }
 
         private void OnNavigate(InputAction.CallbackContext context)
@@ -95,49 +85,31 @@ namespace Modules.Scenes.MainMenu.Runtime
             var vector = context.ReadValue<Vector2>().RoundToInt();
             if (vector.x != 0)
             {
-                ChangeOption(vector.x);
+                CurrentChoice.CurOption += vector.x;
                 return;
             }
 
-            CurrentChoice -= vector.y;
-        }
-
-        private void ChangeOption(int dir)
-        {
-            var choice = choices[CurrentChoice];
-            choice.curOptionIndex += dir;
-            choice.curOptionIndex = Mathf.Clamp(choice.curOptionIndex, 0, choice.options.Length - 1);
-            choice.text.text = choice.options[choice.curOptionIndex];
+            if (vector.y != 0)
+                CurrentChoiceId -= vector.y;
         }
 
         #endregion
 
         #region Public
 
-        public void NextOption(int id)
+        public void OnclickOption(Choice clickedChoice)
         {
-            CurrentChoice = id;
-            ChangeOption(1);
-        }
-
-        public void PrevOption(int id)
-        {
-            CurrentChoice = id;
-            ChangeOption(-1);
+            var clickedChoiceId = choices.FindIndex(c => c == clickedChoice);
+            CurrentChoiceId = clickedChoiceId;
         }
 
         public void StartGame()
         {
-            // CurrentChoice = choices.Count - 1;
-            // var setting = choices[0].GetCurValue<RoundsSetter.GameSetting>();
-            // var diff = choices[1].GetCurValue<Round.GameDifficulty>();
-            // var length = choices[2].GetCurValue<RoundsSetter.GameLenght>();
-         
-            //dis au round setter de generer et de foutre dans la gameConfig
-            
-            // roundsSetter.SetupRounds(length, setting, diff);
-            //todo envoyer les bons trucs
-            //commencer la game
+            var length = choices[0].GetResult<BaseRoundsProvider.GameLength>();
+            var diff = choices[1].GetResult<Round.GameDifficulty>();
+            var provider = choices[2].GetResult<BaseRoundsProvider>();
+            inGameConfig.SetRounds(provider, length, diff);
+            inGameConfig.LoadRound();
         }
 
         #endregion
@@ -145,7 +117,7 @@ namespace Modules.Scenes.MainMenu.Runtime
         [Button] private void SetCurOptions()
         {
             foreach (var choice in choices)
-                choice.text.text = choice.CurOption;
+                choice.Start();
         }
     }
 }

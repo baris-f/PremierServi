@@ -15,7 +15,6 @@ namespace Modules.Technical.ScriptUtils.Runtime
     public class RuntimeScriptableObject : ScriptableObject
     {
 #if UNITY_EDITOR
-        [Space, Header("RuntimeScriptableObject functions")]
         private RuntimeScriptableObject savedData;
 
         protected RuntimeScriptableObject() => EditorApplication.playModeStateChanged += OnplayModeStateChanged;
@@ -37,14 +36,14 @@ namespace Modules.Technical.ScriptUtils.Runtime
             }
         }
 
-        [Button()]
+        [Button(header: "Runtime Scriptable Functions")]
         private void Apply()
         {
             Debug.Log($"Saved data for Scriptable {name}");
             savedData = this.Clone();
         }
 
-        [Button()]
+        [Button]
         private void Revert()
         {
             if (savedData == null)
@@ -63,7 +62,8 @@ namespace Modules.Technical.ScriptUtils.Runtime
                 property.SetValue(this, value);
             }
 
-            // savedData = null;
+            Debug.Log($"Reverted {name} to saved data");
+            // savedData = null; ?
         }
 #endif
     }

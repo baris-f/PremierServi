@@ -36,16 +36,15 @@ namespace Modules.Technical.ScriptUtils.Editor
                 var buttonText = string.IsNullOrEmpty(buttonAttribute.Text)
                     ? ObjectNames.NicifyVariableName(buttonMethod.Name)
                     : buttonAttribute.Text;
-                if (GUILayout.Button(buttonText))
+                if (!string.IsNullOrWhiteSpace(buttonAttribute.Header))
                 {
-                    // if (!Application.isPlaying)
-                    //     Debug.LogError("Currently not supported");
-                    // else
-                    // {
-                    var defaultParams = buttonMethod.GetParameters().Select(p => p.DefaultValue).ToArray();
-                    buttonMethod.Invoke(target, defaultParams);
-                    // }
+                    EditorGUILayout.Space();
+                    EditorGUILayout.LabelField(buttonAttribute.Header, EditorStyles.boldLabel);
                 }
+
+                if (!GUILayout.Button(buttonText)) continue;
+                var defaultParams = buttonMethod.GetParameters().Select(p => p.DefaultValue).ToArray();
+                buttonMethod.Invoke(target, defaultParams);
             }
         }
     }

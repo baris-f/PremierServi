@@ -7,13 +7,12 @@ namespace Modules.Technical.ScriptUtils.Runtime
     public class ButtonAttribute : PropertyAttribute
     {
         public string Text { get; private set; }
+        public string Header { get; private set; }
 
-        public ButtonAttribute(string text = null)
+        public ButtonAttribute(string text = null, string header = null)
         {
             Text = text;
-            if (string.IsNullOrWhiteSpace(text))
-            {
-            }
+            Header = header;
         }
     }
 }

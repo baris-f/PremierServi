@@ -8,5 +8,7 @@ namespace Modules.Technical.GameConfig.Runtime
     {
         [Header("Config")]
         [SerializeField] private LoadSceneEvent sceneEvent;
+
+        public void LoadMode() => sceneEvent.Raise();
     }
 }

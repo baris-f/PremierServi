@@ -14,7 +14,7 @@ namespace Modules.Technical.GameConfig.Runtime
 
         public ModeDescriptor mode;
         public GameDifficulty difficulty;
-
+        
         public Round(ModeDescriptor newMode, GameDifficulty newDiff)
         {
             mode = newMode;
