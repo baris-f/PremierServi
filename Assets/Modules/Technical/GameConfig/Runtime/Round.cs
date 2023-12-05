@@ -1,5 +1,4 @@
 ﻿using System;
-using Modules.Technical.SceneLoader.Runtime;
 
 namespace Modules.Technical.GameConfig.Runtime
 {
@@ -13,9 +12,13 @@ namespace Modules.Technical.GameConfig.Runtime
             Hard
         }
 
-        // Scene a load
-        // Other useful infos
-        public LoadSceneEvent sceneEvent;
+        public ModeDescriptor mode;
         public GameDifficulty difficulty;
+
+        public Round(ModeDescriptor newMode, GameDifficulty newDiff)
+        {
+            mode = newMode;
+            difficulty = newDiff;
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using TMPro;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Modules.Scenes.MainMenu.Runtime

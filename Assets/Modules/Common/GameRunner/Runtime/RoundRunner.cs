@@ -40,9 +40,9 @@ namespace Modules.Common.GameRunner.Runtime
         private void Start()
         {
             humansContainer.DestroyAllChildren();
-            var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.humans.Count);
+            var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.Humans.Count);
 
-            foreach (var human in config.humans)
+            foreach (var human in config.Humans)
             {
                 if (string.IsNullOrWhiteSpace(human.deviceName)) continue;
                 if (human.playerId == -1 || human.playerId >= nbPlayers)
@@ -55,7 +55,7 @@ namespace Modules.Common.GameRunner.Runtime
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
                 player.PlayerId = playerId;
-                var human = config.humans.Find(h => h.playerId == playerId);
+                var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
                     player.RobotId = robotCount;

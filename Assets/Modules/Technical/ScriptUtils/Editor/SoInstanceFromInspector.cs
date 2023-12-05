@@ -27,7 +27,9 @@ namespace Modules.Technical.ScriptUtils.Editor
             if (monoScript == null) return;
             var monoClass = monoScript.GetClass();
             if (monoClass == null ||
-                !monoScript.GetClass().IsSubclassOf(typeof(ScriptableObject)))
+                !monoScript.GetClass().IsSubclassOf(typeof(ScriptableObject))
+                || monoScript.GetClass().IsAbstract
+                )
                 return;
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Create new instance"))

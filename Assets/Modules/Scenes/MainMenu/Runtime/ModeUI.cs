@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using Modules.Technical.GameConfig.Runtime;
+using Modules.Technical.GameConfig.Runtime.RoundsProvider;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptUtils.Runtime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +12,6 @@ namespace Modules.Scenes.MainMenu.Runtime
     {
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
-        [SerializeField] private ProjectConfig projectConfig;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
@@ -20,6 +20,11 @@ namespace Modules.Scenes.MainMenu.Runtime
         [SerializeField] private Color32 selectedColor;
         [SerializeField] private Color32 unSelectedColor;
         [SerializeField] private List<Choice> choices = new();
+
+        [Header("Mode")]
+        [SerializeField] private TextMeshProUGUI modesText;
+        [SerializeField] private RectTransform modesContainer;
+        [SerializeField] private List<BaseRoundsProvider> roundsProviders = new();
 
         private int currentChoice;
         private int CurrentChoice
@@ -124,11 +129,13 @@ namespace Modules.Scenes.MainMenu.Runtime
         public void StartGame()
         {
             // CurrentChoice = choices.Count - 1;
-            var setting = choices[0].GetCurValue<ProjectConfig.GameSetting>();
-            var diff = choices[1].GetCurValue<Round.GameDifficulty>();
-            var length = choices[2].GetCurValue<ProjectConfig.GameLenght>();
+            // var setting = choices[0].GetCurValue<RoundsSetter.GameSetting>();
+            // var diff = choices[1].GetCurValue<Round.GameDifficulty>();
+            // var length = choices[2].GetCurValue<RoundsSetter.GameLenght>();
+         
+            //dis au round setter de generer et de foutre dans la gameConfig
             
-            projectConfig.SetupRounds(length, setting, diff);
+            // roundsSetter.SetupRounds(length, setting, diff);
             //todo envoyer les bons trucs
             //commencer la game
         }

@@ -1,9 +1,8 @@
-using System;
+using System.Linq;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Modules.Scenes.MainMenu.Runtime
 {
@@ -12,7 +11,7 @@ namespace Modules.Scenes.MainMenu.Runtime
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
         [SerializeField] private PlayerCard[] cards;
-       [SerializeField] private ProjectConfig projectConfig;
+        [SerializeField] private InGameConfig inGameConfig;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
@@ -108,7 +107,7 @@ namespace Modules.Scenes.MainMenu.Runtime
 
         public void ValidatePlayers()
         {
-            projectConfig.SetupHumans(players);
+            inGameConfig.Humans = players.ToList();
             nextState.Raise();
         }
 

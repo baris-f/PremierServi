@@ -30,16 +30,29 @@ namespace Modules.Technical.ScriptUtils.Runtime
                 case PlayModeStateChange.ExitingPlayMode:
                     Revert();
                     break;
+                case PlayModeStateChange.EnteredEditMode:
+                case PlayModeStateChange.ExitingEditMode:
+                default:
+                    break;
             }
         }
 
         [Button()]
-        private void Apply() => savedData = this.Clone();
+        private void Apply()
+        {
+            Debug.Log($"Saved data for Scriptable {name}");
+            savedData = this.Clone();
+        }
 
         [Button()]
         private void Revert()
         {
-            if (savedData == null) return;
+            if (savedData == null)
+            {
+                Debug.Log($"No saved data in {name} to Revert to");
+                return;
+            }
+
             var properties = ReflectionUtility.GetAllFields(this,
                 BindingFlags.DeclaredOnly | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance,
                 info => info.GetCustomAttributes(typeof(SaveAtRuntime), true).Length > 0);
@@ -50,7 +63,7 @@ namespace Modules.Technical.ScriptUtils.Runtime
                 property.SetValue(this, value);
             }
 
-            savedData = null;
+            // savedData = null;
         }
 #endif
     }
