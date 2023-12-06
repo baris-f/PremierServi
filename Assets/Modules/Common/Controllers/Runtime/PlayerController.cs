@@ -22,7 +22,8 @@ namespace Modules.Common.Controllers.Runtime
 
         [Header("References")]
         [SerializeField] private SpriteRenderer sprite;
-
+        [SerializeField] private Animator animator;
+        
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
         [SerializeField] private ScriptableFloat goal;
@@ -80,11 +81,24 @@ namespace Modules.Common.Controllers.Runtime
             DisablePlayer();
         }
 
-        public void StartWalking() => currentStatus = Status.Walking;
+        public void StartWalking()
+        {
+            animator.SetBool("Walking", true);
+            currentStatus = Status.Walking;
+        }
 
-        public void StartRunning() => currentStatus = Status.Running;
+        public void StartRunning()
+        {
+            animator.SetBool("Running", true);
+            currentStatus = Status.Running;
+        }
 
-        public void Stop() => currentStatus = Status.Stopped;
+        public void Stop()
+        {
+            animator.SetBool("Walking", false);
+            animator.SetBool("Running", false);
+            currentStatus = Status.Stopped;
+        }
 
         public void Taunt()
         {
@@ -94,8 +108,9 @@ namespace Modules.Common.Controllers.Runtime
 
         private void DisablePlayer()
         {
+            animator.SetTrigger("Death");
             disabled = true;
-            sprite.color = disabledColor;
+            //sprite.color = disabledColor;
         }
     }
 }
