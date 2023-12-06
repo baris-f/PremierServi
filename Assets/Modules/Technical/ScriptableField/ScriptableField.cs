@@ -13,7 +13,7 @@ namespace Modules.Technical.ScriptableField
             get => value;
             set
             {
-                value = Value;
+                this.value = value;
                 NotifyChange();
             }
         }

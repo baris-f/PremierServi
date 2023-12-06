@@ -109,6 +109,7 @@ namespace Modules.Scenes.MainMenu.Runtime
             var diff = choices[1].GetResult<Round.GameDifficulty>();
             var provider = choices[2].GetResult<BaseRoundsProvider>();
             inGameConfig.SetRounds(provider, length, diff);
+            
             inGameConfig.LoadRound();
         }
 

@@ -4,6 +4,7 @@
     "ScriptUtils.Runtime",
     "Unity.InputSystem",
     "SceneLoader.Runtime",
-    "ScriptableEvents.Runtime"
+    "ScriptableEvents.Runtime",
+    "CustomEvents"
   ]
 }

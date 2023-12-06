@@ -1,6 +1,6 @@
 ﻿namespace Modules.Technical.AwaitablePopup.Runtime
 {
-    public class InfoPopup : CanvasPopup<InfoPopup.ResponseType>
+    public class InfosPopup : CanvasPopup<InfosPopup.ResponseType>
     {
         public enum ResponseType
         {

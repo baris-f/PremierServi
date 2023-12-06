@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using Modules.Common.Controllers.Runtime;
+using Modules.Common.CustomEvents.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
 using Modules.Technical.GameConfig.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
@@ -16,6 +18,7 @@ namespace Modules.Common.GameRunner.Runtime
         [SerializeField] private int nbPlayers = 8;
         [SerializeField] private InGameConfig config;
         [SerializeField] private BaseIa robotsComportment;
+        [SerializeField] private ResultsPopup results;
 
         [Header("Prefabs")]
         [SerializeField] private PlayerController playerPrefab;
@@ -44,7 +47,6 @@ namespace Modules.Common.GameRunner.Runtime
 
             foreach (var human in config.Humans)
             {
-                if (string.IsNullOrWhiteSpace(human.deviceName)) continue;
                 if (human.playerId == -1 || human.playerId >= nbPlayers)
                     human.playerId = humanPlayerIds[0];
                 humanPlayerIds.RemoveAt(0);
@@ -54,18 +56,17 @@ namespace Modules.Common.GameRunner.Runtime
             for (var playerId = 0; playerId < nbPlayers; playerId++)
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
-                player.PlayerId = playerId;
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
-                    player.RobotId = robotCount;
+                    player.Init(PlayerEvent.Type.Robot, playerId, robotCount);
                     var robotName = $"Robot {robotCount} (player {playerId})";
                     robots.Add(new RobotInput(robotName, robotsComportment, player, gameSpeed));
                     robotCount++;
                 }
                 else
                 {
-                    player.HumanId = humanCount;
+                    player.Init(PlayerEvent.Type.Human, playerId, humanCount);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
                     canon.Init(playerId, humanCount);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
@@ -76,7 +77,7 @@ namespace Modules.Common.GameRunner.Runtime
 
             playersLayout.RefreshLayout();
             canonsLayout.RefreshLayout();
-            
+
             Invoke(nameof(StartGame), 1);
         }
 
@@ -85,6 +86,16 @@ namespace Modules.Common.GameRunner.Runtime
             gameStartEvent.Raise();
             gameSpeed.Value = 1f;
             foreach (var robot in robots) robot.StartGame();
+        }
+
+        public async void OnPlayerWin(MinimalData data)
+        {
+            if (data is not PlayerEvent.PlayerData playerData) return;
+            config.AddPoints(playerData, 1);
+            gameSpeed.Value = -1;
+            await results.Open($"{playerData.type} {playerData.id} has won", true);
+            config.GoNextRound();
+            config.LoadRound();
         }
 
         private void OnDrawGizmos()

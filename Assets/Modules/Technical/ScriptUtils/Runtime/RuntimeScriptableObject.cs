@@ -39,6 +39,7 @@ namespace Modules.Technical.ScriptUtils.Runtime
         [Button(header: "Runtime Scriptable Functions")]
         private void Apply()
         {
+            if (this == null) return;
             Debug.Log($"Saved data for Scriptable {name}");
             savedData = this.Clone();
         }

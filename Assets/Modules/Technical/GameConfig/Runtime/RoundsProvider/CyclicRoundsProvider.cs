@@ -16,6 +16,7 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
             var rounds = new List<Round>();
             var amount = length switch
             {
+                GameLength.Single => 1,
                 GameLength.Short => modesToProvide.Count,
                 GameLength.Average => modesToProvide.Count * 2,
                 GameLength.Long => modesToProvide.Count * 3,

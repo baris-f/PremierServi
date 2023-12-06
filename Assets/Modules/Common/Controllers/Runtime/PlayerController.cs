@@ -36,24 +36,17 @@ namespace Modules.Common.Controllers.Runtime
 
         private Transform cachedTransform;
         private bool disabled;
+        private PlayerEvent.Type playerType;
 
-        public int PlayerId
+        public void Init(PlayerEvent.Type type, int newPlayerId, int typeId)
         {
-            set
+            playerId = newPlayerId;
+            playerType = type;
+            var typeName = type switch
             {
-                playerId = value;
-                name = $"Player {playerId} (";
-            }
-        }
-
-        public int HumanId
-        {
-            set => name += $"human {value})";
-        }
-
-        public int RobotId
-        {
-            set => name += $"robot {value})";
+                PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot"
+            };
+            name = $"Player {playerId} - {typeName} {typeId}";
         }
 
         private void Start() => cachedTransform = transform;
@@ -63,7 +56,7 @@ namespace Modules.Common.Controllers.Runtime
             if (gameSpeed.Value <= 0 || disabled) return;
             if (transform.position.x > goal.Value)
             {
-                playerWin.Raise(playerId);
+                playerWin.Raise(playerId, playerType);
                 DisablePlayer();
             }
 
@@ -76,7 +69,7 @@ namespace Modules.Common.Controllers.Runtime
         {
             if (!other.transform.CompareTag("Projectile")) return;
             Destroy(other.gameObject); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
-            playerDeath.Raise(playerId);
+            playerDeath.Raise(playerId, playerType);
             DisablePlayer();
         }
 

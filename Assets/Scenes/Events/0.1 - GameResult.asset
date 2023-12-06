@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b2f331ef7c439c86405116d4c06d88, type: 3}
-  m_Name: CyclicRoundsProvider
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 0.1 - GameResult
   m_EditorClassIdentifier: 
-  modesToProvide:
-  - {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
+  listeners: []
+  scene:
+    asset: {fileID: 102900000, guid: 212d51cda3fd898459333ccc2afc829c, type: 3}
+    guid: 212d51cda3fd898459333ccc2afc829c

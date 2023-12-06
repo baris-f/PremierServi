@@ -50,6 +50,7 @@ MonoBehaviour:
   transitionTimeInMs: 1000
   sceneEvents:
   - {fileID: 11400000, guid: 860f53f87812afa468ad4e5a51046319, type: 2}
+  - {fileID: 11400000, guid: 2c41f383391c6b84e880b424e589e30b, type: 2}
   - {fileID: 11400000, guid: 456d81a8d43da5d4a822e361d270c220, type: 2}
   - {fileID: 11400000, guid: 4b0b2e7e146824546bd3f4a0f67acee0, type: 2}
   - {fileID: 11400000, guid: feeaa654dae16d443bebce6e99e1e575, type: 2}

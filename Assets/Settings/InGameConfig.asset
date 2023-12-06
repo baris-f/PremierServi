@@ -12,27 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2427fb1033144818a8451e85f48f2808, type: 3}
   m_Name: InGameConfig
   m_EditorClassIdentifier: 
-  curRound: 0
+  endOfGameScene: {fileID: 11400000, guid: 2c41f383391c6b84e880b424e589e30b, type: 2}
+  curRound: 3
   humans:
   - deviceName: XInputControllerWindows
     color: 13
-    playerId: -1
+    playerId: 6
+    score: 0
   - deviceName: Keyboard
     color: 14
-    playerId: -1
-  - deviceName: 
-    color: 0
-    playerId: -1
-  - deviceName: 
-    color: 0
-    playerId: -1
+    playerId: 7
+    score: 0
   rounds:
   - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
-    difficulty: 0
+    difficulty: 1
   - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
-    difficulty: 0
+    difficulty: 1
   - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
-    difficulty: 0
-  providerToTest: {fileID: 11400000, guid: 704d3c7821bbfe64bb99f11e8c2f7aa3, type: 2}
-  testGameLength: 0
-  testGameDifficulty: 0
+    difficulty: 1

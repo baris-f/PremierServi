@@ -107,7 +107,7 @@ namespace Modules.Scenes.MainMenu.Runtime
 
         public void ValidatePlayers()
         {
-            inGameConfig.Humans = players.ToList();
+            inGameConfig.SetHumans(players);
             nextState.Raise();
         }
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Modules.Technical.GameConfig.Runtime.RoundsProvider;
-using UnityEngine;
 
 namespace Modules.Scenes.MainMenu.Runtime.Choices
 {

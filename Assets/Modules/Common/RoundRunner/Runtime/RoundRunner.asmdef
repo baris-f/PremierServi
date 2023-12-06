@@ -1,5 +1,5 @@
 {
-  "name": "GameRunner",
+  "name": "RoundRunner",
   "rootNamespace": "",
   "references": [
     "Controllers",
@@ -7,7 +7,9 @@
     "GameConfig",
     "Inputs",
     "ScriptableEvents.Runtime",
-    "ScriptableField"
+    "ScriptableField",
+    "CustomEvents",
+    "AwaitablePopup"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

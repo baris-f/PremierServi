@@ -1,0 +1,21 @@
+{
+    "name": "GameResult",
+    "rootNamespace": "",
+    "references": [
+        "SceneLoader.Runtime",
+        "ScriptableEvents.Runtime",
+        "GameConfig",
+        "Unity.TextMeshPro",
+        "ScriptUtils.Runtime",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

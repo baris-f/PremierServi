@@ -9,6 +9,7 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
         [Serializable]
         public enum GameLength
         {
+            Single,
             Short,
             Average,
             Long
@@ -16,6 +17,14 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
 
         public abstract string Name { get; }
 
+        protected static int GetDefaultLength(GameLength length) => length switch
+        {
+            GameLength.Single => 1,
+            GameLength.Short => 3,
+            GameLength.Average => 6,
+            GameLength.Long => 9,
+            _ => throw new ArgumentOutOfRangeException(nameof(length), length, null)
+        };
         public abstract List<Round> GenerateRounds(GameLength length, Round.GameDifficulty difficulty);
     }
 }
