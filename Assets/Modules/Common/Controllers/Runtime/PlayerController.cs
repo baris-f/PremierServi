@@ -2,6 +2,7 @@
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
+// ReSharper disable All
 
 namespace Modules.Common.Controllers.Runtime
 {
