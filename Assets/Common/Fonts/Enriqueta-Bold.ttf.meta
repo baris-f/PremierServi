@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e90833027d4d9be45b2e43139fe281f6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Enriqueta
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b7d9242100e340c4fb4e622b221aa9cb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

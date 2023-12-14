@@ -9,6 +9,7 @@ using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Modules.Common.GameRunner.Runtime
 {
@@ -24,10 +25,12 @@ namespace Modules.Common.GameRunner.Runtime
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private CanonController canonPrefab;
         [SerializeField] private HumanInput humanPrefab;
+        // [SerializeField] private StatusController statusPrefab; //a changer mais jsp comment on fait
 
         [Header("Containers")]
         [SerializeField] private TransformLayout playersLayout;
         [SerializeField] private TransformLayout canonsLayout;
+        [SerializeField] private LayoutGroup statusLayout;
         [SerializeField] private Transform humansContainer;
 
         [Header("Events")]
@@ -56,6 +59,8 @@ namespace Modules.Common.GameRunner.Runtime
             for (var playerId = 0; playerId < nbPlayers; playerId++)
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
+                //var status = Instantiate(statusPrefab, statusLayout.transform);
+                
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
