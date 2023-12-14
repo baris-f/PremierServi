@@ -8,14 +8,14 @@ using UnityEngine;
 
 namespace Modules.Technical.GameConfig.Runtime
 {
-    public class InGameConfig : RuntimeScriptableObject
+    public class InGameConfig : SoPresets
     {
         [Header("Standard Config")]
         [SerializeField] private LoadSceneEvent endOfGameScene;
 
         [Header("Dynamic Config")]
-        [SerializeField, SaveAtRuntime] private List<Human> humans;
-        [SerializeField, SaveAtRuntime] private List<Round> rounds;
+        [SerializeField, SaveInPreset] private List<Human> humans;
+        [SerializeField, SaveInPreset] private List<Round> rounds;
 
         private int curRound;
         public SortedDictionary<string, int> Scores { get; } = new();
