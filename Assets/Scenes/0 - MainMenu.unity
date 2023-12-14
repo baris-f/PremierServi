@@ -1855,15 +1855,19 @@ MonoBehaviour:
   - deviceName: 
     color: 0
     playerId: -1
+    score: 0
   - deviceName: 
     color: 0
     playerId: -1
+    score: 0
   - deviceName: 
     color: 0
     playerId: -1
+    score: 0
   - deviceName: 
     color: 0
     playerId: -1
+    score: 0
 --- !u!1 &1217131805
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,6 +3083,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e76055a6-0b0d-46a9-bc5a-3a1c84ca55dd
     m_ActionName: Game/MoveCanon[/Keyboard/upArrow,/Keyboard/downArrow,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f20847ac-5f3d-4c80-93f9-eff86d4b6975
+    m_ActionName: Game/Taunt[/Keyboard/upArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Joycon
   m_DefaultActionMap: UI
