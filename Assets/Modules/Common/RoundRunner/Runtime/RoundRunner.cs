@@ -76,6 +76,7 @@ namespace Modules.Common.GameRunner.Runtime
                     canon.Init(playerId, humanCount);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
+                    // instantie status
                     humanCount++;
                 }
             }
