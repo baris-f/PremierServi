@@ -3,7 +3,7 @@ using Modules.Technical.ScriptableEvents.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Modules.Common.GameRunner.Runtime
+namespace Modules.Common.Status
 {
     public class StatusController : MonoBehaviour
     {
@@ -33,7 +33,7 @@ namespace Modules.Common.GameRunner.Runtime
         public void ListenDeath(MinimalData data) //(PlayerEvent.PlayerData playerData)
         {
             PlayerEvent.PlayerData playerData = data as PlayerEvent.PlayerData;
-            if (playerData.id == playerID)
+            if (playerData?.id == playerID)
                 Die();
         }
 
@@ -48,11 +48,6 @@ namespace Modules.Common.GameRunner.Runtime
             s = Mathf.Clamp(s, 0f, 1f);
 
             SetColor(Color.HSVToRGB(h, s, v) - new Color(darkenAmount, darkenAmount, darkenAmount, 0));
-        }
-
-        void Update()
-        {
-
         }
     }
 }

@@ -3,6 +3,7 @@ using Modules.Common.Controllers.Runtime;
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
+using Modules.Common.Status;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
@@ -25,7 +26,7 @@ namespace Modules.Common.GameRunner.Runtime
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private CanonController canonPrefab;
         [SerializeField] private HumanInput humanPrefab;
-        // [SerializeField] private StatusController statusPrefab; //a changer mais jsp comment on fait
+        [SerializeField] private StatusController statusPrefab; //a changer mais jsp comment on fait
 
         [Header("Containers")]
         [SerializeField] private TransformLayout playersLayout;
@@ -53,15 +54,17 @@ namespace Modules.Common.GameRunner.Runtime
                 if (human.playerId == -1 || human.playerId >= nbPlayers)
                     human.playerId = humanPlayerIds[0];
                 humanPlayerIds.RemoveAt(0);
+
             }
 
             int robotCount = 0, humanCount = 0;
             for (var playerId = 0; playerId < nbPlayers; playerId++)
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
-                //var status = Instantiate(statusPrefab, statusLayout.transform);
                 
+
                 var human = config.Humans.Find(h => h.playerId == playerId);
+
                 if (human == null)
                 {
                     player.Init(PlayerEvent.Type.Robot, playerId, robotCount);
@@ -73,6 +76,10 @@ namespace Modules.Common.GameRunner.Runtime
                 {
                     player.Init(PlayerEvent.Type.Human, playerId, humanCount);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
+                    var status = Instantiate(statusPrefab, statusLayout.transform);
+
+                    status.Initialize(human.playerId, JoyConColors.Colors[human.color].BodyColor);
+
                     canon.Init(playerId, humanCount);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";

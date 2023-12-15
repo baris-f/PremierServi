@@ -56,6 +56,13 @@ namespace Modules.Technical.GameConfig.Runtime
         public Color BodyColor => bodyColor;
         public Color ButtonColor => buttonColor;
 
+        // public Color GetColor()
+        // {
+        //         Color color = Color.white;
+        //         ColorUtility.TryParseHtmlString(bodyHex, out bodyColor);
+        //         return color;
+        // }
+        
         public static Dictionary<ColorName, JoyConColors> Colors = new()
         {
             { ColorName.Black, new JoyConColors { BodyHex = "#313131", ButtonHex = "#0F0F0F" } },

@@ -1,16 +1,9 @@
 {
-    "name": "RoundRunner",
+    "name": "StatusController",
     "rootNamespace": "",
     "references": [
-        "Controllers",
-        "ScriptUtils.Runtime",
-        "GameConfig",
-        "Inputs",
-        "ScriptableEvents.Runtime",
-        "ScriptableField",
         "CustomEvents",
-        "AwaitablePopup",
-        "StatusController"
+        "ScriptableEvents.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
