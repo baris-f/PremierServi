@@ -24,7 +24,7 @@ namespace Modules.Scenes.MainMenu.Runtime
                 notConnected.SetActive(!value);
             }
         }
-        public JoyConColors.ColorName Color => color;
+        public JoyConColors Color => JoyConColors.Colors[color];
 
         private void Start() => background.color = JoyConColors.Colors[color].BodyColor;
     }

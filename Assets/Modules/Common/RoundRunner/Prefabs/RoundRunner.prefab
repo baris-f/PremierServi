@@ -85,11 +85,12 @@ MonoBehaviour:
   playerPrefab: {fileID: 5540609058838008082, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
   canonPrefab: {fileID: 3060424113564448529, guid: 9588c373c1f2bfd4b803af1c29029bd0, type: 3}
   humanPrefab: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
+  statusPrefab: {fileID: 6494626338137747678, guid: 129fc65342fe4474e8915be981de7478, type: 3}
   playersLayout: {fileID: 0}
   canonsLayout: {fileID: 0}
+  statusLayout: {fileID: 0}
   humansContainer: {fileID: 5963208410058812702}
   gameStartEvent: {fileID: 11400000, guid: 1a3783af1b1d4ee40b31b35ce905dd4b, type: 2}
-  gameEndEvent: {fileID: 11400000, guid: 87d1bcddfb25a0a42aa2cd2b0c21d5b7, type: 2}
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   goal: {fileID: 11400000, guid: 2b3bec6eeebc9554fa82cf92f5099c6c, type: 2}
   robots: []

@@ -1,4 +1,5 @@
 using Modules.Common.CustomEvents.Runtime;
+using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,47 +8,44 @@ namespace Modules.Common.Status
 {
     public class StatusController : MonoBehaviour
     {
-        [SerializeField] private Color color;
+        [Header("References")]
         [SerializeField] private Image[] elemToColor;
-        [SerializeField] private int playerID;
 
-        public void Initialize(int newPlayerID, Color newColor)
+        [Header("Color settings")]
+        [SerializeField] private float desaturationAmount = 0.2f;
+        [SerializeField] private float darkenAmount = 0.25f;
+
+        private JoyConColors color;
+        private int playerID;
+
+        public void Initialize(int newPlayerID, JoyConColors newColor)
         {
             playerID = newPlayerID;
             color = newColor;
+            SetColor(color.BodyColor);
         }
 
-        void SetColor(Color newColor)
+        private void SetColor(Color newColor)
         {
             foreach (var image in elemToColor)
-            {
                 image.color = newColor;
-            }
         }
 
-        void Start()
+        public void OnPlayerDeath(MinimalData data)
         {
-            SetColor(color);
-        }
-
-        public void ListenDeath(MinimalData data) //(PlayerEvent.PlayerData playerData)
-        {
-            PlayerEvent.PlayerData playerData = data as PlayerEvent.PlayerData;
-            if (playerData?.id == playerID)
+            if (data is not PlayerEvent.PlayerData playerData) return;
+            if (playerData.id == playerID)
                 Die();
         }
 
-        void Die()
+        private void Die()
         {
-            float desaturationAmount = 0.2f;
-            float darkenAmount = 0.25f;
-
-            Color.RGBToHSV(color, out float h, out float s, out float v);
-
+            Color.RGBToHSV(color.BodyColor, out var h, out var s, out var v);
             s -= desaturationAmount;
             s = Mathf.Clamp(s, 0f, 1f);
-
-            SetColor(Color.HSVToRGB(h, s, v) - new Color(darkenAmount, darkenAmount, darkenAmount, 0));
+            var subtractColor = new Color(darkenAmount, darkenAmount, darkenAmount, 0);
+            var newColor = Color.HSVToRGB(h, s, v) - subtractColor;
+            SetColor(newColor);
         }
     }
 }

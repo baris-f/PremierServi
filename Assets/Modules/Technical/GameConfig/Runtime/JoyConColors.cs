@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Modules.Technical.GameConfig.Runtime
 {
+    [Serializable]
     public class JoyConColors
     {
         [Serializable]
@@ -28,11 +29,11 @@ namespace Modules.Technical.GameConfig.Runtime
             PastelGreen
         }
 
-        private string bodyHex;
-        private string buttonHex;
+        [SerializeField] private string bodyHex;
+        [SerializeField] private string buttonHex;
 
-        private Color bodyColor;
-        private Color buttonColor;
+        [SerializeField] private Color bodyColor;
+        [SerializeField] private Color buttonColor;
 
         public string BodyHex
         {
@@ -56,13 +57,6 @@ namespace Modules.Technical.GameConfig.Runtime
         public Color BodyColor => bodyColor;
         public Color ButtonColor => buttonColor;
 
-        // public Color GetColor()
-        // {
-        //         Color color = Color.white;
-        //         ColorUtility.TryParseHtmlString(bodyHex, out bodyColor);
-        //         return color;
-        // }
-        
         public static Dictionary<ColorName, JoyConColors> Colors = new()
         {
             { ColorName.Black, new JoyConColors { BodyHex = "#313131", ButtonHex = "#0F0F0F" } },

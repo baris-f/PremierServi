@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "CustomEvents",
-        "ScriptableEvents.Runtime"
+        "ScriptableEvents.Runtime",
+        "GameConfig"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

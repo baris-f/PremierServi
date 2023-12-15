@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5275794628719502177}
-  - component: {fileID: 652681700736263226}
   - component: {fileID: 6494626338137747678}
+  - component: {fileID: 652681700736263226}
   - component: {fileID: 5819069079104016726}
   - component: {fileID: 2399048802949473799}
   m_Layer: 5
@@ -42,6 +42,29 @@ RectTransform:
   m_AnchoredPosition: {x: -684, y: -427}
   m_SizeDelta: {x: 960, y: 590}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6494626338137747678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572674136561127368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff45d7667c5b37a4ebcfa64a957653b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desaturationAmount: 0.2
+  darkenAmount: 0.25
+  color:
+    bodyHex: 
+    buttonHex: 
+    bodyColor: {r: 0, g: 0, b: 0, a: 0}
+    buttonColor: {r: 0, g: 0, b: 0, a: 0}
+  elemToColor:
+  - {fileID: 2399048802949473799}
+  - {fileID: 3271897658669400322}
+  playerID: 0
 --- !u!114 &652681700736263226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +85,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 6494626338137747678}
           m_TargetAssemblyTypeName: Status, Assembly-CSharp
-          m_MethodName: ListenDeath
+          m_MethodName: OnPlayerDeath
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -72,23 +95,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &6494626338137747678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572674136561127368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff45d7667c5b37a4ebcfa64a957653b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0.6556604, g: 1, b: 0.89177895, a: 1}
-  elemToColor:
-  - {fileID: 2399048802949473799}
-  - {fileID: 3271897658669400322}
-  playerID: 0
 --- !u!222 &5819069079104016726
 CanvasRenderer:
   m_ObjectHideFlags: 0

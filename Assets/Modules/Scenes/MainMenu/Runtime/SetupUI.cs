@@ -92,7 +92,7 @@ namespace Modules.Scenes.MainMenu.Runtime
                 if (players[i].Device != context.control.device) continue;
                 players[i].Device = null;
                 players[i].deviceName = "";
-                players[i].color = JoyConColors.ColorName.None;
+                players[i].color = new JoyConColors();
                 cards[i].Connected = false;
                 return;
             }

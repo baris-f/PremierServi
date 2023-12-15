@@ -54,14 +54,13 @@ namespace Modules.Common.GameRunner.Runtime
                 if (human.playerId == -1 || human.playerId >= nbPlayers)
                     human.playerId = humanPlayerIds[0];
                 humanPlayerIds.RemoveAt(0);
-
             }
 
             int robotCount = 0, humanCount = 0;
             for (var playerId = 0; playerId < nbPlayers; playerId++)
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
-                
+
 
                 var human = config.Humans.Find(h => h.playerId == playerId);
 
@@ -76,14 +75,11 @@ namespace Modules.Common.GameRunner.Runtime
                 {
                     player.Init(PlayerEvent.Type.Human, playerId, humanCount);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
-                    var status = Instantiate(statusPrefab, statusLayout.transform);
-
-                    status.Initialize(human.playerId, JoyConColors.Colors[human.color].BodyColor);
-
                     canon.Init(playerId, humanCount);
+                    var status = Instantiate(statusPrefab, statusLayout.transform);
+                    status.Initialize(human.playerId, human.color);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
-                    // instantie status
                     humanCount++;
                 }
             }

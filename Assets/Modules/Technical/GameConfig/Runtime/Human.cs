@@ -8,7 +8,7 @@ namespace Modules.Technical.GameConfig.Runtime
     {
         public InputDevice Device;
         public string deviceName;
-        public JoyConColors.ColorName color;
+        public JoyConColors color;
         public int playerId = -1; // -1 || >nbPlayers = random id on game start, else use that id to set player
         public int score;
     }
