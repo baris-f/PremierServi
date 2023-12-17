@@ -33,10 +33,14 @@ namespace Modules.Scenes.GameResult.Runtime
         private void Start()
         {
             resultsContainer.DestroyAllChildren();
-            foreach (var entry in inGameConfig.Scores)
+
+            inGameConfig.SortHumansByScore();
+            
+            foreach (var human in inGameConfig.Humans)
             {
                 var text = Instantiate(resultsPrefab, resultsContainer);
-                text.text = $"{entry.Key} - {entry.Value} points";
+                text.text = $"Player {human.playerId} - {human.score} points";
+                text.color = JoyConColors.Colors[human.color].BodyColor; // todo remplacer par meilleur facon de store color (branche status)
             }
         }
 

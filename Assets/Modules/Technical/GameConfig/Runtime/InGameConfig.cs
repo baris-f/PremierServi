@@ -18,7 +18,6 @@ namespace Modules.Technical.GameConfig.Runtime
         [SerializeField, SaveAtRuntime] private List<Round> rounds;
 
         private int curRound;
-        public SortedDictionary<string, int> Scores { get; } = new();
         private Round CurrentRound => rounds[curRound];
         public ModeDescriptor CurrentModeDescriptor => CurrentRound.mode;
         public List<Human> Humans => humans;
@@ -38,14 +37,8 @@ namespace Modules.Technical.GameConfig.Runtime
 
         [Button] public void GoNextRound() => curRound++;
 
-        public void AddPoints(PlayerEvent.PlayerData data, int amount)
-        {
-            var key = $"{data.type} {data.id}";
-            if (Scores.ContainsKey(key))
-                Scores[key] += amount;
-            else
-                Scores.Add(key, amount);
-        }
+        public void AddPoints(int id, int amount) => humans.Find(h => h.playerId == id).score += amount;
+        public void SortHumansByScore() => humans.Sort((a, b) => a.score.CompareTo(b.score));
 
         public void SetHumans(Human[] players)
         {

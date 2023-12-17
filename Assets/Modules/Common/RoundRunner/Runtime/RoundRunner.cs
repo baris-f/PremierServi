@@ -92,8 +92,8 @@ namespace Modules.Common.GameRunner.Runtime
         public async void OnPlayerWin(MinimalData data)
         {
             if (data is not PlayerEvent.PlayerData playerData) return;
-            config.AddPoints(playerData, 1);
             gameSpeed.Value = -1;
+            if (playerData.type == PlayerEvent.Type.Human) config.AddPoints(playerData.id, 1);
             await results.Open($"{playerData.type} {playerData.id} has won", true);
             config.GoNextRound();
             config.LoadRound();
