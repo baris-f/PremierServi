@@ -32,7 +32,7 @@ Transform:
   - {fileID: 3821926929696861141}
   - {fileID: 3604484255382612907}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5540609058838008082
 MonoBehaviour:
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 0.3
   runSpeed: 0.6
-  playerId: 1
+  playerId: 0
   disabledColor: {r: 0, g: 0, b: 0, a: 0.8}
   sprite: {fileID: 683600909151089515}
   animator: {fileID: 8360375900399556194}

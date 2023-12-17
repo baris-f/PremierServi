@@ -3,26 +3,21 @@ using Modules.Common.Controllers.Runtime;
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
-using Modules.Common.Status;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Modules.Common.GameRunner.Runtime
 {
     public class RoundRunner : MonoBehaviour
     {
         [Header("Config")]
-        [SerializeField] private int nbPlayers = 8;
         [SerializeField] private InGameConfig config;
         [SerializeField] private BaseIa robotsComportment;
         [SerializeField] private ResultsPopup results;
-        
-        [SerializeField] private int maxAmmo;
 
         [Header("Prefabs")]
         [SerializeField] private PlayerController playerPrefab;
@@ -48,24 +43,23 @@ namespace Modules.Common.GameRunner.Runtime
 
         private void Start()
         {
+            var modeDescriptor = config.CurrentModeDescriptor;
             humansContainer.DestroyAllChildren();
-            var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.Humans.Count);
+            var humanPlayerIds =
+                UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
             foreach (var human in config.Humans)
             {
-                if (human.playerId == -1 || human.playerId >= nbPlayers)
+                if (human.playerId == -1 || human.playerId >= modeDescriptor.NbPlayers)
                     human.playerId = humanPlayerIds[0];
                 humanPlayerIds.RemoveAt(0);
             }
 
             int robotCount = 0, humanCount = 0;
-            for (var playerId = 0; playerId < nbPlayers; playerId++)
+            for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
-
-
                 var human = config.Humans.Find(h => h.playerId == playerId);
-
                 if (human == null)
                 {
                     player.Init(PlayerEvent.Type.Robot, playerId, robotCount);
@@ -79,7 +73,7 @@ namespace Modules.Common.GameRunner.Runtime
                     var status = Instantiate(statusPrefab, statusLayout.transform);
                     status.Initialize(human.playerId, human.color, maxAmmo);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
-                    canon.Init(playerId, humanCount, maxAmmo);
+                    canon.Init(playerId, humanCount, modeDescriptor.NbBullets);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
                     humanCount++;
@@ -102,8 +96,8 @@ namespace Modules.Common.GameRunner.Runtime
         public async void OnPlayerWin(MinimalData data)
         {
             if (data is not PlayerEvent.PlayerData playerData) return;
-            config.AddPoints(playerData, 1);
             gameSpeed.Value = -1;
+            if (playerData.type == PlayerEvent.Type.Human) config.AddPoints(playerData.id, 1);
             await results.Open($"{playerData.type} {playerData.id} has won", true);
             config.GoNextRound();
             config.LoadRound();

@@ -1,9 +1,6 @@
-﻿using System;
-using Modules.Common.CustomEvents.Runtime;
+﻿using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
-using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
@@ -12,7 +9,6 @@ namespace Modules.Common.Controllers.Runtime
     {
         [Header("Settings")]
         [SerializeField] private float speed;
-        [SerializeField] private int maxAmmo = 2;
         [SerializeField] private Color disabledColor;
         [SerializeField] private float maxYPosition = 10;
         [SerializeField] private float minYPosition = -10;
@@ -31,19 +27,19 @@ namespace Modules.Common.Controllers.Runtime
         private Transform cachedTransform;
         private bool disabled;
         private int playerId;
-        private EditorApplication.CallbackFunction statusUpdate;
-        
-        public void Init(int newPlayerId, int humanId, int ammo = 2)
+        private int maxBullets;
+
+        public void Init(int newPlayerId, int humanId, int maxB)
         {
             playerId = newPlayerId;
             name = $"Canon {humanId} (player {playerId}, human {humanId})";
-            maxAmmo = ammo;
+            this.maxBullets = maxB;
         }
 
         private void Start()
         {
             cachedTransform = transform;
-            curAmmo = maxAmmo;
+            curAmmo = maxBullets;
         }
 
         public void Move(Vector2 amount)

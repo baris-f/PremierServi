@@ -24,7 +24,7 @@ namespace Modules.Common.Inputs.Runtime.IAs
                         player.Stop();
                         break;
                     case 3:
-                        player.Taunt();
+                        player.StartTaunt();
                         break;
                 }
 

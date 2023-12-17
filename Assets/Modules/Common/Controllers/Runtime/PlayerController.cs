@@ -8,23 +8,28 @@ namespace Modules.Common.Controllers.Runtime
 {
     public class PlayerController : MonoBehaviour
     {
+        private static readonly int Walking = Animator.StringToHash("Walking");
+        private static readonly int Running = Animator.StringToHash("Running");
+        private static readonly int Taunting = Animator.StringToHash("Taunting");
+        private static readonly int Death = Animator.StringToHash("Death");
+
         [Serializable] private enum Status
         {
             Stopped,
             Walking,
-            Running
+            Running,
+            Taunting
         }
 
         [Header("Settings")]
         [SerializeField] private float walkSpeed;
         [SerializeField] private float runSpeed;
         [SerializeField] private int playerId;
-        [SerializeField] private Color disabledColor;
 
         [Header("References")]
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private Animator animator;
-        
+
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
         [SerializeField] private ScriptableFloat goal;
@@ -46,7 +51,8 @@ namespace Modules.Common.Controllers.Runtime
             playerType = type;
             var typeName = type switch
             {
-                PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot"
+                PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot",
+                _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
             name = $"Player {playerId} - {typeName} {typeId}";
         }
@@ -62,7 +68,7 @@ namespace Modules.Common.Controllers.Runtime
                 DisablePlayer();
             }
 
-            if (currentStatus == Status.Stopped) return;
+            if (currentStatus is Status.Stopped or Status.Taunting) return;
             var speed = currentStatus == Status.Running ? runSpeed : walkSpeed;
             cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * cachedTransform.right;
         }
@@ -77,34 +83,34 @@ namespace Modules.Common.Controllers.Runtime
 
         public void StartWalking()
         {
-            animator.SetBool("Walking", true);
+            animator.SetBool(Walking, true);
             currentStatus = Status.Walking;
         }
 
         public void StartRunning()
         {
-            animator.SetBool("Running", true);
+            animator.SetBool(Running, true);
             currentStatus = Status.Running;
         }
 
+        public void StartTaunt()
+        {
+            animator.SetBool(Taunting, true);
+            currentStatus = Status.Taunting;
+        }
+        
         public void Stop()
         {
-            animator.SetBool("Walking", false);
-            animator.SetBool("Running", false);
+            animator.SetBool(Walking, false);
+            animator.SetBool(Running, false);
+            animator.SetBool(Taunting, false);
             currentStatus = Status.Stopped;
-        }
-
-        public void Taunt()
-        {
-            Debug.Log("I am Taunting wow");
-            // independant : prends le pas temporairement pour faire le taunt puis reprends action precedente
         }
 
         private void DisablePlayer()
         {
-            animator.SetTrigger("Death");
+            animator.SetTrigger(Death);
             disabled = true;
-            //sprite.color = disabledColor;
         }
     }
 }

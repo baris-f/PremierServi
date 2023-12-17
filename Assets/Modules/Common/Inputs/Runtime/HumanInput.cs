@@ -39,15 +39,17 @@ namespace Modules.Common.Inputs.Runtime
             walk = input.actions["Walk"];
             walk.started += _ => player.StartWalking();
             walk.canceled += _ => player.Stop();
+            
             run = input.actions["Run"];
             run.started += _ => player.StartRunning();
             run.canceled += _ => player.Stop();
+            
             taunt = input.actions["Taunt"];
-            taunt.started += _ => player.Taunt();
-
+            taunt.started += _ => player.StartTaunt();
+            taunt.canceled += _ => player.Stop();
+            
             // CanonController
             move = input.actions["Move"];
-            // move.performed += ctx => canon.Move(ctx.ReadValue<Vector2>());
             fire = input.actions["Fire"];
             fire.started += _ => canon.Fire();
         }
