@@ -15,7 +15,6 @@ namespace Modules.Common.GameRunner.Runtime
     public class RoundRunner : MonoBehaviour
     {
         [Header("Config")]
-        [SerializeField] private int nbPlayers = 8;
         [SerializeField] private InGameConfig config;
         [SerializeField] private BaseIa robotsComportment;
         [SerializeField] private ResultsPopup results;
@@ -42,18 +41,20 @@ namespace Modules.Common.GameRunner.Runtime
 
         private void Start()
         {
+            var modeDescriptor = config.CurrentModeDescriptor;
             humansContainer.DestroyAllChildren();
-            var humanPlayerIds = UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.Humans.Count);
+            var humanPlayerIds =
+                UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
             foreach (var human in config.Humans)
             {
-                if (human.playerId == -1 || human.playerId >= nbPlayers)
+                if (human.playerId == -1 || human.playerId >= modeDescriptor.NbPlayers)
                     human.playerId = humanPlayerIds[0];
                 humanPlayerIds.RemoveAt(0);
             }
 
             int robotCount = 0, humanCount = 0;
-            for (var playerId = 0; playerId < nbPlayers; playerId++)
+            for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
                 var player = Instantiate(playerPrefab, playersLayout.transform);
                 var human = config.Humans.Find(h => h.playerId == playerId);
@@ -68,7 +69,7 @@ namespace Modules.Common.GameRunner.Runtime
                 {
                     player.Init(PlayerEvent.Type.Human, playerId, humanCount);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
-                    canon.Init(playerId, humanCount);
+                    canon.Init(playerId, humanCount, modeDescriptor.NbBullets);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
                     humanCount++;

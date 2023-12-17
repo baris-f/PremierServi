@@ -9,7 +9,6 @@ namespace Modules.Common.Controllers.Runtime
     {
         [Header("Settings")]
         [SerializeField] private float speed;
-        [SerializeField] private int maxAmmo = 2;
         [SerializeField] private Color disabledColor;
         [SerializeField] private float maxYPosition = 10;
         [SerializeField] private float minYPosition = -10;
@@ -28,17 +27,19 @@ namespace Modules.Common.Controllers.Runtime
         private Transform cachedTransform;
         private bool disabled;
         private int playerId;
+        private int maxBullets;
 
-        public void Init(int newPlayerId, int humanId)
+        public void Init(int newPlayerId, int humanId, int maxB)
         {
             playerId = newPlayerId;
             name = $"Canon {humanId} (player {playerId}, human {humanId})";
+            this.maxBullets = maxB;
         }
 
         private void Start()
         {
             cachedTransform = transform;
-            curAmmo = maxAmmo;
+            curAmmo = maxBullets;
         }
 
         public void Move(Vector2 amount)

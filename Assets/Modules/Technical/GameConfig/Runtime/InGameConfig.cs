@@ -20,6 +20,7 @@ namespace Modules.Technical.GameConfig.Runtime
         private int curRound;
         public SortedDictionary<string, int> Scores { get; } = new();
         private Round CurrentRound => rounds[curRound];
+        public ModeDescriptor CurrentModeDescriptor => CurrentRound.mode;
         public List<Human> Humans => humans;
 
         public void SetRounds(BaseRoundsProvider provider,
