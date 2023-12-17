@@ -44,7 +44,7 @@ namespace Modules.Common.Inputs.Runtime
             run.started += _ => player.StartRunning();
             run.canceled += _ => player.Stop();
             
-            taunt = input.actions["StartTaunt"];
+            taunt = input.actions["Taunt"];
             taunt.started += _ => player.StartTaunt();
             taunt.canceled += _ => player.Stop();
             

@@ -50,7 +50,8 @@ namespace Modules.Common.Controllers.Runtime
             playerType = type;
             var typeName = type switch
             {
-                PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot"
+                PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot",
+                _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
             name = $"Player {playerId} - {typeName} {typeId}";
         }
