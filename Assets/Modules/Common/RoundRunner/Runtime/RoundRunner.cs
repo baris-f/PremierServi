@@ -21,12 +21,14 @@ namespace Modules.Common.GameRunner.Runtime
         [SerializeField] private InGameConfig config;
         [SerializeField] private BaseIa robotsComportment;
         [SerializeField] private ResultsPopup results;
+        
+        [SerializeField] private int maxAmmo;
 
         [Header("Prefabs")]
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private CanonController canonPrefab;
         [SerializeField] private HumanInput humanPrefab;
-        [SerializeField] private StatusController statusPrefab; //a changer mais jsp comment on fait
+        [SerializeField] private StatusController statusPrefab;
 
         [Header("Containers")]
         [SerializeField] private TransformLayout playersLayout;
@@ -74,10 +76,10 @@ namespace Modules.Common.GameRunner.Runtime
                 else
                 {
                     player.Init(PlayerEvent.Type.Human, playerId, humanCount);
-                    var canon = Instantiate(canonPrefab, canonsLayout.transform);
-                    canon.Init(playerId, humanCount);
                     var status = Instantiate(statusPrefab, statusLayout.transform);
-                    status.Initialize(human.playerId, human.color);
+                    status.Initialize(human.playerId, human.color, maxAmmo);
+                    var canon = Instantiate(canonPrefab, canonsLayout.transform);
+                    canon.Init(playerId, humanCount, maxAmmo);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
                     humanCount++;

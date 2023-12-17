@@ -1,6 +1,9 @@
-﻿using Modules.Common.CustomEvents.Runtime;
+﻿using System;
+using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
+using UnityEditor;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
@@ -28,11 +31,13 @@ namespace Modules.Common.Controllers.Runtime
         private Transform cachedTransform;
         private bool disabled;
         private int playerId;
-
-        public void Init(int newPlayerId, int humanId)
+        private EditorApplication.CallbackFunction statusUpdate;
+        
+        public void Init(int newPlayerId, int humanId, int ammo = 2)
         {
             playerId = newPlayerId;
             name = $"Canon {humanId} (player {playerId}, human {humanId})";
+            maxAmmo = ammo;
         }
 
         private void Start()
@@ -53,6 +58,7 @@ namespace Modules.Common.Controllers.Runtime
         public void Fire()
         {
             if (gameSpeed.Value <= 0 || disabled) return;
+            // send event for status
             curAmmo--;
             var obj = Instantiate(projectile);
             obj.transform.position = projectileStart.position;
