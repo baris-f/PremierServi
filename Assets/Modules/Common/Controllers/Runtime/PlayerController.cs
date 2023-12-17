@@ -91,18 +91,18 @@ namespace Modules.Common.Controllers.Runtime
             currentStatus = Status.Running;
         }
 
+        public void StartTaunt()
+        {
+            animator.SetBool(Taunting, true);
+            currentStatus = Status.Taunting;
+        }
+        
         public void Stop()
         {
             animator.SetBool(Walking, false);
             animator.SetBool(Running, false);
             animator.SetBool(Taunting, false);
             currentStatus = Status.Stopped;
-        }
-
-        public void Taunt()
-        {
-            animator.SetBool(Taunting, true);
-            currentStatus = Status.Taunting;
         }
 
         private void DisablePlayer()
