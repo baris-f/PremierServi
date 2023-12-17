@@ -33,7 +33,7 @@ Transform:
   - {fileID: 8871653389478596261}
   - {fileID: 8849913668048496641}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3060424113564448529
 MonoBehaviour:
@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  maxAmmo: 1
   disabledColor: {r: 0, g: 0, b: 0, a: 0.8}
   maxYPosition: 4.5
   minYPosition: -4.5
@@ -56,6 +55,7 @@ MonoBehaviour:
   projectile: {fileID: 5943722618379184314, guid: 4c9a6b3e128b1074c9b5962fd7ac3da2, type: 3}
   projectileStart: {fileID: 8849913668048496641}
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
+  playerFire: {fileID: 11400000, guid: c14ba7bad036ffc4db5e1bdc9281565d, type: 2}
   curAmmo: 0
 --- !u!114 &3429208139571072904
 MonoBehaviour:

@@ -1,16 +1,19 @@
 ﻿using System.Collections.Generic;
 using Modules.Common.Controllers.Runtime;
 using Modules.Common.CustomEvents.Runtime;
+using Modules.Common.GameRunner.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
+using Modules.Common.Status;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Modules.Common.GameRunner.Runtime
+namespace Modules.Common.RoundRunner.Runtime
 {
     public class RoundRunner : MonoBehaviour
     {
@@ -28,7 +31,7 @@ namespace Modules.Common.GameRunner.Runtime
         [Header("Containers")]
         [SerializeField] private TransformLayout playersLayout;
         [SerializeField] private TransformLayout canonsLayout;
-        [SerializeField] private LayoutGroup statusLayout;
+        [SerializeField] private Transform statusContainer;
         [SerializeField] private Transform humansContainer;
 
         [Header("Events")]
@@ -45,6 +48,7 @@ namespace Modules.Common.GameRunner.Runtime
         {
             var modeDescriptor = config.CurrentModeDescriptor;
             humansContainer.DestroyAllChildren();
+            statusContainer.DestroyAllChildren();
             var humanPlayerIds =
                 UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
@@ -70,8 +74,8 @@ namespace Modules.Common.GameRunner.Runtime
                 else
                 {
                     player.Init(PlayerEvent.Type.Human, playerId, humanCount);
-                    var status = Instantiate(statusPrefab, statusLayout.transform);
-                    status.Initialize(human.playerId, human.color, maxAmmo);
+                    var status = Instantiate(statusPrefab, statusContainer.transform);
+                    status.Initialize(human.playerId, human.color, modeDescriptor.NbBullets);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
                     canon.Init(playerId, humanCount, modeDescriptor.NbBullets);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);

@@ -20,6 +20,10 @@ namespace Modules.Common.Controllers.Runtime
 
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
+        
+        [Header("Events")]
+        [SerializeField] private PlayerEvent playerFire;
+
 
         [Header("Debug")]
         [SerializeField] private int curAmmo;
@@ -54,7 +58,7 @@ namespace Modules.Common.Controllers.Runtime
         public void Fire()
         {
             if (gameSpeed.Value <= 0 || disabled) return;
-            // send event for status
+            playerFire.Raise(playerId, PlayerEvent.Type.Human);
             curAmmo--;
             var obj = Instantiate(projectile);
             obj.transform.position = projectileStart.position;

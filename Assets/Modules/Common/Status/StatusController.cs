@@ -15,7 +15,7 @@ namespace Modules.Common.Status
         [SerializeField] private LayoutGroup shotLeft;
         [SerializeField] private GameObject shotContainer;
         private Image[] shotLeftRefs;
-        
+
         [Header("Color settings")]
         [SerializeField] private float desaturationAmount = 0.2f;
         [SerializeField] private float darkenAmount = 0.25f;
@@ -35,7 +35,7 @@ namespace Modules.Common.Status
             {
                 var shot = Instantiate(shotContainer, shotLeft.transform);
                 Debug.Log(shot.transform.GetChild(0).name);
-                shotLeftRefs[i] = shot.transform.GetChild(0).transform.GetComponent<Image>(); 
+                shotLeftRefs[i] = shot.transform.GetChild(0).transform.GetComponent<Image>();
                 //(shot.transform.GetComponentInChildren<Image>());
             }
         }
@@ -52,12 +52,11 @@ namespace Modules.Common.Status
             if (playerData.id == playerID)
                 Die();
         }
-        
-        [Button] public void OnShotFired()
+
+        public void OnPlayerFire(MinimalData data)
         {
-            if (numberOfShotLeft <= 0)
-                return;
-            //if (data is not PlayerEvent.PlayerData playerData) return;       // pr le futur event
+            if (data is not PlayerEvent.PlayerData playerData || playerData.id != playerID ||
+                numberOfShotLeft <= 0) return;
             shotLeftRefs[numberOfShotLeft - 1].color = Color.clear;
             numberOfShotLeft--;
         }
