@@ -1,14 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Modules.Technical.ScriptUtils.Runtime
 {
-    public class SingletonMonoBehaviour : MonoBehaviour
+    public class SingletonMonoBehaviour<T> : MonoBehaviour where T : Component
     {
-        private static SingletonMonoBehaviour instance;
+        [Header("Singleton Config")]
+        [SerializeField] private bool forceInstance;
 
-        protected SingletonMonoBehaviour()
+        private static SingletonMonoBehaviour<T> instance;
+
+        protected void Awake()
         {
-            if (instance == null) instance = this;
+            if (forceInstance)
+            {
+                Destroy(instance);
+                instance = this;
+            }
+            else if (instance == null)
+                instance = this;
             else
             {
                 Destroy(gameObject);

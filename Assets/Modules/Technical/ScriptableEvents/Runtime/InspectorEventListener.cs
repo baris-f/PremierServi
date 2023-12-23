@@ -19,35 +19,5 @@ namespace Modules.Technical.ScriptableEvents.Runtime
             foreach (var listener in eventsToListen)
                 listener.@event.UnRegister(listener);
         }
-
-        public void AddCallback(ScriptableEvent<MinimalData> @event, UnityAction<MinimalData> callback)
-        {
-            var listener = eventsToListen.Find(listener => listener.@event == @event);
-            if (listener == null)
-            {
-                listener = new EventListener<MinimalData>
-                {
-                    @event = @event,
-                    callback = new UnityEvent<MinimalData>()
-                };
-                listener.callback.AddListener(callback);
-                eventsToListen.Add(listener);
-                @event.Register(listener, this);
-                return;
-            }
-
-            listener.callback.AddListener(callback);
-        }
-
-        public void RemoveCallback(ScriptableEvent<MinimalData> @event, UnityAction<MinimalData> callback)
-        {
-            var listener = eventsToListen.Find(listener => listener.@event == @event);
-            if (listener == null)
-            {
-                Debug.LogError($"No listener with event {@event}");
-                return;
-            }
-            listener.callback.RemoveListener(callback);
-        }
     }
 }

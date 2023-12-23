@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Modules.Technical.ScriptableEvents.Runtime;
 using UnityEngine;
 
@@ -12,23 +11,12 @@ namespace Modules.Technical.SceneLoader.Runtime
         [Header("Config")]
         [SerializeField] private Animator animator;
         [SerializeField] private int transitionTimeInMs = 1000;
-        private InspectorEventListener inspectorEventListener;
 
-        [SerializeField] private List<LoadSceneEvent> sceneEvents;
+        private void Awake() => animator.gameObject.SetActive(true);
 
-        private void Awake()
+        public void LoadSceneCallback(MinimalData data)
         {
-            animator.gameObject.SetActive(true);
-            if ((inspectorEventListener = GetComponent<InspectorEventListener>()) == null)
-                inspectorEventListener = gameObject.AddComponent<InspectorEventListener>();
-            foreach (var sceneEvent in sceneEvents)
-                inspectorEventListener.AddCallback(sceneEvent, LoadSceneCallback);
-        }
-
-        private void LoadSceneCallback(MinimalData data)
-        {
-            if (data is not LoadSceneEvent.LoadSceneData sceneData)
-                return;
+            if (data is not LoadSceneEvent.LoadSceneData sceneData) return;
             LoadScene(sceneData.sceneName);
         }
 

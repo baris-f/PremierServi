@@ -1,15 +1,22 @@
+using System;
+using System.Collections.Generic;
 using Modules.Technical.ScriptableEvents.Runtime;
+using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 
 namespace Modules.Technical.SoundsController.Runtime
 {
-    public class SoundsControllerBehaviour : MonoBehaviour
+    public class SoundsControllerBehaviour : SingletonMonoBehaviour<SoundsControllerBehaviour>
     {
         [Header("References")]
         [SerializeField] private SoundsController soundsController;
         [SerializeField] private AudioSource backgroundMusicSource;
 
-        private void Awake() => soundsController.BackgroundAudioSource = backgroundMusicSource;
+        private new void Awake()
+        {
+            base.Awake();
+            soundsController.BackgroundAudioSource = backgroundMusicSource;
+        }
 
         public void OnSetVolumeEvent(MinimalData data)
         {

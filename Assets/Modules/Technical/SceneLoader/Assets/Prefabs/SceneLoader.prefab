@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209567172181389035}
   - component: {fileID: 5788607560572615717}
-  - component: {fileID: 6001211774189058547}
+  - component: {fileID: 2893531760033708332}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 7895063961512693370}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5788607560572615717
 MonoBehaviour:
@@ -46,18 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49cbd181519f4268b4a0464ba40d7b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceInstance: 0
   animator: {fileID: 6349777200627300529}
   transitionTimeInMs: 1000
-  sceneEvents:
-  - {fileID: 11400000, guid: 860f53f87812afa468ad4e5a51046319, type: 2}
-  - {fileID: 11400000, guid: 2c41f383391c6b84e880b424e589e30b, type: 2}
-  - {fileID: 11400000, guid: 456d81a8d43da5d4a822e361d270c220, type: 2}
-  - {fileID: 11400000, guid: 4b0b2e7e146824546bd3f4a0f67acee0, type: 2}
-  - {fileID: 11400000, guid: feeaa654dae16d443bebce6e99e1e575, type: 2}
-  - {fileID: 11400000, guid: 447fbc4c9e366b148b4502a5dae7f5ec, type: 2}
-  - {fileID: 11400000, guid: 202d9ed320ee37b42b97c4616fae21db, type: 2}
-  - {fileID: 11400000, guid: 8e51ff63035a3ca42854ae3c4bed1d2f, type: 2}
---- !u!114 &6001211774189058547
+--- !u!114 &2893531760033708332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,10 +58,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 8693547299499510988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
+  m_Script: {fileID: 11500000, guid: c9efe4ded67d477795e610150e94dcdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventsToListen: []
+  callBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5788607560572615717}
+        m_TargetAssemblyTypeName: Modules.Technical.SceneLoader.Runtime.SceneLoader,
+          SceneLoader.Runtime
+        m_MethodName: LoadSceneCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  events:
+  - {fileID: 11400000, guid: 860f53f87812afa468ad4e5a51046319, type: 2}
+  - {fileID: 11400000, guid: 2c41f383391c6b84e880b424e589e30b, type: 2}
+  - {fileID: 11400000, guid: 456d81a8d43da5d4a822e361d270c220, type: 2}
+  - {fileID: 11400000, guid: 4b0b2e7e146824546bd3f4a0f67acee0, type: 2}
+  - {fileID: 11400000, guid: 202d9ed320ee37b42b97c4616fae21db, type: 2}
+  - {fileID: 11400000, guid: feeaa654dae16d443bebce6e99e1e575, type: 2}
+  - {fileID: 11400000, guid: 447fbc4c9e366b148b4502a5dae7f5ec, type: 2}
 --- !u!1001 &7464944992311821443
 PrefabInstance:
   m_ObjectHideFlags: 0
