@@ -1,11 +1,15 @@
+using System.Collections.Generic;
+using Modules.Technical.ScriptableEvents.Runtime;
+using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 using UnityEngine.Audio;
 
 namespace Modules.Technical.SoundsController.Runtime
 {
-    public class SoundsController : ScriptableObject
+    public class SoundsController : SingletonMonoBehaviour<SoundsController>
     {
-        public enum VolumeType
+        public enum Output
         {
             None,
             Music,
@@ -13,26 +17,41 @@ namespace Modules.Technical.SoundsController.Runtime
             UiEffects,
             Voices
         }
-
+        
         [Header("References")]
         [SerializeField] private AudioMixer audioMixer;
+        [SerializeField] private AudioSource backgroundMusicSource;
+        [SerializeField] private List<ScriptableFloat> volumeFields = new();
 
-        public AudioSource BackgroundAudioSource { private get; set; }
-
-        public void SetVolume(VolumeType type, float value) => audioMixer.SetFloat($"{type}Volume", value);
-
-        public void Play(AudioClip clip, VolumeType output = VolumeType.None, bool oneShot = true)
+        private new void Awake()
         {
-            if (output != VolumeType.None)
+            base.Awake();
+            foreach (var volumeField in volumeFields)
+            {
+                if (volumeField != null)
+                    volumeField.OnValueChanged += value => audioMixer.SetFloat(volumeField.name, value);
+            }
+        }
+
+        public void OnPlayBackgroundMusicEvent(MinimalData data)
+        {
+            if (data is not PlayClipEvent.ClipData clipData) return;
+            PlayClip(clipData.clip, backgroundMusicSource, clipData.output, oneShot: false);
+        }
+
+        private void PlayClip(AudioClip clip, AudioSource source,
+            Output output = Output.None, bool oneShot = true)
+        {
+            if (output != Output.None)
             {
                 var groups = audioMixer.FindMatchingGroups($"{output}");
                 if (groups is { Length: > 0 })
-                    BackgroundAudioSource.outputAudioMixerGroup = groups[0];
+                    source.outputAudioMixerGroup = groups[0];
             }
 
-            BackgroundAudioSource.clip = clip;
-            BackgroundAudioSource.loop = !oneShot;
-            BackgroundAudioSource.Play();
+            source.clip = clip;
+            source.loop = !oneShot;
+            source.Play();
         }
     }
 }

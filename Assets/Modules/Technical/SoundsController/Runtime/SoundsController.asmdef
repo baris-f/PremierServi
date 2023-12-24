@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "ScriptUtils.Runtime",
-        "ScriptableEvents.Runtime"
+        "ScriptableEvents.Runtime",
+        "ScriptableField"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

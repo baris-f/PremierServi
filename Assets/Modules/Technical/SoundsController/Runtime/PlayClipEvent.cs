@@ -11,7 +11,7 @@ namespace Modules.Technical.SoundsController.Runtime
         [Serializable]
         public class ClipData : MinimalData
         {
-            public SoundsController.VolumeType output;
+            public SoundsController.Output output;
             public bool oneShot;
             public AudioClip clip;
         }
