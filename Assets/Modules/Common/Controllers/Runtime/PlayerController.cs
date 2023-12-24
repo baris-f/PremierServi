@@ -109,6 +109,7 @@ namespace Modules.Common.Controllers.Runtime
 
         private void DisablePlayer()
         {
+            Stop();
             animator.SetTrigger(Death);
             disabled = true;
         }

@@ -8,7 +8,7 @@ namespace Modules.Common.Inputs.Runtime.IAs
     // ce serait mieux avec une interface mais... unity c code avec le cul (bon jabuse mais voila)
     public abstract class BaseIa : ScriptableObject
     {
-        [SerializeField] public int tickDelay = 100;
+        [SerializeField] public int tickDelayInMs = 100;
         protected RobotInput.GameState State;
 
         public async Task StartThinking(RobotInput.GameState newState, PlayerController newPlayer)
@@ -30,12 +30,12 @@ namespace Modules.Common.Inputs.Runtime.IAs
             var elapsedTicks = 0;
             while (elapsedTicks <= nbTicks)
             {
-                await Task.Delay(tickDelay);
+                await Task.Delay(tickDelayInMs);
                 if (!State.Paused) elapsedTicks++;
                 if (!State.Started) return;
             }
         }
 
-        protected async Task WaitForOneTick() => await Task.Delay(tickDelay);
+        protected async Task WaitForOneTick() => await Task.Delay(tickDelayInMs);
     }
 }
