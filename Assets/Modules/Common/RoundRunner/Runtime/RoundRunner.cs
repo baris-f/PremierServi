@@ -77,7 +77,7 @@ namespace Modules.Common.RoundRunner.Runtime
                     var status = Instantiate(statusPrefab, statusContainer.transform);
                     status.Initialize(human.playerId, human.color, modeDescriptor.NbBullets);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
-                    canon.Init(playerId, humanCount, modeDescriptor.NbBullets);
+                    canon.Init(playerId, human.color, humanCount, modeDescriptor.NbBullets);
                     var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human, player, canon);
                     humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
                     humanCount++;
