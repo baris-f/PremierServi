@@ -4,7 +4,8 @@
   "references": [
     "CustomEvents",
     "ScriptableEvents.Runtime",
-    "ScriptableField"
+    "ScriptableField",
+    "GameConfig"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
