@@ -17,19 +17,20 @@ namespace Modules.Technical.SoundsController.Runtime
             UiEffects,
             Voices
         }
-        
+
         [Header("References")]
         [SerializeField] private AudioMixer audioMixer;
         [SerializeField] private AudioSource backgroundMusicSource;
         [SerializeField] private List<ScriptableFloat> volumeFields = new();
 
-        private new void Awake()
+        private void Start()
         {
-            base.Awake();
             foreach (var volumeField in volumeFields)
             {
-                if (volumeField != null)
-                    volumeField.OnValueChanged += value => audioMixer.SetFloat(volumeField.name, value);
+                if (volumeField == null) continue;
+                var success = audioMixer.SetFloat(volumeField.name, volumeField.Value);
+                if (!success) continue;
+                volumeField.OnValueChanged += value => audioMixer.SetFloat(volumeField.name, value);
             }
         }
 
@@ -39,8 +40,7 @@ namespace Modules.Technical.SoundsController.Runtime
             PlayClip(clipData.clip, backgroundMusicSource, clipData.output, oneShot: false);
         }
 
-        private void PlayClip(AudioClip clip, AudioSource source,
-            Output output = Output.None, bool oneShot = true)
+        private void PlayClip(AudioClip clip, AudioSource source, Output output = Output.None, bool oneShot = true)
         {
             if (output != Output.None)
             {

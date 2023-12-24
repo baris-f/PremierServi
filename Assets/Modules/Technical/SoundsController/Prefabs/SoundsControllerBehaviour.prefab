@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 6827828288751557690}
   - component: {fileID: 6710252622653343741}
   - component: {fileID: 1811571690087477730}
-  - component: {fileID: 8808937710657017030}
   m_Layer: 0
   m_Name: SoundsControllerBehaviour
   m_TagString: Untagged
@@ -176,8 +175,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceInstance: 0
-  soundsController: {fileID: 11400000, guid: 90cabc06630a6b44b80eb437306dde0c, type: 2}
+  audioMixer: {fileID: 24100000, guid: 510eb7722bcaf414eaafc2bdfbd6dab3, type: 2}
   backgroundMusicSource: {fileID: 8085719155583239321}
+  volumeFields:
+  - {fileID: 11400000, guid: 6143096d675936f429849c2657d6573a, type: 2}
+  - {fileID: 11400000, guid: 546d9ef6a43dfbe4c9c65f36b0d3f121, type: 2}
+  - {fileID: 11400000, guid: 5cea8135dbab0654884c32fecc4e9b19, type: 2}
+  - {fileID: 11400000, guid: cb4cc9e61c634d1429a151c4ba21b9cd, type: 2}
 --- !u!114 &1811571690087477730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,9 +201,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6710252622653343741}
-          m_TargetAssemblyTypeName: Modules.Technical.SoundsController.Runtime.SoundsControllerBehaviour,
+          m_TargetAssemblyTypeName: Modules.Technical.SoundsController.Runtime.SoundsController,
             SoundsManager
-          m_MethodName: OnPlayClipEvent
+          m_MethodName: OnPlayBackgroundMusicEvent
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -209,36 +213,3 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &8808937710657017030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8893757028164206001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9efe4ded67d477795e610150e94dcdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  callBack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6710252622653343741}
-        m_TargetAssemblyTypeName: Modules.Technical.SoundsController.Runtime.SoundsControllerBehaviour,
-          SoundsManager
-        m_MethodName: OnSetVolumeEvent
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  events:
-  - {fileID: 11400000, guid: d5f1fa9b38296614fbdaf149dbe0fe94, type: 2}
-  - {fileID: 11400000, guid: 7bfb470e74b79834dbd75a1c7ea3532a, type: 2}
-  - {fileID: 11400000, guid: 5cd5cc5508339c24caf36bd829b7de2c, type: 2}
-  - {fileID: 11400000, guid: 3e948faefd0f0f0419ac4a957630864a, type: 2}
