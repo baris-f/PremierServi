@@ -2,7 +2,6 @@
     "name": "ScriptableEvents.Runtime",
     "rootNamespace": "",
     "references": [
-        "ScriptUtils.Editor",
         "ScriptUtils.Runtime"
     ],
     "includePlatforms": [],

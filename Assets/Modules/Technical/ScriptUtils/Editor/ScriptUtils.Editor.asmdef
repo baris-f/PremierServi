@@ -4,7 +4,9 @@
     "references": [
         "ScriptUtils.Runtime",
         "ToolbarExtender.Editor",
-        "ScriptUtils.Core"
+        "ScriptUtils.Core",
+        "ScriptableField",
+        "ScriptableEvents.Runtime"
     ],
     "includePlatforms": [
         "Editor"
