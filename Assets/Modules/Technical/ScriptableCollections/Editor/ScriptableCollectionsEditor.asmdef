@@ -1,0 +1,16 @@
+{
+    "name": "ScriptableCollectionsEditor",
+    "rootNamespace": "",
+    "references": ["GUID:c0106df7a3584bf299b67c4c21518fa8","GUID:3d54adbca663a9047ae700a112409ea5"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
