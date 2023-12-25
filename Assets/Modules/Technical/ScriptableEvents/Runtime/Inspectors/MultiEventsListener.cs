@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Modules.Technical.ScriptableEvents.Runtime
+namespace Modules.Technical.ScriptableEvents.Runtime.Inspectors
 {
     public class MultiEventsListener : MonoBehaviour
     {

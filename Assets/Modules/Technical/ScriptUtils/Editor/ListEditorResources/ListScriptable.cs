@@ -8,7 +8,6 @@ using Object = UnityEngine.Object;
 
 namespace Modules.Technical.ScriptUtils.Editor.ListEditorResources
 {
-    [CreateAssetMenu(fileName = "TestScriptable", menuName = "ScriptableObjects/TestScriptable")]
     public class ListScriptable : SearchableListWindow
     {
         [Serializable]

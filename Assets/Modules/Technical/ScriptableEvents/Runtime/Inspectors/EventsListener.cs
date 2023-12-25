@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Modules.Technical.ScriptableEvents.Runtime
+namespace Modules.Technical.ScriptableEvents.Runtime.Inspectors
 {
-    public class InspectorEventListener : MonoBehaviour
+    public class EventsListener : MonoBehaviour
     {
         [SerializeField] private List<EventListener<MinimalData>> eventsToListen = new();
 
