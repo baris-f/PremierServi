@@ -10,7 +10,8 @@
         "ScriptableField",
         "CustomEvents",
         "AwaitablePopup",
-        "StatusController"
+        "StatusController",
+        "Cake"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

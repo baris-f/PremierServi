@@ -5,6 +5,7 @@ using Modules.Common.GameRunner.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
 using Modules.Common.Status;
+using Modules.Common.Cake;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
@@ -33,6 +34,14 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] private Transform statusContainer;
         [SerializeField] private Transform humansContainer;
 
+        [Header("Assets")]
+        [SerializeField] private Sprite[] cakeList; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
+        
+        [Header("References")]
+        [SerializeField] private Cake.Cake cake; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
+
+        private int cakeId;
+        
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent gameStartEvent;
 
@@ -51,6 +60,8 @@ namespace Modules.Common.RoundRunner.Runtime
             var humanPlayerIds =
                 UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
+            cakeId = Random.Range(0, cakeList.Length);
+            cake.SetCake(cakeList[cakeId], cakeId);
             foreach (var human in config.Humans)
             {
                 if (human.playerId == -1 || human.playerId >= modeDescriptor.NbPlayers)
