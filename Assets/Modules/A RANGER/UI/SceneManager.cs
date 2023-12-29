@@ -1,5 +1,4 @@
-﻿using Eflatun.SceneReference;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Modules.A_RANGER.UI
 {
@@ -7,14 +6,14 @@ namespace Modules.A_RANGER.UI
     {
         [Header("Music Config")] public bool playMusicOnLoad;
         public AudioClip musicToPlay;
-        [Header("Other Config")] public SceneReference mainMenuScene;
+        // [Header("Other Config")] public SceneReference mainMenuScene;
 
         private void Start()
         {
         }
 
-        public void LoadScene(SceneReference scene) => UnityEngine.SceneManagement.SceneManager.LoadScene(scene.BuildIndex);
-        public void GoMainMenu() => LoadScene(mainMenuScene);
+        // public void LoadScene(SceneReference scene) => UnityEngine.SceneManagement.SceneManager.LoadScene(scene.BuildIndex);
+        // public void GoMainMenu() => LoadScene(mainMenuScene);
 
         public void Quit()
         {

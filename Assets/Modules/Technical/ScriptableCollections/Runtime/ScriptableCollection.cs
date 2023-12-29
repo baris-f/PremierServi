@@ -5,8 +5,7 @@ namespace Modules.Technical.ScriptableCollections.Runtime
 {
     public abstract class ScriptableCollection<T> : ScriptableObject where T : ScriptableObject
     {
-       public List<T> collection = new ();
-       public string path;
-
+        public List<T> collection = new();
+        [HideInInspector] public string path;
     }
 }

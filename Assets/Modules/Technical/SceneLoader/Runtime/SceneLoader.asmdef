@@ -1,5 +1,5 @@
 {
-  "name": "SceneLoader.Runtime",
+  "name": "SceneLoader",
   "rootNamespace": "",
   "references": [
     "ScriptableEvents.Runtime",

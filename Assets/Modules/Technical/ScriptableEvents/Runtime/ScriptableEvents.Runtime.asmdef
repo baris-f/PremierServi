@@ -2,7 +2,8 @@
     "name": "ScriptableEvents.Runtime",
     "rootNamespace": "",
     "references": [
-        "ScriptUtils.Runtime"
+        "ScriptUtils.Runtime",
+        "ScriptableCollections"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

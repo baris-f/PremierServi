@@ -1,4 +1,6 @@
 ﻿{
   "name": "ScriptableCollections",
-  "references":[ "GUID:3d54adbca663a9047ae700a112409ea5" ]
+  "references": [
+    "ScriptUtils.Runtime"
+  ]
 }

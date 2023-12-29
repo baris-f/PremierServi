@@ -9,6 +9,8 @@ namespace Modules.Technical.ScriptableEvents.Runtime.Inspectors
         [SerializeField] private UnityEvent<MinimalData> callBack;
         [SerializeField] private List<ScriptableEvent<MinimalData>> events = new();
 
+        public List<ScriptableEvent<MinimalData>> Events => events;
+        
         private void OnEnable()
         {
             if (callBack == null) return;
