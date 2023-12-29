@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Modules.Technical.ScriptableEvents.Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Modules.Technical.SceneLoader.Runtime
 {
@@ -26,7 +27,7 @@ namespace Modules.Technical.SceneLoader.Runtime
         {
             animator.SetTrigger(StartId);
             await Task.Delay(transitionTimeInMs);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

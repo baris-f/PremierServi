@@ -1,5 +1,4 @@
 ﻿using System;
-using Eflatun.SceneReference;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptUtils.Runtime;
@@ -17,11 +16,24 @@ namespace Modules.Technical.SceneLoader.Runtime
         }
 
         private readonly LoadSceneData data = new();
-        [SerializeField] private SceneReference scene; 
+        public string sceneName;
+        public string scenePath;
+        public string sceneGuid;
+        public bool Valid => !string.IsNullOrWhiteSpace(sceneGuid)
+                             && !string.IsNullOrWhiteSpace(scenePath)
+                             && !string.IsNullOrWhiteSpace(sceneName);
+
+        public void Initialize(string guid, string path, string newName)
+        {
+            sceneGuid = guid;
+            scenePath = path;
+            sceneName = newName;
+            name = newName;
+        }
         
         [Button] public void Raise()
         {
-            data.sceneName = scene.Name;
+            data.sceneName = sceneName;
             Raise(data);
         }
     }

@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 
-namespace Modules.Technical.ScriptableEvents.Runtime.LocalEvents
+namespace Modules.Technical.ScriptableEvents.Runtime.Inspectors
 {
-    public class TriggerLocalEventsInspector : MonoBehaviour
+    public class TriggerLocalEvents : MonoBehaviour
     {
         [Flags]
         private enum ActivationRule

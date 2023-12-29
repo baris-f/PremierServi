@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Modules.Technical.ScriptableField
 {
-    public class ScriptableField<T> : ScriptableObject
+    public abstract class ScriptableField<T> : ScriptableObject
     {
         [SerializeField] private T value;
 
@@ -20,7 +20,7 @@ namespace Modules.Technical.ScriptableField
 
         public event Action<T> OnValueChanged;
 
-        [Button] private void NotifyChange() => OnValueChanged?.Invoke(value);
+        [Button] protected void NotifyChange() => OnValueChanged?.Invoke(value);
         public void ChangeSilently(T newValue) => value = newValue;
     }
 }

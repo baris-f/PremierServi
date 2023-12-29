@@ -1,18 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Modules.Technical.ScriptableCollections.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Modules.Technical.ScriptableEvents.Runtime
+namespace Modules.Technical.ScriptableEvents.Runtime.Inspectors
 {
-    public class MultiEventsListener : MonoBehaviour
+    public abstract class CollectionEventsListener<T> : MonoBehaviour where T : ScriptableEvent<MinimalData>
     {
         [SerializeField] private UnityEvent<MinimalData> callBack;
-        [SerializeField] private List<ScriptableEvent<MinimalData>> events = new();
+        [SerializeField] private ScriptableCollection<T> collection;
 
         private void OnEnable()
         {
             if (callBack == null) return;
-            foreach (var @event in events)
+            foreach (var @event in collection.collection)
             {
                 if (@event == null) continue;
                 var listener = new EventListener<MinimalData>()
@@ -27,7 +28,7 @@ namespace Modules.Technical.ScriptableEvents.Runtime
         private void OnDisable()
         {
             if (callBack == null) return;
-            foreach (var @event in events)
+            foreach (var @event in collection.collection)
             {
                 if (@event == null) continue;
                 @event.UnRegisterAll(this);

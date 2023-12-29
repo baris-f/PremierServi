@@ -1,15 +1,10 @@
 {
-    "name": "GameResult",
+    "name": "ScriptableCollectionsEditor",
     "rootNamespace": "",
-    "references": [
-        "SceneLoader",
-        "ScriptableEvents.Runtime",
-        "GameConfig",
-        "Unity.TextMeshPro",
-        "ScriptUtils.Runtime",
-        "Unity.InputSystem"
+    "references": ["GUID:c0106df7a3584bf299b67c4c21518fa8","GUID:3d54adbca663a9047ae700a112409ea5"],
+    "includePlatforms": [
+        "Editor"
     ],
-    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

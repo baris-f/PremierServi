@@ -3,7 +3,7 @@
   "references": [
     "ScriptUtils.Runtime",
     "Unity.InputSystem",
-    "SceneLoader.Runtime",
+    "SceneLoader",
     "ScriptableEvents.Runtime",
     "CustomEvents"
   ]

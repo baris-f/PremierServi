@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Eflatun.SceneReference;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,8 +22,8 @@ namespace Modules.A_RANGER.In_Game
         public TextMeshProUGUI winText;
         public bool isSquidGame;
         public bool ISDEBUG = false;
-        public SceneReference game;
-        public SceneReference menu;
+        // public SceneReference game;
+        // public SceneReference menu;
         private int playerCount;
         public int AINumber = 8;
         private int currentID = 1;
@@ -110,11 +109,11 @@ namespace Modules.A_RANGER.In_Game
             SceneManager.LoadScene("0 - MainMenu");
         }
     
-        public IEnumerator LoadScene(SceneReference scene)
-        {
-            yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene(scene.BuildIndex);
-        }
+        // public IEnumerator LoadScene(SceneReference scene)
+        // {
+            // yield return new WaitForSeconds(3f);
+            // SceneManager.LoadScene(scene.BuildIndex);
+        // }
 
     }
 }

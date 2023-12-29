@@ -1,21 +1,24 @@
 ﻿using System;
-using System.Linq;
-using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Modules.Technical.ScriptUtils.Editor
 {
     [CustomEditor(typeof(MonoScript), editorForChildClasses: true)]
     public class ButtonForCustomTypes : UnityEditor.Editor
     {
-        private static void CreateNew(Type monoClass)
+        private static void CheckCreateScriptable(Type monoClass, Object target)
         {
-            var path = EditorUtility.SaveFilePanelInProject(
+            if (!GUILayout.Button("Create new instance")) return;
+            var path = AssetDatabase.GetAssetPath(target);
+            path = path.Remove(path.LastIndexOf('/'));
+            path = EditorUtility.SaveFilePanelInProject(
                 $"Create new {monoClass}",
                 $"{monoClass.Name}",
                 "asset",
-                $"Select where to create new {monoClass}");
+                $"Select where to create new {monoClass}",
+                path);
             if (string.IsNullOrWhiteSpace(path)) return;
             var instance = CreateInstance(monoClass);
             AssetDatabase.CreateAsset(instance, path);
@@ -44,10 +47,7 @@ namespace Modules.Technical.ScriptUtils.Editor
             if (monoScript.GetClass().IsSubclassOf(typeof(EditorWindow)))
                 CheckOpenWindow(monoClass);
             else if (monoScript.GetClass().IsSubclassOf(typeof(ScriptableObject)))
-            {
-                if (GUILayout.Button("Create new instance"))
-                    CreateNew(monoClass);
-            }
+                CheckCreateScriptable(monoClass, monoScript);
         }
     }
 }

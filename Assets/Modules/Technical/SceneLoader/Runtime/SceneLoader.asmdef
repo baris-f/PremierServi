@@ -1,10 +1,12 @@
 {
-  "name": "SceneLoader.Runtime",
+  "name": "SceneLoader",
   "rootNamespace": "",
   "references": [
     "ScriptableEvents.Runtime",
     "ScriptUtils.Runtime",
-    "Eflatun.SceneReference"
+    "Eflatun.SceneReference",
+    "ScriptableCollections",
+    "ScriptableCollectionsEditor"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
