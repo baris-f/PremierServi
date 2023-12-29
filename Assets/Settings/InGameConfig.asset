@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2427fb1033144818a8451e85f48f2808, type: 3}
   m_Name: InGameConfig
   m_EditorClassIdentifier: 
-  endOfGameScene: {fileID: 11400000, guid: 2c41f383391c6b84e880b424e589e30b, type: 2}
+  endOfGameScene: {fileID: 3303178733444523154, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   humans:
   - deviceName: Keyboard
     color:
@@ -20,7 +20,7 @@ MonoBehaviour:
       buttonHex: '#372D2D'
       bodyColor: {r: 1, g: 0.6862745, b: 0.6862745, a: 1}
       buttonColor: {r: 0.21568628, g: 0.1764706, b: 0.1764706, a: 1}
-    playerId: -1
+    playerId: 6
     score: 0
   rounds:
   - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}

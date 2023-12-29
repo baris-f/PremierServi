@@ -2,6 +2,7 @@
 
 namespace Modules.Technical.ScriptableEvents.Runtime.LocalEvents
 {
+    [Serializable]
     public abstract class LocalEvent<T> : ScriptableEvent<T> where T : MinimalData
     {
         protected override void Raise(T data)

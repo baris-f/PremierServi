@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209567172181389035}
   - component: {fileID: 5788607560572615717}
-  - component: {fileID: 2893531760033708332}
+  - component: {fileID: 5232959821710942063}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6349777200627300529}
   transitionTimeInMs: 1000
---- !u!114 &2893531760033708332
+--- !u!114 &5232959821710942063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8693547299499510988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9efe4ded67d477795e610150e94dcdc, type: 3}
+  m_Script: {fileID: 11500000, guid: c4e34f72b4e14468abf17bb8ab9d7791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   callBack:
@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5788607560572615717}
         m_TargetAssemblyTypeName: Modules.Technical.SceneLoader.Runtime.SceneLoader,
-          SceneLoader.Runtime
+          SceneLoader
         m_MethodName: LoadSceneCallback
         m_Mode: 0
         m_Arguments:
@@ -76,7 +76,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  events: []
+  collection: {fileID: 11400000, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
 --- !u!1001 &7464944992311821443
 PrefabInstance:
   m_ObjectHideFlags: 0
