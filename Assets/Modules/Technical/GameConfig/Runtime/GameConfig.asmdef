@@ -1,10 +1,10 @@
 ﻿{
   "name": "GameConfig",
   "references": [
-    "ScriptUtils.Runtime",
+    "ScriptUtils",
     "Unity.InputSystem",
     "SceneLoader",
-    "ScriptableEvents.Runtime",
+    "ScriptableEvents",
     "CustomEvents"
   ]
 }

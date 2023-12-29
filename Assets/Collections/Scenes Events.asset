@@ -1,111 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7491067023590813962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 2.2 - SquidGame
-  m_EditorClassIdentifier: 
-  listeners: []
-  sceneName: 2.2 - SquidGame
-  scenePath: Assets/Scenes/2.2 - SquidGame.unity
-  sceneGuid: f5cca977415d2624c912b258b908fcb1
---- !u!114 &-6737483768209456275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 0 - MainMenu
-  m_EditorClassIdentifier: 
-  listeners: []
-  sceneName: 0 - MainMenu
-  scenePath: Assets/Scenes/0 - MainMenu.unity
-  sceneGuid: 9b70ad2f51eaa6b459dbe92b616224f9
---- !u!114 &-5510017638698121718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 2.0 - Basic
-  m_EditorClassIdentifier: 
-  listeners: []
-  sceneName: 2.0 - Basic
-  scenePath: Assets/Scenes/2.0 - Basic.unity
-  sceneGuid: 393661beed5bd754489127c6388d2707
---- !u!114 &-363067610824758273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 2.0.2 - Canon
-  m_EditorClassIdentifier: 
-  listeners: []
-  sceneName: 2.0.2 - Canon
-  scenePath: Assets/Scenes/2.0.2 - Canon.unity
-  sceneGuid: 99edf19d5e5fb564e9a207fa8d9f39bd
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9dbb28f4b043c2a459b1aa888fda26, type: 3}
-  m_Name: SceneEventCollection
-  m_EditorClassIdentifier: 
-  collection:
-  - {fileID: -6737483768209456275}
-  - {fileID: 3303178733444523154}
-  - {fileID: 8098956106784325415}
-  - {fileID: -5510017638698121718}
-  - {fileID: 565338191694457129}
-  - {fileID: -363067610824758273}
-  - {fileID: 2735156503050807687}
-  - {fileID: -7491067023590813962}
-  path: Assets/Scenes/SceneEventCollection.asset
-  notInBuildSettings:
-  - {fileID: -6737483768209456275}
-  - {fileID: -363067610824758273}
---- !u!114 &565338191694457129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 2.0.1 - Basic
-  m_EditorClassIdentifier: 
-  listeners: []
-  sceneName: 2.0.1 - Basic
-  scenePath: Assets/Scenes/2.0.1 - Basic.unity
-  sceneGuid: 4aa9e93f54c74e340abf3133d2026baf
---- !u!114 &2735156503050807687
+--- !u!114 &-7699853818479077509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listeners: []
   sceneName: 2.1 - Frogger
-  scenePath: Assets/Scenes/2.1 - Frogger.unity
+  scenePath: Assets/Modules/Scenes/2.1 - Frogger.unity
   sceneGuid: 8c9cfa26abfee488c85f1582747f6a02
---- !u!114 &3303178733444523154
+--- !u!114 &-7235040578451068210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,13 +26,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 0.1 - GameResult
+  m_Name: 2.0.1 - Basic
   m_EditorClassIdentifier: 
   listeners: []
-  sceneName: 0.1 - GameResult
-  scenePath: Assets/Scenes/0.1 - GameResult.unity
-  sceneGuid: 212d51cda3fd898459333ccc2afc829c
---- !u!114 &8098956106784325415
+  sceneName: 2.0.1 - Basic
+  scenePath: Assets/Modules/Scenes/2.0.1 - Basic.unity
+  sceneGuid: 4aa9e93f54c74e340abf3133d2026baf
+--- !u!114 &-5379199914178505613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,5 +46,128 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listeners: []
   sceneName: 1.0 - Tuto
-  scenePath: Assets/Scenes/1.0 - Tuto.unity
+  scenePath: Assets/Modules/Scenes/Tutorial/1.0 - Tuto.unity
   sceneGuid: 47ba43008b3b0ce49afc65846e0c1938
+--- !u!114 &-5024186464015360529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 0 - MainMenu
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 0 - MainMenu
+  scenePath: Assets/Modules/Scenes/MainMenu/0 - MainMenu.unity
+  sceneGuid: 9b70ad2f51eaa6b459dbe92b616224f9
+--- !u!114 &-3227548623092683279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 2.2 - SquidGame
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 2.2 - SquidGame
+  scenePath: Assets/Modules/Scenes/2.2 - SquidGame.unity
+  sceneGuid: f5cca977415d2624c912b258b908fcb1
+--- !u!114 &-1069727083311247290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 0.1 - GameResult
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 0.1 - GameResult
+  scenePath: Assets/Modules/Scenes/GameResult/0.1 - GameResult.unity
+  sceneGuid: 212d51cda3fd898459333ccc2afc829c
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9dbb28f4b043c2a459b1aa888fda26, type: 3}
+  m_Name: Scenes Events
+  m_EditorClassIdentifier: 
+  path: Assets/Collections/SceneEventCollection.asset
+  notInBuildSettings:
+  - {fileID: 5734078645614088607}
+  - {fileID: 3255531457372891341}
+  - {fileID: -5024186464015360529}
+  scenes:
+  - {fileID: 7301053323043275154}
+  - {fileID: -7235040578451068210}
+  - {fileID: 5734078645614088607}
+  - {fileID: 3255531457372891341}
+  - {fileID: -7699853818479077509}
+  - {fileID: -3227548623092683279}
+  - {fileID: -1069727083311247290}
+  - {fileID: -5024186464015360529}
+  - {fileID: -5379199914178505613}
+--- !u!114 &3255531457372891341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 2.0.3 - Cake
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 2.0.3 - Cake
+  scenePath: Assets/Modules/Scenes/2.0.3 - Cake.unity
+  sceneGuid: e8bf0da3e9aff324ba7f92a702415142
+--- !u!114 &5734078645614088607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 2.0.2 - Canon
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 2.0.2 - Canon
+  scenePath: Assets/Modules/Scenes/2.0.2 - Canon.unity
+  sceneGuid: 99edf19d5e5fb564e9a207fa8d9f39bd
+--- !u!114 &7301053323043275154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 2.0 - Basic
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 2.0 - Basic
+  scenePath: Assets/Modules/Scenes/2.0 - Basic.unity
+  sceneGuid: 393661beed5bd754489127c6388d2707

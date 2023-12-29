@@ -1,5 +1,5 @@
 ﻿using System;
-using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 
 namespace Modules.Technical.ScriptableField

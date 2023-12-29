@@ -4,6 +4,7 @@ using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.GameConfig.Runtime.RoundsProvider;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
-using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 
 namespace Modules.Common.CustomEvents.Runtime

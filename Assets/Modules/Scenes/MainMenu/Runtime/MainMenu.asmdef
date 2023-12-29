@@ -2,8 +2,8 @@
     "name": "MainMenu",
     "rootNamespace": "",
     "references": [
-        "ScriptableEvents.Runtime",
-        "ScriptUtils.Runtime",
+        "ScriptableEvents",
+        "ScriptUtils",
         "Unity.InputSystem",
         "Unity.TextMeshPro",
         "GameConfig"

@@ -3,10 +3,10 @@
     "rootNamespace": "",
     "references": [
         "Controllers",
-        "ScriptUtils.Runtime",
+        "ScriptUtils",
         "GameConfig",
         "Inputs",
-        "ScriptableEvents.Runtime",
+        "ScriptableEvents",
         "ScriptableField",
         "CustomEvents",
         "AwaitablePopup",

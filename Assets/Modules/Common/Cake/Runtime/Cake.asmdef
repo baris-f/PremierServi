@@ -1,10 +1,8 @@
 {
-    "name": "ScriptableCollectionsEditor",
+    "name": "Cake",
     "rootNamespace": "",
-    "references": ["GUID:c0106df7a3584bf299b67c4c21518fa8","GUID:3d54adbca663a9047ae700a112409ea5"],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "references": ["GUID:c0106df7a3584bf299b67c4c21518fa8","GUID:3d54adbca663a9047ae700a112409ea5","GUID:ea4a5152dd34401ea57431e64a8cdf52"],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

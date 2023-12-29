@@ -784,7 +784,7 @@ MonoBehaviour:
   resultsPrefab: {fileID: 8311347143175578097, guid: 5f1e4f366515eec4fa26768a6906d621, type: 3}
   inGameConfig: {fileID: 11400000, guid: f18362f1a3d38ea4086821517aa0aa60, type: 2}
   input: {fileID: 1924894349}
-  mainMenu: {fileID: -6737483768209456275, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
+  mainMenu: {fileID: -5024186464015360529, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
 --- !u!1001 &722616744
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,8 +2,8 @@
     "name": "SoundsManager",
     "rootNamespace": "",
     "references": [
-        "ScriptUtils.Runtime",
-        "ScriptableEvents.Runtime",
+        "ScriptUtils",
+        "ScriptableEvents",
         "ScriptableField"
     ],
     "includePlatforms": [],

@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using Modules.Technical.ScriptableCollections.Editor;
 using Modules.Technical.ScriptableCollections.Runtime;
-using Modules.Technical.ScriptUtils.Runtime;
 using System.IO;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -17,22 +16,26 @@ namespace Modules.Technical.SceneLoader.Runtime
         [Header("Debug")]
         [SerializeField] private List<LoadSceneEvent> notInBuildSettings = new();
 
+        [SerializeField] private List<LoadSceneEvent> scenes = new();
+
+        public override IEnumerable<LoadSceneEvent> Collection => scenes;
+
 #if UNITY_EDITOR
-        [Button] public void RefreshCollection()
+        [Button(header:"Scene Collection Functions")] public void ScanScenes()
         {
             var scenesGuids = AssetDatabase.FindAssets("t:Scene", new[] { "Assets" }).ToList();
             foreach (var sceneGuid in scenesGuids)
             {
-                if (collection.Exists(@event => @event.sceneGuid == sceneGuid)) continue;
+                if (scenes.Exists(@event => @event.sceneGuid == sceneGuid)) continue;
                 var scenePath = AssetDatabase.GUIDToAssetPath(sceneGuid);
                 var sceneName = Path.GetFileNameWithoutExtension(scenePath);
-                var sceneEvent = this.New();
+                var sceneEvent = New();
                 sceneEvent.Initialize(sceneGuid, scenePath, sceneName);
                 Debug.Log($"Adding Event for new scene {sceneName}");
             }
 
             notInBuildSettings.Clear();
-            collection.RemoveAll(@event =>
+            scenes.RemoveAll(@event =>
             {
                 var sceneExists = AssetDatabase.LoadAssetAtPath<Object>(@event.scenePath) != null;
                 if (!sceneExists || !@event.Valid) return true;
@@ -42,8 +45,11 @@ namespace Modules.Technical.SceneLoader.Runtime
                 Debug.LogWarning($"Scene {@event.scenePath} is not present in build settings");
                 return false;
             });
-            this.Cleanup();
+            Cleanup();
         }
+
+        protected override void AddToCollection(LoadSceneEvent obj) => scenes.Add(obj);
+        protected override void RemoveFromCollection(LoadSceneEvent obj) => scenes.Remove(obj);
 #endif
     }
 }

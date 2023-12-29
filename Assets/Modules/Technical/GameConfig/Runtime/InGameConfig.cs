@@ -2,6 +2,7 @@
 using Modules.Technical.GameConfig.Runtime.RoundsProvider;
 using Modules.Technical.SceneLoader.Runtime;
 using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 
 namespace Modules.Technical.GameConfig.Runtime

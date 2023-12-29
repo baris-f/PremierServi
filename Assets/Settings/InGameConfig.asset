@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2427fb1033144818a8451e85f48f2808, type: 3}
   m_Name: InGameConfig
   m_EditorClassIdentifier: 
-  endOfGameScene: {fileID: 3303178733444523154, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
+  endOfGameScene: {fileID: -1069727083311247290, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   humans:
   - deviceName: Keyboard
     color:

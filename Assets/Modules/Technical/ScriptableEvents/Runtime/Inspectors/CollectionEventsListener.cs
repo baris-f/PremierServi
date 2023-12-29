@@ -1,5 +1,4 @@
 ﻿using Modules.Technical.ScriptableCollections.Runtime;
-using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,7 +12,7 @@ namespace Modules.Technical.ScriptableEvents.Runtime.Inspectors
         private void OnEnable()
         {
             if (callBack == null) return;
-            foreach (var @event in collection.collection)
+            foreach (var @event in collection.Collection)
             {
                 if (@event == null) continue;
                 var listener = new EventListener<MinimalData>()
@@ -28,7 +27,7 @@ namespace Modules.Technical.ScriptableEvents.Runtime.Inspectors
         private void OnDisable()
         {
             if (callBack == null) return;
-            foreach (var @event in collection.collection)
+            foreach (var @event in collection.Collection)
             {
                 if (@event == null) continue;
                 @event.UnRegisterAll(this);

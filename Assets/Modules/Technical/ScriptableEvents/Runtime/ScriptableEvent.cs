@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -17,6 +17,7 @@ namespace Modules.Technical.ScriptableEvents.Runtime
     [Serializable]
     public abstract class ScriptableEvent<T> : ScriptableObject where T : MinimalData
     {
+        [Header("Scriptable Event Data")]
         [SerializeField] protected List<EventListener<T>> listeners = new();
 
         protected abstract void Raise(T data);

@@ -1,8 +1,12 @@
 ﻿using System;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
-using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor.SceneManagement;
+#endif
+
 
 namespace Modules.Technical.SceneLoader.Runtime
 {
@@ -15,10 +19,12 @@ namespace Modules.Technical.SceneLoader.Runtime
             public string sceneName;
         }
 
+        [Header("Scene event Data")]
+        [SerializeField] private string sceneName;
+        [SerializeField] internal string scenePath;
+        [SerializeField] internal string sceneGuid;
+
         private readonly LoadSceneData data = new();
-        public string sceneName;
-        public string scenePath;
-        public string sceneGuid;
         public bool Valid => !string.IsNullOrWhiteSpace(sceneGuid)
                              && !string.IsNullOrWhiteSpace(scenePath)
                              && !string.IsNullOrWhiteSpace(sceneName);
@@ -30,8 +36,15 @@ namespace Modules.Technical.SceneLoader.Runtime
             sceneName = newName;
             name = newName;
         }
-        
-        [Button] public void Raise()
+
+#if UNITY_EDITOR
+        [Button("Open Corresponding Scene", "Scene Functions")]
+        public void OpenScene()
+            => EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
+#endif
+
+        [Button("Raise Event", "Events Functions")]
+        public void Raise()
         {
             data.sceneName = sceneName;
             Raise(data);

@@ -1,9 +1,8 @@
-using System.Collections;
 using UnityEngine;
 
-namespace Modules.Common.Cake
+namespace Modules.Common.Cake.Runtime
 {
-    public class Cake : MonoBehaviour
+    public class CakeBehaviour : MonoBehaviour
     {
         [Header("References")]
         [SerializeField] private SpriteRenderer spriteRenderer;

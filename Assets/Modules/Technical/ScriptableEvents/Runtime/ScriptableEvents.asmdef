@@ -1,7 +1,10 @@
 {
-    "name": "Cake",
+    "name": "ScriptableEvents",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "ScriptUtils",
+        "ScriptableCollections"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

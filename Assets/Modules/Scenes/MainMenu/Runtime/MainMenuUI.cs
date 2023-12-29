@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.UI;
 

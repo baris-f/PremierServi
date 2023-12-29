@@ -6,7 +6,7 @@
         "GameConfig",
         "Controllers",
         "ScriptableField",
-        "ScriptableEvents.Runtime"
+        "ScriptableEvents"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

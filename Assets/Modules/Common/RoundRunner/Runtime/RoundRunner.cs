@@ -5,13 +5,13 @@ using Modules.Common.GameRunner.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
 using Modules.Common.Status;
-using Modules.Common.Cake;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Modules.Common.RoundRunner.Runtime
 {
@@ -37,8 +37,9 @@ namespace Modules.Common.RoundRunner.Runtime
         [Header("Assets")]
         [SerializeField] private Sprite[] cakeList; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
         
+        [FormerlySerializedAs("cake")]
         [Header("References")]
-        [SerializeField] private Cake.Cake cake; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
+        [SerializeField] private Cake.Runtime.CakeBehaviour cakeBehaviour; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
 
         private int cakeId;
         
@@ -61,7 +62,7 @@ namespace Modules.Common.RoundRunner.Runtime
                 UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
             cakeId = Random.Range(0, cakeList.Length);
-            cake.SetCake(cakeList[cakeId], cakeId);
+            cakeBehaviour.SetCake(cakeList[cakeId], cakeId);
             foreach (var human in config.Humans)
             {
                 if (human.playerId == -1 || human.playerId >= modeDescriptor.NbPlayers)

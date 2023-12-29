@@ -2,11 +2,11 @@
     "name": "ScriptUtils.Editor",
     "rootNamespace": "",
     "references": [
-        "ScriptUtils.Runtime",
+        "ScriptUtils",
         "ToolbarExtender.Editor",
         "ScriptUtils.Core",
         "ScriptableField",
-        "ScriptableEvents.Runtime"
+        "ScriptableEvents"
     ],
     "includePlatforms": [
         "Editor"

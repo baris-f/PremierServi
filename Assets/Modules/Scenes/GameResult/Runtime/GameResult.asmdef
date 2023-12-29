@@ -3,10 +3,10 @@
     "rootNamespace": "",
     "references": [
         "SceneLoader",
-        "ScriptableEvents.Runtime",
+        "ScriptableEvents",
         "GameConfig",
         "Unity.TextMeshPro",
-        "ScriptUtils.Runtime",
+        "ScriptUtils",
         "Unity.InputSystem"
     ],
     "includePlatforms": [],

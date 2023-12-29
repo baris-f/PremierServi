@@ -2,8 +2,8 @@
   "name": "CustomEvents",
   "rootNamespace": "",
   "references": [
-    "ScriptableEvents.Runtime",
-    "ScriptUtils.Runtime"
+    "ScriptableEvents",
+    "ScriptUtils"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
