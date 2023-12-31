@@ -1,34 +1,21 @@
 ﻿using System.Threading.Tasks;
 using Modules.Common.Controllers.Runtime;
+using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 
 namespace Modules.Common.Inputs.Runtime.IAs
 {
     public class RandomIa : BaseIa
     {
-        protected override async Task Think(PlayerController player)
+        protected override async Task Think()
         {
             while (State.Started)
             {
-                var rndAction = Random.Range(0, 4);
+                var rndAction = UtilsGenerator.RandomInEnum(new[] { ActionToPerform.None });
                 var rndTickDuration = Random.Range(1, 20);
-                switch (rndAction)
-                {
-                    case 0:
-                        player.StartWalking();
-                        break;
-                    case 1:
-                        player.StartRunning();
-                        break;
-                    case 2:
-                        player.Stop();
-                        break;
-                    case 3:
-                        player.StartTaunt();
-                        break;
-                }
-
-                // Il doit toujours y avoir au moins un WaitForOneTick() dans chaque loop pour avoid le spam
+                PerformAction(rndAction);
+                
+                Debug.Log("");
                 await WaitForTicks(rndTickDuration);
             }
         }

@@ -61,8 +61,8 @@ namespace Modules.Common.RoundRunner.Runtime
             var humanPlayerIds =
                 UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
-            cakeId = Random.Range(0, cakeList.Length);
-            cakeBehaviour.SetCake(cakeList[cakeId], cakeId);
+            // cakeId = Random.Range(0, cakeList.Length);
+            // cakeBehaviour.SetCake(cakeList[cakeId], cakeId);
             foreach (var human in config.Humans)
             {
                 if (human.playerId == -1 || human.playerId >= modeDescriptor.NbPlayers)
