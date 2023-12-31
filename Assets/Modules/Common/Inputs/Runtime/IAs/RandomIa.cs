@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Modules.Common.Controllers.Runtime;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 
@@ -7,15 +6,18 @@ namespace Modules.Common.Inputs.Runtime.IAs
 {
     public class RandomIa : BaseIa
     {
+        [Header("RandomIa Config")]
+        [SerializeField] private ActionToPerform[] allowedActions =
+            { ActionToPerform.Walk, ActionToPerform.Run, ActionToPerform.Stop };
+
         protected override async Task Think()
         {
-            while (State.Started)
+            while (Started)
             {
-                var rndAction = UtilsGenerator.RandomInEnum(new[] { ActionToPerform.None });
+                var rndAction = allowedActions.GetRandom();
                 var rndTickDuration = Random.Range(1, 20);
                 PerformAction(rndAction);
-                
-                Debug.Log("");
+
                 await WaitForTicks(rndTickDuration);
             }
         }

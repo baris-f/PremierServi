@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: RandomIa
   m_EditorClassIdentifier: 
   tickDelayInMs: 100
-  verbose: 1
+  verbose: 0
+  debug: 'paused : False started : False'
+  allowedActions: 010000000200000004000000

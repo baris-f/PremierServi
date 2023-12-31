@@ -32,7 +32,6 @@ namespace Modules.Common.Status
             for (int i = 0; i < numberOfShotLeft; i++)
             {
                 var shot = Instantiate(shotContainer, shotLeft.transform);
-                Debug.Log(shot.transform.GetChild(0).name);
                 shotLeftRefs[i] = shot.transform.GetChild(0).transform.GetComponent<Image>();
             }
         }
