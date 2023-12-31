@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Modules.Technical.ScriptableCollections.Runtime;
+using Modules.Technical.ScriptUtils.Runtime;
 using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 
@@ -10,6 +11,13 @@ namespace Modules.Common.Cake.Runtime
         [SerializeField] private List<Cake> selectedCakes;
         [SerializeField] private List<Cake> cakes = new();
         public override IEnumerable<Cake> Collection => cakes;
+
+        public List<Cake> CakesOfType(Cake.CakeType type) => cakes.FindAll(cake => cake.CompareType(type));
+
+        public Cake GetRandomCake(Cake.CakeType type = Cake.CakeType.All)
+        {
+            return CakesOfType(type).ToArray().GetRandom();
+        }
 
 #if UNITY_EDITOR
         [Button(header: "Cake Collection Functions", horizontal: true)]

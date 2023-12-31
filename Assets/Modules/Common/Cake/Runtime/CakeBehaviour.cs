@@ -6,15 +6,12 @@ namespace Modules.Common.Cake.Runtime
     {
         [Header("References")]
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private Sprite[] cakeList;
+        [SerializeField] private Cake cake;
     
-        [Header("Infos")]
-        [SerializeField] private int cakeId;
-    
-        public void SetCake(Sprite cakeSprite, int newCakeId)
+        public void SetCake(Cake newCake)
         {
-            spriteRenderer.sprite = cakeSprite;
-            cakeId = newCakeId;
+            cake = newCake;
+            spriteRenderer.sprite = cake.sprite;
         }
 
         // private IEnumerator ShiftShape() //pretty much useless but might be good for some menu or make videos / ads

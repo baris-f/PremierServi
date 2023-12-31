@@ -1,4 +1,5 @@
 ﻿using System;
+using Modules.Common.Cake.Runtime;
 
 namespace Modules.Technical.GameConfig.Runtime
 {
@@ -14,6 +15,7 @@ namespace Modules.Technical.GameConfig.Runtime
 
         public ModeDescriptor mode;
         public GameDifficulty difficulty;
+        public Cake cake;
         
         public Round(ModeDescriptor newMode, GameDifficulty newDiff)
         {

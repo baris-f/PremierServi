@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Modules.Common.Cake.Runtime;
 using UnityEngine.InputSystem;
 
 namespace Modules.Technical.GameConfig.Runtime
@@ -11,5 +13,6 @@ namespace Modules.Technical.GameConfig.Runtime
         public JoyConColors color;
         public int playerId = -1; // -1 || >nbPlayers = random id on game start, else use that id to set player
         public int score;
+        public List<Cake> eatenCakes = new();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Modules.Common.Cake.Runtime;
 using Modules.Common.Controllers.Runtime;
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Common.GameRunner.Runtime;
@@ -35,14 +36,12 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] private Transform humansContainer;
 
         [Header("Assets")]
-        [SerializeField] private Sprite[] cakeList; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
+        [SerializeField] private CakeCollection cakeList;
         
         [FormerlySerializedAs("cake")]
         [Header("References")]
         [SerializeField] private Cake.Runtime.CakeBehaviour cakeBehaviour; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
 
-        private int cakeId;
-        
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent gameStartEvent;
 
@@ -61,8 +60,7 @@ namespace Modules.Common.RoundRunner.Runtime
             var humanPlayerIds =
                 UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
-            cakeId = Random.Range(0, cakeList.Length);
-            cakeBehaviour.SetCake(cakeList[cakeId], cakeId);
+            //cakeBehaviour.SetCake(cakeList[cakeId], cakeId);
             foreach (var human in config.Humans)
             {
                 if (human.playerId == -1 || human.playerId >= modeDescriptor.NbPlayers)

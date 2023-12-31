@@ -5,6 +5,7 @@
     "Unity.InputSystem",
     "SceneLoader",
     "ScriptableEvents",
-    "CustomEvents"
+    "CustomEvents",
+    "Cake"
   ]
 }
