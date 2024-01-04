@@ -1589,7 +1589,7 @@ PrefabInstance:
     - target: {fileID: 7898153958609148277, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
       propertyPath: robotsComportment
       value: 
-      objectReference: {fileID: 11400000, guid: f64822eb0ed884246972e4ef2a315814, type: 2}
+      objectReference: {fileID: 11400000, guid: 6fd5b8e374794574191c6e9ba2b584d5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

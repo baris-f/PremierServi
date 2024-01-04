@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -23,6 +24,7 @@ namespace Modules.Technical.ScriptUtils.Runtime
         }
 
         public static T GetRandom<T>(this T[] array) => array[Random.Range(0, array.Length)];
+        public static T GetRandom<T>(this List<T> list) => list[Random.Range(0, list.Count)];
 
         /// <summary>
         /// Creates and returns a clone of any given scriptable object.

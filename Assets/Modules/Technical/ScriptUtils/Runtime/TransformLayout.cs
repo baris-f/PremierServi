@@ -55,7 +55,6 @@ namespace Modules.Technical.ScriptUtils.Runtime
                     ApplyPositions(start, -step);
                     break;
             }
-            Debug.Log(wantsToOverflow);
         }
 
         private void ApplyPositions(float start, float step)

@@ -9,17 +9,10 @@ namespace Modules.Common.Inputs.Runtime
     [Serializable]
     public class RobotInput
     {
-        public class GameState
-        {
-            public bool Started;
-            public bool Paused;
-        }
-
         private string name;
         private BaseIa ia;
         private PlayerController player;
         private ScriptableFloat gameSpeed;
-        private readonly GameState state = new();
 
         public RobotInput(string name, BaseIa ia, PlayerController player, ScriptableFloat gameSpeed)
         {
@@ -31,15 +24,9 @@ namespace Modules.Common.Inputs.Runtime
 
         public void StartGame()
         {
-            state.Started = true;
-            gameSpeed.OnValueChanged += speed =>
-            {
-                state.Paused = speed == 0;
-                state.Started = speed < 0;
-            };
             try
             {
-                ia.StartThinking(state, player);
+                ia.StartThinking(gameSpeed, player);
             }
             catch (Exception e)
             {

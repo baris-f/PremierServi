@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b91680b7943473f9528079ec0578988, type: 3}
   m_Name: RandomIa
   m_EditorClassIdentifier: 
-  tickDelay: 100
+  tickDelayInMs: 100
+  verbose: 0
+  debug: 'paused : False started : False'
+  allowedActions: 010000000200000004000000
