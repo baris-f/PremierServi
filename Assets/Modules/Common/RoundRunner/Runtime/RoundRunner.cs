@@ -35,12 +35,8 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] private Transform statusContainer;
         [SerializeField] private Transform humansContainer;
 
-        [Header("Assets")]
-        [SerializeField] private CakeCollection cakeList;
-        
-        [FormerlySerializedAs("cake")]
         [Header("References")]
-        [SerializeField] private Cake.Runtime.CakeBehaviour cakeBehaviour; //il y a surement moyen de faire m,ieux notament garder leur ID et faire une liste "externe"
+        [SerializeField] private Cake.Runtime.CakeBehaviour cakeBehaviour;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent gameStartEvent;
@@ -60,7 +56,6 @@ namespace Modules.Common.RoundRunner.Runtime
             var humanPlayerIds =
                 UtilsGenerator.GenerateRandomNumbersInRange(0, modeDescriptor.NbPlayers, config.Humans.Count);
 
-            //cakeBehaviour.SetCake(cakeList[cakeId], cakeId);
             foreach (var human in config.Humans)
             {
                 if (human.playerId == -1 || human.playerId >= modeDescriptor.NbPlayers)
@@ -110,7 +105,10 @@ namespace Modules.Common.RoundRunner.Runtime
         {
             if (data is not PlayerEvent.PlayerData playerData) return;
             gameSpeed.Value = -1;
-            if (playerData.type == PlayerEvent.Type.Human) config.AddPoints(playerData.id, 1);
+            if (playerData.type == PlayerEvent.Type.Human)
+            {
+                config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
+            }
             await results.Open($"{playerData.type} {playerData.id} has won", true);
             config.GoNextRound();
             config.LoadRound();

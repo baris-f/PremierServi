@@ -21,11 +21,8 @@ MonoBehaviour:
       bodyColor: {r: 1, g: 0.6862745, b: 0.6862745, a: 1}
       buttonColor: {r: 0.21568628, g: 0.1764706, b: 0.1764706, a: 1}
     playerId: 6
-    score: 0
+    eatenCakes: []
   rounds:
   - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
     difficulty: 1
-  - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
-    difficulty: 1
-  - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
-    difficulty: 1
+    cake: {fileID: 0}

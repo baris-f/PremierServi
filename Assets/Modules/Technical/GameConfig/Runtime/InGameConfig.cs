@@ -35,10 +35,11 @@ namespace Modules.Technical.GameConfig.Runtime
         }
 
         [Button] public void GoNextRound() => curRound++;
+        
+        public void SortHumansByScore() => humans.Sort((a, b) => a.eatenCakes.Count.CompareTo(b.eatenCakes.Count));
 
-        public void AddPoints(int id, int amount) => humans.Find(h => h.playerId == id).score += amount;
-        public void SortHumansByScore() => humans.Sort((a, b) => a.score.CompareTo(b.score));
-
+        public Human GetHumanById(int id) => humans.Find(h => h.playerId == id);
+        
         public void SetHumans(Human[] players)
         {
             curRound = 0;

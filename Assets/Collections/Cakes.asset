@@ -15,6 +15,39 @@ MonoBehaviour:
   selectedCakes: []
   cakes:
   - {fileID: 3519990422939857840}
+  - {fileID: 123122850878390955}
+  - {fileID: 2827762539572629765}
+  - {fileID: 6221414595802616340}
+--- !u!114 &123122850878390955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162a230cdf3f4349bafe1a26ab4ebca4, type: 3}
+  m_Name: Cake 2
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1300206010, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
+  displayName: Cake 2
+  type: 3
+--- !u!114 &2827762539572629765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162a230cdf3f4349bafe1a26ab4ebca4, type: 3}
+  m_Name: Cake 3
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1015460980, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
+  displayName: Cake 3
+  type: 3
 --- !u!114 &3519990422939857840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +60,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162a230cdf3f4349bafe1a26ab4ebca4, type: 3}
   m_Name: Cake1
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1586487862, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
+  sprite: {fileID: -701352293, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
   displayName: Cake1
   type: 0
+--- !u!114 &6221414595802616340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162a230cdf3f4349bafe1a26ab4ebca4, type: 3}
+  m_Name: Cake 4
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1122878592, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
+  displayName: Cake 4
+  type: 3

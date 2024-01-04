@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331bcd0a13e548a89ea759951c5b3576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0.4
-  runSpeed: 0.7
+  walkSpeed: 1
+  runSpeed: 8
   playerId: 0
   sprite: {fileID: 683600909151089515}
   animator: {fileID: 8360375900399556194}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Modules.Common.Cake.Runtime
@@ -7,10 +8,19 @@ namespace Modules.Common.Cake.Runtime
         [Header("References")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Cake cake;
-    
+        [SerializeField] private CakeCollection cakeList;
+        
+        public Cake GetCake() => cake;
+
         public void SetCake(Cake newCake)
         {
             cake = newCake;
+            spriteRenderer.sprite = cake.sprite;
+        }
+
+        public void Start()
+        {
+            SetCake(cakeList.GetRandomCake());
             spriteRenderer.sprite = cake.sprite;
         }
 

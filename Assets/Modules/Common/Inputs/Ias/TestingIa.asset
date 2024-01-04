@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickDelayInMs: 1000
   verbose: 1
-  sequence: 02000000
+  sequence: 0100000004000000
   actionTime: 5
   loop: 1

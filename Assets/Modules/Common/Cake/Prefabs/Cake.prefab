@@ -100,26 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1601411492903600125}
-  cakeList:
-  - {fileID: 1586487862, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -701352293, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 1300206010, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 1015460980, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 1122878592, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -1692940408, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -1055100252, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 1635826080, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 1103039952, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -945558450, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -2129056935, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -2112167877, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -1707904805, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 1348747708, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 1548035875, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: 351815096, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -2108458405, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  - {fileID: -675587476, guid: a29c118bf32b03c4286f91bda6adc418, type: 3}
-  cakeId: 0
+  cake: {fileID: 0}
+  cakeList: {fileID: 11400000, guid: a6c1c9efa776baa46ad389f2e50078eb, type: 2}
 --- !u!1 &6670002353223883615
 GameObject:
   m_ObjectHideFlags: 0

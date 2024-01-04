@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Classic
   m_EditorClassIdentifier: 
   sceneEvent: {fileID: -7235040578451068210, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
-  nbPlayers: 2
-  nbBullets: 999
+  nbPlayers: 8
+  nbBullets: 2
