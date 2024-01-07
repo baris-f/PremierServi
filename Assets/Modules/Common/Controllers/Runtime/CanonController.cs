@@ -19,6 +19,7 @@ namespace Modules.Common.Controllers.Runtime
         [SerializeField] private Projectile projectile;
         [SerializeField] private Transform projectileStart;
         [SerializeField] private LineRenderer line;
+        [SerializeField] private AudioSource audioSource;
         
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
@@ -84,6 +85,7 @@ namespace Modules.Common.Controllers.Runtime
         public void Fire()
         {
             if (gameSpeed.Value <= 0 || disabled) return;
+            audioSource.Play();
             playerFire.Raise(playerId, PlayerEvent.Type.Human);
             curAmmo--;
             var obj = Instantiate(projectile);

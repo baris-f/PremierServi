@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3256438291868001488}
   - component: {fileID: 5540609058838008082}
+  - component: {fileID: 1383267232037078092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   - {fileID: 3604484255382612907}
   - {fileID: 189994086150093190}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5540609058838008082
 MonoBehaviour:
@@ -52,11 +53,110 @@ MonoBehaviour:
   playerId: 0
   sprite: {fileID: 683600909151089515}
   animator: {fileID: 8360375900399556194}
+  audioSource: {fileID: 1383267232037078092}
+  walkClip: {fileID: 8300000, guid: 27a14b18a7f876244b68e69028ad348a, type: 3}
+  runClip: {fileID: 8300000, guid: 3f4e1ac4ad3b01d46aed6c2935b52f21, type: 3}
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   goal: {fileID: 11400000, guid: 2b3bec6eeebc9554fa82cf92f5099c6c, type: 2}
   playerWin: {fileID: 11400000, guid: 954ad7bfee57caa4c9586cf15f6e48da, type: 2}
   playerDeath: {fileID: 11400000, guid: 02c2942c2dc072346a648dae0ca01ad2, type: 2}
   currentStatus: 0
+--- !u!82 &1383267232037078092
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952473586864672032}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7716948604233658518, guid: 510eb7722bcaf414eaafc2bdfbd6dab3, type: 2}
+  m_audioClip: {fileID: 8300000, guid: e13c10b486ffa154894d97ef131862a4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3963575115525082933
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 3963575115525082933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3256438291868001488}
@@ -152,7 +252,7 @@ Animator:
   m_GameObject: {fileID: 3963575115525082933}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d3ba22af794e1745a402c0ec251a79f, type: 2}
+  m_Controller: {fileID: 9100000, guid: e2b93fd5957a5d44ca52ce55b4d39fd0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

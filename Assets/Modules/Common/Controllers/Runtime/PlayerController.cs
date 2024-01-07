@@ -29,7 +29,13 @@ namespace Modules.Common.Controllers.Runtime
         [Header("References")]
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private Animator animator;
+        [SerializeField] private AudioSource audioSource;
 
+        
+        [Header("Assets")]
+        [SerializeField] private AudioClip walkClip;
+        [SerializeField] private AudioClip runClip;
+        
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
         [SerializeField] private ScriptableFloat goal;
@@ -83,12 +89,16 @@ namespace Modules.Common.Controllers.Runtime
 
         public void StartWalking()
         {
+            audioSource.clip = walkClip;
+            audioSource.Play();
             animator.SetBool(Walking, true);
             currentStatus = Status.Walking;
         }
 
         public void StartRunning()
         {
+            audioSource.clip = runClip;
+            audioSource.Play();
             animator.SetBool(Running, true);
             currentStatus = Status.Running;
         }
@@ -101,6 +111,7 @@ namespace Modules.Common.Controllers.Runtime
         
         public void Stop()
         {
+            audioSource.Stop();
             animator.SetBool(Walking, false);
             animator.SetBool(Running, false);
             animator.SetBool(Taunting, false);
