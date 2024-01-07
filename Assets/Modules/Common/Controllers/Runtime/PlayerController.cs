@@ -3,6 +3,7 @@ using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 // ReSharper disable All
+//commentaire inutile pr pouvoir push psk je comprends rien a git rider
 
 namespace Modules.Common.Controllers.Runtime
 {
