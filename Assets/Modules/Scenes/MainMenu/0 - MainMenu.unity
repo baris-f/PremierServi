@@ -1898,7 +1898,7 @@ MonoBehaviour:
       bodyColor: {r: 0, g: 0, b: 0, a: 0}
       buttonColor: {r: 0, g: 0, b: 0, a: 0}
     playerId: -1
-    score: 0
+    eatenCakes: []
   - deviceName: 
     color:
       bodyHex: 
@@ -1906,7 +1906,7 @@ MonoBehaviour:
       bodyColor: {r: 0, g: 0, b: 0, a: 0}
       buttonColor: {r: 0, g: 0, b: 0, a: 0}
     playerId: -1
-    score: 0
+    eatenCakes: []
   - deviceName: 
     color:
       bodyHex: 
@@ -1914,7 +1914,7 @@ MonoBehaviour:
       bodyColor: {r: 0, g: 0, b: 0, a: 0}
       buttonColor: {r: 0, g: 0, b: 0, a: 0}
     playerId: -1
-    score: 0
+    eatenCakes: []
   - deviceName: 
     color:
       bodyHex: 
@@ -1922,7 +1922,7 @@ MonoBehaviour:
       bodyColor: {r: 0, g: 0, b: 0, a: 0}
       buttonColor: {r: 0, g: 0, b: 0, a: 0}
     playerId: -1
-    score: 0
+    eatenCakes: []
 --- !u!1 &1217131805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,6 +2519,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1633549754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4318536557718870658, guid: b4c0677527af5f6459ce4a48aeea050e, type: 3}
+  m_PrefabInstance: {fileID: 7131494898039898553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1654586483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,7 +3681,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4318536557718870658, guid: b4c0677527af5f6459ce4a48aeea050e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7131494898039898559}
   m_SourcePrefab: {fileID: 100100000, guid: b4c0677527af5f6459ce4a48aeea050e, type: 3}
 --- !u!224 &7131494898039898554 stripped
 RectTransform:
@@ -3688,12 +3696,41 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4393079159803890668, guid: b4c0677527af5f6459ce4a48aeea050e, type: 3}
   m_PrefabInstance: {fileID: 7131494898039898553}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1633549754}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7131494898039898559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633549754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 3c260eaf2a2db9e46b365da261e599b5, type: 2}
+          m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &7664893239066278515
 PrefabInstance:
   m_ObjectHideFlags: 0
