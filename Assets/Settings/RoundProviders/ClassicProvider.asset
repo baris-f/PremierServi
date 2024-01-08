@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ClassicProvider
   m_EditorClassIdentifier: 
   modeName: Classic
-  modeToProvide: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
+  modeToProvide: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
