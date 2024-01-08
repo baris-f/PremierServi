@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 1
-  runSpeed: 8
+  runSpeed: 2
   playerId: 0
   sprite: {fileID: 683600909151089515}
   animator: {fileID: 8360375900399556194}

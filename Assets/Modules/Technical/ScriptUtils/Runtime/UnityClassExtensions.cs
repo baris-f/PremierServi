@@ -29,7 +29,7 @@ namespace Modules.Technical.ScriptUtils.Runtime
         /// <summary>
         /// Creates and returns a clone of any given scriptable object.
         /// </summary>
-        public static T Clone<T>(this T scriptableObject) where T : ScriptableObject
+        public static T Clone<T>(this T scriptableObject, string newName = "") where T : ScriptableObject
         {
             if (scriptableObject == null)
             {
@@ -38,7 +38,8 @@ namespace Modules.Technical.ScriptUtils.Runtime
             }
 
             var instance = Object.Instantiate(scriptableObject);
-            instance.name = scriptableObject.name; // remove (Clone) from name
+            instance.name =
+                string.IsNullOrWhiteSpace(newName) ? scriptableObject.name : newName; // remove (Clone) from name
             return instance;
         }
     }

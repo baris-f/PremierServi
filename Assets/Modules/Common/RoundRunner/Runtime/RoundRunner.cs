@@ -36,7 +36,7 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] private Transform humansContainer;
 
         [Header("References")]
-        [SerializeField] private Cake.Runtime.CakeBehaviour cakeBehaviour;
+        [SerializeField] private CakeBehaviour cakeBehaviour;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent gameStartEvent;

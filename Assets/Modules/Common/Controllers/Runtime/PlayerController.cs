@@ -1,9 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
-// ReSharper disable All
-//commentaire inutile pr pouvoir push psk je comprends rien a git rider
 
 namespace Modules.Common.Controllers.Runtime
 {
@@ -13,6 +12,7 @@ namespace Modules.Common.Controllers.Runtime
         private static readonly int Running = Animator.StringToHash("Running");
         private static readonly int Taunting = Animator.StringToHash("Taunting");
         private static readonly int Death = Animator.StringToHash("Death");
+        private static readonly int Win = Animator.StringToHash("Win");
 
         [Serializable] private enum Status
         {
@@ -32,11 +32,10 @@ namespace Modules.Common.Controllers.Runtime
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSource audioSource;
 
-        
         [Header("Assets")]
         [SerializeField] private AudioClip walkClip;
         [SerializeField] private AudioClip runClip;
-        
+
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
         [SerializeField] private ScriptableFloat goal;
@@ -47,10 +46,23 @@ namespace Modules.Common.Controllers.Runtime
 
         [Header("Debug")]
         [SerializeField] private Status currentStatus;
+        [SerializeField] private List<Status> statusHistory = new();
 
         private Transform cachedTransform;
         private bool disabled;
         private PlayerEvent.Type playerType;
+        private Status CurrentStatus
+        {
+            get => currentStatus;
+            set
+            {
+                currentStatus = value;
+                animator.SetBool(Walking, value == Status.Walking);
+                animator.SetBool(Running, value == Status.Running);
+                animator.SetBool(Taunting, value == Status.Taunting);
+                statusHistory.Add(value);
+            }
+        }
 
         public void Init(PlayerEvent.Type type, int newPlayerId, int typeId)
         {
@@ -72,11 +84,12 @@ namespace Modules.Common.Controllers.Runtime
             if (transform.position.x > goal.Value)
             {
                 playerWin.Raise(playerId, playerType);
+                // animator.SetTrigger(Win); todo faire l'animation
                 DisablePlayer();
             }
 
-            if (currentStatus is Status.Stopped or Status.Taunting) return;
-            var speed = currentStatus == Status.Running ? runSpeed : walkSpeed;
+            if (CurrentStatus is Status.Stopped or Status.Taunting) return;
+            var speed = CurrentStatus == Status.Running ? runSpeed : walkSpeed;
             cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * cachedTransform.right;
         }
 
@@ -85,6 +98,7 @@ namespace Modules.Common.Controllers.Runtime
             if (!other.transform.CompareTag("Projectile")) return;
             Destroy(other.gameObject); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
             playerDeath.Raise(playerId, playerType);
+            animator.SetTrigger(Death);
             DisablePlayer();
         }
 
@@ -92,37 +106,30 @@ namespace Modules.Common.Controllers.Runtime
         {
             audioSource.clip = walkClip;
             audioSource.Play();
-            animator.SetBool(Walking, true);
-            currentStatus = Status.Walking;
+            CurrentStatus = Status.Walking;
         }
 
         public void StartRunning()
         {
             audioSource.clip = runClip;
             audioSource.Play();
-            animator.SetBool(Running, true);
-            currentStatus = Status.Running;
+            CurrentStatus = Status.Running;
         }
 
         public void StartTaunt()
         {
-            animator.SetBool(Taunting, true);
-            currentStatus = Status.Taunting;
+            CurrentStatus = Status.Taunting;
         }
-        
+
         public void Stop()
         {
             audioSource.Stop();
-            animator.SetBool(Walking, false);
-            animator.SetBool(Running, false);
-            animator.SetBool(Taunting, false);
-            currentStatus = Status.Stopped;
+            CurrentStatus = Status.Stopped;
         }
 
         private void DisablePlayer()
         {
             Stop();
-            animator.SetTrigger(Death);
             disabled = true;
         }
     }

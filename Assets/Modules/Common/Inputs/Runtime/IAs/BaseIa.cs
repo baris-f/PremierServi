@@ -23,7 +23,6 @@ namespace Modules.Common.Inputs.Runtime.IAs
 
         private ScriptableFloat gameSpeed;
         private PlayerController playerController;
-        private Task task;
 
         protected bool Paused => gameSpeed.Value == 0;
         protected bool Started => gameSpeed.Value >= 0;
@@ -36,8 +35,8 @@ namespace Modules.Common.Inputs.Runtime.IAs
             playerController = newPlayer;
             try
             {
-                task = Think();
-                await task;
+                await Think();
+                playerController.Stop();
             }
             catch (Exception e)
             {

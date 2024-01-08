@@ -26,7 +26,8 @@ namespace Modules.Technical.GameConfig.Runtime
             Round.GameDifficulty difficulty)
             => rounds = provider.GenerateRounds(length, difficulty);
 
-        [Button] public void LoadRound()
+        [Button(header: "Rounds Functions", horizontal: true)]
+        public void LoadRound()
         {
             if (curRound >= rounds.Count)
                 endOfGameScene.Raise();
@@ -34,12 +35,12 @@ namespace Modules.Technical.GameConfig.Runtime
                 CurrentRound.mode.LoadMode();
         }
 
-        [Button] public void GoNextRound() => curRound++;
-        
+        [Button(horizontal: true)] public void GoNextRound() => curRound++;
+
         public void SortHumansByScore() => humans.Sort((a, b) => a.eatenCakes.Count.CompareTo(b.eatenCakes.Count));
 
         public Human GetHumanById(int id) => humans.Find(h => h.playerId == id);
-        
+
         public void SetHumans(Human[] players)
         {
             curRound = 0;
@@ -48,5 +49,8 @@ namespace Modules.Technical.GameConfig.Runtime
                 if (!string.IsNullOrWhiteSpace(player.deviceName))
                     humans.Add(player);
         }
+
+        // fix nul
+        protected InGameConfig() => OnExitEditMode += () => curRound = 0;
     }
 }

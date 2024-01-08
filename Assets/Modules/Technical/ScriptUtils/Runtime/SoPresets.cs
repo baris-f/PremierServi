@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 #if UNITY_EDITOR
 using Modules.Technical.ScriptUtils.Core;
@@ -18,20 +19,20 @@ namespace Modules.Technical.ScriptUtils.Runtime
 
         protected SoPresets()
         {
-            OnEnterPlayMode += Apply;
-            OnExitPlayMode += Revert;
+            OnEnterPlayMode += Save;
+            OnExitPlayMode += LoadSaved;
         }
 
-        [Button(header: "Runtime Scriptable Functions")]
-        private void Apply()
+        [Button(header: "Scriptable Presets functions", horizontal: true)]
+        private void Save()
         {
             if (this == null) return;
             Debug.Log($"Saved data for Scriptable {name}");
             preset1 = this.Clone();
         }
 
-        [Button]
-        private void Revert()
+        [Button(horizontal: true)]
+        private void LoadSaved()
         {
             if (preset1 == null)
             {
