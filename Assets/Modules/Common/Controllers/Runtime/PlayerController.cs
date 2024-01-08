@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Modules.Common.CustomEvents.Runtime;
+using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 
@@ -23,9 +24,9 @@ namespace Modules.Common.Controllers.Runtime
         }
 
         [Header("Settings")]
+        [SerializeField] private int playerId;
         [SerializeField] private float walkSpeed;
         [SerializeField] private float runSpeed;
-        [SerializeField] private int playerId;
 
         [Header("References")]
         [SerializeField] private SpriteRenderer sprite;
@@ -64,7 +65,7 @@ namespace Modules.Common.Controllers.Runtime
             }
         }
 
-        public void Init(PlayerEvent.Type type, int newPlayerId, int typeId)
+        public void Init(PlayerEvent.Type type, int newPlayerId, int typeId, float newWalkSpeed, float newRunSpeed)
         {
             playerId = newPlayerId;
             playerType = type;
@@ -74,6 +75,8 @@ namespace Modules.Common.Controllers.Runtime
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
             name = $"Player {playerId} - {typeName} {typeId}";
+            walkSpeed = newWalkSpeed;
+            runSpeed = newRunSpeed;
         }
 
         private void Start() => cachedTransform = transform;

@@ -70,14 +70,16 @@ namespace Modules.Common.RoundRunner.Runtime
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
-                    player.Init(PlayerEvent.Type.Robot, playerId, robotCount);
+                    player.Init(PlayerEvent.Type.Robot, playerId, robotCount, modeDescriptor.WalkSpeed,
+                        modeDescriptor.RunSpeed);
                     var robotName = $"Robot {robotCount} (player {playerId})";
                     robots.Add(new RobotInput(robotName, robotsComportment, player, gameSpeed));
                     robotCount++;
                 }
                 else
                 {
-                    player.Init(PlayerEvent.Type.Human, playerId, humanCount);
+                    player.Init(PlayerEvent.Type.Human, playerId, humanCount, modeDescriptor.WalkSpeed,
+                        modeDescriptor.RunSpeed);
                     var status = Instantiate(statusPrefab, statusContainer.transform);
                     status.Initialize(human.playerId, human.color, modeDescriptor.NbBullets);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
@@ -109,6 +111,7 @@ namespace Modules.Common.RoundRunner.Runtime
             {
                 config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
             }
+
             await results.Open($"{playerData.type} {playerData.id} has won", true);
             config.GoNextRound();
             config.LoadRound();

@@ -6,6 +6,7 @@
     "SceneLoader",
     "ScriptableEvents",
     "CustomEvents",
-    "Cake"
+    "Cake",
+    "ScriptableCollections"
   ]
 }

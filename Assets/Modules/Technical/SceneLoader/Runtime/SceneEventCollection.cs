@@ -15,13 +15,16 @@ namespace Modules.Technical.SceneLoader.Runtime
     {
         [Header("Debug")]
         [SerializeField] private List<LoadSceneEvent> notInBuildSettings = new();
-
         [SerializeField] private List<LoadSceneEvent> scenes = new();
 
         public override IEnumerable<LoadSceneEvent> Collection => scenes;
+        
+        protected override void AddToCollection(LoadSceneEvent obj) => scenes.Add(obj);
+        protected override void RemoveFromCollection(LoadSceneEvent obj) => scenes.Remove(obj);
 
 #if UNITY_EDITOR
-        [Button(header:"Scene Collection Functions")] public void ScanScenes()
+        [Button(header: "Scene Collection Functions")]
+        public void ScanScenes()
         {
             var scenesGuids = AssetDatabase.FindAssets("t:Scene", new[] { "Assets" }).ToList();
             foreach (var sceneGuid in scenesGuids)
@@ -47,9 +50,6 @@ namespace Modules.Technical.SceneLoader.Runtime
             });
             Cleanup();
         }
-
-        protected override void AddToCollection(LoadSceneEvent obj) => scenes.Add(obj);
-        protected override void RemoveFromCollection(LoadSceneEvent obj) => scenes.Remove(obj);
 #endif
     }
 }

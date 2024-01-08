@@ -9,9 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54110c6919f9434abf32600a1aaea0a2, type: 3}
+  m_Name: ModesCollection
+  m_EditorClassIdentifier: 
+  selectedModes: []
+  modes:
+  - {fileID: 4575295985344050323}
+--- !u!114 &4575295985344050323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc0153f1bacb4ba5bcaf7a7307ba4a92, type: 3}
   m_Name: Classic
   m_EditorClassIdentifier: 
+  displayName: Classic
   sceneEvent: {fileID: -7235040578451068210, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   nbPlayers: 8
   nbBullets: 2
+  walkSpeed: 1
+  runSpeed: 3

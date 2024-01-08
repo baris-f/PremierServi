@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0153f1bacb4ba5bcaf7a7307ba4a92, type: 3}
-  m_Name: Squid
+  m_Script: {fileID: 11500000, guid: 414066cf68f14aa3803cc1abacf24454, type: 3}
+  m_Name: PlayUiSound
   m_EditorClassIdentifier: 
-  sceneEvent: {fileID: -3227548623092683279, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
-  nbPlayers: 8
-  nbBullets: 1
+  listeners: []
+  data:
+    Timestamp: 0
+    EventName: 
+    output: 3
+    oneShot: 0
+    clip: {fileID: 0}
