@@ -8,14 +8,15 @@ namespace Modules.Technical.ScriptUtils.Core
 {
     public static class ReflectionUtility
     {
-        public static IEnumerable<FieldInfo> GetAllFields(object target, BindingFlags flags,Func<FieldInfo, bool> predicate)
+        public static IEnumerable<FieldInfo> GetAllFields(object target, BindingFlags flags,
+            Func<FieldInfo, bool> predicate)
         {
             if (target == null)
             {
                 Debug.LogError("The target object is null. Check for missing scripts.");
                 yield break;
             }
-            
+
             var types = GetSelfAndBaseTypes(target);
             foreach (var type in types)
             {
@@ -26,7 +27,8 @@ namespace Modules.Technical.ScriptUtils.Core
             }
         }
 
-        public static IEnumerable<MethodInfo> GetAllMethods(object target, BindingFlags flags,Func<MethodInfo, bool> predicate)
+        public static IEnumerable<MethodInfo> GetAllMethods(object target, BindingFlags flags,
+            Func<MethodInfo, bool> predicate)
         {
             if (target == null)
             {
