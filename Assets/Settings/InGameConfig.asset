@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2427fb1033144818a8451e85f48f2808, type: 3}
   m_Name: InGameConfig
   m_EditorClassIdentifier: 
+  preset1: {fileID: 0}
   endOfGameScene: {fileID: -1069727083311247290, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   humans:
   - deviceName: Keyboard
@@ -20,9 +21,17 @@ MonoBehaviour:
       buttonHex: '#372D2D'
       bodyColor: {r: 1, g: 0.6862745, b: 0.6862745, a: 1}
       buttonColor: {r: 0.21568628, g: 0.1764706, b: 0.1764706, a: 1}
-    playerId: 0
+    playerId: 6
     eatenCakes: []
   rounds:
-  - mode: {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
+  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
     difficulty: 1
     cake: {fileID: 0}
+  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+    difficulty: 1
+    cake: {fileID: 0}
+  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+    difficulty: 1
+    cake: {fileID: 0}
+  curRound: 0
+  test: 

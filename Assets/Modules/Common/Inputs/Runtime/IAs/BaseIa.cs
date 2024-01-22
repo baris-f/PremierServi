@@ -36,7 +36,8 @@ namespace Modules.Common.Inputs.Runtime.IAs
             try
             {
                 await Think();
-                playerController.Stop();
+                if (Application.isPlaying)
+                    playerController.Stop();
             }
             catch (Exception e)
             {

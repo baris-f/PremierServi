@@ -17,7 +17,8 @@ namespace Modules.Technical.GameConfig.Runtime
         [SerializeField, SaveInPreset] private List<Human> humans;
         [SerializeField, SaveInPreset] private List<Round> rounds;
 
-        private int curRound;
+        [SerializeField, ForceReset(0)] private int curRound;
+        [SerializeField, ForceReset("")] private string test;
         private Round CurrentRound => rounds[curRound];
         public ModeDescriptor CurrentModeDescriptor => CurrentRound.mode;
         public List<Human> Humans => humans;
@@ -52,6 +53,6 @@ namespace Modules.Technical.GameConfig.Runtime
         }
 
         // fix nul
-        protected InGameConfig() => OnExitEditMode += () => curRound = 0;
+        // protected InGameConfig() => OnExitEditMode += () => curRound = 0;
     }
 }
