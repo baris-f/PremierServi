@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9151648807499871067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 2.0.4 - AI + controle
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 2.0.4 - AI + controle
+  scenePath: Assets/Modules/Scenes/2.0.4 - AI + controle.unity
+  sceneGuid: 332ebfbaf8aa303459bf0818b2d4620b
+--- !u!114 &-8041266394751828592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 1.1 - Static
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 1.1 - Static
+  scenePath: Assets/Modules/Scenes/Tutorial/1.1 - Static.unity
+  sceneGuid: c03441bc7fcd38f45a31dcb0da79cc9d
 --- !u!114 &-7699853818479077509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,22 +64,6 @@ MonoBehaviour:
   sceneName: 2.0.1 - Basic
   scenePath: Assets/Modules/Scenes/2.0.1 - Basic.unity
   sceneGuid: 4aa9e93f54c74e340abf3133d2026baf
---- !u!114 &-5379199914178505613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 1.0 - Tuto
-  m_EditorClassIdentifier: 
-  listeners: []
-  sceneName: 1.0 - Tuto
-  scenePath: Assets/Modules/Scenes/Tutorial/1.0 - Tuto.unity
-  sceneGuid: 47ba43008b3b0ce49afc65846e0c1938
 --- !u!114 &-5024186464015360529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,21 +124,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9dbb28f4b043c2a459b1aa888fda26, type: 3}
   m_Name: Scenes Events
   m_EditorClassIdentifier: 
-  path: Assets/Collections/SceneEventCollection.asset
   notInBuildSettings:
-  - {fileID: 5734078645614088607}
   - {fileID: 3255531457372891341}
   - {fileID: -5024186464015360529}
+  - {fileID: -9151648807499871067}
+  - {fileID: 6011089783954874177}
+  - {fileID: -8041266394751828592}
   scenes:
   - {fileID: 7301053323043275154}
   - {fileID: -7235040578451068210}
-  - {fileID: 5734078645614088607}
   - {fileID: 3255531457372891341}
   - {fileID: -7699853818479077509}
   - {fileID: -3227548623092683279}
   - {fileID: -1069727083311247290}
   - {fileID: -5024186464015360529}
-  - {fileID: -5379199914178505613}
+  - {fileID: -9151648807499871067}
+  - {fileID: 6011089783954874177}
+  - {fileID: -8041266394751828592}
+  - {fileID: 8532516424997601736}
 --- !u!114 &3255531457372891341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +158,7 @@ MonoBehaviour:
   sceneName: 2.0.3 - Cake
   scenePath: Assets/Modules/Scenes/2.0.3 - Cake.unity
   sceneGuid: e8bf0da3e9aff324ba7f92a702415142
---- !u!114 &5734078645614088607
+--- !u!114 &6011089783954874177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,12 +168,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 2.0.2 - Canon
+  m_Name: 2.0.5 - Frog and sound
   m_EditorClassIdentifier: 
   listeners: []
-  sceneName: 2.0.2 - Canon
-  scenePath: Assets/Modules/Scenes/2.0.2 - Canon.unity
-  sceneGuid: 99edf19d5e5fb564e9a207fa8d9f39bd
+  sceneName: 2.0.5 - Frog and sound
+  scenePath: Assets/Modules/Scenes/2.0.5 - Frog and sound.unity
+  sceneGuid: 410643820c71bdf4c81546269d734e7d
 --- !u!114 &7301053323043275154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +190,19 @@ MonoBehaviour:
   sceneName: 2.0 - Basic
   scenePath: Assets/Modules/Scenes/2.0 - Basic.unity
   sceneGuid: 393661beed5bd754489127c6388d2707
+--- !u!114 &8532516424997601736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 1.0 - Tuto
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 1.0 - Tuto
+  scenePath: Assets/Modules/Scenes/Tutorial/1.0 - Tuto.unity
+  sceneGuid: bf9d00d4deaa0614e91dd4f7bef42416
