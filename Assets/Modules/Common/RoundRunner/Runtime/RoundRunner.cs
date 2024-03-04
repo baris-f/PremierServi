@@ -105,13 +105,9 @@ namespace Modules.Common.RoundRunner.Runtime
 
         public async void OnPlayerWin(MinimalData data)
         {
-            if (data is not PlayerEvent.PlayerData playerData) return;
+            if (data is not PlayerEvent.PlayerData playerData || playerData.type == PlayerEvent.Type.Robot) return;
             gameSpeed.Value = -1;
-            if (playerData.type == PlayerEvent.Type.Human)
-            {
-                config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
-            }
-
+            config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
             await results.Open($"{playerData.type} {playerData.id} has won", true);
             config.GoNextRound();
             config.LoadRound();
