@@ -108,7 +108,7 @@ namespace Modules.Common.RoundRunner.Runtime
             if (data is not PlayerEvent.PlayerData playerData || playerData.type == PlayerEvent.Type.Robot) return;
             gameSpeed.Value = -1;
             config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
-            await results.Open($"{playerData.type} {playerData.id} has won", true);
+            await results.Open($"{playerData.type} {playerData.id} ate the cake !", true);
             config.GoNextRound();
             config.LoadRound();
         }
