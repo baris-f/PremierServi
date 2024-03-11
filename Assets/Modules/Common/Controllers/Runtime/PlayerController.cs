@@ -13,6 +13,7 @@ namespace Modules.Common.Controllers.Runtime
         private static readonly int Taunting = Animator.StringToHash("Taunting");
         private static readonly int Death = Animator.StringToHash("Death");
         private static readonly int Win = Animator.StringToHash("Win");
+        private static readonly int Paused = Animator.StringToHash("Paused");
 
         [Serializable] private enum Status
         {
@@ -76,9 +77,12 @@ namespace Modules.Common.Controllers.Runtime
             name = $"Player {playerId} - {typeName} {typeId}";
             walkSpeed = newWalkSpeed;
             runSpeed = newRunSpeed;
+            gameSpeed.OnValueChanged += SetPauseState;
         }
 
         private void Start() => cachedTransform = transform;
+        private void OnDisable() => gameSpeed.OnValueChanged -= SetPauseState;
+        private void SetPauseState(float speed) => animator.SetBool(Paused, speed <= 0);
 
         protected void Update()
         {
