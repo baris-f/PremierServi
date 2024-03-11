@@ -24,7 +24,6 @@ namespace Modules.Common.Controllers.Runtime
         }
 
         [Header("Settings")]
-        [SerializeField] private int playerId;
         [SerializeField] private float walkSpeed;
         [SerializeField] private float runSpeed;
 
@@ -51,7 +50,7 @@ namespace Modules.Common.Controllers.Runtime
 
         private Transform cachedTransform;
         private bool disabled;
-        private PlayerEvent.Type playerType;
+        private readonly PlayerEvent.PlayerData playerData = new();
         private Status CurrentStatus
         {
             get => currentStatus;
@@ -67,14 +66,15 @@ namespace Modules.Common.Controllers.Runtime
 
         public void Init(PlayerEvent.Type type, int newPlayerId, int typeId, float newWalkSpeed, float newRunSpeed)
         {
-            playerId = newPlayerId;
-            playerType = type;
-            var typeName = type switch
+            playerData.id = newPlayerId;
+            playerData.type = type;
+            playerData.typeId = typeId;
+            var typeName = playerData.type switch
             {
                 PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot",
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
-            name = $"Player {playerId} - {typeName} {typeId}";
+            name = $"Player {playerData.id} - {typeName} {playerData.typeId}";
             walkSpeed = newWalkSpeed;
             runSpeed = newRunSpeed;
             gameSpeed.OnValueChanged += SetPauseState;
@@ -89,7 +89,7 @@ namespace Modules.Common.Controllers.Runtime
             if (gameSpeed.Value <= 0 || disabled) return;
             if (transform.position.x > goal.Value)
             {
-                playerWin.Raise(playerId, playerType);
+                playerWin.Raise(playerData);
                 // animator.SetTrigger(Win); todo faire l'animation
                 DisablePlayer();
             }
@@ -103,7 +103,7 @@ namespace Modules.Common.Controllers.Runtime
         {
             if (!other.transform.CompareTag("Projectile")) return;
             Destroy(other.gameObject); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
-            playerDeath.Raise(playerId, playerType);
+            playerDeath.Raise(playerData);
             animator.SetTrigger(Death);
             DisablePlayer();
         }

@@ -35,7 +35,7 @@ namespace Modules.Common.Controllers.Runtime
         private Transform cachedTransform;
         private JoyConColors color;
         private bool disabled;
-        private int playerId;
+        private readonly PlayerEvent.PlayerData playerData = new();
         private int maxBullets;
 
 
@@ -59,12 +59,14 @@ namespace Modules.Common.Controllers.Runtime
         
         public void Init(int newPlayerId,JoyConColors newColor, int humanId, int maxB)
         {
-            playerId = newPlayerId;
+            playerData.id = newPlayerId;
+            playerData.type = PlayerEvent.Type.Human;
+            playerData.typeId = humanId;
             color = newColor;
             line.startColor = color.BodyColor;
             sprite.color = color.BodyColor;
-            name = $"Canon {humanId} (player {playerId}, human {humanId})";
-            this.maxBullets = maxB;
+            name = $"Canon {playerData.typeId} (player {playerData.id}, human {playerData.typeId})";
+            maxBullets = maxB;
         }
 
         private void Start()
@@ -86,7 +88,7 @@ namespace Modules.Common.Controllers.Runtime
         {
             if (gameSpeed.Value <= 0 || disabled) return;
             audioSource.Play();
-            playerFire.Raise(playerId, PlayerEvent.Type.Human);
+            playerFire.Raise(playerData);
             curAmmo--;
             var obj = Instantiate(projectile);
             obj.transform.position = projectileStart.position;
@@ -105,8 +107,8 @@ namespace Modules.Common.Controllers.Runtime
         public void OnPlayerDeath(MinimalData data)
         {
             if (!disabled
-                && data is PlayerEvent.PlayerData playerData
-                && playerData.id == playerId)
+                && data is PlayerEvent.PlayerData receivedPlayerData
+                && receivedPlayerData.id == playerData.id)
                 DisableCanon();
         }
 
