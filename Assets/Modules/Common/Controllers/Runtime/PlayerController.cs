@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Modules.Common.CustomEvents.Runtime;
-using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 
