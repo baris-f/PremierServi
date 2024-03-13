@@ -633,7 +633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &337205232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -670,6 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 1924894349}
   inGameConfig: {fileID: 11400000, guid: f18362f1a3d38ea4086821517aa0aa60, type: 2}
+  demoProvider: {fileID: 11400000, guid: 27764aabe3c03944583c358cc3576739, type: 2}
   choices:
   - {fileID: 408719206}
   - {fileID: 1123550003}

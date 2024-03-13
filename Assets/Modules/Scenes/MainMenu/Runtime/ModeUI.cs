@@ -15,6 +15,7 @@ namespace Modules.Scenes.MainMenu.Runtime
         [Header("Refs")]
         [SerializeField] private PlayerInput input;
         [SerializeField] private InGameConfig inGameConfig;
+        [SerializeField] private BaseRoundsProvider demoProvider;
         [SerializeField] private List<Choice> choices = new();
 
         [Header("Events")]
@@ -44,6 +45,8 @@ namespace Modules.Scenes.MainMenu.Runtime
 
         private void Awake()
         {
+            if (inGameConfig.DemoMode)
+                StartGameDemoMode();
             submit = input.actions["Submit"];
             cancel = input.actions["Cancel"];
             navigate = input.actions["Navigate"];
@@ -58,9 +61,9 @@ namespace Modules.Scenes.MainMenu.Runtime
 
         private void OnDisable()
         {
-            submit.performed -= OnSubmit;
-            cancel.performed -= OnCancel;
-            navigate.performed -= OnNavigate;
+            if (submit != null) submit.performed -= OnSubmit;
+            if (cancel != null) cancel.performed -= OnCancel;
+            if (navigate != null) navigate.performed -= OnNavigate;
         }
 
         #endregion
@@ -111,6 +114,13 @@ namespace Modules.Scenes.MainMenu.Runtime
             var provider = choices[2].GetResult<BaseRoundsProvider>();
             inGameConfig.SetRounds(provider, length, diff);
             
+            inGameConfig.LoadRound();
+        }
+
+        private void StartGameDemoMode()
+        {
+            gameObject.SetActive(false);
+            inGameConfig.SetRounds(demoProvider, BaseRoundsProvider.GameLength.Short, Round.GameDifficulty.Normal);
             inGameConfig.LoadRound();
         }
 

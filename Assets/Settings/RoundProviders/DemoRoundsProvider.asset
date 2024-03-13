@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b2f331ef7c439c86405116d4c06d88, type: 3}
-  m_Name: CyclicRoundsProvider
+  m_Script: {fileID: 11500000, guid: 1dec589f98ec413e9d252179a04730e3, type: 3}
+  m_Name: DemoRoundsProvider
   m_EditorClassIdentifier: 
+  forcedFirstRound: {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
   modesToProvide:
-  - {fileID: 11400000, guid: b41fadf9575ed584a85e70517d0b9ced, type: 2}
+  - {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}

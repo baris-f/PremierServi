@@ -12,6 +12,7 @@ namespace Modules.Technical.GameConfig.Runtime
     {
         [Header("Standard Config")]
         [SerializeField] private LoadSceneEvent endOfGameScene;
+        [SerializeField] private bool demoMode;
 
         [Header("Dynamic Config")]
         [SerializeField, SaveInPreset] private List<Human> humans;
@@ -52,6 +53,7 @@ namespace Modules.Technical.GameConfig.Runtime
                     humans.Add(player);
         }
 
+        public bool DemoMode => demoMode;
         // fix nul
         // protected InGameConfig() => OnExitEditMode += () => curRound = 0;
     }
