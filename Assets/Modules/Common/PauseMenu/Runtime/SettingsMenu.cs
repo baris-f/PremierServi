@@ -19,6 +19,8 @@ namespace Modules.Common.PauseMenu.Runtime
         [Header("Volume sliders")]
         [SerializeField] private List<VolumeSliders> sliders = new();
 
+        public void OpenFromEvent() => Open(true);
+
         protected override void Show()
         {
             foreach (var tuple in sliders)

@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04dbe9c24f247d7912576c57a1b4973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDelay: 500
+  checkDelay: 200
   container: {fileID: 5847809702171942323}
   blocker: {fileID: 5928413717549536801}
   sliders:
@@ -838,7 +838,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventsToListen: []
+  eventsToListen:
+  - origin: {fileID: 0}
+    event: {fileID: 11400000, guid: b081356e169bd2843b42105ede1733f6, type: 2}
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7484225495133183016}
+          m_TargetAssemblyTypeName: Modules.Common.PauseMenu.Runtime.SettingsMenu,
+            PauseMenu
+          m_MethodName: OpenFromEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8095662407279131570
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 ﻿using System;
 using Modules.Technical.AwaitablePopup.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Modules.Common.PauseMenu.Runtime
 {
