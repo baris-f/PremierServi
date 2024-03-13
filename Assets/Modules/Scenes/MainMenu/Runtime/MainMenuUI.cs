@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Modules.Common.PauseMenu.Runtime;
 using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,6 +43,10 @@ namespace Modules.Scenes.MainMenu.Runtime
                 }
             }
         }
+        
+        [Header("References")]
+        [SerializeField] private SettingsMenu settingsMenu;
+        
         [Header("States")]
         [SerializeField] private List<StateData> states = new();
 

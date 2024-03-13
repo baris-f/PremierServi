@@ -1,13 +1,9 @@
 {
-    "name": "MainMenu",
+    "name": "PauseMenu",
     "rootNamespace": "",
     "references": [
-        "ScriptableEvents",
-        "ScriptUtils",
-        "Unity.InputSystem",
-        "Unity.TextMeshPro",
-        "GameConfig",
-        "PauseMenu"
+        "AwaitablePopup",
+        "ScriptableField"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
