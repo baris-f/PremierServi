@@ -62,7 +62,7 @@ namespace Modules.Scenes.MainMenu.Runtime
             foreach (StateEnum value in Enum.GetValues(typeof(StateEnum)))
                 states.Add(new StateData { stateEnum = value });
         }
-
+        
         public void Quit() => Application.Quit();
     }
 }

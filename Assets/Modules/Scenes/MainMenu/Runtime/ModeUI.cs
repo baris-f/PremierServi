@@ -16,6 +16,7 @@ namespace Modules.Scenes.MainMenu.Runtime
         [SerializeField] private PlayerInput input;
         [SerializeField] private InGameConfig inGameConfig;
         [SerializeField] private BaseRoundsProvider demoProvider;
+        [SerializeField] private BaseRoundsProvider tutoProvider;
         [SerializeField] private List<Choice> choices = new();
 
         [Header("Events")]
@@ -124,6 +125,13 @@ namespace Modules.Scenes.MainMenu.Runtime
             inGameConfig.LoadRound();
         }
 
+        public void StartTuto()
+        {
+            gameObject.SetActive(false);
+            inGameConfig.SetRounds(tutoProvider, BaseRoundsProvider.GameLength.Single, Round.GameDifficulty.Normal);
+            inGameConfig.LoadRound();
+        }
+        
         #endregion
 
         [Button] private void SetCurOptions()

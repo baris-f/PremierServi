@@ -6,7 +6,7 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
 {
     public class SimpleRoundsProvider : BaseRoundsProvider
     {
-        [Header("Config ")]
+        [Header("Config")]
         [SerializeField] private string modeName;
         [SerializeField] private ModeDescriptor modeToProvide;
 

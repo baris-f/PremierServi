@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473c71c9d3fe4339bf09564f44ab905e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDelay: 500
+  checkDelay: 200
   container: {fileID: 4644783815768542438}
   blocker: {fileID: 8237666309522871166}
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
