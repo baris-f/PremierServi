@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Modules.Common.Controllers.Runtime;
 using Modules.Technical.GameConfig.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,9 @@ namespace Modules.Common.Inputs.Runtime
 {
     public class HumanInput : MonoBehaviour
     {
+        [Header("Refs")]
+        [SerializeField] private SimpleLocalEvent openPauseMenu;
+
         [Header("Debug")]
         [SerializeField] private PlayerController player;
         [SerializeField] private CanonController canon;
@@ -21,6 +25,9 @@ namespace Modules.Common.Inputs.Runtime
         // Canon
         private InputAction move;
         private InputAction fire;
+
+        // Other
+        private InputAction pause;
 
         private enum MovementActions
         {
@@ -64,6 +71,10 @@ namespace Modules.Common.Inputs.Runtime
             move = input.actions["Move"];
             fire = input.actions["Fire"];
             fire.started += _ => canon.Fire();
+
+            // Pause
+            pause = input.actions["Pause"];
+            pause.performed += _ => openPauseMenu.Raise();
         }
 
         private void AddAction(MovementActions movementActions)

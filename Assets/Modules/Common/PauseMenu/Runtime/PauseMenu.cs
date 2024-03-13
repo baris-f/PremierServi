@@ -1,5 +1,6 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using Modules.Technical.AwaitablePopup.Runtime;
+using Modules.Technical.ScriptableField;
 using UnityEngine;
 
 namespace Modules.Common.PauseMenu.Runtime
@@ -9,21 +10,22 @@ namespace Modules.Common.PauseMenu.Runtime
         public enum ResponseType
         {
             Resume,
-            Restart,
             MainMenu
         }
 
-        [Header("References")]
-        [SerializeField] private SettingsMenu settingsMenu;
-        
-        public void OnResume() => Response = ResponseType.Resume;
-        public void OnRestart() => Response = ResponseType.Restart;
-        public void OnMainMEnu() => Response = ResponseType.MainMenu;
+        [Header("Refs")]
+        [SerializeField] private ScriptableFloat gameSpeed;
+        public void OpenFromEvent() => Open();
 
-        public async void OnSettings()
+        private new async Task Open(bool shouldBlockBackground = true)
         {
-            var shouldReload  = await settingsMenu.Open();
-            if (shouldReload) throw new NotImplementedException();
+            gameSpeed.Value = 0;
+            var r = await base.Open(shouldBlockBackground);
+            if (r == ResponseType.Resume)
+                gameSpeed.Value = 1;
         }
+
+        public void OnResume() => Response = ResponseType.Resume;
+        public void OnMainMenu() => Response = ResponseType.MainMenu;
     }
 }
