@@ -2482,22 +2482,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoundRunner
       objectReference: {fileID: 0}
-    - target: {fileID: 4598400213616363317, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598400213616363317, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
-      value: f20847ac-5f3d-4c80-93f9-eff86d4b6975
-      objectReference: {fileID: 0}
-    - target: {fileID: 4598400213616363317, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
-      value: Game/Taunt[/SwitchProControllerHID/buttonNorth,/Keyboard/q]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4909412851429758231, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4909412851429758231, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2559,14 +2543,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 359845414}
     - target: {fileID: 7898153958609148277, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: backgrounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7898153958609148277, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: playerPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7898153958609148277, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
       propertyPath: backgrounds.Array.data[0]
       value: 
       objectReference: {fileID: 1535611508}
@@ -2582,17 +2558,8 @@ PrefabInstance:
       propertyPath: backgrounds.Array.data[3]
       value: 
       objectReference: {fileID: 1809136428}
-    - target: {fileID: 7898153958609148277, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: playerPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 5540609058838008082, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
-    - target: {fileID: 7898153958609148277, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
-      propertyPath: playerPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 5540609058838008082, guid: 4ff54f282278b934fa895bc2512bbc14, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4883719951287289472, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ac4f4d184fa2354f8d5e114bc786536, type: 3}

@@ -3686,18 +3686,6 @@ PrefabInstance:
       propertyPath: statusContainer
       value: 
       objectReference: {fileID: 359845414}
-    - target: {fileID: 6787388018191421134, guid: 82566894b4c0b8a498c81274b3de427a, type: 3}
-      propertyPath: playerPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6787388018191421134, guid: 82566894b4c0b8a498c81274b3de427a, type: 3}
-      propertyPath: playerPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 5540609058838008082, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
-    - target: {fileID: 6787388018191421134, guid: 82566894b4c0b8a498c81274b3de427a, type: 3}
-      propertyPath: playerPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 5540609058838008082, guid: 4ff54f282278b934fa895bc2512bbc14, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

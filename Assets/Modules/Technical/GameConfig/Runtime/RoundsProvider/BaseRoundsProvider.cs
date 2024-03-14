@@ -9,6 +9,7 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
         [Serializable]
         public enum GameLength
         {
+            Infinite,
             Single,
             Short,
             Average,
@@ -19,6 +20,7 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
 
         protected static int GetDefaultLength(GameLength length) => length switch
         {
+            GameLength.Infinite => 999,
             GameLength.Single => 1,
             GameLength.Short => 3,
             GameLength.Average => 6,

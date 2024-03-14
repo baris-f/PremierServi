@@ -9,8 +9,9 @@ namespace Modules.Common.Cake.Runtime
         {
             None,
             All,
-            Eclair,
             Classic,
+            Eclair,
+            Pain,
         }
         
         public Sprite sprite;

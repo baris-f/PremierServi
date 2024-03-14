@@ -48,6 +48,7 @@ namespace Modules.Technical.GameConfig.Runtime
         {
             curRound = 0;
             humans.Clear();
+            if (players == null) return;
             foreach (var player in players)
                 if (!string.IsNullOrWhiteSpace(player.deviceName))
                     humans.Add(player);

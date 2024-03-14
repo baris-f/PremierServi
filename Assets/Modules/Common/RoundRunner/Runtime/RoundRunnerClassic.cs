@@ -49,6 +49,7 @@ namespace Modules.Common.RoundRunner.Runtime
 
         [Header("Debug")]
         [SerializeField] private List<RobotInput> robots = new();
+        [SerializeField] private int nbPlayersDead;
 
         protected void Start()
         {
@@ -81,7 +82,7 @@ namespace Modules.Common.RoundRunner.Runtime
             foreach (var prefab in playerPrefabs)
                 for (var j = 0; j < nbToPut; j++)
                     randomPrefabArray.Add(prefab);
-            while(randomPrefabArray.Count < modeDescriptor.NbPlayers)
+            while (randomPrefabArray.Count < modeDescriptor.NbPlayers)
                 randomPrefabArray.Add(playerPrefabs.GetRandom());
 
             for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
@@ -127,16 +128,30 @@ namespace Modules.Common.RoundRunner.Runtime
         {
             if (data is not PlayerEvent.PlayerData playerData) return;
             gameSpeed.Value = -1;
-            if (playerData.type == PlayerEvent.Type.Human)
+            if (config.Humans is { Count: > 0 })
             {
-                config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
-                var r = await results.Open($"{playerData.type} {playerData.typeId} ate the cake !", true);
-            }
-            else
-            {
-                var r = await results.Open($"Somebody else ate the cake !", true);
+                if (playerData.type == PlayerEvent.Type.Human)
+                {
+                    config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
+                    var r = await results.Open($"{playerData.type} {playerData.typeId} ate the cake !", true);
+                }
+                else
+                {
+                    var r = await results.Open($"Somebody else ate the cake !", true);
+                }
             }
 
+            config.GoNextRound();
+            config.LoadRound();
+        }
+
+        public async void OnPlayerDeath(MinimalData data)
+        {
+            if (data is not PlayerEvent.PlayerData playerData) return;
+            nbPlayersDead++;
+            if (nbPlayersDead < config.CurrentModeDescriptor.NbPlayers)
+                return;
+            var r = await results.Open($"Nobody could get the cake !", true);
             config.GoNextRound();
             config.LoadRound();
         }
