@@ -40,7 +40,7 @@ namespace Modules.Technical.GameConfig.Runtime
 
         [Button(horizontal: true)] public void GoNextRound() => curRound++;
 
-        public void SortHumansByScore() => humans.Sort((a, b) => a.eatenCakes.Count.CompareTo(b.eatenCakes.Count));
+        public void SortHumansByScore() => humans.Sort((a, b) => b.eatenCakes.Count.CompareTo(a.eatenCakes.Count));
 
         public Human GetHumanById(int id) => humans.Find(h => h.playerId == id);
 

@@ -32,8 +32,8 @@ MonoBehaviour:
   sceneEvent: {fileID: -7235040578451068210, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   nbPlayers: 8
   nbBullets: 2
-  walkSpeed: 1
-  runSpeed: 3
+  walkSpeed: 0.4
+  runSpeed: 0.7
 --- !u!114 &5554331989897863570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,8 +50,8 @@ MonoBehaviour:
   sceneEvent: {fileID: -7235040578451068210, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   nbPlayers: 8
   nbBullets: 1
-  walkSpeed: 1
-  runSpeed: 3
+  walkSpeed: 0.6
+  runSpeed: 1.1
 --- !u!114 &7192595958786286919
 MonoBehaviour:
   m_ObjectHideFlags: 0
