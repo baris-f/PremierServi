@@ -11,6 +11,7 @@ using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Modules.Common.RoundRunner.Runtime
 {
@@ -24,6 +25,7 @@ namespace Modules.Common.RoundRunner.Runtime
 
         [Header("Prefabs")]
         [SerializeField] private List<PlayerController> playerPrefabs = new();
+        [SerializeField] private List<GameObject> backgrounds = new();
         [SerializeField] private CanonController canonPrefab;
         [SerializeField] private HumanInput humanPrefab;
         [SerializeField] private StatusController statusPrefab;
@@ -56,6 +58,9 @@ namespace Modules.Common.RoundRunner.Runtime
 
         protected void InitGame()
         {
+            var rndBackId = Random.Range(0, backgrounds.Count);
+            for (var i = 0; i < backgrounds.Count; i++)
+                backgrounds[i].SetActive(i == rndBackId);
             var modeDescriptor = config.CurrentModeDescriptor;
             humansContainer.DestroyAllChildren();
             statusContainer.DestroyAllChildren();
@@ -70,10 +75,20 @@ namespace Modules.Common.RoundRunner.Runtime
             }
 
             int robotCount = 0, humanCount = 0;
+
+            var randomPrefabArray = new List<PlayerController>();
+            var nbToPut = modeDescriptor.NbPlayers / (playerPrefabs.Count + 1);
+            foreach (var prefab in playerPrefabs)
+                for (var j = 0; j < nbToPut; j++)
+                    randomPrefabArray.Add(prefab);
+            while(randomPrefabArray.Count < modeDescriptor.NbPlayers)
+                randomPrefabArray.Add(playerPrefabs.GetRandom());
+
             for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
-                var prefab = playerPrefabs.GetRandom();
+                var prefab = randomPrefabArray.PickRandom();
                 var player = Instantiate(prefab, playersLayout.transform);
+
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
