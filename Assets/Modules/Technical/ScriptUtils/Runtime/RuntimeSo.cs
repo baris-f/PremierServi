@@ -1,8 +1,8 @@
 ﻿#if UNITY_EDITOR
-using System;
 using UnityEditor;
 #endif
 using UnityEngine;
+using System;
 
 namespace Modules.Technical.ScriptUtils.Runtime
 {

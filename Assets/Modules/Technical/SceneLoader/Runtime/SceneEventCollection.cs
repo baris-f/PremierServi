@@ -19,9 +19,6 @@ namespace Modules.Technical.SceneLoader.Runtime
 
         public override IEnumerable<LoadSceneEvent> Collection => scenes;
         
-        protected override void AddToCollection(LoadSceneEvent obj) => scenes.Add(obj);
-        protected override void RemoveFromCollection(LoadSceneEvent obj) => scenes.Remove(obj);
-
 #if UNITY_EDITOR
         [Button(header: "Scene Collection Functions")]
         public void ScanScenes()
@@ -50,6 +47,9 @@ namespace Modules.Technical.SceneLoader.Runtime
             });
             Cleanup();
         }
+        
+        protected override void AddToCollection(LoadSceneEvent obj) => scenes.Add(obj);
+        protected override void RemoveFromCollection(LoadSceneEvent obj) => scenes.Remove(obj);
 #endif
     }
 }
