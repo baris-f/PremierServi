@@ -35,6 +35,7 @@ namespace Modules.Common.Controllers.Runtime
         [Header("Assets")]
         [SerializeField] private AudioClip walkClip;
         [SerializeField] private AudioClip runClip;
+        [SerializeField] private AudioClip deathClip;
 
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
@@ -105,6 +106,7 @@ namespace Modules.Common.Controllers.Runtime
             Destroy(other.gameObject); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
             playerDeath.Raise(playerData);
             animator.SetTrigger(Death);
+            if (deathClip != null) audioSource.PlayOneShot(deathClip);
             DisablePlayer();
         }
 
