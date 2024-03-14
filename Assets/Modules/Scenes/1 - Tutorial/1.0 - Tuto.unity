@@ -171,7 +171,7 @@ MonoBehaviour:
   clearOnStart: 1
   startFrom: 2
   maxYPosition: 4
-  minYPosition: -3
+  minYPosition: -2.8
   spacing: 1.2
   expand: 1
   overflow: 0

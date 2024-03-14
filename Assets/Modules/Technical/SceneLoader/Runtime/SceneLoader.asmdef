@@ -6,7 +6,8 @@
     "ScriptUtils",
     "Eflatun.SceneReference",
     "ScriptableCollections",
-    "ScriptableCollectionsEditor"
+    "ScriptableCollectionsEditor",
+    "SoundsManager"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

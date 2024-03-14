@@ -32,22 +32,6 @@ MonoBehaviour:
   sceneName: 2.0.1 - Basic
   scenePath: Assets/Modules/Scenes/2.0.1 - Basic.unity
   sceneGuid: 4aa9e93f54c74e340abf3133d2026baf
---- !u!114 &-5024186464015360529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 0 - MainMenu
-  m_EditorClassIdentifier: 
-  listeners: []
-  sceneName: 0 - MainMenu
-  scenePath: Assets/Modules/Scenes/MainMenu/0 - MainMenu.unity
-  sceneGuid: 9b70ad2f51eaa6b459dbe92b616224f9
 --- !u!114 &-3227548623092683279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +48,7 @@ MonoBehaviour:
   sceneName: 2.2 - SquidGame
   scenePath: Assets/Modules/Scenes/2.2 - SquidGame.unity
   sceneGuid: f5cca977415d2624c912b258b908fcb1
---- !u!114 &-1069727083311247290
+--- !u!114 &-1339986102902656894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,11 +58,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
-  m_Name: 0.1 - GameResult
+  m_Name: 3 - GameResult
   m_EditorClassIdentifier: 
   listeners: []
-  sceneName: 0.1 - GameResult
-  scenePath: Assets/Modules/Scenes/GameResult/0.1 - GameResult.unity
+  sceneName: 3 - GameResult
+  scenePath: Assets/Modules/Scenes/3 - GameResult/3 - GameResult.unity
   sceneGuid: 212d51cda3fd898459333ccc2afc829c
 --- !u!114 &11400000
 MonoBehaviour:
@@ -95,15 +79,31 @@ MonoBehaviour:
   notInBuildSettings:
   - {fileID: -7699853818479077509}
   - {fileID: -3227548623092683279}
-  - {fileID: -5024186464015360529}
+  - {fileID: 754025912210646033}
   scenes:
-  - {fileID: -5024186464015360529}
-  - {fileID: 8532516424997601736}
   - {fileID: -7235040578451068210}
   - {fileID: -7699853818479077509}
   - {fileID: -3227548623092683279}
-  - {fileID: -1069727083311247290}
---- !u!114 &8532516424997601736
+  - {fileID: 754025912210646033}
+  - {fileID: 8907404787312078829}
+  - {fileID: -1339986102902656894}
+--- !u!114 &754025912210646033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 0 - MainMenu
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 0 - MainMenu
+  scenePath: Assets/Modules/Scenes/0 - MainMenu/0 - MainMenu.unity
+  sceneGuid: 9b70ad2f51eaa6b459dbe92b616224f9
+--- !u!114 &8907404787312078829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,5 +117,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listeners: []
   sceneName: 1.0 - Tuto
-  scenePath: Assets/Modules/Scenes/Tutorial/1.0 - Tuto.unity
+  scenePath: Assets/Modules/Scenes/1 - Tutorial/1.0 - Tuto.unity
   sceneGuid: bf9d00d4deaa0614e91dd4f7bef42416

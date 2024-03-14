@@ -16,6 +16,7 @@ MonoBehaviour:
   modes:
   - {fileID: 4575295985344050323}
   - {fileID: 7192595958786286919}
+  - {fileID: 5554331989897863570}
 --- !u!114 &4575295985344050323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,9 +32,9 @@ MonoBehaviour:
   displayName: Classic
   sceneEvent: {fileID: -7235040578451068210, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   nbPlayers: 8
-  nbBullets: 2
-  walkSpeed: 0.4
-  runSpeed: 0.7
+  nbBullets: 1
+  walkSpeed: 0.6
+  runSpeed: 1.1
 --- !u!114 &5554331989897863570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,8 +66,8 @@ MonoBehaviour:
   m_Name: Tuto
   m_EditorClassIdentifier: 
   displayName: Tuto
-  sceneEvent: {fileID: 8532516424997601736, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
+  sceneEvent: {fileID: 8907404787312078829, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   nbPlayers: 8
   nbBullets: 1
-  walkSpeed: 1
-  runSpeed: 3
+  walkSpeed: 0.6
+  runSpeed: 1.1

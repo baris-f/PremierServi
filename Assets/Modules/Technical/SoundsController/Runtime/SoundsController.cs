@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
+using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -37,7 +39,7 @@ namespace Modules.Technical.SoundsController.Runtime
         public void OnPlayBackgroundMusicEvent(MinimalData data)
         {
             if (data is not PlayClipEvent.ClipData clipData) return;
-            PlayClip(clipData.clip, backgroundMusicSource, clipData.output, oneShot: false);
+            PlayClip(clipData.clip, backgroundMusicSource, clipData.output, oneShot: clipData.oneShot);
         }
 
         private void PlayClip(AudioClip clip, AudioSource source, Output output = Output.None, bool oneShot = true)
