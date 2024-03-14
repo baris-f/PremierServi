@@ -23,7 +23,7 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] protected ResultsPopup results;
 
         [Header("Prefabs")]
-        [SerializeField] private PlayerController playerPrefab;
+        [SerializeField] private List<PlayerController> playerPrefabs = new();
         [SerializeField] private CanonController canonPrefab;
         [SerializeField] private HumanInput humanPrefab;
         [SerializeField] private StatusController statusPrefab;
@@ -72,7 +72,8 @@ namespace Modules.Common.RoundRunner.Runtime
             int robotCount = 0, humanCount = 0;
             for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
-                var player = Instantiate(playerPrefab, playersLayout.transform);
+                var prefab = playerPrefabs.GetRandom();
+                var player = Instantiate(prefab, playersLayout.transform);
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
@@ -118,9 +119,9 @@ namespace Modules.Common.RoundRunner.Runtime
             }
             else
             {
-                var  r = await results.Open($"Somebody else ate the cake !", true);
+                var r = await results.Open($"Somebody else ate the cake !", true);
             }
-            
+
             config.GoNextRound();
             config.LoadRound();
         }
