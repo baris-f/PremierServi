@@ -7,7 +7,6 @@ namespace Modules.Technical.Debug
     public class DebugUiHelper : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private DebugLogManager debugLogManager;
         [SerializeField] private DebugLogPopup debugLogPopup;
         [SerializeField] private RuntimeHierarchy runtimeHierarchy;
         [SerializeField] private RuntimeInspector runtimeInspector;
@@ -20,9 +19,9 @@ namespace Modules.Technical.Debug
         private void Start()
         {
             canOpenHierarchy = UnityEngine.Debug.isDebugBuild;
+            canOpenHierarchy = false;
             ToggleHierarchy(true);
             CheckPopup();
-            debugLogManager.HideLogWindow();
         }
 
         private void Update()
@@ -35,11 +34,7 @@ namespace Modules.Technical.Debug
             CheckPopup();
         }
 
-        private void CheckPopup()
-        {
-            if (canOpenHierarchy)
-                debugLogPopup.gameObject.SetActive(canOpenHierarchy);
-        }
+        private void CheckPopup() => debugLogPopup.gameObject.SetActive(canOpenHierarchy);
 
         private void ToggleHierarchy(bool forceClosed = false)
         {
