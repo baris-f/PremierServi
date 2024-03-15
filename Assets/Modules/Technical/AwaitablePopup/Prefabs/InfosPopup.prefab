@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5eb6c6ab6d468f9287b1c6647a60ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDelay: 500
+  checkDelay: 200
   container: {fileID: 5110779690136638333}
   blocker: {fileID: 710606395723042330}
   message: {fileID: 4281765321100593438}

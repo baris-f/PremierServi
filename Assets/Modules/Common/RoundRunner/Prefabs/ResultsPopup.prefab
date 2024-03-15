@@ -350,8 +350,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -47.5}
+  m_SizeDelta: {x: -40, y: -105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &243562371965096865
 CanvasRenderer:
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bravo jean michel !
+  m_text: 'Salut je suis un txte tres long '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb8035b1dd086544595f286da952c2a4, type: 2}
   m_sharedMaterial: {fileID: -4980926070784093590, guid: bb8035b1dd086544595f286da952c2a4, type: 2}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -836,10 +836,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f647d11269b4a049548ea91d09c9cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDelay: 500
+  checkDelay: 200
   container: {fileID: 5110779690136638333}
   blocker: {fileID: 710606395723042330}
   message: {fileID: 4281765321100593438}
+  buttonToSelect: {fileID: 8471343344568771927}
 --- !u!1 &5110779690136638333
 GameObject:
   m_ObjectHideFlags: 0

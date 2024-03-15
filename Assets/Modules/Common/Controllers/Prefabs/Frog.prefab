@@ -55,6 +55,7 @@ MonoBehaviour:
   audioSource: {fileID: 1383267232037078092}
   walkClip: {fileID: 8300000, guid: 27a14b18a7f876244b68e69028ad348a, type: 3}
   runClip: {fileID: 8300000, guid: 3f4e1ac4ad3b01d46aed6c2935b52f21, type: 3}
+  deathClip: {fileID: 0}
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   goal: {fileID: 11400000, guid: 2b3bec6eeebc9554fa82cf92f5099c6c, type: 2}
   playerWin: {fileID: 11400000, guid: 954ad7bfee57caa4c9586cf15f6e48da, type: 2}
@@ -456,7 +457,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008088529, y: -0.07720733}
+  m_Offset: {x: -0.008088529, y: -0.05569361}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -467,7 +468,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6929332, y: 1}
+  m_Size: {x: 0.6929332, y: 0.7297878}
   m_EdgeRadius: 0
 --- !u!50 &1087736547263153263
 Rigidbody2D:

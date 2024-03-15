@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Modules.Common.Controllers.Runtime;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
@@ -40,20 +41,38 @@ namespace Modules.Common.Inputs.Runtime
         private List<MovementActions> activeActions = new() { MovementActions.Stop };
         private MovementActions CurMovementAction => activeActions[^1];
 
-        public static HumanInput Instantiate(HumanInput prefab, Transform container, Human human,
-            PlayerController player, CanonController canon)
+        public static HumanInput Instantiate(HumanInput prefab, Transform container, Human human)
         {
-            var inputDevice = InputSystem.GetDevice(human.deviceName);
+            InputDevice inputDevice = null;
+            try
+            {
+                inputDevice = InputSystem.GetDevice(human.deviceName);
+            }
+            catch (ArgumentException e)
+            {
+                Debug.LogError($"deviceName {human.deviceName} returned a null device \n {e}");
+            }
+
             var playerInput = PlayerInput.Instantiate(prefab.gameObject, pairWithDevice: inputDevice);
             playerInput.transform.SetParent(container);
             var humanInput = playerInput.GetComponent<HumanInput>();
-            humanInput.player = player;
-            humanInput.canon = canon;
+
             return humanInput;
         }
 
-        private void Start()
+        public static HumanInput InstantiateDummy(HumanInput prefab, Transform container)
         {
+            var playerInput = PlayerInput.Instantiate(prefab.gameObject, pairWithDevices: InputSystem.devices[0]);
+            playerInput.transform.SetParent(container);
+            var humanInput = playerInput.GetComponent<HumanInput>();
+            return humanInput;
+        }
+
+        public void Init(PlayerController player, CanonController canon)
+        {
+            this.player = player;
+            this.canon = canon;
+
             // PlayerController
             walk = input.actions["Walk"];
             walk.started += _ => AddAction(MovementActions.Walk);
@@ -70,7 +89,7 @@ namespace Modules.Common.Inputs.Runtime
             // CanonController
             move = input.actions["Move"];
             fire = input.actions["Fire"];
-            fire.started += _ => canon.Fire();
+            fire.started += _ => canon?.Fire();
 
             // Pause
             pause = input.actions["Pause"];
@@ -94,6 +113,7 @@ namespace Modules.Common.Inputs.Runtime
 
         private void CheckAction()
         {
+            if (player == null) return;
             switch (CurMovementAction)
             {
                 case MovementActions.Run:
@@ -112,6 +132,6 @@ namespace Modules.Common.Inputs.Runtime
         }
 
         private void Update() =>
-            canon.Move(move.ReadValue<Vector2>());
+            canon?.Move(move.ReadValue<Vector2>());
     }
 }

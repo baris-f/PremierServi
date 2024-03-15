@@ -78,7 +78,7 @@ namespace Modules.Technical.ScriptUtils.Runtime
             return i;
         }
 
-        private void Clear() => transform.DestroyAllChildren();
+        public void Clear() => transform.DestroyAllChildren();
 
         private void OnDrawGizmosSelected()
         {

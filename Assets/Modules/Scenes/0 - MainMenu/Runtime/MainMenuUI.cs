@@ -44,9 +44,6 @@ namespace Modules.Scenes.MainMenu.Runtime
             }
         }
         
-        [Header("References")]
-        [SerializeField] private SettingsMenu settingsMenu;
-        
         [Header("States")]
         [SerializeField] private List<StateData> states = new();
 

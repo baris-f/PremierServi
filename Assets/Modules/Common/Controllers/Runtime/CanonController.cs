@@ -20,10 +20,10 @@ namespace Modules.Common.Controllers.Runtime
         [SerializeField] private Transform projectileStart;
         [SerializeField] private LineRenderer line;
         [SerializeField] private AudioSource audioSource;
-        
+
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
-        
+
         [Header("Events")]
         [SerializeField] private PlayerEvent playerFire;
 
@@ -51,13 +51,14 @@ namespace Modules.Common.Controllers.Runtime
             else
                 line.SetPosition(1, transform.position + (Vector3.left * 16)); // set au loin quand pas de cible
         }
+
         void FixedUpdate()
         {
             if (!disabled)
                 UpdateLine();
         }
-        
-        public void Init(int newPlayerId,JoyConColors newColor, int humanId, int maxB)
+
+        public void Init(int newPlayerId, JoyConColors newColor, int humanId, int maxB)
         {
             playerData.id = newPlayerId;
             playerData.type = PlayerEvent.Type.Human;

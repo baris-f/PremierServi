@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805b4150d3fb47f3bad6fbf05a32fbaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDelay: 500
+  checkDelay: 200
   container: {fileID: 6643076333709936945}
   blocker: {fileID: 8444305841345544195}
 --- !u!1 &7536747987453800309

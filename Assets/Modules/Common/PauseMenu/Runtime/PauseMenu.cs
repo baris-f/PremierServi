@@ -15,7 +15,13 @@ namespace Modules.Common.PauseMenu.Runtime
 
         [Header("Refs")]
         [SerializeField] private ScriptableFloat gameSpeed;
-        public void OpenFromEvent() => Open();
+        public void OpenFromEvent()
+        {
+            if (Opened)
+                Response = ResponseType.Resume;
+            else
+                Open();
+        }
 
         private new async Task Open(bool shouldBlockBackground = true)
         {
