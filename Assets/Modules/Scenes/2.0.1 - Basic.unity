@@ -1297,6 +1297,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 305771649}
     m_Modifications:
+    - target: {fileID: 1601411492903600125, guid: 992309d19262f7146bf82f937b19c557, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1465618406, guid: 499f3ef97647ba949929e62c3479015f, type: 3}
     - target: {fileID: 6410787619609598030, guid: 992309d19262f7146bf82f937b19c557, type: 3}
       propertyPath: m_Name
       value: Cake
