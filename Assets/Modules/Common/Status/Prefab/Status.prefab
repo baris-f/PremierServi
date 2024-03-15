@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 3271897658669400322}
   shotLeft: {fileID: 3585815947312776574}
   shotContainer: {fileID: 5217224921708280186, guid: d862d798d1866ab44874408eff4e300b, type: 3}
+  nameText: {fileID: 7268688393891862984}
   desaturationAmount: 0.2
   darkenAmount: 0.25
 --- !u!114 &652681700736263226
@@ -211,7 +212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player 1
+  m_text: dsoighdfkjngldk
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb8035b1dd086544595f286da952c2a4, type: 2}
   m_sharedMaterial: {fileID: -4980926070784093590, guid: bb8035b1dd086544595f286da952c2a4, type: 2}
@@ -238,7 +239,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

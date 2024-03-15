@@ -5,7 +5,8 @@
         "CustomEvents",
         "ScriptableEvents",
         "GameConfig",
-        "ScriptUtils"
+        "ScriptUtils",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

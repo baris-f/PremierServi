@@ -94,7 +94,7 @@ namespace Modules.Common.RoundRunner.Runtime
             player.Init(PlayerEvent.Type.Human, playerId, humanCount, modeDescriptor.WalkSpeed,
                 modeDescriptor.RunSpeed);
             var status = Instantiate(statusPrefab, statusContainer.transform);
-            status.Initialize(human.playerId, human.color, modeDescriptor.NbBullets);
+            status.Initialize(human.playerId, human.color, humanCount,modeDescriptor.NbBullets);
             var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human);
             humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
             return humanInput;
@@ -124,7 +124,7 @@ namespace Modules.Common.RoundRunner.Runtime
                 if (playerData.type == PlayerEvent.Type.Human)
                 {
                     config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
-                    await results.Open($"Player {playerData.typeId} ate the cake !", true);
+                    await results.Open($"Player {playerData.typeId + 1} ate the cake !", true);
                 }
                 else
                     await results.Open($"Somebody else ate the cake !", true);
@@ -151,7 +151,7 @@ namespace Modules.Common.RoundRunner.Runtime
             if (config.LastOneWins && config.Humans.Count > 1 && nbHumansDead >= config.Humans.Count - 1)
             {
                 gameSpeed.Value = -1;
-                await results.Open($"Player {playerData.id} is the last player standing ! That's a win.", true);
+                await results.Open($"Player {playerData.id + 1} is the last player standing ! That's a win.", true);
                 config.GoNextRound();
                 config.LoadRound();
             }

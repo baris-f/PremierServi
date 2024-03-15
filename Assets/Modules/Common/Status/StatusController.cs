@@ -1,6 +1,7 @@
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,17 +13,18 @@ namespace Modules.Common.Status
         [SerializeField] private Image[] elemToColor;
         [SerializeField] private LayoutGroup shotLeft;
         [SerializeField] private GameObject shotContainer;
-        private Image[] shotLeftRefs;
+        [SerializeField] private TextMeshProUGUI nameText;
 
         [Header("Color settings")]
         [SerializeField] private float desaturationAmount = 0.2f;
         [SerializeField] private float darkenAmount = 0.25f;
 
+        private Image[] shotLeftRefs;
         private JoyConColors color;
         private int playerID;
         private int numberOfShotLeft;
 
-        public void Initialize(int newPlayerID, JoyConColors newColor, int ammo = 3)
+        public void Initialize(int newPlayerID, JoyConColors newColor, int humanId, int ammo = 3)
         {
             playerID = newPlayerID;
             color = newColor;
@@ -34,6 +36,8 @@ namespace Modules.Common.Status
                 var shot = Instantiate(shotContainer, shotLeft.transform);
                 shotLeftRefs[i] = shot.transform.GetChild(0).transform.GetComponent<Image>();
             }
+
+            nameText.text = $"Player {humanId + 1}";
         }
 
         private void SetColor(Color newColor)
