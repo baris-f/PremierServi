@@ -11,7 +11,7 @@ namespace Modules.Technical.SceneLoader.Runtime
 
         [Header("Config")]
         [SerializeField] private Animator animator;
-        [SerializeField] private int transitionTimeInMs = 1000;
+        [SerializeField] private float transitionTime = 1;
 
         private void Awake() => animator.gameObject.SetActive(true);
 
@@ -26,7 +26,7 @@ namespace Modules.Technical.SceneLoader.Runtime
         private async Task DoTransition(string sceneName)
         {
             animator.SetTrigger(StartId);
-            await Task.Delay(transitionTimeInMs);
+            await Task.Delay((int)(transitionTime * 1000));
             SceneManager.LoadScene(sceneName);
         }
     }

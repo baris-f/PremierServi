@@ -11,23 +11,30 @@ namespace Modules.Common.CustomEvents.Runtime
     {
         public enum Type
         {
-            Robot, Human
+            Robot,
+            Human
         }
-        
+
         [Serializable]
         public class PlayerData : MinimalData
         {
             public int id;
             public Type type;
+            public int typeId;
         }
 
         [SerializeField] private PlayerData data = new();
 
-        [Button] public void Raise(int id, Type type)
+        public void Raise(PlayerData newData) => Raise(newData.id, newData.type, newData.typeId);
+        
+        public void Raise(int id, Type type, int typeId)
         {
             data.id = id;
             data.type = type;
-            Raise(data);
+            data.typeId = typeId;
+            Raise();
         }
+        
+        [Button] public void Raise() => base.Raise(data);
     }
 }

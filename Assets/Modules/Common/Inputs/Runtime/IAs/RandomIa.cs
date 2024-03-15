@@ -7,6 +7,8 @@ namespace Modules.Common.Inputs.Runtime.IAs
     public class RandomIa : BaseIa
     {
         [Header("RandomIa Config")]
+        [SerializeField] private int minRndTickDuration = 10;
+        [SerializeField] private int maxRndTickDuration = 30;
         [SerializeField] private ActionToPerform[] allowedActions =
             { ActionToPerform.Walk, ActionToPerform.Run, ActionToPerform.Stop };
 
@@ -15,7 +17,7 @@ namespace Modules.Common.Inputs.Runtime.IAs
             while (Started)
             {
                 var rndAction = allowedActions.GetRandom();
-                var rndTickDuration = Random.Range(1, 20);
+                var rndTickDuration = Random.Range(minRndTickDuration, maxRndTickDuration);
                 PerformAction(rndAction);
 
                 await WaitForTicks(rndTickDuration);

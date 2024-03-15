@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using TMPro;
 using UnityEngine;
 
 namespace Modules.Technical.AwaitablePopup.Runtime
@@ -9,15 +8,13 @@ namespace Modules.Technical.AwaitablePopup.Runtime
         [Header("Canvas Popup Settings")]
         [SerializeField] private GameObject container;
         [SerializeField] private GameObject blocker;
-        [SerializeField] private TextMeshProUGUI message;
 
         private bool blockBackground;
 
         private void Awake() => Hide();
 
-        public async Task<T> Open(string newMessage = "", bool shouldBlockBackground = false)
+        public async Task<T> Open(bool shouldBlockBackground = false)
         {
-            if (!string.IsNullOrWhiteSpace(newMessage)) message.text = newMessage;
             blockBackground = shouldBlockBackground;
             return await base.Open();
         }

@@ -13,16 +13,25 @@ MonoBehaviour:
   m_Name: InGameConfig
   m_EditorClassIdentifier: 
   preset1: {fileID: 0}
-  endOfGameScene: {fileID: -1069727083311247290, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
-  humans: []
+  endOfGameScene: {fileID: -1339986102902656894, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
+  demoMode: 1
+  humans:
+  - deviceName: Keyboard
+    color:
+      bodyHex: '#FFAFAF'
+      buttonHex: '#372D2D'
+      bodyColor: {r: 1, g: 0.6862745, b: 0.6862745, a: 1}
+      buttonColor: {r: 0.21568628, g: 0.1764706, b: 0.1764706, a: 1}
+    playerId: 1
+    eatenCakes: []
   rounds:
-  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+  - mode: {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
     difficulty: 1
     cake: {fileID: 0}
-  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+  - mode: {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
     difficulty: 1
     cake: {fileID: 0}
-  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+  - mode: {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
     difficulty: 1
     cake: {fileID: 0}
   curRound: 0

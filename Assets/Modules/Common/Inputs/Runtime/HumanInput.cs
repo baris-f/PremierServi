@@ -1,5 +1,7 @@
-﻿using Modules.Common.Controllers.Runtime;
+﻿using System.Collections.Generic;
+using Modules.Common.Controllers.Runtime;
 using Modules.Technical.GameConfig.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +9,9 @@ namespace Modules.Common.Inputs.Runtime
 {
     public class HumanInput : MonoBehaviour
     {
+        [Header("Refs")]
+        [SerializeField] private SimpleLocalEvent openPauseMenu;
+
         [Header("Debug")]
         [SerializeField] private PlayerController player;
         [SerializeField] private CanonController canon;
@@ -20,6 +25,20 @@ namespace Modules.Common.Inputs.Runtime
         // Canon
         private InputAction move;
         private InputAction fire;
+
+        // Other
+        private InputAction pause;
+
+        private enum MovementActions
+        {
+            Walk,
+            Run,
+            Taunt,
+            Stop
+        }
+
+        private List<MovementActions> activeActions = new() { MovementActions.Stop };
+        private MovementActions CurMovementAction => activeActions[^1];
 
         public static HumanInput Instantiate(HumanInput prefab, Transform container, Human human,
             PlayerController player, CanonController canon)
@@ -37,24 +56,62 @@ namespace Modules.Common.Inputs.Runtime
         {
             // PlayerController
             walk = input.actions["Walk"];
-            walk.started += _ => player.StartWalking();
-            walk.canceled += _ => player.Stop();
-            
+            walk.started += _ => AddAction(MovementActions.Walk);
+            walk.canceled += _ => RemoveAction(MovementActions.Walk);
+
             run = input.actions["Run"];
-            run.started += _ => player.StartRunning();
-            run.canceled += _ => player.Stop();
-            
+            run.started += _ => AddAction(MovementActions.Run);
+            run.canceled += _ => RemoveAction(MovementActions.Run);
+
             taunt = input.actions["Taunt"];
-            taunt.started += _ => player.StartTaunt();
-            taunt.canceled += _ => player.Stop();
-            
+            taunt.started += _ => AddAction(MovementActions.Taunt);
+            taunt.canceled += _ => RemoveAction(MovementActions.Taunt);
+
             // CanonController
             move = input.actions["Move"];
             fire = input.actions["Fire"];
             fire.started += _ => canon.Fire();
+
+            // Pause
+            pause = input.actions["Pause"];
+            pause.performed += _ => openPauseMenu.Raise();
         }
 
-        private void Update() => 
+        private void AddAction(MovementActions movementActions)
+        {
+            if (activeActions.Contains(movementActions))
+                activeActions.Remove(movementActions);
+            activeActions.Add(movementActions);
+            CheckAction();
+        }
+
+        private void RemoveAction(MovementActions movementActions)
+        {
+            if (activeActions.Contains(movementActions))
+                activeActions.Remove(movementActions);
+            CheckAction();
+        }
+
+        private void CheckAction()
+        {
+            switch (CurMovementAction)
+            {
+                case MovementActions.Run:
+                    player.StartRunning();
+                    break;
+                case MovementActions.Walk:
+                    player.StartWalking();
+                    break;
+                case MovementActions.Taunt:
+                    player.StartTaunt();
+                    break;
+                case MovementActions.Stop:
+                    player.Stop();
+                    break;
+            }
+        }
+
+        private void Update() =>
             canon.Move(move.ReadValue<Vector2>());
     }
 }

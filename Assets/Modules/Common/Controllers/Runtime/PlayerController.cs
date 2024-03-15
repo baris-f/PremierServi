@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Modules.Common.CustomEvents.Runtime;
-using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 
@@ -14,6 +13,7 @@ namespace Modules.Common.Controllers.Runtime
         private static readonly int Taunting = Animator.StringToHash("Taunting");
         private static readonly int Death = Animator.StringToHash("Death");
         private static readonly int Win = Animator.StringToHash("Win");
+        private static readonly int Paused = Animator.StringToHash("Paused");
 
         [Serializable] private enum Status
         {
@@ -24,7 +24,6 @@ namespace Modules.Common.Controllers.Runtime
         }
 
         [Header("Settings")]
-        [SerializeField] private int playerId;
         [SerializeField] private float walkSpeed;
         [SerializeField] private float runSpeed;
 
@@ -36,6 +35,7 @@ namespace Modules.Common.Controllers.Runtime
         [Header("Assets")]
         [SerializeField] private AudioClip walkClip;
         [SerializeField] private AudioClip runClip;
+        [SerializeField] private AudioClip deathClip;
 
         [Header("Fields")]
         [SerializeField] private ScriptableFloat gameSpeed;
@@ -51,7 +51,7 @@ namespace Modules.Common.Controllers.Runtime
 
         private Transform cachedTransform;
         private bool disabled;
-        private PlayerEvent.Type playerType;
+        private readonly PlayerEvent.PlayerData playerData = new();
         private Status CurrentStatus
         {
             get => currentStatus;
@@ -67,26 +67,30 @@ namespace Modules.Common.Controllers.Runtime
 
         public void Init(PlayerEvent.Type type, int newPlayerId, int typeId, float newWalkSpeed, float newRunSpeed)
         {
-            playerId = newPlayerId;
-            playerType = type;
-            var typeName = type switch
+            playerData.id = newPlayerId;
+            playerData.type = type;
+            playerData.typeId = typeId;
+            var typeName = playerData.type switch
             {
                 PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot",
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
-            name = $"Player {playerId} - {typeName} {typeId}";
+            name = $"Player {playerData.id} - {typeName} {playerData.typeId}";
             walkSpeed = newWalkSpeed;
             runSpeed = newRunSpeed;
+            gameSpeed.OnValueChanged += SetPauseState;
         }
 
         private void Start() => cachedTransform = transform;
+        private void OnDisable() => gameSpeed.OnValueChanged -= SetPauseState;
+        private void SetPauseState(float speed) => animator.SetBool(Paused, speed <= 0);
 
         protected void Update()
         {
             if (gameSpeed.Value <= 0 || disabled) return;
             if (transform.position.x > goal.Value)
             {
-                playerWin.Raise(playerId, playerType);
+                playerWin.Raise(playerData);
                 // animator.SetTrigger(Win); todo faire l'animation
                 DisablePlayer();
             }
@@ -100,8 +104,9 @@ namespace Modules.Common.Controllers.Runtime
         {
             if (!other.transform.CompareTag("Projectile")) return;
             Destroy(other.gameObject); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
-            playerDeath.Raise(playerId, playerType);
+            playerDeath.Raise(playerData);
             animator.SetTrigger(Death);
+            if (deathClip != null) audioSource.PlayOneShot(deathClip);
             DisablePlayer();
         }
 

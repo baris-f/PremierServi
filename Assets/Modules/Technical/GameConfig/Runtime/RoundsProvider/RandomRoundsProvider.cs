@@ -7,7 +7,8 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
 {
     public class RandomRoundsProvider : BaseRoundsProvider
     {
-        [Header("Config ")]
+        [Header("Config")]
+        [SerializeField] private ModeDescriptor forcedFirstRound;
         [SerializeField] private List<ModeDescriptor> modesToProvide = new();
 
         public override string Name => "Random";
@@ -16,6 +17,12 @@ namespace Modules.Technical.GameConfig.Runtime.RoundsProvider
         {
             var rounds = new List<Round>();
             var amount = GetDefaultLength(length);
+            if (forcedFirstRound != null)
+            {
+                rounds.Add(new Round(forcedFirstRound, difficulty));
+                amount--;
+            }
+
             for (var i = 0; i < amount; i++)
             {
                 var id = Random.Range(0, modesToProvide.Count);

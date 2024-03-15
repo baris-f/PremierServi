@@ -13,6 +13,7 @@ namespace Modules.Technical.ScriptableCollections.Runtime
     {
         public abstract IEnumerable<T> Collection { get; }
         private string path;
+#if UNITY_EDITOR
         private string Path
         {
             get
@@ -24,7 +25,6 @@ namespace Modules.Technical.ScriptableCollections.Runtime
             }
         }
 
-#if UNITY_EDITOR
         protected T New()
         {
             var newObj = CreateInstance(typeof(T)) as T;
@@ -70,7 +70,7 @@ namespace Modules.Technical.ScriptableCollections.Runtime
             RemoveFromCollection(obj);
         }
 
-        [Button(header:"ScriptableCollection Functions", horizontal:true)]
+        [Button(header: "ScriptableCollection Functions", horizontal: true)]
         protected void Cleanup()
         {
             var children = AssetDatabase.LoadAllAssetRepresentationsAtPath(Path);
@@ -79,6 +79,7 @@ namespace Modules.Technical.ScriptableCollections.Runtime
                 if (!Collection.Contains(child))
                     AssetDatabase.RemoveObjectFromAsset(child);
             }
+
             RefreshCollection();
         }
 

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickDelayInMs: 100
   verbose: 0
-  debug: 'paused : False started : False'
-  allowedActions: 010000000200000004000000
+  minRndTickDuration: 5
+  maxRndTickDuration: 25
+  allowedActions: 010000000100000002000000040000000400000004000000

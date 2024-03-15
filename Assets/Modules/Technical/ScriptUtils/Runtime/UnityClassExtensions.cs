@@ -25,6 +25,13 @@ namespace Modules.Technical.ScriptUtils.Runtime
 
         public static T GetRandom<T>(this T[] array) => array[Random.Range(0, array.Length)];
         public static T GetRandom<T>(this List<T> list) => list[Random.Range(0, list.Count)];
+        
+        public static T PickRandom<T>(this List<T> list)
+        {
+            var ret = list[Random.Range(0, list.Count)];
+            list.Remove(ret);
+            return ret;
+        }
 
         /// <summary>
         /// Creates and returns a clone of any given scriptable object.

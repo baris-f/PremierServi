@@ -1,0 +1,17 @@
+{
+    "name": "PauseMenu",
+    "rootNamespace": "",
+    "references": [
+        "AwaitablePopup",
+        "ScriptableField"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

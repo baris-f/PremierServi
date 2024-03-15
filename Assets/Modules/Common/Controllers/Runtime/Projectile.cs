@@ -16,6 +16,7 @@ namespace Modules.Common.Controllers.Runtime
         private void Start() => cachedTransform = transform;
 
         private void Update() =>
-            cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * -1 * cachedTransform.right;
+            cachedTransform.position +=
+                Time.deltaTime * Mathf.Max(gameSpeed.Value, 0) * speed * -1 * cachedTransform.right;
     }
 }

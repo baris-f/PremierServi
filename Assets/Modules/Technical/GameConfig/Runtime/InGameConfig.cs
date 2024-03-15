@@ -12,6 +12,7 @@ namespace Modules.Technical.GameConfig.Runtime
     {
         [Header("Standard Config")]
         [SerializeField] private LoadSceneEvent endOfGameScene;
+        [SerializeField] private bool demoMode;
 
         [Header("Dynamic Config")]
         [SerializeField, SaveInPreset] private List<Human> humans;
@@ -39,7 +40,7 @@ namespace Modules.Technical.GameConfig.Runtime
 
         [Button(horizontal: true)] public void GoNextRound() => curRound++;
 
-        public void SortHumansByScore() => humans.Sort((a, b) => a.eatenCakes.Count.CompareTo(b.eatenCakes.Count));
+        public void SortHumansByScore() => humans.Sort((a, b) => b.eatenCakes.Count.CompareTo(a.eatenCakes.Count));
 
         public Human GetHumanById(int id) => humans.Find(h => h.playerId == id);
 
@@ -47,11 +48,13 @@ namespace Modules.Technical.GameConfig.Runtime
         {
             curRound = 0;
             humans.Clear();
+            if (players == null) return;
             foreach (var player in players)
                 if (!string.IsNullOrWhiteSpace(player.deviceName))
                     humans.Add(player);
         }
 
+        public bool DemoMode => demoMode;
         // fix nul
         // protected InGameConfig() => OnExitEditMode += () => curRound = 0;
     }

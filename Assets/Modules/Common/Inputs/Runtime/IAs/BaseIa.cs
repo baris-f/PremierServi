@@ -11,10 +11,10 @@ namespace Modules.Common.Inputs.Runtime.IAs
         protected enum ActionToPerform
         {
             None,
-            Walk,
-            Run,
-            Taunt,
-            Stop
+            Walk, // 100
+            Run, // 50
+            Taunt, // 0
+            Stop // 75
         }
 
         [Header("Base Config")]

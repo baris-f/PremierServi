@@ -1,0 +1,4641 @@
+fileFormatVersion: 2
+guid: 499f3ef97647ba949929e62c3479015f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GATO_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 6652
+        width: 317
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91e8c64569c01a44ad4c8dc1a874ae5
+      internalID: 1465618406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 6631
+        width: 349
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438644b1b1e16fa4aa89816aa3e07b89
+      internalID: 1981386111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_2
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 6645
+        width: 338
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696f2d7c161bf364f91949d32d4f32ac
+      internalID: 1619647534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_3
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 6638
+        width: 335
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac40d8d52703db44db3f20d7a38c5aae
+      internalID: 1443374547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_4
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 6648
+        width: 303
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df710cdd065eef64f9b0039dbc9d1a82
+      internalID: -1331772039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_5
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 6641
+        width: 355
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ff2ad93fc918341935c6eded6e967d
+      internalID: 707943312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_6
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 6626
+        width: 447
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da31000c33eb4a45abed18169312278
+      internalID: 1501511507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_7
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 6619
+        width: 479
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2df8c693a777074b8dd0a838620f98c
+      internalID: -2027871065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_8
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 6643
+        width: 516
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4538744ec843dd84aa3ba447c12e7294
+      internalID: -206121082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_9
+      rect:
+        serializedVersion: 2
+        x: 4035
+        y: 6657
+        width: 454
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2217f40fa85db7244862d7e075fc6e3d
+      internalID: -51241677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_10
+      rect:
+        serializedVersion: 2
+        x: 4609
+        y: 6633
+        width: 448
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa838043d98a424884b6a4ed1e250bf
+      internalID: -335785059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_11
+      rect:
+        serializedVersion: 2
+        x: 5187
+        y: 6667
+        width: 454
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebed5aec4f283748b01cb219dc31f81
+      internalID: 678149273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_12
+      rect:
+        serializedVersion: 2
+        x: 5782
+        y: 6636
+        width: 416
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c3a826a47203f48af0c50985a7a700
+      internalID: -879936120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_13
+      rect:
+        serializedVersion: 2
+        x: 6332
+        y: 6646
+        width: 396
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b49f605ffe8ea4db9abada7240c404
+      internalID: 2090188297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_14
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 6214
+        width: 300
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e47cda7c26965408b20616256feaca
+      internalID: 1201197222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_15
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 6200
+        width: 311
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352d1306f1be6e2449a6542558f90698
+      internalID: -412928535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_16
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 6214
+        width: 301
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6a725c6c4c6504a901df6eb9d849cd
+      internalID: 912490589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_17
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 6214
+        width: 318
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d30d8ba46032a489fcff5b91854583
+      internalID: 383394607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_18
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 6228
+        width: 273
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2cf633adde2884bae9c252ce904992
+      internalID: 415660404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_19
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 6211
+        width: 324
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0c7196624881e45ac6189e6537caab
+      internalID: 701117122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_20
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 6226
+        width: 390
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e97e9427290432408ca0b4597543581
+      internalID: -1393961336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_21
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 6229
+        width: 465
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c518c9954d1cd45904c212ffe35752
+      internalID: 1378935347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_22
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 6226
+        width: 513
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9628d23084cb34a8b1c062458a98c2
+      internalID: -240146288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_23
+      rect:
+        serializedVersion: 2
+        x: 4059
+        y: 6192
+        width: 410
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1770ca8e0400df24ea42e474d69063fa
+      internalID: -184354074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_24
+      rect:
+        serializedVersion: 2
+        x: 4609
+        y: 6226
+        width: 475
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e4ce8c5243f384d99cc575d4db6474
+      internalID: 1259624494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_25
+      rect:
+        serializedVersion: 2
+        x: 5194
+        y: 6212
+        width: 437
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd6f0c1616668f409861a8ddd7176e7
+      internalID: 920211775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_26
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 6222
+        width: 420
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b7032acbdc8014e801b46e0ab5f55e
+      internalID: 1512917849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_27
+      rect:
+        serializedVersion: 2
+        x: 6291
+        y: 6212
+        width: 458
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d34532f701568d47a03fffb479ed954
+      internalID: -2053139276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5794
+        width: 318
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8c56f9441d14a4eb45b83fd0e37ed2
+      internalID: -1198910734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_29
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 5770
+        width: 338
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb9ad6aa8ad866468c3db1dfda490e6
+      internalID: -1851906097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_30
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 5756
+        width: 338
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e4648352d8ca143976b7a4e2db2920
+      internalID: 499154358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_31
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 5794
+        width: 239
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e6a930c595a58418f4b999a340d9aa
+      internalID: 451131394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_32
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 5770
+        width: 290
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ff2c81d4a93a2418e4533d8df0c1f0
+      internalID: -806201123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_33
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 5780
+        width: 320
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a370b3efce9047c4fb96a99b1287c2ce
+      internalID: 930633284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_34
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 5785
+        width: 481
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19b548acfead9a4486e42f14ec779c4
+      internalID: -1738413083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_35
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 5795
+        width: 499
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56ed9f67eacf624d9cb18fbfddfe16b
+      internalID: 1663559966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_36
+      rect:
+        serializedVersion: 2
+        x: 3690
+        y: 5819
+        width: 249
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29c0cf87025e1b46af444015ec0138c
+      internalID: -1716134560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_37
+      rect:
+        serializedVersion: 2
+        x: 4107
+        y: 5805
+        width: 338
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7613236e76b3cae48ba5a22375ae6249
+      internalID: -262500909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_38
+      rect:
+        serializedVersion: 2
+        x: 4616
+        y: 5833
+        width: 475
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da31d2fe3ddbdcb40a9011dd1b39cc86
+      internalID: 1532705403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_39
+      rect:
+        serializedVersion: 2
+        x: 5218
+        y: 5805
+        width: 427
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe6cb56dd8341b418c54890eaf3c667
+      internalID: -1588830078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_40
+      rect:
+        serializedVersion: 2
+        x: 5782
+        y: 5805
+        width: 369
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4ffa09ac3fdd64c93db609b0e889cf
+      internalID: 1683382527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_41
+      rect:
+        serializedVersion: 2
+        x: 6342
+        y: 5823
+        width: 335
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80a6f13189bd7f438393963a552c058
+      internalID: -725143701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_42
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 5426
+        width: 259
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b9f6f92cd5e3547811dd98bba46017
+      internalID: 42716920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_43
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 5423
+        width: 260
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2720c0080b8ffc9458fd0363044f4abc
+      internalID: -1088018549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_44
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 5419
+        width: 257
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b76229b323201c4da73f687d8382999
+      internalID: -1393069739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_45
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 5419
+        width: 229
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604ec64b6cd7bb3458a0bb9b223534dd
+      internalID: 907530795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_46
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 5419
+        width: 243
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7027cde4d2050584b842cb8f4abc2852
+      internalID: -1207777451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_47
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 5419
+        width: 249
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa56058718b6a04458c6a37f8629b0a7
+      internalID: -538543182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_48
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 5373
+        width: 291
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5094ade13b672a44b927b59995ef709c
+      internalID: -1707572284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_49
+      rect:
+        serializedVersion: 2
+        x: 2694
+        y: 5377
+        width: 293
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4821c25125071bb43822c2ccbdacd2c6
+      internalID: -529490158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_50
+      rect:
+        serializedVersion: 2
+        x: 3066
+        y: 5366
+        width: 280
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ae7f5500c24f04fbb2d9c055a50e9d
+      internalID: -1598071428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_51
+      rect:
+        serializedVersion: 2
+        x: 3425
+        y: 5370
+        width: 311
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f571b32ce8ff2448f6a8ae9f7b1486
+      internalID: -166020322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_52
+      rect:
+        serializedVersion: 2
+        x: 3770
+        y: 5366
+        width: 318
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1608dd6830306f142ab7ca65ffd455b2
+      internalID: -1515201189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_53
+      rect:
+        serializedVersion: 2
+        x: 4129
+        y: 5380
+        width: 324
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411232f7e28df534fa73315b0b536246
+      internalID: 2121208089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_54
+      rect:
+        serializedVersion: 2
+        x: 4708
+        y: 5269
+        width: 356
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5a6aacd9d5b4744b0ee36002459562
+      internalID: 1750164692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_55
+      rect:
+        serializedVersion: 2
+        x: 5337
+        y: 5269
+        width: 304
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c9f2edbfa0d8042bf8dab79c35cdf8
+      internalID: -727141937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_56
+      rect:
+        serializedVersion: 2
+        x: 5901
+        y: 5265
+        width: 311
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d89944662043d84eb990ae30830e467
+      internalID: -1128377344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_57
+      rect:
+        serializedVersion: 2
+        x: 6455
+        y: 5265
+        width: 355
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617727bc548629c4197f23c19b711df0
+      internalID: -1574824305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_58
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 5077
+        width: 277
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f74b9033418b9429edeb84244643d6
+      internalID: 217684023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_59
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 5077
+        width: 260
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6875d5428ec63f4882530a184440c64
+      internalID: -1721210146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_60
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 5074
+        width: 281
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640a1250703f3864b8d0da90fcf65437
+      internalID: 889562153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_61
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 5074
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9c41f7a32d27a4097b5cced0b44f21
+      internalID: 1201154708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_62
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 5074
+        width: 250
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736c032437a3cfc42be3cf734872ce50
+      internalID: 52847334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_63
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 5074
+        width: 249
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d99681da2afa34dbb7302624395464
+      internalID: 459762570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_64
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 5031
+        width: 297
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a8725ec9099114ea99cacd10f9e660
+      internalID: -1321475448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_65
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 5045
+        width: 277
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a043cb3885ec8b04387cdd7f23fbd196
+      internalID: -1678941201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_66
+      rect:
+        serializedVersion: 2
+        x: 3049
+        y: 5045
+        width: 300
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b44668d7aed7114cb8c5cbfd0ebf92f
+      internalID: 377949180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_67
+      rect:
+        serializedVersion: 2
+        x: 3425
+        y: 5031
+        width: 307
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d7bd6420ad05648bd8378dc4a2c2f8
+      internalID: -1425745572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_68
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 5038
+        width: 307
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1cfe8a08546fa4b92fbcbb9c60b907
+      internalID: -292078329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_69
+      rect:
+        serializedVersion: 2
+        x: 4126
+        y: 4683
+        width: 334
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f645d29d8cda9e441af15d29fc34fb62
+      internalID: 1293480633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_70
+      rect:
+        serializedVersion: 2
+        x: 5327
+        y: 4712
+        width: 321
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecccb64583a001b44852f6a99fee53a8
+      internalID: -1887597005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_71
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 4736
+        width: 273
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d90de72d2a49454898d97eeb1f4effb
+      internalID: -2114792737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_72
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 4736
+        width: 250
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4102091c33e18274f9d816e3a1050dcd
+      internalID: 262495198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_73
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 4739
+        width: 263
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e568d6d0b8d206e4d8bcbd4c556c67b3
+      internalID: 1077323201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_74
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 4736
+        width: 256
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bb64a6380d17e4ab41fcf2208cf016
+      internalID: -87344680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_75
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 4736
+        width: 256
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66353122a467f545818ce4042c498e3
+      internalID: -115021608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_76
+      rect:
+        serializedVersion: 2
+        x: 1909
+        y: 4736
+        width: 246
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f627fb6b786dce4989403c8ee75584a
+      internalID: -1258929960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_77
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 4341
+        width: 300
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5cee79ec0f52240870fc788f6003a0
+      internalID: -960080771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_78
+      rect:
+        serializedVersion: 2
+        x: 2694
+        y: 4710
+        width: 303
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc87dd7300ea1654aabe539a88285dd9
+      internalID: 192723654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_79
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 4676
+        width: 304
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ef6bdc270c2fc43bb6fe756291d77a
+      internalID: 1853716998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_80
+      rect:
+        serializedVersion: 2
+        x: 3422
+        y: 4669
+        width: 297
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb842fbda1293884c994cefdb1b61ab8
+      internalID: 18675438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_81
+      rect:
+        serializedVersion: 2
+        x: 3777
+        y: 4676
+        width: 324
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ff6e9e2cdc58645993dbb8816b8ba1
+      internalID: -647015927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_82
+      rect:
+        serializedVersion: 2
+        x: 4712
+        y: 4712
+        width: 352
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be66774a8085edb45ba3eeb1c2042b4a
+      internalID: 199802010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_83
+      rect:
+        serializedVersion: 2
+        x: 5901
+        y: 4712
+        width: 311
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a2eb50cd44e9f44bdc3df6af27ba3d
+      internalID: -1698387557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_84
+      rect:
+        serializedVersion: 2
+        x: 6458
+        y: 4708
+        width: 349
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81cdf30e483e5d943a704f368b68ceaa
+      internalID: -421532581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_85
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 4397
+        width: 266
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e577967caf170ed4d9f98114d7b51f57
+      internalID: 1359961760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_86
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 4397
+        width: 253
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d612c8686e1233e4a97d7e47993e8e8a
+      internalID: -1788995076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_87
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 4397
+        width: 256
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7505f93623430034aaf3ae8f5cad5965
+      internalID: -688119002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_88
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 4397
+        width: 243
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc2dd903e0b6aa48a687e709d8ffdc2
+      internalID: 32360419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_89
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 4397
+        width: 252
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a7bc1df05ea5c4286666d420982908
+      internalID: -2123133955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_90
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 4397
+        width: 246
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084fdf33bef2ccb49b50e52db698a635
+      internalID: -297106123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_91
+      rect:
+        serializedVersion: 2
+        x: 2694
+        y: 4340
+        width: 307
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b549b8fc11c19438525310f59bdf3b
+      internalID: -2090017926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_92
+      rect:
+        serializedVersion: 2
+        x: 3056
+        y: 4340
+        width: 311
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e9a0631900fff43b578eb0b3913072
+      internalID: -153325430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_93
+      rect:
+        serializedVersion: 2
+        x: 3415
+        y: 4340
+        width: 324
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5ae0c19e9cfec4da35389e9c9fea64
+      internalID: -546388035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_94
+      rect:
+        serializedVersion: 2
+        x: 3767
+        y: 4340
+        width: 345
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa38d3e8239cfb84ca2966589ec18644
+      internalID: -510692827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_95
+      rect:
+        serializedVersion: 2
+        x: 4133
+        y: 4341
+        width: 303
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e490dc387ef81f4d9675c35be0217de
+      internalID: 1068275417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_96
+      rect:
+        serializedVersion: 2
+        x: 4649
+        y: 4088
+        width: 351
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8700a307bdde0c48b2be6e23b580c8b
+      internalID: 1245019718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_97
+      rect:
+        serializedVersion: 2
+        x: 5664
+        y: 4105
+        width: 468
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca90ec8318311884d84cb7bb59e3f847
+      internalID: -894035055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_98
+      rect:
+        serializedVersion: 2
+        x: 6211
+        y: 4092
+        width: 461
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640a79dd2acd01d41b9c154a5a5e7a49
+      internalID: -1184254452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_99
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 3984
+        width: 366
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44054b42e445fdc45b53a8a107a2e0e5
+      internalID: 2041918315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_100
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 3984
+        width: 369
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ca2f976005f854c8cfb0eb7c2f8d23
+      internalID: 1803503899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_101
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 3987
+        width: 366
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b69d33f32feda4e810bc553b0aab7b
+      internalID: 1923545504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_102
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 3991
+        width: 352
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79df8e4d57632a343a5deef7c20ee6c0
+      internalID: 1186719629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_103
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 3936
+        width: 396
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de297e74641363f49a5fe55aed3a5b28
+      internalID: 1910468732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_104
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 3936
+        width: 383
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b9ba9b5f0479740871685e3e82221b
+      internalID: 1786534539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_105
+      rect:
+        serializedVersion: 2
+        x: 3474
+        y: 3929
+        width: 387
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a528f2cc93c89843b815884c57f6077
+      internalID: -1663630530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_106
+      rect:
+        serializedVersion: 2
+        x: 4052
+        y: 3926
+        width: 379
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ac3e2ffbe03d245b8e4d64cf8cfdd9
+      internalID: -201598521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_107
+      rect:
+        serializedVersion: 2
+        x: 5124
+        y: 4085
+        width: 457
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb681f7deadb6541890cde800569dbd
+      internalID: 1242601951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_108
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 3509
+        width: 359
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2066ef4c21b9847ab22f427f6868b0
+      internalID: -51056137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_109
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 3509
+        width: 359
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb42697dae626234fafde5a4fa373a6a
+      internalID: 834694136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_110
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 3509
+        width: 349
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d687b923817034eb542dc8ed3b9434
+      internalID: -2071790239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_111
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 3509
+        width: 365
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151829abff1a6a545890f486215695fa
+      internalID: 591012577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_112
+      rect:
+        serializedVersion: 2
+        x: 2312
+        y: 3471
+        width: 421
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5382945b66ae247b27c1da6f731545
+      internalID: 1793389122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_113
+      rect:
+        serializedVersion: 2
+        x: 2917
+        y: 3471
+        width: 407
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18667cb123e5584287ca8c93e3d92bd
+      internalID: -1147278089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_114
+      rect:
+        serializedVersion: 2
+        x: 3485
+        y: 3471
+        width: 369
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef444714685e084ea49086202d8e540
+      internalID: 453964838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_115
+      rect:
+        serializedVersion: 2
+        x: 4038
+        y: 3471
+        width: 397
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32556df227f9c0e4fb96ba1b61901d34
+      internalID: 385772064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_116
+      rect:
+        serializedVersion: 2
+        x: 4659
+        y: 3695
+        width: 416
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1955b69c694104f40a4309ba08a953ee
+      internalID: -1429781213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_117
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 3722
+        width: 365
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf825a23272df749b4525cdd7a61f0a
+      internalID: -35259595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_118
+      rect:
+        serializedVersion: 2
+        x: 5749
+        y: 3695
+        width: 359
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9a02b1d801d5d4586f002ad5a38fd7
+      internalID: -1287568414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_119
+      rect:
+        serializedVersion: 2
+        x: 6265
+        y: 3709
+        width: 369
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3c4b6e9fc02c646889d8f9e20837fe
+      internalID: -243460346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_120
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 3061
+        width: 359
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b8a171691c2fe4fbbd0686019f2c90
+      internalID: -1697023587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_121
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 3061
+        width: 359
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f103b14762b89004b9298168077d4afb
+      internalID: -1937298990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_122
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 3064
+        width: 352
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57a5dd1dc9930b499a854464eed1f04
+      internalID: 237650109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_123
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 3057
+        width: 372
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbec9f92af3b7e4fb7bf3c6e21153fe
+      internalID: -1319527656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_124
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 3022
+        width: 410
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c40872e41950e4b89826bc5535463c
+      internalID: 309989982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_125
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 3020
+        width: 388
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a611eaf164a5694a85fbbd07b1a2fd7
+      internalID: 95581237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_126
+      rect:
+        serializedVersion: 2
+        x: 3447
+        y: 3023
+        width: 413
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33739d54e77068245b5d6e7ae08eaec9
+      internalID: -2044402962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_127
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 3023
+        width: 406
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a49b1c6762e82b4186ee0c9ce0cf1f4
+      internalID: -1441763099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_128
+      rect:
+        serializedVersion: 2
+        x: 4628
+        y: 3309
+        width: 454
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595fd1a3f35f3d24987f7a7e68342f11
+      internalID: -1691560107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_129
+      rect:
+        serializedVersion: 2
+        x: 5182
+        y: 3326
+        width: 447
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 655887907a011e0408e4f965cadf19e3
+      internalID: 2139269197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_130
+      rect:
+        serializedVersion: 2
+        x: 5708
+        y: 3299
+        width: 448
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82be95cfb00bfb2489c81169d97b194c
+      internalID: 1624713518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_131
+      rect:
+        serializedVersion: 2
+        x: 6228
+        y: 3312
+        width: 457
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d178fc0d6e0e37845ae8edaf9d553898
+      internalID: -40702233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_132
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 2757
+        width: 338
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6e36ec0ba30ad488de11c372e5fb6c
+      internalID: 1317251969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_133
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 2767
+        width: 362
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdc95bd8ba36d643bcb05d6bc0c8500
+      internalID: 276511963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_134
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2767
+        width: 229
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4288ab5721ec1547b0b36e6713b8ab4
+      internalID: -927846438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_135
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 2760
+        width: 348
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5eb891052d7424d9809ad71620a830
+      internalID: 1893626646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_136
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 2627
+        width: 287
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f43f8ddc5ab10646b1eff10b7e6b198
+      internalID: 270161721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_137
+      rect:
+        serializedVersion: 2
+        x: 2904
+        y: 2620
+        width: 281
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c169fe8fb422a2748ac967bd1d415dfd
+      internalID: -1750300954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_138
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 2630
+        width: 270
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1657bd2d4cb8741a03f17816ce48af
+      internalID: -993045809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_139
+      rect:
+        serializedVersion: 2
+        x: 3973
+        y: 2627
+        width: 287
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985ab313f20d6ad46a6bece321a295cc
+      internalID: -1850603338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_140
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 2449
+        width: 715
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30765231e9e2cc46a45de83c3a760df
+      internalID: -302929510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_141
+      rect:
+        serializedVersion: 2
+        x: 5392
+        y: 2476
+        width: 615
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c8dcc28b352d34ba7768d7ff3df324
+      internalID: -1137363998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_142
+      rect:
+        serializedVersion: 2
+        x: 6123
+        y: 2435
+        width: 701
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1953a2eabd877f643b338f3a513ca0fb
+      internalID: -1703947700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_143
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2418
+        width: 314
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f902f76bb3ab644bce96f54f0cc797
+      internalID: 1517712415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_144
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 2408
+        width: 397
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadd4568f0117c4488ef9c4d9203dd6d
+      internalID: 1700734208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_145
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 2418
+        width: 400
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a5c882a5f52ea428037a9757f7506c
+      internalID: 1473592319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_146
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 2418
+        width: 339
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389fb4d17a554a34a82caf637d545be2
+      internalID: 597620053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_147
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 2193
+        width: 287
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca0c7f3d6f1d1b4b8cb8f1e24a7e797
+      internalID: 476969399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_148
+      rect:
+        serializedVersion: 2
+        x: 2897
+        y: 2203
+        width: 294
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b306e6280fe2c154684618f5e152e5a7
+      internalID: -1949906913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_149
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 2203
+        width: 277
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafc1334b2ce85b4ea4a7d185d8f51ea
+      internalID: 326053895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_150
+      rect:
+        serializedVersion: 2
+        x: 3977
+        y: 2200
+        width: 290
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f1e090fa9188f47b3a2e90f9624212
+      internalID: 1230301828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_151
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 2046
+        width: 417
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fffccaeeb6a48d45bd2763b7598824d
+      internalID: 1031923125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_152
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 2046
+        width: 362
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2185d621d70714dbf8d3e06b339e5e
+      internalID: 951018456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_153
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 2049
+        width: 410
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac2c34445164fe40b452498e1b2419c
+      internalID: 321119474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_154
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 2039
+        width: 396
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd338613c3c32241bf3b9a7efa37d0e
+      internalID: 1128601384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_155
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1769
+        width: 297
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ce1b3a2ca93734d946bdf5430b5bfb
+      internalID: -92108845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_156
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 1755
+        width: 291
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d374e999025950439eebc3aeec94d0b
+      internalID: -699973192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_157
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 1759
+        width: 297
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a42fad374dd31d468c73ada6fce4bf6
+      internalID: -1867594270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_158
+      rect:
+        serializedVersion: 2
+        x: 3974
+        y: 1769
+        width: 297
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9be08f8603dae244a88c94222eac928
+      internalID: -543255095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_159
+      rect:
+        serializedVersion: 2
+        x: 4541
+        y: 1721
+        width: 748
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6d351f536ab70479dbf41391cc5a58
+      internalID: -1442171432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_160
+      rect:
+        serializedVersion: 2
+        x: 5344
+        y: 1721
+        width: 711
+        height: 537
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e847faa8e369b4d87dde86a8f3ff46
+      internalID: -1801186407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_161
+      rect:
+        serializedVersion: 2
+        x: 6106
+        y: 1721
+        width: 766
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83288e5f8b1b16142a66f31a5ced8987
+      internalID: 1211473823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_162
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1677
+        width: 366
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9315210bbec0b644815657b78095916
+      internalID: -1753969253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_163
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1680
+        width: 393
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17e5b460ebb7484db7529b1bb5663cd
+      internalID: -1289412957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_164
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 1683
+        width: 291
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2caf1ef7ea3673b42aeade35792403b6
+      internalID: -445766631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_165
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 1683
+        width: 352
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb49ab78f4e204d4a8afd8fd599877d4
+      internalID: -1922967641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_166
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1239
+        width: 363
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f58fa5e2741c24eb393d9427cc89aa
+      internalID: -162235438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_167
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1236
+        width: 407
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57ad568bfda9124599c7544ef9ac3ca
+      internalID: -2131638942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_168
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 1232
+        width: 400
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b88b55a0547152488a1c6ef255c242e
+      internalID: 1704539447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_169
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1232
+        width: 379
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16731f64b20a454cbbae7f3c8de15e3
+      internalID: 1313549048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_170
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 1232
+        width: 379
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea9119fb2d145e448ee123887940a20
+      internalID: -1529049381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_171
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 1236
+        width: 372
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49c255995e5e034b81452b590f84d15
+      internalID: 1092578328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_172
+      rect:
+        serializedVersion: 2
+        x: 2787
+        y: 1246
+        width: 387
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f782d8ab3e4b74ca0ed519972c816f
+      internalID: 279422767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_173
+      rect:
+        serializedVersion: 2
+        x: 3218
+        y: 1236
+        width: 417
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13be8b04c34d7ea4ebf48a1df0357c21
+      internalID: -374800936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_174
+      rect:
+        serializedVersion: 2
+        x: 3690
+        y: 1225
+        width: 352
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638252a514db281439c0f44d8da2f69e
+      internalID: 1145874104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_175
+      rect:
+        serializedVersion: 2
+        x: 4124
+        y: 1230
+        width: 396
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e24a7c7c8806c4b82555efc10834d1
+      internalID: 1799140134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_176
+      rect:
+        serializedVersion: 2
+        x: 4657
+        y: 990
+        width: 530
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd057d5c775bdfe47a4e6c2d4dc0bc19
+      internalID: 447144451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_177
+      rect:
+        serializedVersion: 2
+        x: 5286
+        y: 1020
+        width: 461
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb272b3e09241945bd5b86e8b476aae
+      internalID: 509893019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_178
+      rect:
+        serializedVersion: 2
+        x: 5846
+        y: 994
+        width: 479
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cba98d1dd57dd4ab394d2a6318d34f
+      internalID: 1352477226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_179
+      rect:
+        serializedVersion: 2
+        x: 6441
+        y: 1020
+        width: 431
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d6daf8d11b81f449f8851c389a5bb9
+      internalID: 891487419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_180
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 815
+        width: 387
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538701dc6af4266448c410005e1be8f8
+      internalID: -1086563450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_181
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 806
+        width: 400
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8de4ae30185c647bfc6bee0c4aa198
+      internalID: -797545275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_182
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 808
+        width: 378
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8bb27b30dca74498155b442f8d2fa8
+      internalID: -770608397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_183
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 808
+        width: 376
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b35389a98fa1847878cbf9b6403755
+      internalID: 1356570620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_184
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 808
+        width: 414
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccb8c181d71edf4a9e530aa5f03550b
+      internalID: 338653359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_185
+      rect:
+        serializedVersion: 2
+        x: 2299
+        y: 771
+        width: 430
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8503a111d15252440938864d1344accb
+      internalID: -732271156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_186
+      rect:
+        serializedVersion: 2
+        x: 2787
+        y: 771
+        width: 386
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7bdab1092854d4889d58f85c20f985
+      internalID: -2146584235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_187
+      rect:
+        serializedVersion: 2
+        x: 3242
+        y: 771
+        width: 362
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665577d34e16a5045a6fe8e457d2009c
+      internalID: 553453134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_188
+      rect:
+        serializedVersion: 2
+        x: 3690
+        y: 774
+        width: 369
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3796fbbb2170c4181b0a86990a079c
+      internalID: -1964721397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_189
+      rect:
+        serializedVersion: 2
+        x: 4120
+        y: 771
+        width: 397
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7804a09a235577449b5a3c335f38fca
+      internalID: 2063102715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_190
+      rect:
+        serializedVersion: 2
+        x: 4691
+        y: 412
+        width: 482
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89a6b11b17c1154892f95a2434539e1
+      internalID: 307326633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_191
+      rect:
+        serializedVersion: 2
+        x: 5289
+        y: 412
+        width: 462
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25dbe1e8ddcf56b4fa558f17d635318c
+      internalID: 1862623033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_192
+      rect:
+        serializedVersion: 2
+        x: 5864
+        y: 381
+        width: 447
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482b7a2cd5b2e2a4095d87452996c855
+      internalID: 1846981907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_193
+      rect:
+        serializedVersion: 2
+        x: 6445
+        y: 421
+        width: 410
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3a1840e0bfef245b13420494524e75
+      internalID: -326532737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_194
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 385
+        width: 400
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3035c10cf3aa96a46bcea3428cfe1877
+      internalID: -2052225410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_195
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 385
+        width: 342
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ba18041b6b2ff49b145cba67a10750
+      internalID: 1351867752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_196
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 388
+        width: 395
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6bdd2fa3547be47b0cbffcd4faf0c8
+      internalID: 2039193805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_197
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 381
+        width: 362
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56dcc20af689f94b82c03519ab79f62
+      internalID: 612992974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_198
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 391
+        width: 376
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6994759c741801a46b0e689a65d4d3e1
+      internalID: 945436225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_199
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 357
+        width: 342
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bac5ffde12df3243b741da19e8e6bf6
+      internalID: -807676664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_200
+      rect:
+        serializedVersion: 2
+        x: 2798
+        y: 350
+        width: 358
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e9856888605424db4c4f983ee019fe
+      internalID: -796949496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_201
+      rect:
+        serializedVersion: 2
+        x: 3252
+        y: 364
+        width: 321
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277981899523c4f4d99170d13362ab61
+      internalID: -1716193455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_202
+      rect:
+        serializedVersion: 2
+        x: 3676
+        y: 354
+        width: 379
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36561e0829f11d4d8f0dd661c7533a5
+      internalID: -1374828604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GATO_203
+      rect:
+        serializedVersion: 2
+        x: 4124
+        y: 354
+        width: 383
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c778c748c61e62b4f84f2e21b1a7da18
+      internalID: 447056376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GATO_0: 1465618406
+      GATO_1: 1981386111
+      GATO_10: -335785059
+      GATO_100: 1803503899
+      GATO_101: 1923545504
+      GATO_102: 1186719629
+      GATO_103: 1910468732
+      GATO_104: 1786534539
+      GATO_105: -1663630530
+      GATO_106: -201598521
+      GATO_107: 1242601951
+      GATO_108: -51056137
+      GATO_109: 834694136
+      GATO_11: 678149273
+      GATO_110: -2071790239
+      GATO_111: 591012577
+      GATO_112: 1793389122
+      GATO_113: -1147278089
+      GATO_114: 453964838
+      GATO_115: 385772064
+      GATO_116: -1429781213
+      GATO_117: -35259595
+      GATO_118: -1287568414
+      GATO_119: -243460346
+      GATO_12: -879936120
+      GATO_120: -1697023587
+      GATO_121: -1937298990
+      GATO_122: 237650109
+      GATO_123: -1319527656
+      GATO_124: 309989982
+      GATO_125: 95581237
+      GATO_126: -2044402962
+      GATO_127: -1441763099
+      GATO_128: -1691560107
+      GATO_129: 2139269197
+      GATO_13: 2090188297
+      GATO_130: 1624713518
+      GATO_131: -40702233
+      GATO_132: 1317251969
+      GATO_133: 276511963
+      GATO_134: -927846438
+      GATO_135: 1893626646
+      GATO_136: 270161721
+      GATO_137: -1750300954
+      GATO_138: -993045809
+      GATO_139: -1850603338
+      GATO_14: 1201197222
+      GATO_140: -302929510
+      GATO_141: -1137363998
+      GATO_142: -1703947700
+      GATO_143: 1517712415
+      GATO_144: 1700734208
+      GATO_145: 1473592319
+      GATO_146: 597620053
+      GATO_147: 476969399
+      GATO_148: -1949906913
+      GATO_149: 326053895
+      GATO_15: -412928535
+      GATO_150: 1230301828
+      GATO_151: 1031923125
+      GATO_152: 951018456
+      GATO_153: 321119474
+      GATO_154: 1128601384
+      GATO_155: -92108845
+      GATO_156: -699973192
+      GATO_157: -1867594270
+      GATO_158: -543255095
+      GATO_159: -1442171432
+      GATO_16: 912490589
+      GATO_160: -1801186407
+      GATO_161: 1211473823
+      GATO_162: -1753969253
+      GATO_163: -1289412957
+      GATO_164: -445766631
+      GATO_165: -1922967641
+      GATO_166: -162235438
+      GATO_167: -2131638942
+      GATO_168: 1704539447
+      GATO_169: 1313549048
+      GATO_17: 383394607
+      GATO_170: -1529049381
+      GATO_171: 1092578328
+      GATO_172: 279422767
+      GATO_173: -374800936
+      GATO_174: 1145874104
+      GATO_175: 1799140134
+      GATO_176: 447144451
+      GATO_177: 509893019
+      GATO_178: 1352477226
+      GATO_179: 891487419
+      GATO_18: 415660404
+      GATO_180: -1086563450
+      GATO_181: -797545275
+      GATO_182: -770608397
+      GATO_183: 1356570620
+      GATO_184: 338653359
+      GATO_185: -732271156
+      GATO_186: -2146584235
+      GATO_187: 553453134
+      GATO_188: -1964721397
+      GATO_189: 2063102715
+      GATO_19: 701117122
+      GATO_190: 307326633
+      GATO_191: 1862623033
+      GATO_192: 1846981907
+      GATO_193: -326532737
+      GATO_194: -2052225410
+      GATO_195: 1351867752
+      GATO_196: 2039193805
+      GATO_197: 612992974
+      GATO_198: 945436225
+      GATO_199: -807676664
+      GATO_2: 1619647534
+      GATO_20: -1393961336
+      GATO_200: -796949496
+      GATO_201: -1716193455
+      GATO_202: -1374828604
+      GATO_203: 447056376
+      GATO_21: 1378935347
+      GATO_22: -240146288
+      GATO_23: -184354074
+      GATO_24: 1259624494
+      GATO_25: 920211775
+      GATO_26: 1512917849
+      GATO_27: -2053139276
+      GATO_28: -1198910734
+      GATO_29: -1851906097
+      GATO_3: 1443374547
+      GATO_30: 499154358
+      GATO_31: 451131394
+      GATO_32: -806201123
+      GATO_33: 930633284
+      GATO_34: -1738413083
+      GATO_35: 1663559966
+      GATO_36: -1716134560
+      GATO_37: -262500909
+      GATO_38: 1532705403
+      GATO_39: -1588830078
+      GATO_4: -1331772039
+      GATO_40: 1683382527
+      GATO_41: -725143701
+      GATO_42: 42716920
+      GATO_43: -1088018549
+      GATO_44: -1393069739
+      GATO_45: 907530795
+      GATO_46: -1207777451
+      GATO_47: -538543182
+      GATO_48: -1707572284
+      GATO_49: -529490158
+      GATO_5: 707943312
+      GATO_50: -1598071428
+      GATO_51: -166020322
+      GATO_52: -1515201189
+      GATO_53: 2121208089
+      GATO_54: 1750164692
+      GATO_55: -727141937
+      GATO_56: -1128377344
+      GATO_57: -1574824305
+      GATO_58: 217684023
+      GATO_59: -1721210146
+      GATO_6: 1501511507
+      GATO_60: 889562153
+      GATO_61: 1201154708
+      GATO_62: 52847334
+      GATO_63: 459762570
+      GATO_64: -1321475448
+      GATO_65: -1678941201
+      GATO_66: 377949180
+      GATO_67: -1425745572
+      GATO_68: -292078329
+      GATO_69: 1293480633
+      GATO_7: -2027871065
+      GATO_70: -1887597005
+      GATO_71: -2114792737
+      GATO_72: 262495198
+      GATO_73: 1077323201
+      GATO_74: -87344680
+      GATO_75: -115021608
+      GATO_76: -1258929960
+      GATO_77: -960080771
+      GATO_78: 192723654
+      GATO_79: 1853716998
+      GATO_8: -206121082
+      GATO_80: 18675438
+      GATO_81: -647015927
+      GATO_82: 199802010
+      GATO_83: -1698387557
+      GATO_84: -421532581
+      GATO_85: 1359961760
+      GATO_86: -1788995076
+      GATO_87: -688119002
+      GATO_88: 32360419
+      GATO_89: -2123133955
+      GATO_9: -51241677
+      GATO_90: -297106123
+      GATO_91: -2090017926
+      GATO_92: -153325430
+      GATO_93: -546388035
+      GATO_94: -510692827
+      GATO_95: 1068275417
+      GATO_96: 1245019718
+      GATO_97: -894035055
+      GATO_98: -1184254452
+      GATO_99: 2041918315
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

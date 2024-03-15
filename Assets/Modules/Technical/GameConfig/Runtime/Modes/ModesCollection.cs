@@ -12,9 +12,6 @@ namespace Modules.Technical.GameConfig.Runtime.Modes
 
         public override IEnumerable<ModeDescriptor> Collection => modes;
 
-        protected override void AddToCollection(ModeDescriptor obj) => modes.Add(obj);
-        protected override void RemoveFromCollection(ModeDescriptor obj) => modes.Remove(obj);
-
 #if UNITY_EDITOR
         [Button(header: "Cake Collection Functions", horizontal: true)]
         private void CreateNewMode()
@@ -39,6 +36,18 @@ namespace Modules.Technical.GameConfig.Runtime.Modes
             foreach (var mode in modes) mode.ApplyNameChange();
             RefreshCollection();
         }
+
+        [Button]
+        private void ReintegrateSelected()
+        {
+            foreach (var selectedMode in selectedModes)
+                AddToCollection(selectedMode);
+            selectedModes.Clear();
+            RefreshCollection();
+        }
+        
+        protected override void AddToCollection(ModeDescriptor obj) => modes.Add(obj);
+        protected override void RemoveFromCollection(ModeDescriptor obj) => modes.Remove(obj);
 #endif
     }
 }
