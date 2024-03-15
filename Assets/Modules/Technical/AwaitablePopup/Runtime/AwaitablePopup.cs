@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Modules.Technical.ScriptableField;
 using UnityEngine;
 
 namespace Modules.Technical.AwaitablePopup.Runtime
@@ -7,11 +8,23 @@ namespace Modules.Technical.AwaitablePopup.Runtime
     {
         [Header("PopupSettings")]
         [SerializeField] private int checkDelay = 500;
-
+        [SerializeField] private ScriptableBool optionalOpenedField;
+        
         private T response;
         private bool userResponded;
 
-        public bool Opened { get; private set; }
+        private bool opened;
+        
+        public bool Opened
+        {
+            get => opened;
+            private set
+            {
+                if (optionalOpenedField != null) optionalOpenedField.Value = value;
+                opened = value;
+            }
+        }
+        
         protected T Response
         {
             get => response;

@@ -18,7 +18,6 @@ namespace Modules.Common.PauseMenu.Runtime
         }
 
         [Header("Config")]
-        [SerializeField] private SimpleLocalEvent onSettingsClose;
         [SerializeField] private List<VolumeSliders> sliders = new();
 
         public void OpenFromEvent()
@@ -38,12 +37,6 @@ namespace Modules.Common.PauseMenu.Runtime
             }
 
             base.Show();
-        }
-
-        protected override void Hide()
-        {
-            base.Hide();
-            onSettingsClose.Raise();
         }
 
         public void OnApply() => Response = false;

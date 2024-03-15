@@ -154,10 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkDelay: 200
+  optionalOpenedField: {fileID: 11400000, guid: 3ab41b4bbdfdbf54d839e8fc3ac1e802, type: 2}
   container: {fileID: 2831092307058729192}
   blocker: {fileID: 2605451515024829306}
   buttonToSelect: {fileID: 6250531931391060006}
-  onSettingsClose: {fileID: 11400000, guid: 730f18c72cf6e0943aaddb4d18dc5a29, type: 2}
   sliders:
   - field: {fileID: 11400000, guid: 6143096d675936f429849c2657d6573a, type: 2}
     slider: {fileID: 2118303922770426428}

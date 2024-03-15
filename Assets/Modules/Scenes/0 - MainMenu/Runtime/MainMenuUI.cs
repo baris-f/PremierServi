@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
+using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -41,7 +42,7 @@ namespace Modules.Scenes._0___MainMenu.Runtime
                     if (current)
                     {
                         cachedButtonToSelect = state.buttonToSelect;
-                       SelectCachedButton();
+                        SelectCachedButton();
                     }
 
                     state.container.SetActive(current);
@@ -52,30 +53,45 @@ namespace Modules.Scenes._0___MainMenu.Runtime
         [Header("References")]
         [SerializeField] private PlayerInput input;
         [SerializeField] private SimpleLocalEvent openSettings;
-    
+        [SerializeField] private ScriptableBool settingsOpened;
+
         [Header("States")]
         [SerializeField] private List<StateData> states = new();
 
         [SerializeField] private Button cachedButtonToSelect;
-        private InputAction pause;
+        private InputAction menu;
 
         private void Awake()
         {
-            pause = input.actions["Pause"];
+            menu = input.actions["Menu"];
             CurrentState = StateEnum.Menu;
         }
 
-        private void OnEnable() => pause.performed += OnPause;
-        private void OnDisable() => pause.performed -= OnPause;
+        private void OnSettingsOpenedChange(bool value)
+        {
+            if (!value) SelectCachedButton();
+        }
 
-        private void OnPause(InputAction.CallbackContext _) => openSettings.Raise();
+        private void OnEnable()
+        {
+            settingsOpened.OnValueChanged += OnSettingsOpenedChange;
+            menu.performed += OnMenu;
+        }
+
+        private void OnDisable()
+        {
+            settingsOpened.OnValueChanged -= OnSettingsOpenedChange;
+            menu.performed -= OnMenu;
+        }
+
+        private void OnMenu(InputAction.CallbackContext _) => openSettings.Raise();
 
         public void SelectCachedButton()
         {
             if (cachedButtonToSelect != null)
                 cachedButtonToSelect.Select();
         }
-        
+
         [Button] public void PrevState() => CurrentState--;
         [Button] public void NextState() => CurrentState++;
         public void Quit() => Application.Quit();

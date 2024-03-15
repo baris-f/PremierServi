@@ -2,7 +2,8 @@
     "name": "AwaitablePopup",
     "rootNamespace": "",
     "references": [
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "ScriptableField"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

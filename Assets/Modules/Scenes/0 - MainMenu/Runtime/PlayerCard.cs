@@ -1,9 +1,10 @@
 ﻿using System;
 using Modules.Technical.GameConfig.Runtime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Modules.Scenes.MainMenu.Runtime
+namespace Modules.Scenes._0___MainMenu.Runtime
 {
     [Serializable]
     public class PlayerCard : MonoBehaviour
@@ -15,15 +16,17 @@ namespace Modules.Scenes.MainMenu.Runtime
         [SerializeField] private GameObject notConnected;
         [SerializeField] private GameObject connected;
         [SerializeField] private Image background;
+        [SerializeField] private TextMeshProUGUI deviceDescription;
 
-        public bool Connected
+        private void Awake() => Connected(false);
+
+        public void Connected(bool value, string deviceName = "unknown")
         {
-            set
-            {
-                connected.SetActive(value);
-                notConnected.SetActive(!value);
-            }
+            connected.SetActive(value);
+            notConnected.SetActive(!value);
+            deviceDescription.text = $"{deviceName} connected";
         }
+        
         public JoyConColors Color => JoyConColors.Colors[color];
 
         private void Start() => background.color = JoyConColors.Colors[color].BodyColor;

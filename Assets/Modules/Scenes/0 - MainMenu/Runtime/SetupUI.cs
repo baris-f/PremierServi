@@ -1,9 +1,10 @@
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
+using Modules.Technical.ScriptableField;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Modules.Scenes.MainMenu.Runtime
+namespace Modules.Scenes._0___MainMenu.Runtime
 {
     public class SetupUI : MonoBehaviour
     {
@@ -11,6 +12,7 @@ namespace Modules.Scenes.MainMenu.Runtime
         [SerializeField] private PlayerInput input;
         [SerializeField] private PlayerCard[] cards;
         [SerializeField] private InGameConfig inGameConfig;
+        [SerializeField] private ScriptableBool settingsOpened;
 
         [Header("Events")]
         [SerializeField] private SimpleLocalEvent prevState;
@@ -20,7 +22,6 @@ namespace Modules.Scenes.MainMenu.Runtime
         [SerializeField] private Human[] players = new Human[4];
 
         private InputAction submit;
-        private InputAction start;
         private InputAction cancel;
 
         #region Setup
@@ -28,21 +29,18 @@ namespace Modules.Scenes.MainMenu.Runtime
         private void Awake()
         {
             submit = input.actions["Submit"];
-            start = input.actions["Menu"];
             cancel = input.actions["Cancel"];
         }
 
         private void OnEnable()
         {
             submit.performed += OnSubmit;
-            start.performed += OnStart;
             cancel.performed += OnCancel;
         }
 
         private void OnDisable()
         {
             submit.performed -= OnSubmit;
-            start.performed -= OnStart;
             cancel.performed -= OnCancel;
         }
 
@@ -52,6 +50,7 @@ namespace Modules.Scenes.MainMenu.Runtime
 
         private void OnSubmit(InputAction.CallbackContext context)
         {
+            if (settingsOpened.Value) return;
             for (var i = 0; i < players.Length; i++)
             {
                 if (players[i].Device != null && players[i].Device == context.control.device)
@@ -64,25 +63,16 @@ namespace Modules.Scenes.MainMenu.Runtime
                 players[i].Device = context.control.device;
                 players[i].deviceName = context.control.device.name;
                 players[i].color = cards[i].Color;
-                cards[i].Connected = true;
+                cards[i].Connected(true, players[i].Device.displayName);
                 return;
             }
 
             Debug.Log("Too much players");
         }
 
-        private void OnStart(InputAction.CallbackContext context)
-        {
-            foreach (var player in players)
-            {
-                if (player.Device == null || player.Device != context.control.device) continue;
-                ValidatePlayers();
-                return;
-            }
-        }
-
         private void OnCancel(InputAction.CallbackContext context)
         {
+            if (settingsOpened.Value) return;
             var count = 0;
             for (var i = 0; i < players.Length; i++)
             {
@@ -92,7 +82,7 @@ namespace Modules.Scenes.MainMenu.Runtime
                 players[i].Device = null;
                 players[i].deviceName = "";
                 players[i].color = new JoyConColors();
-                cards[i].Connected = false;
+                cards[i].Connected(false);
                 return;
             }
 
@@ -109,7 +99,7 @@ namespace Modules.Scenes.MainMenu.Runtime
             inGameConfig.SetHumans(players);
             nextState.Raise();
         }
-
+        
         #endregion
     }
 }

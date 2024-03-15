@@ -7,7 +7,8 @@
         "Unity.InputSystem",
         "Unity.TextMeshPro",
         "GameConfig",
-        "PauseMenu"
+        "PauseMenu",
+        "ScriptableField"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
