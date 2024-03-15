@@ -784,6 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkDelay: 200
+  optionalOpenedField: {fileID: 0}
   container: {fileID: 4644783815768542438}
   blocker: {fileID: 8237666309522871166}
   buttonToSelect: {fileID: 5111640074055921963}

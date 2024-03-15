@@ -1,9 +1,9 @@
 {
-    "name": "ScriptUtils",
+    "name": "Debug",
     "rootNamespace": "",
     "references": [
-        "ScriptUtils.Core",
-        ""
+        "IngameDebugConsole.Runtime",
+        "RuntimeInspector.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

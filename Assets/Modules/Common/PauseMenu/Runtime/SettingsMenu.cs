@@ -20,12 +20,12 @@ namespace Modules.Common.PauseMenu.Runtime
         [Header("Config")]
         [SerializeField] private List<VolumeSliders> sliders = new();
 
-        public void OpenFromEvent()
+        public async void OpenFromEvent()
         {
             if (Opened)
                 Response = false;
             else
-                Open(true);
+                await Open(true);
         }
 
         protected override void Show()

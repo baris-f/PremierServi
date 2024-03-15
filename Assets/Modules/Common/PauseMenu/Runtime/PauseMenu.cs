@@ -19,7 +19,7 @@ namespace Modules.Common.PauseMenu.Runtime
         [SerializeField] private ScriptableFloat gameSpeed;
         [SerializeField] private SettingsMenu settings;
 
-        public void OpenFromEvent()
+        public async void OpenFromEvent()
         {
             if (Opened)
             {
@@ -29,7 +29,7 @@ namespace Modules.Common.PauseMenu.Runtime
                     Response = ResponseType.Resume;
             }
             else
-                Open();
+                await Open();
         }
 
         private new async Task Open(bool shouldBlockBackground = true)

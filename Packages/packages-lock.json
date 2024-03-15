@@ -262,6 +262,20 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.yasirkula.ingamedebugconsole": {
+      "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b1204706248cea04f1b762dca8591e32ae044652"
+    },
+    "com.yasirkula.runtimeinspector": {
+      "version": "https://github.com/yasirkula/UnityRuntimeInspector.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6e6dcbf2f4e6fc3d38b5462351bde30ab9a6196e"
+    },
     "com.unity.modules.animation": {
       "version": "1.0.0",
       "depth": 0,

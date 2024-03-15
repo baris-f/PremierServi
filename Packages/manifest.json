@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "com.marijnzwemmer.unity-toolbar-extender": "https://github.com/marijnz/unity-toolbar-extender.git",
+    "com.yasirkula.runtimeinspector": "https://github.com/yasirkula/UnityRuntimeInspector.git",
+    "com.yasirkula.ingamedebugconsole": "https://github.com/yasirkula/UnityIngameDebugConsole.git",
     "com.unity.feature.2d": "2.0.0",
     "com.unity.ide.rider": "3.0.28",
     "com.unity.inputsystem": "1.7.0",
