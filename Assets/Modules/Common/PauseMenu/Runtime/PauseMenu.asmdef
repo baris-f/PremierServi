@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "AwaitablePopup",
-        "ScriptableField"
+        "ScriptableField",
+        "ScriptableEvents"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

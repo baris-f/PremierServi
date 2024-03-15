@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Modules.Technical.AwaitablePopup.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
+using UnityEditor;
 using UnityEngine;
 
 namespace Modules.Common.PauseMenu.Runtime
@@ -15,10 +17,17 @@ namespace Modules.Common.PauseMenu.Runtime
 
         [Header("Refs")]
         [SerializeField] private ScriptableFloat gameSpeed;
+        [SerializeField] private SettingsMenu settings;
+
         public void OpenFromEvent()
         {
             if (Opened)
-                Response = ResponseType.Resume;
+            {
+                if (settings.Opened)
+                    settings.OnCancel();
+                else
+                    Response = ResponseType.Resume;
+            }
             else
                 Open();
         }
@@ -29,6 +38,12 @@ namespace Modules.Common.PauseMenu.Runtime
             var r = await base.Open(shouldBlockBackground);
             if (r == ResponseType.Resume)
                 gameSpeed.Value = 1;
+        }
+
+        public async void OpenSettings()
+        {
+            await settings.Open();
+            SelectButton();
         }
 
         public void OnResume() => Response = ResponseType.Resume;

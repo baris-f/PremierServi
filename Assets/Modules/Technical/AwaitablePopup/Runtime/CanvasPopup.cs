@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Modules.Technical.AwaitablePopup.Runtime
 {
@@ -8,6 +9,7 @@ namespace Modules.Technical.AwaitablePopup.Runtime
         [Header("Canvas Popup Settings")]
         [SerializeField] private GameObject container;
         [SerializeField] private GameObject blocker;
+        [SerializeField] private Button buttonToSelect;
 
         private bool blockBackground;
 
@@ -15,6 +17,7 @@ namespace Modules.Technical.AwaitablePopup.Runtime
 
         public async Task<T> Open(bool shouldBlockBackground = false)
         {
+            SelectButton();
             blockBackground = shouldBlockBackground;
             return await base.Open();
         }
@@ -29,6 +32,11 @@ namespace Modules.Technical.AwaitablePopup.Runtime
         {
             blocker.SetActive(false);
             container.SetActive(false);
+        }
+
+        protected void SelectButton()
+        {
+            if (buttonToSelect != null) buttonToSelect.Select();
         }
     }
 }

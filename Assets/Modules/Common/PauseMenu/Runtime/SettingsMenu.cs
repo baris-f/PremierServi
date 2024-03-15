@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Modules.Technical.AwaitablePopup.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +17,8 @@ namespace Modules.Common.PauseMenu.Runtime
             public Slider slider;
         }
 
-        [Header("Volume sliders")]
+        [Header("Config")]
+        [SerializeField] private SimpleLocalEvent onSettingsClose;
         [SerializeField] private List<VolumeSliders> sliders = new();
 
         public void OpenFromEvent()
@@ -38,14 +40,14 @@ namespace Modules.Common.PauseMenu.Runtime
             base.Show();
         }
 
-        public void OnApply()
+        protected override void Hide()
         {
-            Response = false;
+            base.Hide();
+            onSettingsClose.Raise();
         }
 
-        public void OnCancel()
-        {
-            Response = false;
-        }
+        public void OnApply() => Response = false;
+
+        public void OnCancel() => Response = false;
     }
 }
