@@ -467,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161ea53d352e72b4da462a7d8e958386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsMenu: {fileID: 0}
   states:
   - stateEnum: 0
     container: {fileID: 1217131805}
@@ -593,6 +594,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 1924894349}
   inGameConfig: {fileID: 11400000, guid: f18362f1a3d38ea4086821517aa0aa60, type: 2}
+  demoProvider: {fileID: 0}
+  automaticProvider: {fileID: 0}
+  tutoProvider: {fileID: 0}
   choices:
   - {fileID: 408719206}
   - {fileID: 1123550003}
@@ -2000,7 +2004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1169055283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2088,7 +2092,7 @@ Animator:
   m_GameObject: {fileID: 1169055282}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cbdc3a8f82b97ce4cbe26733b65a7e7f, type: 2}
+  m_Controller: {fileID: 9100000, guid: b38ff9bd56dfe5747aa8b44159c59a28, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2115,7 +2119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1217131806
 RectTransform:
   m_ObjectHideFlags: 0
