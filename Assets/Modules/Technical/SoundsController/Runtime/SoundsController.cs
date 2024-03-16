@@ -1,9 +1,8 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
-using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -36,11 +35,25 @@ namespace Modules.Technical.SoundsController.Runtime
             foreach (var volumeField in volumeFields)
             {
                 if (volumeField == null) continue;
+                volumeField.LoadFromPlayerPrefs();
                 var success = audioMixer.SetFloat(volumeField.name, volumeField.Value * decMult + minDecibel);
                 if (!success) continue;
                 volumeField.OnValueChanged += value => audioMixer.SetFloat(volumeField.name,
                     value == 0 ? -80 : value * decMult + minDecibel);
             }
+        }
+
+        private void OnApplicationPause(bool pauseStatus)
+        {
+            if (pauseStatus) SaveVolumes();
+        }
+
+        private void OnApplicationQuit() => SaveVolumes();
+
+        private void SaveVolumes()
+        {
+            foreach (var volumeField in volumeFields)
+                volumeField.SaveToPlayerPrefs();
         }
 
         public void OnPlayBackgroundMusicEvent(MinimalData data)

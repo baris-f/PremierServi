@@ -35,7 +35,6 @@ namespace Modules.Common.PauseMenu.Runtime
                 tuple.slider.value = tuple.field.Value;
                 tuple.slider.onValueChanged.AddListener(f => tuple.field.Value = f);
             }
-
             base.Show();
         }
 

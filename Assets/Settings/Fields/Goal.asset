@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Goal
   m_EditorClassIdentifier: 
   value: 7
+  defaultValue: 7

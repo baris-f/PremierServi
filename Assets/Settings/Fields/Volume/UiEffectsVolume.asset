@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: UiEffectsVolume
   m_EditorClassIdentifier: 
   value: 100
+  defaultValue: 80

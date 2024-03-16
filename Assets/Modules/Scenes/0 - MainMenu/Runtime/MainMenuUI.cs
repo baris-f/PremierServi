@@ -6,6 +6,9 @@ using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Modules.Scenes._0___MainMenu.Runtime
 {
@@ -94,6 +97,14 @@ namespace Modules.Scenes._0___MainMenu.Runtime
 
         [Button] public void PrevState() => CurrentState--;
         [Button] public void NextState() => CurrentState++;
-        public void Quit() => Application.Quit();
+
+        public void Quit()
+        {
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
     }
 }

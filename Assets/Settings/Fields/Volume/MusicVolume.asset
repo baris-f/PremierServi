@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MusicVolume
   m_EditorClassIdentifier: 
   value: 100
+  defaultValue: 80
