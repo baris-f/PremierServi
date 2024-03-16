@@ -11,7 +11,6 @@ namespace Modules.Technical.ScriptableField
         [SerializeField] private T defaultValue;
 
         public event Action<T> OnValueChanged;
-        private string key;
 
         public T Value
         {
@@ -23,8 +22,6 @@ namespace Modules.Technical.ScriptableField
             }
         }
 
-        private void OnValidate() => key = $"{name}_field";
-
         public void ChangeSilently(T newValue) => value = newValue;
 
         protected abstract void SaveToPlayerPrefs(string key, T value);
@@ -34,17 +31,18 @@ namespace Modules.Technical.ScriptableField
         private void NotifyChange() => OnValueChanged?.Invoke(value);
 
         [Button(horizontal: true, header: "Player Prefs")]
-        public void SaveToPlayerPrefs() => SaveToPlayerPrefs(key, Value);
+        public void SaveToPlayerPrefs() => SaveToPlayerPrefs($"{name}_field", Value);
 
         [Button(horizontal: true)]
         public void LoadFromPlayerPrefs()
         {
+            var key = $"{name}_field";
             if (!PlayerPrefs.HasKey(key))
                 SaveToPlayerPrefs(key, defaultValue);
             Value = LoadFomPlayerPrefs(key);
         }
 
         [Button]
-        public void ClearPlayerPrefs() => PlayerPrefs.DeleteKey(key);
+        public void ClearPlayerPrefs() => PlayerPrefs.DeleteKey($"{name}_field");
     }
 }
