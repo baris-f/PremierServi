@@ -3,14 +3,15 @@ using Modules.Common.Controllers.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Modules.Common.RoundRunner.Runtime
 {
     public class RoundRunnerClassic : RoundRunner
     {
-        [Header("Classic Config")] [SerializeField]
-        private float startClassicDelay = 1;
-        [SerializeField] private List<GameObject> backgrounds = new();
+        [Header("Classic Config")]
+        [SerializeField] private float startClassicDelay = 1;
+        [SerializeField] private Transform arenasContainer;
 
         [Header("Canons")]
         [SerializeField]
@@ -70,9 +71,9 @@ namespace Modules.Common.RoundRunner.Runtime
 
         private void ChooseRandomBackground()
         {
-            var rndBackId = Random.Range(0, backgrounds.Count);
-            for (var i = 0; i < backgrounds.Count; i++)
-                backgrounds[i].SetActive(i == rndBackId);
+            var rndBackId = Random.Range(0, arenasContainer.childCount);
+            for (var i = 0; i < arenasContainer.childCount; i++)
+                arenasContainer.GetChild(i).gameObject.SetActive(i == rndBackId);
         }
     }
 }

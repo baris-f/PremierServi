@@ -43,10 +43,9 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] protected ScriptableFloat gameSpeed;
         [SerializeField] private ScriptableFloat goal;
 
-        [Header("Debug")]
-        [SerializeField] private List<RobotInput> robots = new();
-        [SerializeField] private int nbPlayersDead;
-        [SerializeField] private int nbHumansDead;
+        private readonly List<RobotInput> robots = new();
+        private int nbPlayersDead;
+        private int nbHumansDead;
 
         protected void Reset()
         {
@@ -94,7 +93,7 @@ namespace Modules.Common.RoundRunner.Runtime
             player.Init(PlayerEvent.Type.Human, playerId, humanCount, modeDescriptor.WalkSpeed,
                 modeDescriptor.RunSpeed);
             var status = Instantiate(statusPrefab, statusContainer.transform);
-            status.Initialize(human.playerId, human.color, humanCount,modeDescriptor.NbBullets);
+            status.Initialize(human.playerId, human.color, humanCount, modeDescriptor.NbBullets);
             var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human);
             humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
             return humanInput;

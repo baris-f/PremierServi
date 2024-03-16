@@ -48,6 +48,22 @@ MonoBehaviour:
   sceneName: 2.2 - SquidGame
   scenePath: Assets/Modules/Scenes/2.2 - SquidGame.unity
   sceneGuid: f5cca977415d2624c912b258b908fcb1
+--- !u!114 &-2766125574622011868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884f9f4b49bb4e4f871c38ca5861deab, type: 3}
+  m_Name: 2.2.1 - Squid
+  m_EditorClassIdentifier: 
+  listeners: []
+  sceneName: 2.2.1 - Squid
+  scenePath: Assets/Modules/Scenes/2.2.1 - Squid.unity
+  sceneGuid: d5100b2770aed00458980846bba48631
 --- !u!114 &-1339986102902656894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,13 +96,15 @@ MonoBehaviour:
   - {fileID: -7699853818479077509}
   - {fileID: -3227548623092683279}
   - {fileID: 754025912210646033}
+  - {fileID: -2766125574622011868}
   scenes:
-  - {fileID: -7235040578451068210}
-  - {fileID: -7699853818479077509}
-  - {fileID: -3227548623092683279}
   - {fileID: 754025912210646033}
   - {fileID: 8907404787312078829}
+  - {fileID: -7235040578451068210}
+  - {fileID: -2766125574622011868}
   - {fileID: -1339986102902656894}
+  - {fileID: -7699853818479077509}
+  - {fileID: -3227548623092683279}
 --- !u!114 &754025912210646033
 MonoBehaviour:
   m_ObjectHideFlags: 0

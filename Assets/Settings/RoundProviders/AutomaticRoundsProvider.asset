@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dec589f98ec413e9d252179a04730e3, type: 3}
   m_Name: AutomaticRoundsProvider
   m_EditorClassIdentifier: 
-  forcedFirstRound: {fileID: 0}
+  forcedFirstRound: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
   modesToProvide:
   - {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}

@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2493684057578239163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5963208410058812702}
+  m_Layer: 0
+  m_Name: Humans
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5963208410058812702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493684057578239163}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4909412851429758231}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3686605900364335249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4909412851429758231}
+  - component: {fileID: 7898153958609148277}
+  - component: {fileID: 8872190674883210734}
+  m_Layer: 0
+  m_Name: RoundRunnerClassic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4909412851429758231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686605900364335249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5963208410058812702}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7898153958609148277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686605900364335249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b649ea7c8c455babfe8fa81de7e719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGameDelay: 1
+  config: {fileID: 11400000, guid: f18362f1a3d38ea4086821517aa0aa60, type: 2}
+  robotsComportment: {fileID: 11400000, guid: 6fd5b8e374794574191c6e9ba2b584d5, type: 2}
+  results: {fileID: 0}
+  playerPrefabs:
+  - {fileID: 5540609058838008082, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
+  - {fileID: 5540609058838008082, guid: 4ff54f282278b934fa895bc2512bbc14, type: 3}
+  backgrounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  canonPrefab: {fileID: 3060424113564448529, guid: 9588c373c1f2bfd4b803af1c29029bd0, type: 3}
+  humanPrefab: {fileID: 347995918743298120, guid: 6e08fe973b268de4ab12cb5fefbf11fe, type: 3}
+  statusPrefab: {fileID: 6494626338137747678, guid: 129fc65342fe4474e8915be981de7478, type: 3}
+  playersLayout: {fileID: 0}
+  canonsLayout: {fileID: 0}
+  statusContainer: {fileID: 0}
+  humansContainer: {fileID: 5963208410058812702}
+  cakeBehaviour: {fileID: 0}
+  gameStartEvent: {fileID: 11400000, guid: 1a3783af1b1d4ee40b31b35ce905dd4b, type: 2}
+  gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
+  goal: {fileID: 11400000, guid: 2b3bec6eeebc9554fa82cf92f5099c6c, type: 2}
+  robots: []
+  nbPlayersDead: 0
+--- !u!114 &8872190674883210734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686605900364335249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsToListen:
+  - origin: {fileID: 0}
+    event: {fileID: 11400000, guid: 954ad7bfee57caa4c9586cf15f6e48da, type: 2}
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7898153958609148277}
+          m_TargetAssemblyTypeName: Modules.Common.GameRunner.Runtime.RoundRunner,
+            GameRunner
+          m_MethodName: OnPlayerWin
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - origin: {fileID: 0}
+    event: {fileID: 11400000, guid: 02c2942c2dc072346a648dae0ca01ad2, type: 2}
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7898153958609148277}
+          m_TargetAssemblyTypeName: Modules.Common.RoundRunner.Runtime.RoundRunnerClassic,
+            RoundRunner
+          m_MethodName: OnPlayerDeath
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
