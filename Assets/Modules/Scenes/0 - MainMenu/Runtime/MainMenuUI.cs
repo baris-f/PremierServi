@@ -68,6 +68,7 @@ namespace Modules.Scenes._0___MainMenu.Runtime
         {
             menu = input.actions["Menu"];
             CurrentState = StateEnum.Menu;
+            Invoke(nameof(SelectCachedButton), .1f);
         }
 
         private void OnSettingsOpenedChange(bool value)

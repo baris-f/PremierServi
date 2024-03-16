@@ -11,6 +11,7 @@ namespace Modules.Common.CustomEvents.Runtime
     {
         public enum Type
         {
+            Unknown,
             Robot,
             Human
         }
@@ -26,7 +27,7 @@ namespace Modules.Common.CustomEvents.Runtime
         [SerializeField] private PlayerData data = new();
 
         public void Raise(PlayerData newData) => Raise(newData.id, newData.type, newData.typeId);
-        
+
         public void Raise(int id, Type type, int typeId)
         {
             data.id = id;
@@ -34,7 +35,9 @@ namespace Modules.Common.CustomEvents.Runtime
             data.typeId = typeId;
             Raise();
         }
-        
+
+        public void Raise(int id) => Raise(id, Type.Unknown, -1);
+
         [Button] public void Raise() => base.Raise(data);
     }
 }

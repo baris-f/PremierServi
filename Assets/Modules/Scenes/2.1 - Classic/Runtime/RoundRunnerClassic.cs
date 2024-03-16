@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using Modules.Common.Controllers.Runtime;
-using Modules.Common.Inputs.Runtime;
+﻿using Modules.Common.Inputs.Runtime;
+using Modules.Common.RoundRunner.Runtime;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Modules.Common.RoundRunner.Runtime
+namespace Modules.Scenes._2._1___Classic.Runtime
 {
     public class RoundRunnerClassic : RoundRunner
     {
@@ -14,8 +12,7 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] private Transform arenasContainer;
 
         [Header("Canons")]
-        [SerializeField]
-        protected CanonController canonPrefab;
+        [SerializeField] protected CanonController canonPrefab;
         [SerializeField] protected TransformLayout canonsLayout;
 
         protected void Start()
@@ -31,6 +28,7 @@ namespace Modules.Common.RoundRunner.Runtime
             for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
                 var player = Instantiate(randomPrefabArray.PickRandom(), playersLayout.transform);
+                player.GetComponentInChildren<OnProjectileHit>().SetPlayerId(playerId);
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {

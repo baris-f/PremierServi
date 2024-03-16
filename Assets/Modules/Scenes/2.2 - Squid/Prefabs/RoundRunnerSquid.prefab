@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4317723891705650172}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -93,6 +93,8 @@ MonoBehaviour:
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   goal: {fileID: 11400000, guid: 2b3bec6eeebc9554fa82cf92f5099c6c, type: 2}
   startSquidDelay: 1
+  squidControllerPrefab: {fileID: 4170175978659805485, guid: 49ea72d28c44e7e4787a82f741ec1f1c, type: 3}
+  squidControllersContainer: {fileID: 0}
 --- !u!114 &7267596477300387101
 MonoBehaviour:
   m_ObjectHideFlags: 0

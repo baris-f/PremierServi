@@ -1,0 +1,26 @@
+{
+  "name": "Tuto",
+  "rootNamespace": "",
+  "references": [
+    "ScriptableEvents",
+    "CustomEvents",
+    "Controllers",
+    "ScriptUtils",
+    "Inputs",
+    "RoundRunner",
+    "GameConfig",
+    "Classic",
+    "SceneLoader",
+    "ScriptableField",
+    "AwaitablePopup"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

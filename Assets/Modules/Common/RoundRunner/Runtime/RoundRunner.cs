@@ -12,7 +12,6 @@ using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Modules.Common.RoundRunner.Runtime
 {

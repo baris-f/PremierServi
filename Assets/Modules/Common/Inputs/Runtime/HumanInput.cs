@@ -5,6 +5,7 @@ using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Modules.Common.Inputs.Runtime
 {
@@ -15,7 +16,7 @@ namespace Modules.Common.Inputs.Runtime
 
         [Header("Debug")]
         [SerializeField] private PlayerController player;
-        [SerializeField] private CanonController canon;
+        [SerializeField] private ShootController shooter;
         [SerializeField] private PlayerInput input;
 
         // Player
@@ -68,10 +69,10 @@ namespace Modules.Common.Inputs.Runtime
             return humanInput;
         }
 
-        public void Init(PlayerController player, CanonController canon)
+        public void Init(PlayerController player, ShootController shooter)
         {
             this.player = player;
-            this.canon = canon;
+            this.shooter = shooter;
 
             // PlayerController
             walk = input.actions["Walk"];
@@ -89,7 +90,7 @@ namespace Modules.Common.Inputs.Runtime
             // CanonController
             move = input.actions["Move"];
             fire = input.actions["Fire"];
-            fire.started += _ => canon?.Fire();
+            fire.started += _ => shooter?.Fire();
 
             // Pause
             pause = input.actions["Pause"];
@@ -132,6 +133,6 @@ namespace Modules.Common.Inputs.Runtime
         }
 
         private void Update() =>
-            canon?.Move(move.ReadValue<Vector2>());
+            shooter?.Move(move.ReadValue<Vector2>());
     }
 }

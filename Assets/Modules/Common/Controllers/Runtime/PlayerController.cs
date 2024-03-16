@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Modules.Common.CustomEvents.Runtime;
+using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 
@@ -23,10 +24,6 @@ namespace Modules.Common.Controllers.Runtime
             Taunting
         }
 
-        [Header("Settings")]
-        [SerializeField] private float walkSpeed;
-        [SerializeField] private float runSpeed;
-
         [Header("References")]
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private Animator animator;
@@ -37,21 +34,25 @@ namespace Modules.Common.Controllers.Runtime
         [SerializeField] private AudioClip runClip;
         [SerializeField] private AudioClip deathClip;
 
-        [Header("Fields")]
+        [Header("Scriptables")]
         [SerializeField] private ScriptableFloat gameSpeed;
         [SerializeField] private ScriptableFloat goal;
-
-        [Header("Events")]
         [SerializeField] private PlayerEvent playerWin;
-        [SerializeField] private PlayerEvent playerDeath;
 
         [Header("Debug")]
         [SerializeField] private Status currentStatus;
         [SerializeField] private List<Status> statusHistory = new();
 
+        private float walkSpeed;
+        private float runSpeed;
         private Transform cachedTransform;
         private bool disabled;
         private readonly PlayerEvent.PlayerData playerData = new();
+
+        public int Id => playerData.id;
+
+        public bool IsMoving => !disabled && CurrentStatus is Status.Running or Status.Walking or Status.Taunting;
+
         private Status CurrentStatus
         {
             get => currentStatus;
@@ -100,11 +101,10 @@ namespace Modules.Common.Controllers.Runtime
             cachedTransform.position += Time.deltaTime * gameSpeed.Value * speed * cachedTransform.right;
         }
 
-        public void OnProjectileHit(Collider2D other)
+        public void OnPlayerDeath(MinimalData data)
         {
-            if (!other.transform.CompareTag("Projectile")) return;
-            Destroy(other.gameObject); // en vrai juste instantiation d'une animation one shot sur le hit.point et c op
-            playerDeath.Raise(playerData);
+            if (data is not PlayerEvent.PlayerData receivedPlayerData
+                || receivedPlayerData.id != playerData.id) return;
             animator.SetTrigger(Death);
             if (deathClip != null) audioSource.PlayOneShot(deathClip);
             DisablePlayer();

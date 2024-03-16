@@ -1,0 +1,23 @@
+{
+  "name": "Classic",
+  "rootNamespace": "",
+  "references": [
+    "ScriptableEvents",
+    "CustomEvents",
+    "Controllers",
+    "ScriptUtils",
+    "Inputs",
+    "RoundRunner",
+    "GameConfig",
+    "ScriptableField"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
