@@ -3,7 +3,6 @@ using Modules.Scenes._2._1___Classic.Runtime;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.SceneLoader.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
-using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -16,8 +15,10 @@ namespace Modules.Scenes._1___Tutorial.Runtime
         [SerializeField] private JoyConColors.ColorName forcedColor = JoyConColors.ColorName.PastelGreen;
         [SerializeField] private LoadSceneEvent mainMenu;
 
+        private int humanId;
+        
         private new void Start() => StartTuto(true);
-
+        
         private void StartTuto(bool startTimeline)
         {
             var robotCount = 0;
@@ -28,7 +29,7 @@ namespace Modules.Scenes._1___Tutorial.Runtime
 
             for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
-                var player = Instantiate(randomPrefabArray.PickRandom(), playersLayout.transform);
+                var player = InstantiatePlayer(randomPrefabArray, playerId);
                 if (playerId == modeDescriptor.NbPlayers / 2)
                 {
                     var human = new Human
@@ -40,6 +41,7 @@ namespace Modules.Scenes._1___Tutorial.Runtime
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
                     canon.Init(playerId, human.color, 0, modeDescriptor.NbBullets);
                     input.Init(player, canon);
+                    humanId = playerId;
                 }
                 else
                 {
@@ -89,7 +91,7 @@ namespace Modules.Scenes._1___Tutorial.Runtime
         public new async void OnPlayerDeath(MinimalData data)
         {
             if (data is not PlayerEvent.PlayerData playerData) return;
-            if (playerData.type != PlayerEvent.Type.Human) return;
+            if (playerData.id != humanId) return;
             gameSpeed.Value = -1;
             await results.Open($"You shot yourself ! Be careful..", true);
             StartTuto(false);

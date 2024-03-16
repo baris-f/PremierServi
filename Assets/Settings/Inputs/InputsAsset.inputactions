@@ -339,7 +339,7 @@
                 {
                     "name": "",
                     "id": "72669f91-10d7-4f85-a688-8811b105e158",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/backspace",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard (and Mouse)",

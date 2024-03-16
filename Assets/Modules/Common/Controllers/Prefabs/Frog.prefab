@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: -1575688720, guid: 9be86547fdddb3444a72093db6a24fe4, type: 3}
     - target: {fileID: 952473586864672032, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
       propertyPath: m_Name
-      value: Frog 1
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 3256438291868001488, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,14 +60,6 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 683600909151089515, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
-    - target: {fileID: 5540609058838008082, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 8360375900399556194, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
-    - target: {fileID: 5540609058838008082, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1383267232037078092, guid: 2e7c52e4fe404604f8bb6f75f090958e, type: 3}
     - target: {fileID: 8360375900399556194, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
       propertyPath: m_Controller
       value: 

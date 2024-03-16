@@ -269,7 +269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9148205743961004584}
   - component: {fileID: 6122235328851279787}
-  - component: {fileID: 7930386153656469827}
   - component: {fileID: 8371071427144046485}
   m_Layer: 0
   m_Name: Squid
@@ -310,36 +309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 1059811847820853140}
   animator: {fileID: 8371071427144046485}
---- !u!114 &7930386153656469827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8719320242507305671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsToListen:
-  - origin: {fileID: 0}
-    event: {fileID: 11400000, guid: c14ba7bad036ffc4db5e1bdc9281565d, type: 2}
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6122235328851279787}
-          m_TargetAssemblyTypeName: Modules.Scenes._2._2___Squid.Runtime.Squid, Squid
-          m_MethodName: OnPlayerShoot
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!95 &8371071427144046485
 Animator:
   serializedVersion: 5

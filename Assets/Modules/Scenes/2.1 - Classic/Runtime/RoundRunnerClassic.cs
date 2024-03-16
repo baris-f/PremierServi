@@ -1,4 +1,7 @@
-﻿using Modules.Common.Inputs.Runtime;
+﻿using System.Collections.Generic;
+using Modules.Common.Controllers.Runtime;
+using Modules.Common.CustomEvents.Runtime;
+using Modules.Common.Inputs.Runtime;
 using Modules.Common.RoundRunner.Runtime;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
@@ -10,6 +13,7 @@ namespace Modules.Scenes._2._1___Classic.Runtime
         [Header("Classic Config")]
         [SerializeField] private float startClassicDelay = 1;
         [SerializeField] private Transform arenasContainer;
+        [SerializeField] private PlayerEvent playerDeath;
 
         [Header("Canons")]
         [SerializeField] protected CanonController canonPrefab;
@@ -27,8 +31,7 @@ namespace Modules.Scenes._2._1___Classic.Runtime
 
             for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
-                var player = Instantiate(randomPrefabArray.PickRandom(), playersLayout.transform);
-                player.GetComponentInChildren<OnProjectileHit>().SetPlayerId(playerId);
+                var player = InstantiatePlayer(randomPrefabArray, playerId);
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
@@ -54,13 +57,20 @@ namespace Modules.Scenes._2._1___Classic.Runtime
             RefreshLayouts();
             Invoke(nameof(StartGame), startClassicDelay);
         }
-
+        
         protected new void Reset()
         {
             base.Reset();
             canonsLayout.Clear();
         }
 
+        protected PlayerController InstantiatePlayer(List<PlayerController> randomPrefabArray, int playerId)
+        {
+            var player = Instantiate(randomPrefabArray.PickRandom(), playersLayout.transform);
+            player.Collider.gameObject.AddComponent<OnProjectileHit>().Init(playerId, playerDeath);
+            return player;
+        }
+        
         protected new void RefreshLayouts()
         {
             base.RefreshLayouts();

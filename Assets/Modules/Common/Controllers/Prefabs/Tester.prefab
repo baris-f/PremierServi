@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331bcd0a13e548a89ea759951c5b3576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 683600909151089515}
   animator: {fileID: 8360375900399556194}
   audioSource: {fileID: 1383267232037078092}
+  collider2d: {fileID: 2235605909801190143}
   walkClip: {fileID: 8300000, guid: 27a14b18a7f876244b68e69028ad348a, type: 3}
   runClip: {fileID: 8300000, guid: 3f4e1ac4ad3b01d46aed6c2935b52f21, type: 3}
   deathClip: {fileID: 0}
@@ -386,7 +386,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3604484255382612907}
-  - component: {fileID: 2462025629248695466}
   - component: {fileID: 2235605909801190143}
   - component: {fileID: 1087736547263153263}
   m_Layer: 0
@@ -411,49 +410,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3256438291868001488}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2462025629248695466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9145451195424616083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 357ee8acd75a4a9e93d7d4e4a1adab4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onCollisionEnter2D:
-    m_PersistentCalls:
-      m_Calls: []
-  onCollisionStay2D:
-    m_PersistentCalls:
-      m_Calls: []
-  onCollisionExit2D:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerEnter2D:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 02c2942c2dc072346a648dae0ca01ad2, type: 2}
-        m_TargetAssemblyTypeName: Modules.Common.CustomEvents.Runtime.PlayerEvent,
-          CustomEvents
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onTriggerStay2D:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerExit2D:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &2235605909801190143
 BoxCollider2D:
   m_ObjectHideFlags: 0

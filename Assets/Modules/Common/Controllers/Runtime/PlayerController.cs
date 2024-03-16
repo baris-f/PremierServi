@@ -25,10 +25,10 @@ namespace Modules.Common.Controllers.Runtime
         }
 
         [Header("References")]
-        [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSource audioSource;
-
+        [SerializeField] private Collider2D collider2d;
+        
         [Header("Assets")]
         [SerializeField] private AudioClip walkClip;
         [SerializeField] private AudioClip runClip;
@@ -49,10 +49,11 @@ namespace Modules.Common.Controllers.Runtime
         private bool disabled;
         private readonly PlayerEvent.PlayerData playerData = new();
 
+        public Collider2D Collider => collider2d;
         public int Id => playerData.id;
-
         public bool IsMoving => !disabled && CurrentStatus is Status.Running or Status.Walking or Status.Taunting;
 
+        
         private Status CurrentStatus
         {
             get => currentStatus;
