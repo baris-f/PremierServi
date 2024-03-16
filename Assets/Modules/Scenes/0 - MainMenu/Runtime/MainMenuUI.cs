@@ -98,6 +98,8 @@ namespace Modules.Scenes._0___MainMenu.Runtime
         [Button] public void PrevState() => CurrentState--;
         [Button] public void NextState() => CurrentState++;
 
+        public void OpenWebsite(string url) => Application.OpenURL(url);
+
         public void Quit()
         {
 #if UNITY_EDITOR
