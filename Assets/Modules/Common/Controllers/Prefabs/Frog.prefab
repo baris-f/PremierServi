@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
+    - target: {fileID: 2235605909801190143, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.79820836
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235605909801190143, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03963405
+      objectReference: {fileID: 0}
     - target: {fileID: 3256438291868001488, guid: e063d0897cf878b49b84b349638b2a7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

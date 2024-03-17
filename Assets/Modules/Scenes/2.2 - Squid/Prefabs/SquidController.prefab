@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3869160319624793649}
   - component: {fileID: 4170175978659805485}
+  - component: {fileID: 3295643409666206204}
   m_Layer: 0
   m_Name: SquidController
   m_TagString: Untagged
@@ -46,3 +47,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSpeed: {fileID: 11400000, guid: 02d083e6233a08e48bd5d9ed81b6804d, type: 2}
   playerFire: {fileID: 11400000, guid: c14ba7bad036ffc4db5e1bdc9281565d, type: 2}
+--- !u!114 &3295643409666206204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183340877381294444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8bc676837d46849a6e4de0915559e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsToListen:
+  - origin: {fileID: 0}
+    event: {fileID: 11400000, guid: 02c2942c2dc072346a648dae0ca01ad2, type: 2}
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4170175978659805485}
+          m_TargetAssemblyTypeName: Modules.Common.Controllers.Runtime.ShootController,
+            Controllers
+          m_MethodName: OnPlayerDeath
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3e03de44c94ff7b2c3f28fcdd05357, type: 3}
   m_Name: RoundsProviderChoice
   m_EditorClassIdentifier: 
-  providers:
-  - {fileID: 11400000, guid: 704d3c7821bbfe64bb99f11e8c2f7aa3, type: 2}
-  - {fileID: 11400000, guid: 27764aabe3c03944583c358cc3576739, type: 2}
+  providers: []

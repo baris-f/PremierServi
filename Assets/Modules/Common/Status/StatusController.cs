@@ -37,7 +37,9 @@ namespace Modules.Common.Status
                 shotLeftRefs[i] = shot.transform.GetChild(0).transform.GetComponent<Image>();
             }
 
-            nameText.text = $"Player {humanId + 1}";
+            name = $"Status for player {playerID} Human {humanId}";
+            nameText.text = $"Player {humanId}";
+            transform.SetSiblingIndex(humanId - 1);
         }
 
         private void SetColor(Color newColor)

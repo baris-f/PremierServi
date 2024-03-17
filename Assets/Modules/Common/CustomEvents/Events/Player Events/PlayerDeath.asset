@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listeners: []
   data:
-    Timestamp: 1701276914
+    Timestamp: 1710675163
     EventName: 
-    id: 0
+    id: 1
+    type: 2
+    typeId: 1

@@ -15,16 +15,16 @@ namespace Modules.Scenes._2._2___Squid.Runtime
         [SerializeField] private float startSquidDelay = 1;
         [SerializeField] private PlayerEvent playerDeath;
         [SerializeField] private Squid squid;
-        
+
         [Header("Squid controllers")]
         [SerializeField] protected SquidController squidControllerPrefab;
         [SerializeField] protected Transform squidControllersContainer;
 
-        private List<PlayerController> players = new ();
-        
+        private List<PlayerController> players = new();
+
         private void Start()
         {
-            int robotCount = 0, humanCount = 0;
+            var robotCount = 0;
             var modeDescriptor = config.CurrentModeDescriptor;
             var randomPrefabArray = CreatePlayerPrefabArray(modeDescriptor.NbPlayers);
 
@@ -43,15 +43,14 @@ namespace Modules.Scenes._2._2___Squid.Runtime
                 }
                 else
                 {
-                    var input = SetupHuman(player, playerId, humanCount, modeDescriptor, human);
+                    var input = SetupHuman(player, playerId, modeDescriptor, human);
                     var squidController = Instantiate(squidControllerPrefab, squidControllersContainer);
-                    squidController.Init(playerId, humanCount, modeDescriptor.NbBullets);
+                    squidController.Init(playerId, human.humanId, modeDescriptor.NbBullets);
                     input.Init(player, squidController);
-                    humanCount++;
                 }
             }
 
-            if (humanCount <= 0)
+            if (config.Humans.Count <= 0)
             {
                 var humanInput = HumanInput.InstantiateDummy(humanPrefab, humansContainer);
                 humanInput.name = "Dummy human to get inputs";
@@ -60,7 +59,7 @@ namespace Modules.Scenes._2._2___Squid.Runtime
             RefreshLayouts();
             Invoke(nameof(StartGame), startSquidDelay);
         }
-        
+
         protected new void Reset()
         {
             base.Reset();
@@ -72,13 +71,13 @@ namespace Modules.Scenes._2._2___Squid.Runtime
             if (data is not PlayerEvent.PlayerData playerData
                 || playerData.type == PlayerEvent.Type.Robot) return;
             var targets = new List<Vector3>();
+            squid.Shoot(targets);
             foreach (var player in players)
             {
                 if (!player.IsMoving) continue;
                 targets.Add(player.transform.position);
-                playerDeath.Raise(player.Id);
+                playerDeath.Raise(player.PlayerData);
             }
-            squid.Shoot(targets);
         }
     }
 }

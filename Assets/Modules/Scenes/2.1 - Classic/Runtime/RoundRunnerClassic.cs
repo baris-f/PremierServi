@@ -3,6 +3,7 @@ using Modules.Common.Controllers.Runtime;
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Common.Inputs.Runtime;
 using Modules.Common.RoundRunner.Runtime;
+using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Modules.Scenes._2._1___Classic.Runtime
 
         protected void Start()
         {
-            int robotCount = 0, humanCount = 0;
+            var robotCount = 0;
             var modeDescriptor = config.CurrentModeDescriptor;
             var randomPrefabArray = CreatePlayerPrefabArray(modeDescriptor.NbPlayers);
 
@@ -40,15 +41,14 @@ namespace Modules.Scenes._2._1___Classic.Runtime
                 }
                 else
                 {
-                    var input = SetupHuman(player, playerId, humanCount, modeDescriptor, human);
+                    var input = SetupHuman(player, playerId, modeDescriptor, human);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
-                    canon.Init(playerId, human.color, humanCount, modeDescriptor.NbBullets);
+                    canon.Init(playerId, human.color, human.humanId, modeDescriptor.NbBullets);
                     input.Init(player, canon);
-                    humanCount++;
                 }
             }
 
-            if (humanCount <= 0)
+            if (config.Humans.Count <= 0)
             {
                 var humanInput = HumanInput.InstantiateDummy(humanPrefab, humansContainer);
                 humanInput.name = "Dummy human to get inputs";

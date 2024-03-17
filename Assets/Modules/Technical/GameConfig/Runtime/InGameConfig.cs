@@ -20,7 +20,6 @@ namespace Modules.Technical.GameConfig.Runtime
         [SerializeField, SaveInPreset] private List<Round> rounds;
 
         [SerializeField, ForceReset(0)] private int curRound;
-        [SerializeField, ForceReset("")] private string test;
         private Round CurrentRound => rounds[curRound];
         public ModeDescriptor CurrentModeDescriptor => CurrentRound.mode;
         public List<Human> Humans => humans;
@@ -28,7 +27,10 @@ namespace Modules.Technical.GameConfig.Runtime
         public void SetRounds(BaseRoundsProvider provider,
             BaseRoundsProvider.GameLength length,
             Round.GameDifficulty difficulty)
-            => rounds = provider.GenerateRounds(length, difficulty);
+        {
+            curRound = 0;
+            rounds = provider.GenerateRounds(length, difficulty);
+        }
 
         [Button(header: "Rounds Functions", horizontal: true)]
         public void LoadRound()
@@ -50,9 +52,13 @@ namespace Modules.Technical.GameConfig.Runtime
             curRound = 0;
             humans.Clear();
             if (players == null) return;
+            var humanCount = 1;
             foreach (var player in players)
                 if (!string.IsNullOrWhiteSpace(player.deviceName))
+                {
+                    player.humanId = humanCount++;
                     humans.Add(player);
+                }
         }
 
         public bool DemoMode => demoMode;

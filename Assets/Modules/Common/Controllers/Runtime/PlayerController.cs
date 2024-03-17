@@ -47,10 +47,9 @@ namespace Modules.Common.Controllers.Runtime
         private float runSpeed;
         private Transform cachedTransform;
         private bool disabled;
-        private readonly PlayerEvent.PlayerData playerData = new();
 
         public Collider2D Collider => collider2d;
-        public int Id => playerData.id;
+        public PlayerEvent.PlayerData PlayerData { get; } = new();
         public bool IsMoving => !disabled && CurrentStatus is Status.Running or Status.Walking or Status.Taunting;
 
         
@@ -69,15 +68,15 @@ namespace Modules.Common.Controllers.Runtime
 
         public void Init(PlayerEvent.Type type, int newPlayerId, int typeId, float newWalkSpeed, float newRunSpeed)
         {
-            playerData.id = newPlayerId;
-            playerData.type = type;
-            playerData.typeId = typeId;
-            var typeName = playerData.type switch
+            PlayerData.id = newPlayerId;
+            PlayerData.type = type;
+            PlayerData.typeId = typeId;
+            var typeName = PlayerData.type switch
             {
                 PlayerEvent.Type.Human => "Human", PlayerEvent.Type.Robot => "Robot",
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
-            name = $"Player {playerData.id} - {typeName} {playerData.typeId}";
+            name = $"Player {PlayerData.id} - {typeName} {PlayerData.typeId}";
             walkSpeed = newWalkSpeed;
             runSpeed = newRunSpeed;
             gameSpeed.OnValueChanged += SetPauseState;
@@ -92,7 +91,7 @@ namespace Modules.Common.Controllers.Runtime
             if (gameSpeed.Value <= 0 || disabled) return;
             if (transform.position.x > goal.Value)
             {
-                playerWin.Raise(playerData);
+                playerWin.Raise(PlayerData);
                 // animator.SetTrigger(Win); todo faire l'animation
                 DisablePlayer();
             }
@@ -105,9 +104,10 @@ namespace Modules.Common.Controllers.Runtime
         public void OnPlayerDeath(MinimalData data)
         {
             if (data is not PlayerEvent.PlayerData receivedPlayerData
-                || receivedPlayerData.id != playerData.id) return;
+                || receivedPlayerData.id != PlayerData.id) return;
             animator.SetTrigger(Death);
-            if (deathClip != null) audioSource.PlayOneShot(deathClip);
+            if (deathClip != null) 
+                audioSource.PlayOneShot(deathClip);
             DisablePlayer();
         }
 

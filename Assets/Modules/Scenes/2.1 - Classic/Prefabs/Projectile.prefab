@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1869453391629251543}
   - component: {fileID: 1026167914062791124}
+  - component: {fileID: 7016775217800041552}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Projectile
@@ -34,6 +35,41 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1026167914062791124
 CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295657602245340382}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!70 &7016775217800041552
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -64,9 +100,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 10, y: 1}
+  m_Direction: 1
 --- !u!1 &6024247343375122454
 GameObject:
   m_ObjectHideFlags: 0

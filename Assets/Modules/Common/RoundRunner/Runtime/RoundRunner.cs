@@ -65,7 +65,6 @@ namespace Modules.Common.RoundRunner.Runtime
         {
             var humanPlayerIds =
                 UtilsGenerator.GenerateRandomNumbersInRange(0, nbPlayers, config.Humans.Count);
-
             foreach (var human in config.Humans)
             {
                 if (human.playerId == -1 || human.playerId >= nbPlayers)
@@ -86,15 +85,15 @@ namespace Modules.Common.RoundRunner.Runtime
             return randomPrefabArray;
         }
 
-        protected HumanInput SetupHuman(PlayerController player, int playerId, int humanCount,
-            ModeDescriptor modeDescriptor, Human human)
+        protected HumanInput SetupHuman(PlayerController player, int playerId, ModeDescriptor modeDescriptor,
+            Human human)
         {
-            player.Init(PlayerEvent.Type.Human, playerId, humanCount, modeDescriptor.WalkSpeed,
+            player.Init(PlayerEvent.Type.Human, playerId, human.humanId, modeDescriptor.WalkSpeed,
                 modeDescriptor.RunSpeed);
             var status = Instantiate(statusPrefab, statusContainer.transform);
-            status.Initialize(human.playerId, human.color, humanCount, modeDescriptor.NbBullets);
+            status.Initialize(human.playerId, human.color, human.humanId, modeDescriptor.NbBullets);
             var humanInput = HumanInput.Instantiate(humanPrefab, humansContainer, human);
-            humanInput.name = $"Human {humanCount} (player {playerId}, canon {humanCount})";
+            humanInput.name = $"Human {human.humanId} (player {playerId}, canon {human.humanId})";
             return humanInput;
         }
 
@@ -122,7 +121,7 @@ namespace Modules.Common.RoundRunner.Runtime
                 if (playerData.type == PlayerEvent.Type.Human)
                 {
                     config.GetHumanById(playerData.id).eatenCakes.Add(cakeBehaviour.GetCake());
-                    await results.Open($"Player {playerData.typeId + 1} ate the cake !", true);
+                    await results.Open($"Player {playerData.typeId} ate the cake !", true);
                 }
                 else
                     await results.Open($"Somebody else ate the cake !", true);
@@ -137,8 +136,8 @@ namespace Modules.Common.RoundRunner.Runtime
             if (data is not PlayerEvent.PlayerData playerData) return;
             nbPlayersDead++;
             if (playerData.type == PlayerEvent.Type.Human) nbHumansDead++;
-
-            if (nbPlayersDead >= config.CurrentModeDescriptor.NbPlayers)
+           
+            if (nbHumansDead >= config.Humans.Count)
             {
                 gameSpeed.Value = -1;
                 await results.Open($"Nobody could eat the cake !", true);
@@ -149,7 +148,7 @@ namespace Modules.Common.RoundRunner.Runtime
             if (config.LastOneWins && config.Humans.Count > 1 && nbHumansDead >= config.Humans.Count - 1)
             {
                 gameSpeed.Value = -1;
-                await results.Open($"Player {playerData.id + 1} is the last player standing ! That's a win.", true);
+                await results.Open($"Player {playerData.typeId} is the last player standing ! That's a win.", true);
                 config.GoNextRound();
                 config.LoadRound();
             }

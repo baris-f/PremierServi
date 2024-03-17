@@ -15,24 +15,35 @@ MonoBehaviour:
   preset1: {fileID: 0}
   endOfGameScene: {fileID: -1339986102902656894, guid: 77c2aee60dc15f54fabf912cd5f5338e, type: 2}
   demoMode: 1
+  lastOneWins: 0
   humans:
-  - deviceName: Keyboard
+  - deviceName: XInputControllerWindows
     color:
       bodyHex: '#FFAFAF'
       buttonHex: '#372D2D'
       bodyColor: {r: 1, g: 0.6862745, b: 0.6862745, a: 1}
       buttonColor: {r: 0.21568628, g: 0.1764706, b: 0.1764706, a: 1}
+    playerId: 4
+    humanId: 0
+    eatenCakes: []
+  - deviceName: Keyboard
+    color:
+      bodyHex: '#F5FF82'
+      buttonHex: '#32332D'
+      bodyColor: {r: 0.9607843, g: 1, b: 0.50980395, a: 1}
+      buttonColor: {r: 0.19607843, g: 0.2, b: 0.1764706, a: 1}
     playerId: 1
+    humanId: 1
     eatenCakes: []
   rounds:
-  - mode: {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+  - mode: {fileID: 920416468779297201, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
     difficulty: 1
     cake: {fileID: 0}
-  - mode: {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
     difficulty: 1
     cake: {fileID: 0}
-  - mode: {fileID: 5554331989897863570, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
+  - mode: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
     difficulty: 1
     cake: {fileID: 0}
-  curRound: 0
+  curRound: 1
   test: 

@@ -8,7 +8,7 @@ using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Modules.Scenes.MainMenu.Runtime
+namespace Modules.Scenes._0___MainMenu.Runtime
 {
     public class ModeUI : MonoBehaviour
     {

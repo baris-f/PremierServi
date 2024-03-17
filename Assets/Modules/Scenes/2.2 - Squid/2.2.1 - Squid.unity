@@ -2761,6 +2761,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1059811847820853140, guid: f89dc8d17dd5b5b48a0536477d06eee7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8719320242507305671, guid: f89dc8d17dd5b5b48a0536477d06eee7, type: 3}
       propertyPath: m_Name
       value: Squid

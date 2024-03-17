@@ -14,6 +14,7 @@ namespace Modules.Scenes.GameResult.Runtime
         [SerializeField] private Image background;
         [SerializeField] private RectTransform resultsContainer;
         [SerializeField] private TextMeshProUGUI resultsPrefab;
+        [SerializeField] private Button buttonToSelect;
 
         [Header("Prefab")]
         [SerializeField] private Image cakeIconPrefab;
@@ -46,15 +47,16 @@ namespace Modules.Scenes.GameResult.Runtime
             foreach (var human in inGameConfig.Humans)
             {
                 var text = Instantiate(resultsPrefab, resultsContainer);
-                text.text = $"Player {human.playerId}";
+                text.text = $"Player {human.humanId}";
                 text.color = human.color.BodyColor;
                 human.eatenCakes.ForEach(cake =>
                 {
                     var cakeIcon = Instantiate(cakeIconPrefab, text.transform.GetChild(0));
                     cakeIcon.sprite = cake.sprite;
                 });
-
             }
+
+            if (buttonToSelect != null) buttonToSelect.Select();
         }
 
         public void OnContinue() => mainMenu.Raise();

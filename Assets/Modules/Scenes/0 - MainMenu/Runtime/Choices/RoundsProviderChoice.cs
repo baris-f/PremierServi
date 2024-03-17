@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Modules.Scenes.MainMenu.Runtime.Choices;
 using Modules.Technical.GameConfig.Runtime.RoundsProvider;
 using UnityEngine;
 
-namespace Modules.Scenes.MainMenu.Runtime.Choices
+namespace Modules.Scenes._0___MainMenu.Runtime.Choices
 {
     public class RoundsProviderChoice : OptionsProvider, IGetResult<BaseRoundsProvider>
     {

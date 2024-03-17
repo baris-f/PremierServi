@@ -37,7 +37,7 @@ namespace Modules.Scenes._1___Tutorial.Runtime
                         color = JoyConColors.Colors[forcedColor],
                         playerId = playerId,
                     };
-                    var input = SetupHuman(player, playerId, 0, modeDescriptor, human);
+                    var input = SetupHuman(player, playerId, modeDescriptor, human);
                     var canon = Instantiate(canonPrefab, canonsLayout.transform);
                     canon.Init(playerId, human.color, 0, modeDescriptor.NbBullets);
                     input.Init(player, canon);

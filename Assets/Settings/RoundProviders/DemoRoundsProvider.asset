@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dec589f98ec413e9d252179a04730e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 94b2f331ef7c439c86405116d4c06d88, type: 3}
   m_Name: DemoRoundsProvider
   m_EditorClassIdentifier: 
-  forcedFirstRound: {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
   modesToProvide:
+  - {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
   - {fileID: 4575295985344050323, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
   - {fileID: 920416468779297201, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}
