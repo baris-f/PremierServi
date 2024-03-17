@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Modules.Scenes.MainMenu.Runtime.Choices;
+using Modules.Scenes._0___MainMenu.Runtime.Choices;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.GameConfig.Runtime.RoundsProvider;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;

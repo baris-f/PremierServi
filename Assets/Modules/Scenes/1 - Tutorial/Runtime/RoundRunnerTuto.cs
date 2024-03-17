@@ -1,5 +1,5 @@
 ﻿using Modules.Common.CustomEvents.Runtime;
-using Modules.Scenes._2._1___Classic.Runtime;
+using Modules.Scenes._2._0___Classic.Runtime;
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.SceneLoader.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;

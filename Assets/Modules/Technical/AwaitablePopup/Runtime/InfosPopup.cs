@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Modules.Technical.AwaitablePopup.Runtime
 {

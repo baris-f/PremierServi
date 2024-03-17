@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7f5d1990f44e37a1221ef99951225b, type: 3}
+  m_Name: FroggerProvider
+  m_EditorClassIdentifier: 
+  modeName: Classic
+  modeToProvide: {fileID: 5030507752454760401, guid: 912e161b6e675104aaee7932fb4d2c89, type: 2}

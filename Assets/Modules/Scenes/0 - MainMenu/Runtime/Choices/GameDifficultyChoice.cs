@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Modules.Technical.GameConfig.Runtime;
 
-namespace Modules.Scenes.MainMenu.Runtime.Choices
+namespace Modules.Scenes._0___MainMenu.Runtime.Choices
 {
     public class GameDifficultyChoice : OptionsProvider, IGetResult<Round.GameDifficulty>
     {

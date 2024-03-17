@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Modules.Technical.GameConfig.Runtime.RoundsProvider;
 
-namespace Modules.Scenes.MainMenu.Runtime.Choices
+namespace Modules.Scenes._0___MainMenu.Runtime.Choices
 {
     public class GameLengthChoice : OptionsProvider, IGetResult<BaseRoundsProvider.GameLength>
     {

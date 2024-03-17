@@ -1,10 +1,9 @@
 ﻿using System;
-using Modules.Scenes._0___MainMenu.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Modules.Scenes.MainMenu.Runtime.Choices
+namespace Modules.Scenes._0___MainMenu.Runtime.Choices
 {
     [Serializable]
     public class Choice : MonoBehaviour

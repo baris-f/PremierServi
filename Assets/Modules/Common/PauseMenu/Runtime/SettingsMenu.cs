@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Modules.Technical.AwaitablePopup.Runtime;
-using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
 using UnityEngine;
 using UnityEngine.UI;

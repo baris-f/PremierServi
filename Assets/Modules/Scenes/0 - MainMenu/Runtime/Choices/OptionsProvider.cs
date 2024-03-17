@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Modules.Scenes.MainMenu.Runtime.Choices
+namespace Modules.Scenes._0___MainMenu.Runtime.Choices
 {
     public abstract class OptionsProvider : ScriptableObject
     {

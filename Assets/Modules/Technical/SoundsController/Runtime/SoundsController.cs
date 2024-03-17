@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;

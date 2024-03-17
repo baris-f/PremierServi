@@ -2,7 +2,7 @@
 using Modules.Technical.GameConfig.Runtime;
 using UnityEngine;
 
-namespace Modules.Scenes._2._1___Classic.Runtime
+namespace Modules.Scenes._2._0___Classic.Runtime
 {
     public class CanonController : ShootController
     {

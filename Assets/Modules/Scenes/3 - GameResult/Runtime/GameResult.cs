@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-namespace Modules.Scenes.GameResult.Runtime
+namespace Modules.Scenes._3___GameResult.Runtime
 {
     public class GameResult : MonoBehaviour
     {

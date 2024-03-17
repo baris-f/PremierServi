@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Modules.Scenes.MainMenu.Runtime.Choices
+namespace Modules.Scenes._0___MainMenu.Runtime.Choices
 {
     public class StartChoice : OptionsProvider, IGetResult<string>
     {
