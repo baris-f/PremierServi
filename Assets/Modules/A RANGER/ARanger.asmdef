@@ -4,7 +4,8 @@
     "references": [
         "Unity.InputSystem",
         "Unity.TextMeshPro",
-        "Eflatun.SceneReference"
+        "Eflatun.SceneReference",
+        "ScriptableField"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

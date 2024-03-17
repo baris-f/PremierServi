@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using Modules.Technical.ScriptUtils.Runtime.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;

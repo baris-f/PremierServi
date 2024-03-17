@@ -56,7 +56,7 @@ namespace Modules.Scenes._2._0___Classic.Runtime
             RefreshLayouts();
             Invoke(nameof(StartGame), startClassicDelay);
         }
-        
+
         protected new void Reset()
         {
             base.Reset();
@@ -66,10 +66,12 @@ namespace Modules.Scenes._2._0___Classic.Runtime
         protected PlayerController InstantiatePlayer(List<PlayerController> randomPrefabArray, int playerId)
         {
             var player = Instantiate(randomPrefabArray.PickRandom(), playersLayout.transform);
-            player.Collider.gameObject.AddComponent<OnProjectileHit>().Init(playerId, playerDeath);
+            player.Collider.gameObject.GetComponent<CollisionDetector>()
+                .Init(player.PlayerData, new CollisionDetector.CollisionResponse
+                    { @event = playerDeath, destroy = true, tag = "Projectile" });
             return player;
         }
-        
+
         protected new void RefreshLayouts()
         {
             base.RefreshLayouts();

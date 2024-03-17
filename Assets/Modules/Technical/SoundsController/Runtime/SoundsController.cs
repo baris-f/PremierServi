@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 using UnityEngine.Audio;

@@ -2,6 +2,7 @@
 using Modules.Common.Controllers.Runtime;
 using Modules.Common.Inputs.Runtime.IAs;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 

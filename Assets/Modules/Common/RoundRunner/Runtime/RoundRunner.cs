@@ -10,6 +10,7 @@ using Modules.Technical.GameConfig.Runtime.Modes;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
 
@@ -42,9 +43,10 @@ namespace Modules.Common.RoundRunner.Runtime
         [SerializeField] protected ScriptableFloat gameSpeed;
         [SerializeField] private ScriptableFloat goal;
 
+        [Header("Debug")]
         private readonly List<RobotInput> robots = new();
-        private int nbPlayersDead;
-        private int nbHumansDead;
+        [SerializeField] private int nbPlayersDead;
+        [SerializeField] private int nbHumansDead;
 
         protected void Reset()
         {
@@ -136,7 +138,7 @@ namespace Modules.Common.RoundRunner.Runtime
             if (data is not PlayerEvent.PlayerData playerData) return;
             nbPlayersDead++;
             if (playerData.type == PlayerEvent.Type.Human) nbHumansDead++;
-           
+
             if (nbHumansDead >= config.Humans.Count)
             {
                 gameSpeed.Value = -1;

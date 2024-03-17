@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1869453391629251543}
   - component: {fileID: 1026167914062791124}
   - component: {fileID: 7016775217800041552}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Projectile
   m_Icon: {fileID: 0}

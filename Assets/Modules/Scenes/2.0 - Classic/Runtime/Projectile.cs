@@ -1,4 +1,5 @@
 ﻿using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 
 namespace Modules.Scenes._2._0___Classic.Runtime

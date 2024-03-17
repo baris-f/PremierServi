@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
@@ -28,7 +29,7 @@ namespace Modules.Common.Controllers.Runtime
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private Collider2D collider2d;
-        
+
         [Header("Assets")]
         [SerializeField] private AudioClip walkClip;
         [SerializeField] private AudioClip runClip;
@@ -52,7 +53,7 @@ namespace Modules.Common.Controllers.Runtime
         public PlayerEvent.PlayerData PlayerData { get; } = new();
         public bool IsMoving => !disabled && CurrentStatus is Status.Running or Status.Walking or Status.Taunting;
 
-        
+
         private Status CurrentStatus
         {
             get => currentStatus;
@@ -104,9 +105,10 @@ namespace Modules.Common.Controllers.Runtime
         public void OnPlayerDeath(MinimalData data)
         {
             if (data is not PlayerEvent.PlayerData receivedPlayerData
-                || receivedPlayerData.id != PlayerData.id) return;
+                || receivedPlayerData.id != PlayerData.id
+                || disabled) return;
             animator.SetTrigger(Death);
-            if (deathClip != null) 
+            if (deathClip != null)
                 audioSource.PlayOneShot(deathClip);
             DisablePlayer();
         }
@@ -140,6 +142,7 @@ namespace Modules.Common.Controllers.Runtime
         {
             Stop();
             disabled = true;
+            collider2d.gameObject.SetActive(false);
         }
     }
 }

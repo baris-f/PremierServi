@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Modules.Technical.ScriptableField
+namespace Modules.Technical.ScriptableField.Implementations
 {
     [CreateAssetMenu(fileName = "New Scriptable Float", menuName = "Scriptable Fields/Float")]
     public class ScriptableFloat : ScriptableField<float>

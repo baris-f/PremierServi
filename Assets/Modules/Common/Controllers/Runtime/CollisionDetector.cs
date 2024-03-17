@@ -1,29 +1,36 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Modules.Common.CustomEvents.Runtime;
+using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class CollisionDetector : MonoBehaviour
     {
-        [Header("Collision")]
-        [SerializeField] private UnityEvent<Collision2D> onCollisionEnter2D;
-        [SerializeField] private UnityEvent<Collision2D> onCollisionStay2D;
-        [SerializeField] private UnityEvent<Collision2D> onCollisionExit2D;
+        [Serializable]
+        public class CollisionResponse
+        {
+            public PlayerEvent @event;
+            public bool destroy;
+            public string tag;
+        }
 
-        [Header("Trigger")]
-        [SerializeField] private UnityEvent<Collider2D> onTriggerEnter2D;
-        [SerializeField] private UnityEvent<Collider2D> onTriggerStay2D;
-        [SerializeField] private UnityEvent<Collider2D> onTriggerExit2D;
+        private PlayerEvent.PlayerData playerData;
+        private Dictionary<string, CollisionResponse> responses = new();
 
-        // Collision
-        private void OnCollisionEnter2D(Collision2D other) => onCollisionEnter2D.Invoke(other);
-        private void OnCollisionStay2D(Collision2D other) => onCollisionStay2D.Invoke(other);
-        private void OnCollisionExit2D(Collision2D other) => onCollisionExit2D.Invoke(other);
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!responses.TryGetValue(other.transform.tag, out var response)) return;
+            if (response.destroy) Destroy(other.transform.parent.gameObject);
+            response.@event.Raise(playerData);
+        }
 
-        // Trigger
-        private void OnTriggerEnter2D(Collider2D other) => onTriggerEnter2D.Invoke(other);
-        private void OnTriggerStay2D(Collider2D other) => onTriggerStay2D.Invoke(other);
-        private void OnTriggerExit2D(Collider2D other) => onTriggerExit2D.Invoke(other);
+        public void Init(PlayerEvent.PlayerData newPlayerData, params CollisionResponse[] newResponses)
+        {
+            playerData = newPlayerData;
+            foreach (var response in newResponses)
+                responses.Add(response.tag, response);
+        }
     }
 }

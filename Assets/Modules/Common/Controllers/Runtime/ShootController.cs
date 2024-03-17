@@ -1,6 +1,7 @@
 ﻿using Modules.Common.CustomEvents.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 
 namespace Modules.Common.Controllers.Runtime

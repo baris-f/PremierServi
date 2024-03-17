@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Modules.Technical.AwaitablePopup.Runtime;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 
 namespace Modules.Common.PauseMenu.Runtime

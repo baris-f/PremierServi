@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Modules.Technical.ScriptableField
+namespace Modules.Technical.ScriptableField.Implementations
 {
     [CreateAssetMenu(fileName = "New Scriptable Int", menuName = "Scriptable Fields/Int")]
     public class ScriptableInt: ScriptableField<int>

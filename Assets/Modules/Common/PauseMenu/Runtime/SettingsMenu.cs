@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Modules.Technical.AwaitablePopup.Runtime;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 using UnityEngine.UI;
 

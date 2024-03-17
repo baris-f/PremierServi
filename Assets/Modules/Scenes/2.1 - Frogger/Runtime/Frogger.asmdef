@@ -6,7 +6,8 @@
     "GameConfig",
     "ScriptUtils",
     "Controllers",
-    "Inputs"
+    "Inputs",
+    "CustomEvents"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

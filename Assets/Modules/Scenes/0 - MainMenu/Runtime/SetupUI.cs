@@ -1,6 +1,7 @@
 using Modules.Technical.GameConfig.Runtime;
 using Modules.Technical.ScriptableEvents.Runtime.LocalEvents;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 
 namespace Modules.Technical.AwaitablePopup.Runtime

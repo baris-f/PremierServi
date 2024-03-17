@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Modules.Common.Controllers.Runtime;
 using Modules.Technical.ScriptableField;
+using Modules.Technical.ScriptableField.Implementations;
 using UnityEngine;
 
 namespace Modules.Common.Inputs.Runtime.IAs

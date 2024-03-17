@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Modules.Technical.ScriptableField
+namespace Modules.Technical.ScriptableField.Implementations
 {
     [CreateAssetMenu(fileName = "New Scriptable Bool", menuName = "Scriptable Fields/Bool")]
     public class ScriptableBool : ScriptableField<bool>

@@ -1,17 +1,19 @@
-﻿using Modules.Common.Inputs.Runtime;
+﻿using System.Collections.Generic;
+using Modules.Common.Controllers.Runtime;
+using Modules.Common.CustomEvents.Runtime;
+using Modules.Common.Inputs.Runtime;
 using Modules.Common.RoundRunner.Runtime;
 using Modules.Technical.ScriptUtils.Runtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Modules.Scenes._2._1___Frogger.Runtime
 {
     public class RoundRunnerFrogger : RoundRunner
     {
-        [FormerlySerializedAs("startSquidDelay")]
         [Header("Frogger Config")]
         [SerializeField] private float startFroggerDelay = 1;
-        
+        [SerializeField] private PlayerEvent playerDeath;
+
         private void Start()
         {
             var robotCount = 0;
@@ -23,7 +25,7 @@ namespace Modules.Scenes._2._1___Frogger.Runtime
 
             for (var playerId = 0; playerId < modeDescriptor.NbPlayers; playerId++)
             {
-                var player = Instantiate(randomPrefabArray.PickRandom(), playersLayout.transform);
+                var player = InstantiatePlayer(randomPrefabArray, playerId);
                 var human = config.Humans.Find(h => h.playerId == playerId);
                 if (human == null)
                 {
@@ -45,6 +47,15 @@ namespace Modules.Scenes._2._1___Frogger.Runtime
 
             RefreshLayouts();
             Invoke(nameof(StartGame), startFroggerDelay);
+        }
+
+        private PlayerController InstantiatePlayer(List<PlayerController> randomPrefabArray, int playerId)
+        {
+            var player = Instantiate(randomPrefabArray.PickRandom(), playersLayout.transform);
+            player.Collider.gameObject.GetComponent<CollisionDetector>()
+                .Init(player.PlayerData, new CollisionDetector.CollisionResponse
+                    { @event = playerDeath, destroy = false, tag = "Car" });
+            return player;
         }
     }
 }
