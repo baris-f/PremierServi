@@ -159,8 +159,9 @@ namespace Modules.Common.RoundRunner.Runtime
 
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.I))
-                config.GoNextRound();
+            if (!Input.GetKeyUp(KeyCode.I)) return;
+            config.GoNextRound();
+            config.LoadRound();
         }
 
         private void OnDrawGizmos()
