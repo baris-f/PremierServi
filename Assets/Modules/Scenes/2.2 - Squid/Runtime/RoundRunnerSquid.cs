@@ -19,8 +19,10 @@ namespace Modules.Scenes._2._2___Squid.Runtime
         [Header("Squid controllers")]
         [SerializeField] protected SquidController squidControllerPrefab;
         [SerializeField] protected Transform squidControllersContainer;
-
-        private List<PlayerController> players = new();
+        [SerializeField] private float delayBeforeKill = 1;
+        
+        private readonly List<PlayerEvent.PlayerData> playersToKill = new();
+        private readonly List<PlayerController> players = new();
 
         private void Start()
         {
@@ -65,19 +67,27 @@ namespace Modules.Scenes._2._2___Squid.Runtime
             base.Reset();
             squidControllersContainer.DestroyAllChildren();
         }
-
+        
         public void OnPlayerShoot(MinimalData data)
         {
             if (data is not PlayerEvent.PlayerData playerData
                 || playerData.type == PlayerEvent.Type.Robot) return;
             var targets = new List<Vector3>();
+            playersToKill.Clear();
             squid.Shoot(targets);
             foreach (var player in players)
             {
                 if (!player.IsMoving) continue;
                 targets.Add(player.transform.position);
-                playerDeath.Raise(player.PlayerData);
+                playersToKill.Add(player.PlayerData);
             }
+            Invoke(nameof(KillPlayersAfterDelay), delayBeforeKill);
+        }
+
+        private void KillPlayersAfterDelay()
+        {
+            foreach (var player in playersToKill)
+                playerDeath.Raise(player);
         }
     }
 }
