@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Modules.Common.Cake.Runtime;
 using Modules.Common.Controllers.Runtime;
 using Modules.Common.CustomEvents.Runtime;
@@ -154,6 +155,12 @@ namespace Modules.Common.RoundRunner.Runtime
                 config.GoNextRound();
                 config.LoadRound();
             }
+        }
+
+        private void Update()
+        {
+            if (!Input.GetKeyUp(KeyCode.I))
+                config.GoNextRound();
         }
 
         private void OnDrawGizmos()
