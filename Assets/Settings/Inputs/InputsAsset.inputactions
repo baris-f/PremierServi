@@ -492,7 +492,7 @@
                     "path": "<HID::Nintendo Wireless Gamepad>/button2",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Joycon",
                     "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -504,6 +504,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9da2df5-529b-4792-9eec-88562ca57005",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joycon;Joystick",
                     "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -647,17 +658,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Taunt",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e07304b2-6404-4752-bf9e-526c88f73a84",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "Taunt",
                     "isComposite": false,
                     "isPartOfComposite": false

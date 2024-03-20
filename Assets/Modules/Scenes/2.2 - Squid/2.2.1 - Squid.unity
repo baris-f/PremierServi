@@ -2697,6 +2697,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6672780}
     - target: {fileID: 185004414788969949, guid: e3d5705dca14c564491a49b38e3f3be7, type: 3}
+      propertyPath: delayBeforeKill
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 185004414788969949, guid: e3d5705dca14c564491a49b38e3f3be7, type: 3}
       propertyPath: statusContainer
       value: 
       objectReference: {fileID: 359845414}
