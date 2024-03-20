@@ -159,7 +159,7 @@ namespace Modules.Common.RoundRunner.Runtime
 
         private void Update()
         {
-            if (!Input.GetKeyUp(KeyCode.I))
+            if (Input.GetKeyUp(KeyCode.I))
                 config.GoNextRound();
         }
 
